@@ -23,7 +23,7 @@ const border={
       onsubmit={props.onsubmit}
       validationSchema={schema}
       render={props=>{
-        return <Form>
+        return <Form className="form-controll p-5">
             <div>
         <label>Name</label>
         <Field name="name" type="text" className={border}/>
@@ -32,7 +32,7 @@ const border={
         
         </div>
         <hr></hr>
-        <div>
+        <div className="w-25 h-50">
         <label>E-post</label>
         <Field name="email" type="text" className="no-border"/>
     
@@ -53,7 +53,7 @@ const border={
         <ErrorMessage name="passwordConfirmation" />
         </div>
         <hr></hr>
-        <button type="submit">Send</button>
+        <button className="btn-info" type="submit">Send</button>
     </Form>
       }}
     />
