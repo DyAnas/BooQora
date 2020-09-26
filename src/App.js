@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import SignUP from './Container/SignUp'
-
-
-
+import {Switch} from "react-router-dom";
+import {Route} from "react-router-dom";
+import SignUp from "./Componenet/SignUP/signup";
+import SignIn from './Componenet/SignIN/SignIn'
 class App extends Component{
 
 
   render() {
   return (
     <div className="App">
-       <SignUP/>
-      
+        <Switch>
+        <Route path="/" exact component={SignIn}></Route>
+        <Route path="/signup" component={SignUp}></Route>
+        </Switch>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.text {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px!important;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+
+    color: #0B5C2B!important;
+}
+.background_input {
+    background: #c8f1ee !important;
+
+}
+.btn-submit{
+    color: #287045!important;
+    background-color: #F3FCFB!important;
+    border: 0;
+    -webkit-box-shadow: none;
+}

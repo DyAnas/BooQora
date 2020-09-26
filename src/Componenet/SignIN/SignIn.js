@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {Component}from 'react';
+
+import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
-import  './StyleSignUp.css';
+import './StyleSignIn.css';
 import * as Mui from '@material-ui/core';
 
 
-class SignUp extends Component{
 
 
-   classes = makeStyles(theme => ({
+ class SignIn extends Component  {
+
+    classes = makeStyles(theme => ({
         paper: {
             marginTop: theme.spacing(1),
             display: 'flex',
@@ -26,33 +28,26 @@ class SignUp extends Component{
         submit: {
             margin: theme.spacing(3, 0, 2),
         },
+
+
     }));
-    signin=()=> {
-        this.props.history.push('/');
-    }
-    render (){
-    return(
+     signup=()=> {
+         this.props.history.push('signup');
+     }
+
+     render (){
+
+    return (
         <Mui.Container component="main" maxWidth="xs" className="">
-            <Mui.CssBaseline />
+            <Mui.CssBaseline/>
             <div className={this.classes.paper}>
                 <div>
                     <img src={Logo}/>
                 </div>
-                <Mui.Typography className="text" >
+                <Mui.Typography className="text">
                     Sign in
                 </Mui.Typography>
                 <form className={this.classes.form} noValidate>
-                    <Mui.TextField
-                        variant="filled"
-                        margin="normal"
-                        required
-                        fullWidth
-                        label="User name"
-                        name="name"
-                        autoComplete="name"
-                        className="background_input"
-                        autoFocus
-                    />
                     <Mui.TextField
                         variant="filled"
                         margin="normal"
@@ -74,45 +69,44 @@ class SignUp extends Component{
                         name="password"
                         label="Password"
                         type="password"
+                        autoComplete="current-password"
                         autoFocus
                     />
-                    <Mui.TextField
-                        variant="filled"
-                        margin="normal"
-                        required
-                        fullWidth
-                        className="background_input"
-                        name="confirm_password"
-                        label="Confirm password"
-                        type="password"
-                        autoFocus
+                    <Mui.FormControlLabel
+                        control={<Mui.Checkbox value="remember" color="primary"/>}
+                        label="Remember me"
                     />
                     <br/>
                     <Mui.Button
                         type="submit"
-
                         variant="contained"
-
                         className="btn-submit"
                     >
-                        Sign up
+                        Sign In
                     </Mui.Button>
                     <br/>
                     <hr/>
                     <Mui.Grid container>
-                        <Mui.Grid item>
-                            <Mui.Link onClick={this.signin} variant="body2">
-                                {"I have an account? Sign In"}
+                        <Mui.Grid item xs>
+                            <Mui.Link href="#" variant="body2">
+                                Forgot password?
                             </Mui.Link>
                         </Mui.Grid>
+                            <Mui.Grid item>
+                                <Mui.Link href="#" onClick={this.signup} variant="body2">
+                                    Don't have an account? Sign Up
+                                </Mui.Link>
+                            </Mui.Grid>
+
                     </Mui.Grid>
                 </form>
             </div>
-            <Mui.Box mt={2}>
+            <Mui.Box mt={4}>
 
             </Mui.Box>
         </Mui.Container>
     );
-    }
 }
-export default SignUp;
+}
+
+export default SignIn;

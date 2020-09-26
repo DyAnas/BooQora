@@ -1,0 +1,42 @@
+.no-border {
+    border: 0;
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+  }
+  .hight{
+    height: 5em;
+  }
+span{
+  margin-top: 0;
+  font-size:12px;
+  position: relative;
+}
+
+  .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+
+.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
