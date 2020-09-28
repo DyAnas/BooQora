@@ -1,42 +1,45 @@
-.no-border {
-    border: 0;
-    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
-  }
-  .hight{
-    height: 5em;
-  }
+
+
+.text {
+  font-family: Playfair Display!important;
+  font-size: 36px!important;
+  align-items: center!important;
+  text-align: center!important;
+  color: #0B5C2B!important;
+
+}
 span{
   margin-top: 0;
   font-size:12px;
   position: relative;
 }
 
-  .form-control {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #000000;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .form-control:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
 
 
-.form-control {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
+
+
+
+
+
+.item2 {
+  /*grid-column: 2;
+  grid-row: 1;*/
+  background-color: #D7F4EF;
+}
+.item1{
+    display: none;
 }
 
 
-.form-control:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+@media only screen and (max-width: 600px) {
+ .item2 {
+ display: none;
+ }
+  .item1 {
+    display: contents;
+  }
+
+
+
 }
+
