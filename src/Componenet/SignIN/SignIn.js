@@ -1,4 +1,4 @@
-import React, {Component}from 'react';
+import React, {useState}from 'react';
 
 import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
@@ -45,28 +45,21 @@ function SignIn(props)   {
          props.history.push('signup');
      }
 
-    const onSubmit = (values) => {
-        console.log(values);
-    fetch('http://localhost:8000/api/v1/users/login/', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        // mode: 'cors',
-        body: JSON.stringify({'email': values.email, 'password': values.password})
-    }).then(res => {
-        console.log(res);
-    }).catch(err => {
-        console.log(err);
-    })
-}
+    const onSubmit=(e) =>{
+        e.preventDefault()//blocks the postback event of the page
+        console.log('email: '+email)
+        console.log('password: '+password)
+    }
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
 
     return (
-        <div className="ibox-content ">
+        <div className="root"  >
             <div className="row">
-                <div className="col-md-6">
-        <Mui.Container component="main" maxWidth="xs" className="">
+                <div className="col-md-6 mt-5">
+                    <Mui.Container  maxWidth="xs" >
             <Mui.CssBaseline/>
             <div className={classes.paper}>
                 <div className="item1">
@@ -90,6 +83,8 @@ function SignIn(props)   {
                         autoComplete="email"
                         className="background_input"
                         autoFocus
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                         error={errors.email ? true : false}
                     />
                     <ErrorMessage errors={errors} name="email" />
@@ -105,6 +100,8 @@ function SignIn(props)   {
                         type="password"
                         autoComplete="current-password"
                         autoFocus
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                         error={errors.email ? true : false}
                     />
                     <ErrorMessage errors={errors} name="email" />
@@ -143,11 +140,11 @@ function SignIn(props)   {
         </Mui.Container>
                 </div>
                 <div className="col-md-6 item2 ">
-                    <div className="mt-5 p-5">
-                        <div className="align-self-center mt-5">
+
+                        <div className="">
                             <img src={Logo}/>
                         </div>
-                    </div>
+
                 </div>
             </div>
         </div>

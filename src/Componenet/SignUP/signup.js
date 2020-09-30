@@ -18,7 +18,7 @@ function SignUp(props){
             . max(20,"Too long")
             . matches(/^[\w-.@ ]+$/, {message:"inccorect"}),
         email: Yup.string().matches().required(),
-        password: Yup.string().matches().required('Password is required').min(8).max(20),
+        password: Yup.string().matches().required('Password is required').min(6).max(20),
         passwordConfirmation: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
     })
@@ -50,30 +50,28 @@ function SignUp(props){
    const signin = () => {
         props.history.push('/');
     }
-    const onSubmit = (values) => {
-        console.log(values);
 
 
-        fetch('http://localhost:8000/api/v1/users/login/', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            // mode: 'cors',
-            body: JSON.stringify({'email': values.email, 'password': values.password})
-        }).then(res => {
-            console.log(res);
-        }).catch(err => {
-            console.log(err);
-        })
+    const onSubmit = (e) => {
+        e.preventDefault()//blocks the postback event of the page
+
+        console.log('name: '+name)
+        console.log('email: '+email)
+        console.log('password: '+password)
+        console.log('Confirm passord: '+confirm_password)
+
     }
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirm_password, setConfirm_password] = useState('')
 
 
         return (
-            <div className="ibox-content ">
-                <div className="row">
-                    <div className="col-md-6">
-                        <Mui.Container component="main" maxWidth="xs" className="">
+            <div className="root" >
+                <div className="row ">
+                    <div className="col-md-6 mt-5">
+                        <Mui.Container  maxWidth="xs" className="">
                             <Mui.CssBaseline/>
                             <div className={classes.paper}>
                                 <div className="item1">
@@ -97,6 +95,8 @@ function SignUp(props){
                                         autoComplete="name"
                                         className="background_input"
                                         autoFocus
+                                        value={name}
+                                        onChange={e => setName(e.target.value)}
 
                                         error={errors.name ? true : false}
                                     />
@@ -112,6 +112,8 @@ function SignUp(props){
                                         autoComplete="email"
                                         className="background_input"
                                         autoFocus
+                                        value={email}
+                                        onChange={e => setEmail(e.target.value)}
                                         error={errors.email ? true : false}
                                     />
                                     <ErrorMessage errors={errors} name="email" />
@@ -127,6 +129,8 @@ function SignUp(props){
                                         label="Password"
                                         type="password"
                                         autoFocus
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
                                         error={errors.password ? true : false}
                                     />
                                     <ErrorMessage errors={errors} name="password" />
@@ -140,6 +144,8 @@ function SignUp(props){
                                         label="Confirm password"
                                         type="password"
                                         autoFocus
+                                        value={confirm_password} onChange={e =>
+                                        setConfirm_password(e.target.value)}
                                         error={errors.passwordConfirmation ? true : false}
                                     />
                                     <ErrorMessage errors={errors} name="confirm_password" />
@@ -172,11 +178,11 @@ function SignUp(props){
 
                     </div>
                     <div className="col-md-6 item2 ">
-                        <div className="mt-5 p-5">
-                            <div className="  align-self-center mt-5">
+
+                            <div className=" ">
                                 <img src={Logo}/>
                             </div>
-                        </div>
+
                     </div>
                 </div>
             </div>

@@ -6,6 +6,10 @@
     color: #0B5C2B!important;
 
 }
+.root {
+    max-height:100%;
+
+}
 .background_input {
     background: #c8f1ee !important;
 
@@ -21,6 +25,13 @@
     /*grid-column: 2;
     grid-row: 1;*/
     background-color: #D7F4EF;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+
+    height: 140rem;
+    max-height:1024px;
+
 }
 .item1{
     display: none;
