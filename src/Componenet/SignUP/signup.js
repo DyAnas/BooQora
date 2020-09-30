@@ -53,7 +53,7 @@ function SignUp(props){
 
 
     const onSubmit = (e) => {
-        e.preventDefault()//blocks the postback event of the page
+      //  e.preventDefault()//blocks the postback event of the page
 
         console.log('name: '+name)
         console.log('email: '+email)
@@ -70,15 +70,17 @@ function SignUp(props){
         return (
             <div className="root" >
                 <div className="row ">
-                    <div className="col-md-6 mt-5">
+                    <div className="col-md-6 mt-5 center ">
                         <Mui.Container  maxWidth="xs" className="">
                             <Mui.CssBaseline/>
                             <div className={classes.paper}>
-                                <div className="item1">
+                                <div className="logo1 ">
+                                <div >
                                     <img src={Logo}/>
                                 </div>
+                                </div>
 
-                                    <Mui.Typography className="text mt-5  justify-content-center">
+                                    <Mui.Typography className="text mt-5 mb-4 justify-content-center">
                                         Sign in
                                     </Mui.Typography>
 
@@ -150,15 +152,16 @@ function SignUp(props){
                                     />
                                     <ErrorMessage errors={errors} name="confirm_password" />
                                     <br/>
+                                    <div className="center mt-5">
                                     <Mui.Button
                                         type="submit"
-
+                                        className="btn-color"
                                         variant="contained"
 
-                                        className="btn-submit mt-3"
                                     >
                                         Sign up
                                     </Mui.Button>
+                                    </div>
                                     <br/>
                                     <hr/>
                                     <Mui.Grid container>
@@ -177,12 +180,12 @@ function SignUp(props){
                         </Mui.Container>
 
                     </div>
-                    <div className="col-md-6 item2 ">
-
+                    <div className="col-md-6 section1 ">
+                          <div className="logo2">
                             <div className=" ">
                                 <img src={Logo}/>
                             </div>
-
+                          </div>
                     </div>
                 </div>
             </div>
