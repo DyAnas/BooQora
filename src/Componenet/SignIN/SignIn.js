@@ -46,7 +46,7 @@ function SignIn(props)   {
      }
 
     const onSubmit=(e) =>{
-        e.preventDefault()//blocks the postback event of the page
+     //   e.preventDefault()//blocks the postback event of the page
         console.log('email: '+email)
         console.log('password: '+password)
     }
@@ -58,15 +58,15 @@ function SignIn(props)   {
     return (
         <div className="root"  >
             <div className="row">
-                <div className="col-md-6 mt-5">
+                <div className="col-md-6 mt-5 center">
                     <Mui.Container  maxWidth="xs" >
             <Mui.CssBaseline/>
             <div className={classes.paper}>
-                <div className="item1">
+                <div className="logo1">
                     <img src={Logo}/>
                 </div>
 
-                <Mui.Typography className="text mt-5  justify-content-center">
+                <Mui.Typography className="text mt-5 mb-4 justify-content-center">
                     Sign in
                 </Mui.Typography>
 
@@ -110,13 +110,15 @@ function SignIn(props)   {
                         label="Remember me"
                     />
                     <br/>
-                    <Mui.Button
-                        type="submit"
-                        variant="contained"
-                        className="btn-submit mt3"
-                    >
-                        Sign In
-                    </Mui.Button>
+                    <div className="center mt-4">
+                        <Mui.Button
+                            type="submit"
+                            className="btn-color"
+                            variant="contained"
+                        >
+                            Sign in
+                        </Mui.Button>
+                    </div>
                     <br/>
                     <hr/>
                     <Mui.Grid container>
@@ -139,12 +141,12 @@ function SignIn(props)   {
             </Mui.Box>
         </Mui.Container>
                 </div>
-                <div className="col-md-6 item2 ">
-
-                        <div className="">
+                <div className="col-md-6 section1 ">
+                    <div className="logo2">
+                        <div className=" ">
                             <img src={Logo}/>
                         </div>
-
+                    </div>
                 </div>
             </div>
         </div>
