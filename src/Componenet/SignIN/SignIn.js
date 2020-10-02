@@ -56,9 +56,9 @@ function SignIn(props)   {
 
 
     return (
-        <div className="root"  >
+        <div className=""  >
             <div className="row">
-                <div className="col-md-6 mt-5 center">
+                <div className="col-md-6 center">
                     <Mui.Container  maxWidth="xs" >
             <Mui.CssBaseline/>
             <div className={classes.paper}>
@@ -66,7 +66,7 @@ function SignIn(props)   {
                     <img src={Logo}/>
                 </div>
 
-                <Mui.Typography className="text mt-5 mb-4 justify-content-center">
+                <Mui.Typography className="text mb-4 justify-content-center">
                     Sign in
                 </Mui.Typography>
 
