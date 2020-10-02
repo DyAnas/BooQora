@@ -13,12 +13,15 @@ import { ErrorMessage } from '@hookform/error-message';
 function SignUp(props){
 
      const   schema = Yup.object().shape({
-        name: Yup.string().required()
+        name: Yup.string().required('Please Enter your name')
             .min(8,"To short")
             . max(20,"Too long")
             . matches(/^[\w-.@ ]+$/, {message:"inccorect"}),
-        email: Yup.string().matches().required(),
-        password: Yup.string().matches().required('Password is required').min(6).max(20),
+        email: Yup.string().matches("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$").required(),
+        password: Yup.string().required('Please Enter your password').matches(
+            /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+        ).min(6).max(20),
         passwordConfirmation: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
     })
@@ -70,7 +73,7 @@ function SignUp(props){
         return (
             <div className="root" >
                 <div className="row ">
-                    <div className="col-md-6 mt-5 center ">
+                    <div className="col-md-6  center ">
                         <Mui.Container  maxWidth="xs" className="">
                             <Mui.CssBaseline/>
                             <div className={classes.paper}>
