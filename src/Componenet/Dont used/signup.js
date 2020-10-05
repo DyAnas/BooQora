@@ -1,13 +1,13 @@
 import React, {Component, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
-import './StyleSignUp.css';
+import '../SignUP/LoginStyle.css';
 import * as Mui from '@material-ui/core';
 import * as Yup from "yup";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import { ErrorMessage } from '@hookform/error-message';
-
+import {adduser} from '../../API/User'
 
 
 function SignUp(props){
@@ -55,32 +55,45 @@ function SignUp(props){
     }
 
 
-    const onSubmit = (e) => {
-      //  e.preventDefault()//blocks the postback event of the page
+    function onSubmit(value){
+        value.preventDefault()//blocks the postback event of the page
 
-        console.log('name: '+name)
+        const val ={First_name, Last_name, email, password}
         console.log('email: '+email)
         console.log('password: '+password)
         console.log('Confirm passord: '+confirm_password)
 
+
+
+
+        adduser(val).then (()=> {
+            alert('success');
+            props.history.push('/');
+        }).catch(error=> {
+            alert('error object')
+        });
+
+
     }
-    const [name, setName] = useState('')
+    const [First_name, setFirstName] = useState('')
+    const [Last_name, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirm_password, setConfirm_password] = useState('')
 
 
         return (
-            <div className="container-fluid" >
-                <div className="row ">
+            <div className="container-fluid vh-100 " >
+                <div className="row vh-100 ">
                     <div className="col-md-6  center ">
-                        <Mui.Container  maxWidth="xs" className="">
+                        <Mui.Container  maxWidth="xs" >
                             <Mui.CssBaseline/>
                             <div className={classes.paper}>
-                                <div className="logo1 ">
-                               
+
+                                <div className="logo1  ">
+                               <div className="center ">
                                     <img src={Logo}/>
-                            
+                               </div>
                                 </div>
 
                                     <Mui.Typography className="text  justify-content-center">
@@ -95,13 +108,30 @@ function SignUp(props){
                                         margin="normal"
                                         required
                                         fullWidth
-                                        label="User name"
-                                        name="name"
-                                        autoComplete="name"
+                                        label="First name"
+                                        name="First_name"
+                                        autoComplete="First_name"
                                         className="background_input"
                                         autoFocus
-                                        value={name}
-                                        onChange={e => setName(e.target.value)}
+                                        value={First_name}
+                                        onChange={e => setFirstName(e.target.value)}
+
+                                        error={errors.name ? true : false}
+                                    />
+                                    <ErrorMessage errors={errors} name="name" />
+                                    <Mui.TextField
+                                        inputRef={register}
+                                        variant="filled"
+                                        margin="normal"
+                                        required
+                                        fullWidth
+                                        label="Last name"
+                                        name="Last_name"
+                                        autoComplete="Last_name"
+                                        className="background_input"
+                                        autoFocus
+                                        value={Last_name}
+                                        onChange={e => setLastName(e.target.value)}
 
                                         error={errors.name ? true : false}
                                     />
@@ -167,9 +197,9 @@ function SignUp(props){
                                     </div>
                                     <br/>
                                     <hr/>
-                                    <Mui.Grid container>
-                                        <Mui.Grid item>
-                                            <Mui.Link onClick={signin} variant="body2">
+                                    <Mui.Grid container >
+                                        <Mui.Grid item >
+                                            <Mui.Link onClick={signin} variant="body2" >
                                                 {"I have an account? Sign In"}
                                             </Mui.Link>
                                         </Mui.Grid>
@@ -183,8 +213,8 @@ function SignUp(props){
                         </Mui.Container>
 
                     </div>
-                    <div className="col-md-6 section1 ">
-                          <div className="logo2">
+                    <div className="col-md-6 h-auto center section1 ">
+                          <div className="logo2 h-auto ">
                             <div className=" ">
                                 <img src={Logo}/>
                             </div>

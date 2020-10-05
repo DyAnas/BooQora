@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import {Switch} from "react-router-dom";
 import {Route} from "react-router-dom";
-import SignUp from "./Componenet/SignUP/signup";
-import SignIn from './Componenet/SignIN/SignIn'
+import SignUpContainer from "./Container/SignUpContainer";
+import SignInContainer from './Container/SignInContainer'
 class App extends Component{
 
 
@@ -11,8 +11,8 @@ class App extends Component{
   return (
     <div className="">
         <Switch>
-        <Route path="/" exact component={SignIn}></Route>
-        <Route path="/signup" component={SignUp}></Route>
+        <Route path="/" exact component={SignInContainer}></Route>
+        <Route path="/signup" component={SignUpContainer}></Route>
         </Switch>
     </div>
   );

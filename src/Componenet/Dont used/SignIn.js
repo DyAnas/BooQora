@@ -2,7 +2,7 @@ import React, {useState}from 'react';
 
 import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
-import './StyleSignIn.css';
+import '../SignUP/LoginStyle.css';
 import * as Mui from '@material-ui/core';
 import * as Yup from "yup";
 import {useForm} from "react-hook-form";
@@ -27,19 +27,11 @@ function SignIn(props)   {
             flexDirection: 'column',
             alignItems: 'center',
         },
-        avatar: {
-            margin: theme.spacing(3),
-            backgroundColor: theme.palette.secondary.main,
-        },
+
         form: {
             width: '100%', // Fix IE 11 issue.
             marginTop: theme.spacing(1),
         },
-        submit: {
-            margin: theme.spacing(3, 0, 2),
-        },
-
-
     }));
     const signup=()=> {
          props.history.push('signup');
@@ -56,15 +48,18 @@ function SignIn(props)   {
 
 
     return (
-        <div className=""  >
-            <div className="row">
+        <div className="container-fluid vh-100 " >
+            <div className="row vh-100 ">
                 <div className="col-md-6 center">
                     <Mui.Container  maxWidth="xs" >
             <Mui.CssBaseline/>
             <div className={classes.paper}>
-                <div className="logo1">
-                    <img src={Logo}/>
+                <div className="logo1  ">
+                    <div className="center ">
+                        <img src={Logo}/>
+                    </div>
                 </div>
+
 
                 <Mui.Typography className="text mb-4 justify-content-center">
                     Sign in
@@ -141,8 +136,8 @@ function SignIn(props)   {
             </Mui.Box>
         </Mui.Container>
                 </div>
-                <div className="col-md-6 section1 ">
-                    <div className="logo2">
+                <div className="col-md-6  h-auto center section1 ">
+                    <div className="logo2 h-auto">
                         <div className=" ">
                             <img src={Logo}/>
                         </div>
