@@ -84,7 +84,7 @@ function SignUp(props){
                                 </div>
 
                                     <Mui.Typography className="text mt-5 mb-4 justify-content-center">
-                                        Sign in
+                                        Sign Up
                                     </Mui.Typography>
 
 
