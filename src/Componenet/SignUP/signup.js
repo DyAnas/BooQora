@@ -33,7 +33,7 @@ function SignUp(props){
     });
    const classes = makeStyles(theme => ({
         paper: {
-            marginTop: theme.spacing(0),
+ 
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -44,10 +44,10 @@ function SignUp(props){
         },
         form: {
             width: '100%', // Fix IE 11 issue.
-            marginTop: theme.spacing(1),
+            
         },
         submit: {
-            margin: theme.spacing(0, 0, 0),
+           
         },
     }));
    const signin = () => {
@@ -71,19 +71,19 @@ function SignUp(props){
 
 
         return (
-            <div className="root" >
+            <div className="container-fluid" >
                 <div className="row ">
                     <div className="col-md-6  center ">
                         <Mui.Container  maxWidth="xs" className="">
                             <Mui.CssBaseline/>
                             <div className={classes.paper}>
                                 <div className="logo1 ">
-                                <div >
+                               
                                     <img src={Logo}/>
-                                </div>
+                            
                                 </div>
 
-                                    <Mui.Typography className="text mt-5 mb-4 justify-content-center">
+                                    <Mui.Typography className="text  justify-content-center">
                                         Sign Up
                                     </Mui.Typography>
 
@@ -155,7 +155,7 @@ function SignUp(props){
                                     />
                                     <ErrorMessage errors={errors} name="confirm_password" />
                                     <br/>
-                                    <div className="center mt-5">
+                                    <div className="center">
                                     <Mui.Button
                                         type="submit"
                                         className="btn-color"
