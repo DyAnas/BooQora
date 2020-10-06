@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
-import '../SignUP/LoginStyle.css';
+import '../../Container/LoginStyle.css';
 import * as Mui from '@material-ui/core';
 
 const classes = makeStyles(theme => ({
@@ -58,12 +58,14 @@ const SignInForm =({
                                     fullWidth
                                     type="text"
                                     label="Email"
+
                                     name={user.email}
+
                                     autoComplete={user.email}
                                     className="background_input"
                                     autoFocus
                                     onChange={OnChenge}
-                                    errorText={errors.email}
+                                    error={errors.email}
                                 />
 
 
@@ -76,11 +78,12 @@ const SignInForm =({
                                     type="password"
                                     label="Password"
                                     name={user.password}
+
                                     autoComplete={user.password}
                                     className="background_input"
                                     autoFocus
                                     onChange={OnChenge}
-                                    errorText={errors.password}
+                                 error={errors.password}
                                 />
 
 

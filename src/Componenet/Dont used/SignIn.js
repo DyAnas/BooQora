@@ -2,7 +2,7 @@ import React, {useState}from 'react';
 
 import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
-import '../SignUP/LoginStyle.css';
+import '../../Container/LoginStyle.css';
 import * as Mui from '@material-ui/core';
 import * as Yup from "yup";
 import {useForm} from "react-hook-form";

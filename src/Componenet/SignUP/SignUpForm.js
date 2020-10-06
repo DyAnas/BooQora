@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Logo from "../../assets/logo1.png"
-import './LoginStyle.css';
+import '../../Container/LoginStyle.css';
 import * as Mui from '@material-ui/core';
 
 const classes = makeStyles(theme => ({
@@ -25,8 +25,9 @@ const classes = makeStyles(theme => ({
 }));
 
 const SignUpForm =({
+    history,
     onSubmit,
-    OnChenge,
+    OnChange,
     user,
     errors,
 
@@ -62,10 +63,10 @@ const SignUpForm =({
                         autoComplete={user.First_name}
                         className="background_input"
                         autoFocus
+                        value={user.First_name}
+                        onChange={OnChange}
 
-                        onChange={OnChenge}
-
-                        errorText={errors.First_name}
+                      errorText={errors.First_name}
                     />
 
                     <Mui.TextField
@@ -79,10 +80,10 @@ const SignUpForm =({
                         name={user.Last_name}
                         autoComplete={user.Last_name}
                         className="background_input"
-                        autoFocus
 
-                        onChange={OnChenge}
-                        errorText={errors.Last_name}
+                        value={user.Last_name}
+                        onChange={OnChange}
+                      errorText={errors.Last_name}
                         />
 
                     <Mui.TextField
@@ -96,9 +97,9 @@ const SignUpForm =({
                         name={user.email}
                         autoComplete={user.email}
                         className="background_input"
-                        autoFocus
 
-                        onChange={OnChenge}
+                        value={user.email}
+                        onChange={OnChange}
                         errorText={errors.email}
                     />
 
@@ -113,11 +114,12 @@ const SignUpForm =({
                         label="Password"
                         name={user.password}
                         autoComplete={user.password}
+                         value={user.password}
                         className="background_input"
-                        autoFocus
 
-                        onChange={OnChenge}
-                        errorText={errors.password}
+
+                        onChange={OnChange}
+                         errorText={errors.password}
                     />
 
                     <Mui.TextField
@@ -130,11 +132,12 @@ const SignUpForm =({
                         label="Confirm Password"
                         name={user.confirm_password}
                         autoComplete={user.confirm_password}
+                       value={user.confirm_password}
                         className="background_input"
-                        autoFocus
 
-                        onChange={OnChenge}
-                        errorText={errors.confirm_password}
+
+                        onChange={OnChange}
+                       errorText={errors.confirm_password}
                     />
 
                     <br/>
