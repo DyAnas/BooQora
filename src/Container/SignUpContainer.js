@@ -1,224 +1,199 @@
-import React, {Component, useState} from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import React, { useState} from 'react';
 import Logo from "../assets/logo1.png"
 import './LoginStyle.css';
 import * as Mui from '@material-ui/core';
 import * as Yup from "yup";
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers';
-import { ErrorMessage } from '@hookform/error-message';
+import {useForm} from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers';
+import {ErrorMessage} from '@hookform/error-message';
 import {adduser} from '../API/User'
 
 
-function SignUpContainer(props){
 
+function SignUpContainer(props) {
+
+  // todo change validation not work correctly
+    // validation scehema
     const schema = Yup.object().shape({
-        FirstName: Yup.string().required('Please Enter your name')
-            .min(8,"To short")
-            . max(20,"Too long")
-            . matches(/^[\w-.@ ]+$/, {message:"inccorect"}),
-        LastName: Yup.string().required('Please Enter your Last name')
-            .min(8,"To short")
-            . max(20,"Too long")
-            . matches(/^[\w-.@ ]+$/, {message:"inccorect"}),
-        Email: Yup.string().matches("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",'Please Enter your password').required(),
-        Password: Yup.string().required('Please Enter your password')
-        //matches(
-          //  /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+        firstName: Yup.string().required('Please Enter your name').min(4, "too short")
+            .matches(/^[\w-.@ ]+$/, {message: "inccorect"}),
+        lastName: Yup.string().required()
+            .matches(/^[\w-.@ ]+$/, {message: "inccorect"}),
+        password: Yup.string().required('Please Enter your password')
+            //matches(
+            //  /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
             //"Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character")
-            .min(6).max(20),
+            .min(6, "too short").max(20, "too long"),
         passwordConfirmation: Yup.string()
             .oneOf([Yup.ref('Password'), null], 'Passwords must match')
     })
 
-    const { register, handleSubmit, errors} = useForm({
+    // useform to controll form
+    const {register, errors} = useForm({
         resolver: yupResolver(schema)
     });
-    const classes = makeStyles(theme => ({
-        paper: {
 
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-        },
-        avatar: {
-            margin: theme.spacing(0),
+    // validate email to match @tietoevry.com
+    const ValidatEmail = () => {
+        const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
+        console.log(split[1]);
+        const validEmail = "tietoevry.com";
+        if (split[1].trim() === validEmail.trim()) {
+            return true;
+        } else {
+            alert("email is not valid")
 
-        },
-        form: {
-            width: '100%', // Fix IE 11 issue.
+            return false;
 
-        },
-        submit: {
+        }
+    }
 
-        },
-    }));
+  // todo problem when click submit validation is not work only email work
+    // handel submit form
+    const onSubmit = data => {
+        data.preventDefault()//blocks the postback event of the page
+        const val = {firstName, lastName, email, password}
 
+        // check vaidation befor call api
+        if (ValidatEmail() === true) {
 
-
-  const onSubmit=data=>{
-      //  data.preventDefault()//blocks the postback event of the page
-
-
-        console.log('email: '+Email)
-        console.log('password: '+Password)
-        console.log('Confirm passord: '+ConfirmPassword)
-
-
-        adduser(data).then (()=> {
-            alert('success');
-            props.history.push('/');
-        }).catch(error=> {
-            alert('error object')
-        });
-
+            // call adduser method to sende data to api
+            adduser(val).then(() => {
+                alert('success');
+                props.history.push('/');
+            }).catch(error => {
+                alert('error object')
+            });
+        } else {
+            alert("validation is incorrect")
+        }
 
     }
-    const [FirstName, setFirstName] = useState('')
-    const [LastName, setLastName] = useState('')
-    const [Email, setEmail] = useState('')
-    const [Password, setPassword] = useState('')
-    const [ConfirmPassword, setConfirmPassword] = useState('')
 
+    // create state with usestat for
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
 
     return (
-
-            <div className=" row vh-100 center background">
-                <div className="col-md-3  box ">
-                    <Mui.Container  maxWidth="xs"  >
-                        <Mui.CssBaseline/>
-                        <div className={classes.paper}>
-
-
-                                <div className="center ">
-                                    <img src={Logo}/>
-                                </div>
-
-
-                            <Mui.Typography className="text  m justify-content-center">
-                                Sign Up
-                            </Mui.Typography>
-
-
-                            <form className={classes.form} onSubmit={handleSubmit(onSubmit)} >
-                                <Mui.TextField
-                                    inputRef={register}
-                                    variant="filled"
-                                    size="small"
-                                    required
-                                    fullWidth
-                                    label="First name"
-                                    name="FirstName"
-                                    autoComplete="FirstName"
-                                    className="background_input"
-                                    autoFocus
-                                    value={FirstName}
-                                    onChange={e => setFirstName(e.target.value)}
-
-
-                                />
-                                <ErrorMessage errors={errors} name="name" />
-                                <Mui.TextField
-                                    inputRef={register}
-                                    variant="filled"
-                                    margin="normal"
-                                    required
-                                    size="small"
-                                    fullWidth
-                                    label="Last name"
-                                    name="LastName"
-                                    autoComplete="LastName"
-                                    className="background_input"
-                                    autoFocus
-                                    value={LastName}
-                                    onChange={e => setLastName(e.target.value)}
-
-                                    error={errors.name ? true : false}
-                                />
-                                <ErrorMessage errors={errors} name="LastName" />
-
-                                <Mui.TextField
-                                    inputRef={register}
-                                    variant="filled"
-                                    margin="normal"
-                                    size="small"
-                                    fullWidth
-                                    label="E-post"
-                                    name="Email"
-                                    autoComplete="Email"
-                                    className="background_input"
-                                    autoFocus
-                                    value={Email}
-                                    onChange={e => setEmail(e.target.value)}
-                                    //error={errors.email ? true : false}
-                                />
-                                <ErrorMessage errors={errors} name="Email" />
-
-                                <Mui.TextField
-                                    inputRef={register}
-                                    variant="filled"
-                                    margin="normal"
-                                    required
-                                    size="small"
-                                    fullWidth
-                                    className="background_input"
-                                    name="Password"
-                                    label="Password"
-                                    type="password"
-                                    autoFocus
-                                    value={Password}
-                                    onChange={e => setPassword(e.target.value)}
-
-                                />
-                                <ErrorMessage errors={errors} name="Password" />
-                                <Mui.TextField
-                                    variant="filled"
-                                    margin="normal"
-                                    required
-                                    size="small"
-                                    fullWidth
-                                    className="background_input"
-                                    name="ConfirmPassword"
-                                    label="Confirm password"
-                                    type="password"
-                                    autoFocus
-                                    value={ConfirmPassword} onChange={e =>
-                                    setConfirmPassword(e.target.value)}
-
-                                />
-                                <ErrorMessage errors={errors} name="ConfirmPassword" />
-                                <br/>
-                                <div className="center">
-                                    <Mui.Button
-                                        type="submit"
-                                        className="btn-color mt-4"
-                                        variant="contained"
-
-                                    >
-                                        Sign up
-                                    </Mui.Button>
-                                </div>
-                                <br/>
-                                <hr/>
-                                <Mui.Grid container >
-                                    <Mui.Grid item >
-                                        <Mui.Link href="/" variant="body2" >
-                                            {"I have an account? Sign In"}
-                                        </Mui.Link>
-                                    </Mui.Grid>
-                                </Mui.Grid>
-                            </form>
-
-                        </div>
-                        <Mui.Box mt={2}>
-
-                        </Mui.Box>
-                    </Mui.Container>
-
+        <div className=" ipad vh-100 center background   ">
+            <div className="col-md-3  box ipad2  ">
+                <div>
+                    <div className="center ">
+                        <img src={Logo}/>
+                    </div>
+                    <h1 className="text  mb-2 justify-content-center">
+                        Sign Up
+                    </h1>
+                    <div className="center">
+                        <form onSubmit={onSubmit}>
+                            <Mui.TextField
+                                inputRef={register}
+                                variant="filled"
+                                size="small"
+                                required
+                                fullWidth
+                                label="First name"
+                                name="firstName"
+                                autoComplete="firstName"
+                                className="background_input"
+                                autoFocus
+                                value={firstName}
+                                onChange={e => setFirstName(e.target.value)}
+                            />
+                            <div className="error-message">
+                                <ErrorMessage errors={errors} name="firstName" as="span"/>
+                            </div>
+                            <Mui.TextField
+                                inputRef={register}
+                                variant="filled"
+                                margin="normal"
+                                required
+                                size="small"
+                                fullWidth
+                                label="Last name"
+                                name="lastName"
+                                autoComplete="lastName"
+                                className="background_input"
+                                value={lastName}
+                                onChange={e => setLastName(e.target.value)}
+                            />
+                            <div className="error-message">
+                                <ErrorMessage errors={errors} name="lastName"/>
+                            </div>
+                            <Mui.TextField
+                                inputRef={register}
+                                variant="filled"
+                                margin="normal"
+                                size="small"
+                                fullWidth
+                                label="E-post"
+                                name="email"
+                                autoComplete="email"
+                                className="background_input"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                            <div className="error-message">
+                                <ErrorMessage errors={errors} name="Email"/>
+                            </div>
+                            <Mui.TextField
+                                inputRef={register}
+                                variant="filled"
+                                margin="normal"
+                                required
+                                size="small"
+                                fullWidth
+                                className="background_input"
+                                name="Password"
+                                label="Password"
+                                type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <div className="error-message">
+                                <ErrorMessage errors={errors} name="Password"/>
+                            </div>
+                            <Mui.TextField
+                                variant="filled"
+                                margin="normal"
+                                required
+                                size="small"
+                                fullWidth
+                                className="background_input"
+                                name="ConfirmPassword"
+                                label="Confirm password"
+                                type="password"
+                                value={confirmPassword} onChange={e =>
+                                setConfirmPassword(e.target.value)}
+                            />
+                            <div className="error-message">
+                                <ErrorMessage errors={errors} name="ConfirmPassword"/>
+                            </div>
+                            <div className="center">
+                                <Mui.Button
+                                    type="submit"
+                                    className="btn-color mt-4"
+                                    variant="contained"
+                                >
+                                    Sign up
+                                </Mui.Button>
+                            </div>
+                            <br/>
+                            <hr/>
+                            <div className="mb-5 ">
+                                <Mui.Link href="/" variant="body2" className="text-footer">
+                                    {"I have an account? Sign In"}
+                                </Mui.Link>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+            </div>
         </div>
     );
-
 }
 
 export default SignUpContainer;
