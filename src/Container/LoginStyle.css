@@ -126,9 +126,11 @@ and (max-device-width : 1024px)  {
 
 
     }
-  .ipad2{
 
-  }
+  /* TODO
+   .ipad2{
+
+  } */
     .ipad {
         overflow: hidden!important;
         width: 140vh;

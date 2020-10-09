@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Switch} from "react-router-dom";
-import {Route} from "react-router-dom";
+import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
 import SignUpContainer from "./Container/SignUpContainer";
 import SignInContainer from './Container/SignInContainer'
-import Home from './Container/home'
+import  {Home}  from './Container/home'
+import { ProtectedRoute } from "./Authentication/protectedRoute";
 
-class App extends Component{
+
+class App extends Component {
 
   render() {
-  return (
-    <div className="">
-        <Route path="/home" component={Home}></Route>
-        <Switch>
-        <Route path="/" exact component={SignInContainer}></Route>
-        <Route path="/signup" component={SignUpContainer}></Route>
-        </Switch>
-    </div>
-  );
-}
+
+    return (
+
+      <div className="">
+
+        <BrowserRouter>
+          
+          <Switch>
+            <Route path="/" exact component={SignInContainer}/>
+            <Route path="/signup" component={SignUpContainer}/>
+            <ProtectedRoute 
+            path="/home"
+            component={Home}/>
+            <Route path="*" component={()=> "404 Not Found "}/>
+          </Switch>
+
+        </BrowserRouter>
+
+      </div >
+    );
+  }
 }
 export default App;

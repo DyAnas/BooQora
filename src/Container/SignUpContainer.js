@@ -52,11 +52,12 @@ function SignUpContainer(props) {
     // handel submit form
     const onSubmit = data => {
         data.preventDefault()//blocks the postback event of the page
-        const val = {firstName, lastName, email, password}
+        const IS_ENABLED   = false;
+        const val = {firstName, lastName, email, password,IS_ENABLED}
 
         // check vaidation befor call api
         if (ValidatEmail() === true) {
-
+console.log(val);
             // call adduser method to sende data to api
             adduser(val).then(() => {
                 alert('success');

@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Logo from "../assets/logo1.png"
 import '../Container/LoginStyle.css';
 import * as Mui from '@material-ui/core';
 import * as Yup from "yup";
-import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers";
-import {ErrorMessage} from "@hookform/error-message";
-
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers";
+import { ErrorMessage } from "@hookform/error-message";
+import auth from '../Authentication/auth';
 
 function SignInContainer(props) {
 
@@ -17,7 +17,7 @@ function SignInContainer(props) {
         password: Yup.string().matches().required('Password is required'),
     })
     // useform to controll form
-    const {register, errors} = useForm({
+    const { register, errors } = useForm({
         resolver: yupResolver(schema)
     });
 
@@ -44,7 +44,19 @@ function SignInContainer(props) {
         } else {
             alert("error   " + split[1])
         }
+
+
+        //Authentication
+        console.log(auth);
+        {const Authentication = () => {
+            // auth.isAuthenticated () ?
+            auth.login(() => {
+                this.props.history.push("/home");
+            })
+        };
     }
+    }
+
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -52,75 +64,75 @@ function SignInContainer(props) {
 
 
     return (<div className=" ipad vh-100 center background   ">
-            <div className="col-md-3  box ipad2  ">
-                <div>
-                    <div className="center ">
-                        <img src={Logo}/>
-                    </div>
-                    <h1 className="text  mb-2 justify-content-center">
-                        Sign In
+        <div className="col-md-3  box ipad2  ">
+            <div>
+                <div className="center ">
+                    <img src={Logo} />
+                </div>
+                <h1 className="text  mb-2 justify-content-center">
+                    Sign In
                     </h1>
-                    <div className="center">
-                        <form onSubmit={onSubmit}>
-                            <Mui.TextField
-                                inputRef={register}
-                                variant="filled"
-                                margin="normal"
-                                size="small"
-                                fullWidth
-                                label="E-post"
-                                name="email"
-                                autoComplete="email"
-                                className="background_input"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                error={errors.email}
-                            />
-                            <div className="error-message">
-                                <ErrorMessage errors={errors} name="Email"/>
-                            </div>
-                            <Mui.TextField
-                                inputRef={register}
-                                variant="filled"
-                                margin="normal"
-                                required
-                                size="small"
-                                fullWidth
-                                className="background_input"
-                                name="Password"
-                                label="Password"
-                                type="password"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                            />
-                            <div className="error-message">
-                                <ErrorMessage errors={errors} name="Password"/>
-                            </div>
-                            <div className="center">
-                                <Mui.Button
-                                    type="submit"
-                                    className="btn-color mt-4"
-                                    variant="contained"
-                                >
-                                    Sign In
+                <div className="center">
+                    <form onSubmit={onSubmit}>
+                        <Mui.TextField
+                            inputRef={register}
+                            variant="filled"
+                            margin="normal"
+                            size="small"
+                            fullWidth
+                            label="E-post"
+                            name="email"
+                            autoComplete="email"
+                            className="background_input"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            error={errors.email}
+                        />
+                        <div className="error-message">
+                            <ErrorMessage errors={errors} name="Email" />
+                        </div>
+                        <Mui.TextField
+                            inputRef={register}
+                            variant="filled"
+                            margin="normal"
+                            required
+                            size="small"
+                            fullWidth
+                            className="background_input"
+                            name="Password"
+                            label="Password"
+                            type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                        <div className="error-message">
+                            <ErrorMessage errors={errors} name="Password" />
+                        </div>
+                        <div className="center">
+                            <Mui.Button
+                                type="submit"
+                                className="btn-color mt-4"
+                                variant="contained"
+                            >
+                                Sign In
                                 </Mui.Button>
-                            </div>
-                            <br/>
-                            <hr/>
-                        </form>
-                    </div>
-                    <div className="mb-5 ">
-                        <Mui.Link href="#" variant="body2" className="text-footer">
-                            Forgot password?
+                        </div>
+                        <br />
+                        <hr />
+                    </form>
+                </div>
+                <div className="mb-5 ">
+                    <Mui.Link href="#" variant="body2" className="text-footer">
+                        Forgot password?
                         </Mui.Link>
-                        <br/>
-                        <Mui.Link href="/signup" variant="body2" className="text-footer">
-                            Don't have an account? Sign Up
+                    <br />
+                    <Mui.Link href="/signup" variant="body2" className="text-footer">
+                        Don't have an account? Sign Up
                         </Mui.Link>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 
