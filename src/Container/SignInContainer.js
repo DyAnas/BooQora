@@ -10,16 +10,8 @@ import auth from '../Authentication/auth';
 
 function SignInContainer(props) {
 
-    // validation scehema
-    // todo change validation not work correctly
-    const schema = Yup.object().shape({
-        email: Yup.string().required("Writ vaalid email"),
-        password: Yup.string("writ correct passsword").matches().required('Password is required'),
-    })
     // useform to controll form
-    const { register,handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema)
-    });
+    const { register,handleSubmit, errors } = useForm({});
 
     // check validation
     const ValidatEmail = () => {
@@ -34,8 +26,8 @@ function SignInContainer(props) {
         }
     }
     // handle submit form
-    const onSubmit = (data) => {
-        data.preventDefault()//blocks the postback event of the page
+    function onSubmit (){
+      //  data.preventDefault()//blocks the postback event of the page
 
         const split = email.split(/[ @ ]+/); //splits string using RegEx on a space OR a comma
         // check vaidation befor call api
@@ -48,13 +40,14 @@ function SignInContainer(props) {
 
         //Authentication
         console.log(auth);
-        {const Authentication = () => {
+
+            const Authentication = () => {
             // auth.isAuthenticated () ?
             auth.login(() => {
                 this.props.history.push("/home");
             })
         };
-    }
+
     }
 
 
@@ -73,7 +66,7 @@ function SignInContainer(props) {
                     Sign In
                     </h1>
                 <div className="center">
-                    <form onSubmit={handleSubmit(()=>onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <Mui.TextField
                             inputRef={register({
                                 required: "Required",
@@ -96,7 +89,7 @@ function SignInContainer(props) {
                             error={errors.email}
                         />
                         <div className="error-message">
-                            <ErrorMessage errors={errors} name="Email" />
+                            <ErrorMessage errors={errors} name="email" />
                         </div>
                         <Mui.TextField
                             inputRef={register({
@@ -112,14 +105,14 @@ function SignInContainer(props) {
                             size="small"
                             fullWidth
                             className="background_input"
-                            name="Password"
+                            name="password"
                             label="Password"
                             type="password"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
                         />
                         <div className="error-message">
-                            <ErrorMessage errors={errors} name="Password" />
+                            <ErrorMessage errors={errors} name="password" />
                         </div>
                         <div className="center">
                             <Mui.Button
