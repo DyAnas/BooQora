@@ -13,11 +13,11 @@ function SignInContainer(props) {
     // validation scehema
     // todo change validation not work correctly
     const schema = Yup.object().shape({
-        email: Yup.string().required(),
-        password: Yup.string().matches().required('Password is required'),
+        email: Yup.string().required("Writ vaalid email"),
+        password: Yup.string("writ correct passsword").matches().required('Password is required'),
     })
     // useform to controll form
-    const { register, errors } = useForm({
+    const { register,handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
 
@@ -73,9 +73,16 @@ function SignInContainer(props) {
                     Sign In
                     </h1>
                 <div className="center">
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={handleSubmit(()=>onSubmit)}>
                         <Mui.TextField
-                            inputRef={register}
+                            inputRef={register({
+                                required: "Required",
+                                pattern: {
+                                    value: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                                    message: "Invalid email"
+
+                                }
+                            })}
                             variant="filled"
                             margin="normal"
                             size="small"
@@ -92,7 +99,13 @@ function SignInContainer(props) {
                             <ErrorMessage errors={errors} name="Email" />
                         </div>
                         <Mui.TextField
-                            inputRef={register}
+                            inputRef={register({
+                                required: "Required",
+                                pattern: {
+                                    value:  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
+                                    message: "Must Contain 8 Characters, One Lowercase, One Number"
+                                }
+                            })}
                             variant="filled"
                             margin="normal"
                             required
