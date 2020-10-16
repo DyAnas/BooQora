@@ -91,6 +91,7 @@ function SignInContainer(props) {
                             fullWidth
                             label="E-post"
                             name="email"
+                            autofocus
                             autoComplete="email"
                             className="background_input"
                             value={email}
@@ -110,9 +111,10 @@ function SignInContainer(props) {
                             })}
                             variant="filled"
                             margin="normal"
-                            required
+                            autoComplete="password"
                             size="small"
                             fullWidth
+                            autofocus
                             className="background_input"
                             name="password"
                             label="Password"

@@ -87,6 +87,8 @@ function SignUpContainer(props) {
                                 })}
                                 variant="filled"
                                 size="small"
+                                autofocus
+                                autoComplete="firstName"
                                 fullWidth
                                 label="First name"
                                 name="firstName"
@@ -108,6 +110,8 @@ function SignUpContainer(props) {
                                 variant="filled"
                                 margin="normal"
                                 size="small"
+                                autofocus
+                                autoComplete="lastName"
                                 fullWidth
                                 label="Last name"
                                 name="lastName"
@@ -131,6 +135,8 @@ function SignUpContainer(props) {
                                 variant="filled"
                                 margin="normal"
                                 size="small"
+                                autofocus
+                                autoComplete="email"
                                 fullWidth
                                 label="E-post"
                                 name="email"
@@ -147,7 +153,7 @@ function SignUpContainer(props) {
                                 inputRef={register({
                                     required: "Required",
                                     pattern: {
-                                        value:  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
+                                        value:  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                                         message: "Must Contain 8 Characters, One UperCase, One Number"
                                     }
                                 })}
@@ -155,6 +161,8 @@ function SignUpContainer(props) {
                                 margin="normal"
                                 size="small"
                                 fullWidth
+                                autofocus
+                                autoComplete="password"
                                 className="background_input"
                                 name="password"
                                 label="Password"
@@ -177,6 +185,8 @@ function SignUpContainer(props) {
                                 margin="normal"
                                 size="small"
                                 fullWidth
+                                autofocus
+                                autoComplete="confirmPassword"
                                 className="background_input"
                                 name="confirmPassword"
                                 label="Confirm password"
