@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 const validator = require("validator");
 // validate email to match @tietoevry.com
 
@@ -24,7 +23,7 @@ function Validatform (props){
 
     const split = props.email.split(/[@]+/); //splits string using RegEx on a space OR a comma
     console.log(split[1]);
-    const validEmail = "gmail.com";
+    const validEmail = "tietoevry.com";
     if (split[1].trim() !== validEmail.trim()) {
         errors.props.email= "Please provide a email";
         alert("email is not valid")

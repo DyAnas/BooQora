@@ -2,12 +2,10 @@ import React, { useState} from 'react';
 import Logo from "../assets/logo1.png"
 import './LoginStyle.css';
 import * as Mui from '@material-ui/core';
-import * as Yup from "yup";
 import {useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers';
 import {ErrorMessage} from '@hookform/error-message';
-import {adduser} from '../API/User'
-import Validatform from './ValidateForm'
+import AuthService from '../Authentication/authUser'
+
 
 
 function SignUpContainer(props) {
@@ -24,34 +22,41 @@ function SignUpContainer(props) {
     const [emailError, setEmailError]=useState("");
     const ValidateEmail = () => {
         const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
-        const validEmail = "gmail.com";
+        const validEmail = "tietoevry.com";
         if (split[1].trim() === validEmail.trim()) {
             return true;
         }
     }
 
     // handel submit form
-    function onSubmit () {
-        const IS_ENABLED   = false;
-        const val = {firstName, lastName, email, password, IS_ENABLED}
-        console.log(errors);
+    const onSubmit = data => {
+        
+        
         // check validation before call api
         if (ValidateEmail() ) {
-
+            
 
             setEmailError("")
 
-            // call adduser method to send data to api
-            adduser(val).then(() => {
-                alert('success');
+            // call register method to send data to api
+            const role=["user"];
+            AuthService.register(firstName, lastName, email, password,role)
+            .then(Response => {
+                alert(Response.data.message );
                 props.history.push('/');
 
-            }).catch(error => {
-                alert('error object')
-            });
+            },  error => {
+                const resMessage =
+                  (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                  error.message ||
+                  error.toString();
+                alert(resMessage)}
+                );
         }
         else {
-            setEmailError("Email most match tietovry")
+            setEmailError("Email must match tietoevry")
             alert("error validation ")
         }
 
@@ -65,7 +70,7 @@ function SignUpContainer(props) {
             <div className="col-md-3  box ipad2  ">
                 <div>
                     <div className="center ">
-                        <img src={Logo}/>
+                        <img src={Logo} alt="logo"/>
                     </div>
                     <h1 className="text  mb-2 justify-content-center">
                         Sign Up
@@ -143,7 +148,7 @@ function SignUpContainer(props) {
                                     required: "Required",
                                     pattern: {
                                         value:  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
-                                        message: "Must Contain 8 Characters, One Lowercase, One Number"
+                                        message: "Must Contain 8 Characters, One UperCase, One Number"
                                     }
                                 })}
                                 variant="filled"

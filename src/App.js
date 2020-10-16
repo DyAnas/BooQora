@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import SignUpContainer from "./Container/SignUpContainer";
 import SignInContainer from './Container/SignInContainer'
 import  {Home}  from './Container/home'
 import { ProtectedRoute } from "./Authentication/protectedRoute";
-
+import { NextPage } from './Test to delete/nextpage'
 
 class App extends Component {
 
@@ -15,18 +15,21 @@ class App extends Component {
 
       <div className="">
 
-        <BrowserRouter>
-          
-          <Switch>
-            <Route path="/" exact component={SignInContainer}/>
-            <Route path="/signup" component={SignUpContainer}/>
-            <ProtectedRoute 
-            path="/home"
-            component={Home}/>
-            <Route path="*" component={()=> "404 Not Found "}/>
-          </Switch>
+<BrowserRouter>
 
-        </BrowserRouter>
+<Switch>
+  <Route path="/" exact component={SignInContainer} />
+  <Route path="/signup" component={SignUpContainer} />
+  <ProtectedRoute
+    path="/home"
+    component={Home} />
+    <ProtectedRoute
+    path="/next"
+    component={NextPage} />
+  <Route path="*" component={() => "404 Not Found "} />
+</Switch>
+
+</BrowserRouter>
 
       </div >
     );

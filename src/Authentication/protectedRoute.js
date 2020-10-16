@@ -1,5 +1,5 @@
 import React from "react";
-import auth from '../Authentication/auth';
+import AuthService from '../Authentication/authUser';
 import { Route, Redirect } from "react-router-dom";
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
@@ -8,7 +8,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
             {...rest}
             render={props => {
 
-                if (auth.isAuthenticated()) {
+                if (AuthService.getCurrentUser()) {
                     return <Component {...props} />
                 }
                 else {

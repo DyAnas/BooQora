@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import Logo from "../assets/logo1.png"
 import '../Container/LoginStyle.css';
 import * as Mui from '@material-ui/core';
-import * as Yup from "yup";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers";
 import { ErrorMessage } from "@hookform/error-message";
-import auth from '../Authentication/auth';
+import AuthService from '../Authentication/authUser';
+// import auth from '../Authentication/auth';
 
 function SignInContainer(props) {
 
@@ -32,21 +31,31 @@ function SignInContainer(props) {
         const split = email.split(/[ @ ]+/); //splits string using RegEx on a space OR a comma
         // check vaidation befor call api
         if (ValidatEmail()) {
-            props.history.push('/home')
+            AuthService.login(email, password).then(
+                () => {
+                    props.history.push("/home");
+                    window.location.reload();
+        
+                },
+                error => {
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+    
+                        console.log(resMessage);
+                }
+            );
         } else {
             alert("error   " + split[1])
         }
 
 
         //Authentication
-        console.log(auth);
+       
 
-            const Authentication = () => {
-            // auth.isAuthenticated () ?
-            auth.login(() => {
-                this.props.history.push("/home");
-            })
-        };
 
     }
 
@@ -60,7 +69,7 @@ function SignInContainer(props) {
         <div className="col-md-3  box ipad2  ">
             <div>
                 <div className="center ">
-                    <img src={Logo} />
+                    <img src={Logo} alt="logo" />
                 </div>
                 <h1 className="text  mb-2 justify-content-center">
                     Sign In

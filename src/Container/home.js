@@ -1,19 +1,46 @@
 import React from "react";
-import auth from "../Authentication/auth";
+import AuthService from "../Authentication/authUser";
 
 export const Home = (props) => {
-    return (<div>
-        <h1> Home </h1>
+    const currentUser = AuthService.getCurrentUser();
+
+
+     return (
+
+    <div className="container">
+        <header className="jumbotron">
+          <h3>
+            <strong>{currentUser.username}</strong> Profile
+          </h3>
+        </header>
+        <p>
+          <strong>Token:</strong>{" "}
+          {currentUser.accessToken}
+          
+        </p>
+        <p>
+          <strong>Id:</strong>{" "}
+          {currentUser.id}
+        </p>
+        <p>
+          <strong>Email:</strong>{" "}
+          {currentUser.email}
+        </p>
+        <strong>Authorities:</strong>
+        <ul>
+          {
+            currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
+        </ul>
 
         <button onClick={() => {
-            auth.logout(() => {
-                props.history.push("/");
-            });
+            AuthService.logout();
+            props.history.push("/")
+
         }}
         >
-            logout
-        </button>
-    </div>
+            logout </button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/next">Next protected page</a>
+      </div>
     );
 }
 
