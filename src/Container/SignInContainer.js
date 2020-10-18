@@ -1,41 +1,55 @@
 import React, { useState } from 'react';
 import Logo from "../assets/logo1.png"
 import '../Container/LoginStyle.css';
-import * as Mui from '@material-ui/core';
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
 import AuthService from '../Authentication/authUser';
-// import auth from '../Authentication/auth';
-
+import DialogAlert from '../Copmonent/DialogModale'
+import { Link, Button, TextField } from "@material-ui/core";
 function SignInContainer(props) {
 
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     // useform to controll form
     const { register,handleSubmit, errors } = useForm({});
+    // dialog handle
+    const [show, setShow] = useState(false);
+    const [message, setMessage] = useState({
+        text: "",
+        title:""
+    });
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true, ()=> {
+        setTimeout(() => {
+            handleShow();
+            // show is true
+        }, 3000);
+        setShow(false) // show is false after 3 second
+    });
 
-    // check validation
-    const ValidatEmail = () => {
+    // validate email
+    const ValidateEmail = () => {
         const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
-        const validEmail = "tietoevry.com";
-        if (split[1].trim() === validEmail.trim()) {
+        const validEmailTietoEvry = "tietoevry.com";
+        const validEmailEvry = "evry.com"
+        if (split[1].trim() === validEmailTietoEvry.trim()
+            || split[1].trim() === validEmailEvry.trim()) {
             return true;
         } else {
-            alert("email is not valid")
-            return false;
-
+            setMessage({
+                text: "check if you have correct email or password",
+                title: " Invalid email"   })
+            handleShow();
         }
     }
     // handle submit form
-    function onSubmit (){
-      //  data.preventDefault()//blocks the postback event of the page
-
-        const split = email.split(/[ @ ]+/); //splits string using RegEx on a space OR a comma
+    const onSubmit = data =>{
         // check vaidation befor call api
-        if (ValidatEmail()) {
+        if (ValidateEmail()) {
             AuthService.login(email, password).then(
-                () => {
+                Response => {
+
                     props.history.push("/home");
                     window.location.reload();
-        
                 },
                 error => {
                     const resMessage =
@@ -44,27 +58,19 @@ function SignInContainer(props) {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
-    
-                        console.log(resMessage);
+                    setMessage({
+                        text: resMessage,
+                        title: "Error"})
+                    handleShow();
                 }
             );
         } else {
-            alert("error   " + split[1])
-        }
-
-
-        //Authentication
-       
-
-
+            setMessage({
+                text:"Email must match tietoevry",
+                title: "Incorrect email or password"})
+            handleShow();
+        }//Authentication
     }
-
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-
-
     return (<div className=" ipad vh-100 center background   ">
         <div className="col-md-3  box ipad2  ">
             <div>
@@ -76,76 +82,74 @@ function SignInContainer(props) {
                     </h1>
                 <div className="center">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <Mui.TextField
-                            inputRef={register({
-                                required: "Required",
-                                pattern: {
-                                    value: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
-                                    message: "Invalid email"
-
-                                }
-                            })}
-                            variant="filled"
-                            margin="normal"
-                            size="small"
-                            fullWidth
-                            label="E-post"
+                        <TextField
                             name="email"
-                            autofocus
-                            autoComplete="email"
-                            className="background_input"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            error={errors.email}
-                        />
-                        <div className="error-message">
-                            <ErrorMessage errors={errors} name="email" />
-                        </div>
-                        <Mui.TextField
+                            error={!!errors.email}
+                            label="Email"
                             inputRef={register({
                                 required: "Required",
                                 pattern: {
-                                    value:  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
-                                    message: "Must Contain 8 Characters, One Lowercase, One Number"
+                                    value: /^[a-zA-Z0-9.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                                    message: "Invalid email"
                                 }
                             })}
+                            //value={email}
+                            helperText={errors.email ? errors.email.message : ""}
+                            type="email"
+                            fullWidth
+                            autocompleted="false"
+                            size="small"
+                            onChange={e => setEmail(e.target.value)}
                             variant="filled"
                             margin="normal"
-                            autoComplete="password"
-                            size="small"
-                            fullWidth
-                            autofocus
-                            className="background_input"
-                            name="password"
-                            label="Password"
-                            type="password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
+                           className="background_input"
                         />
-                        <div className="error-message">
-                            <ErrorMessage errors={errors} name="password" />
-                        </div>
+                        <TextField
+                            name="password"
+                            error={!!errors.password}
+                            label="Password"
+                            inputRef={register({
+                                required: "Required",
+                                pattern: {
+                                    value:  /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/,
+                                    message: "Must Contain 8 Characters, One Lowercase, One Number and one special character"
+                                }
+                            })}
+                            helperText={errors.password ? errors.password.message : ""}
+                            type="password"
+                            fullWidth
+                          //  value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            className="background_input"
+                            variant="filled"
+                            margin="normal"
+                        />
                         <div className="center">
-                            <Mui.Button
+                            <Button
                                 type="submit"
                                 className="btn-color mt-4"
                                 variant="contained"
                             >
                                 Sign In
-                                </Mui.Button>
+                            </Button>
                         </div>
-                        <br />
                         <hr />
                     </form>
+                    <DialogAlert
+                        show={show}
+                        onHide={handleClose}
+                        message={message.text}
+                        Tittel={message.title}
+                    />
                 </div>
                 <div className="mb-5 ">
-                    <Mui.Link href="#" variant="body2" className="text-footer">
+                    <Link href="#" variant="body2" className="text-footer">
                         Forgot password?
-                        </Mui.Link>
+                        </Link>
                     <br />
-                    <Mui.Link href="/signup" variant="body2" className="text-footer">
+                    <Link href="/signup" variant="body2" className="text-footer">
                         Don't have an account? Sign Up
-                        </Mui.Link>
+                        </Link>
                 </div>
             </div>
         </div>
