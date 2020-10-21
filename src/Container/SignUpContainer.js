@@ -23,19 +23,14 @@ function SignUpContainer(props) {
         title:""
     });
 
+
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true, ()=> {
-        setTimeout(() => {
-            handleShow();
-            // show is true
-        }, 3000);
-        setShow(false) // show is false after 3 second
-});
+    const handleShow = () => setShow(true);
 
     // validate email
     const ValidateEmail = () => {
         const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
-        const validEmailTietoEvry = "tietoevry.com";
+        const validEmailTietoEvry = "gmail.com";
         const validEmailEvry = "evry.com"
         if (split[1].trim() === validEmailTietoEvry.trim()
             || split[1].trim() === validEmailEvry.trim()) {
@@ -43,24 +38,24 @@ function SignUpContainer(props) {
         } else {
             setMessage({
                 text: "check if you have correct email or password",
-                 title: " Invalid email"   })
+                title: " Invalid email"   })
             handleShow();
         }
     }
 
-    // handel submit form
+    // handle submit form
     const onSubmit = data => {
         // check validation before call api
         if (ValidateEmail()) {
             // call register method to send data to api
-            const role = ["user"];
-            AuthService.register(firstName, lastName, email, password, role)
+            const roles = ["user"];
+            AuthService.register(firstName, lastName, email, password, roles)
                 .then(Response => {
                     setMessage({
                         text: Response.data.message,
                         title: "Success"})
-                       handleShow();
-                        props.history.push('/');
+                    handleShow();
+                    setTimeout(() => { props.history.push('/') }, 4000);
                     }, error => {
                         const resMessage =
                             (error.response &&
@@ -68,10 +63,11 @@ function SignUpContainer(props) {
                                 error.response.data.message) ||
                             error.message ||
                             error.toString();
+                    handleShow();
                         setMessage({
                             text: resMessage,
                              title: "Error"})
-                        handleShow();
+                        console.log("res.message", resMessage);
                     }
                 );
         } else {
@@ -80,6 +76,7 @@ function SignUpContainer(props) {
                  title: "Incorrect email or password"})
             handleShow();
         }
+
     }
 
     return (

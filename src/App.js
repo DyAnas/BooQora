@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import SignUpContainer from "./Container/SignUpContainer";
 import SignInContainer from './Container/SignInContainer'
-import  {Home}  from './Container/home'
+import  {MiniDrawer}  from './Container/home'
 import { ProtectedRoute } from "./Authentication/protectedRoute";
 import { NextPage } from './Test to delete/nextpage'
 
@@ -20,12 +20,15 @@ class App extends Component {
 <Switch>
   <Route path="/" exact component={SignInContainer} />
   <Route path="/signup" component={SignUpContainer} />
+
+
   <ProtectedRoute
     path="/home"
-    component={Home} />
+    component={MiniDrawer} />
+
     <ProtectedRoute
-    path="/next"
-    component={NextPage} />
+        path="/next"
+        component={NextPage} />
   <Route path="*" component={() => "404 Not Found "} />
 </Switch>
 

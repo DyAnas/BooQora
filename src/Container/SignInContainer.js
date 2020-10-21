@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Logo from "../assets/logo1.png"
 import '../Container/LoginStyle.css';
 import { useForm } from "react-hook-form";
 import AuthService from '../Authentication/authUser';
 import DialogAlert from '../Copmonent/DialogModale'
 import { Link, Button, TextField } from "@material-ui/core";
-function SignInContainer(props) {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+const SignInContainer=( {login }) =>{
+
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
     // useform to controll form
-    const { register,handleSubmit, errors } = useForm({});
+    const { register,handleSubmit, errors } =useForm();
     // dialog handle
-    const [show, setShow] = useState(false);
-    const [message, setMessage] = useState({
+    const [show, setShow] = React.useState(false);
+    const [message, setMessage] = React.useState({
         text: "",
         title:""
     });
@@ -48,7 +49,7 @@ function SignInContainer(props) {
             AuthService.login(email, password).then(
                 Response => {
 
-                    props.history.push("/home");
+                    login.history.push("/home");
                     window.location.reload();
                 },
                 error => {
@@ -71,7 +72,7 @@ function SignInContainer(props) {
             handleShow();
         }//Authentication
     }
-    return (<div className=" ipad vh-100 center background   ">
+    return (<div className=" ipad vh-100 center background   " data-test='component-input'>
         <div className="col-md-3  box ipad2  ">
             <div>
                 <div className="center ">
@@ -81,7 +82,7 @@ function SignInContainer(props) {
                     Sign In
                     </h1>
                 <div className="center">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)} id="TestForm"  data-test="submit-button" >
                         <TextField
                             name="email"
                             error={!!errors.email}
@@ -93,7 +94,7 @@ function SignInContainer(props) {
                                     message: "Invalid email"
                                 }
                             })}
-                            //value={email}
+                            value={email}
                             helperText={errors.email ? errors.email.message : ""}
                             type="email"
                             fullWidth
@@ -102,8 +103,11 @@ function SignInContainer(props) {
                             onChange={e => setEmail(e.target.value)}
                             variant="filled"
                             margin="normal"
+                            id="input"
                            className="background_input"
+
                         />
+
                         <TextField
                             name="password"
                             error={!!errors.password}
@@ -118,15 +122,19 @@ function SignInContainer(props) {
                             helperText={errors.password ? errors.password.message : ""}
                             type="password"
                             fullWidth
-                          //  value={password}
+                           value={password}
                             onChange={e => setPassword(e.target.value)}
                             className="background_input"
                             variant="filled"
                             margin="normal"
+                            id="password"
+
                         />
+
                         <div className="center">
                             <Button
                                 type="submit"
+                                id="submit"
                                 className="btn-color mt-4"
                                 variant="contained"
                             >
