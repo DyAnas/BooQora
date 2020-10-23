@@ -5,15 +5,17 @@ import {useForm} from 'react-hook-form';
 import AuthService from '../Authentication/authUser'
 import {Link, Button, TextField} from "@material-ui/core";
 import DialogAlert from '../Copmonent/DialogModale'
+import SignInContainer from "./SignInContainer";
 
-function SignUpContainer(props) {
+
+const SignUpContainer=(props ) => {
     // create state with usestat for
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [firstName, setFirstName] = React.useState('')
+    const [lastName, setLastName] = React.useState('')
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
 
- //   const [confirmPassword, setConfirmPassword] = useState('')
+  // const [confirmPassword, setConfirmPassword] = useState('')
     // useForm to control form
     const {register, handleSubmit, watch, errors} = useForm();
     // dialog handle
@@ -30,10 +32,11 @@ function SignUpContainer(props) {
     // validate email
     const ValidateEmail = () => {
         const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
-        const validEmailTietoEvry = "gmail.com";
+        const validEmailTietoEvry = "tietoevry.com";
         const validEmailEvry = "evry.com"
+        const validEmailGmail = "gmail.com" // todo remove
         if (split[1].trim() === validEmailTietoEvry.trim()
-            || split[1].trim() === validEmailEvry.trim()) {
+            || split[1].trim() === validEmailEvry.trim() || split[1].trim()===validEmailGmail.trim()) {
             return true;
         } else {
             setMessage({
@@ -55,7 +58,7 @@ function SignUpContainer(props) {
                         text: Response.data.message,
                         title: "Success"})
                     handleShow();
-                    setTimeout(() => { props.history.push('/') }, 4000);
+                   return <SignInContainer> </SignInContainer>
                     }, error => {
                         const resMessage =
                             (error.response &&
@@ -93,6 +96,7 @@ function SignUpContainer(props) {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <TextField
                                 name="firstName"
+                                id="firstName"
                                 error={!!errors.firstName}
                                 label="FirstName"
                                 inputRef={register({
@@ -114,6 +118,7 @@ function SignUpContainer(props) {
                             />
                             <TextField
                                 name="lastName"
+                                id="lastName"
                                 error={!!errors.lastName}
                                 label="LastName"
                                 inputRef={register({
@@ -135,12 +140,13 @@ function SignUpContainer(props) {
 
                             <TextField
                                 name="email"
+                                id="email"
                                 error={!!errors.email}
                                 label="Email"
                                 inputRef={register({
                                     required: "Required",
                                     pattern: {
-                                        value: /^[a-zA-Z0-9.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                                        value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
                                         message: "Invalid email"
 
                                     }
@@ -156,6 +162,7 @@ function SignUpContainer(props) {
                             />
                             <TextField
                                 name="password"
+                                id="password"
                                 error={!!errors.password}
                                 label="Password"
                                 inputRef={register({
@@ -175,6 +182,7 @@ function SignUpContainer(props) {
                             />
                             <TextField
                                 name="confirmPassword"
+                                id="confirmPassword"
                                 error={!!errors.confirmPassword}
                                 label="Confirm Password"
                                 inputRef={register({

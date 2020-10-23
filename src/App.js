@@ -6,7 +6,9 @@ import SignInContainer from './Container/SignInContainer'
 import  {MiniDrawer}  from './Container/home'
 import { ProtectedRoute } from "./Authentication/protectedRoute";
 import { NextPage } from './Test to delete/nextpage'
-
+import ForgotPassword from "./Copmonent/Login/ForgotPassword";
+import Verification from "./Copmonent/Login/VerfictionCode";
+import NewPassword from "./Copmonent/Login/NewPassword";
 class App extends Component {
 
   render() {
@@ -20,8 +22,9 @@ class App extends Component {
 <Switch>
   <Route path="/" exact component={SignInContainer} />
   <Route path="/signup" component={SignUpContainer} />
-
-
+  <Route path="/forgotPassword"  component={ForgotPassword} />
+  <Route path="/Verification"  component={Verification} />
+  <Route path="/NewPassword"  component={NewPassword} />
   <ProtectedRoute
     path="/home"
     component={MiniDrawer} />

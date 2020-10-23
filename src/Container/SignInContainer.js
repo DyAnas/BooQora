@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import AuthService from '../Authentication/authUser';
 import DialogAlert from '../Copmonent/DialogModale'
 import { Link, Button, TextField } from "@material-ui/core";
-
-const SignInContainer=( {login }) =>{
+import AlertDialog from '../Copmonent/AlertDialog'
+const SignInContainer=( props) =>{
 
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
@@ -19,21 +19,22 @@ const SignInContainer=( {login }) =>{
         title:""
     });
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true, ()=> {
-        setTimeout(() => {
-            handleShow();
+    const handleShow = () => {setTimeout(() => {
+           setShow(false)
             // show is true
         }, 3000);
-        setShow(false) // show is false after 3 second
-    });
+        setShow(true);
+    }
+        // show is false after 3 second;
 
     // validate email
     const ValidateEmail = () => {
         const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
         const validEmailTietoEvry = "tietoevry.com";
         const validEmailEvry = "evry.com"
+        const validEmailGmail = "gmail.com" // todo remove
         if (split[1].trim() === validEmailTietoEvry.trim()
-            || split[1].trim() === validEmailEvry.trim()) {
+            || split[1].trim() === validEmailEvry.trim() || split[1].trim()===validEmailGmail.trim()) {
             return true;
         } else {
             setMessage({
@@ -49,7 +50,7 @@ const SignInContainer=( {login }) =>{
             AuthService.login(email, password).then(
                 Response => {
 
-                    login.history.push("/home");
+                    props.history.push("/home");
                     window.location.reload();
                 },
                 error => {
@@ -72,7 +73,7 @@ const SignInContainer=( {login }) =>{
             handleShow();
         }//Authentication
     }
-    return (<div className=" ipad vh-100 center background   " data-test='component-input'>
+    return (<div className=" ipad vh-100 center background   " >
         <div className="col-md-3  box ipad2  ">
             <div>
                 <div className="center ">
@@ -90,7 +91,7 @@ const SignInContainer=( {login }) =>{
                             inputRef={register({
                                 required: "Required",
                                 pattern: {
-                                    value: /^[a-zA-Z0-9.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
                                     message: "Invalid email"
                                 }
                             })}
@@ -143,15 +144,22 @@ const SignInContainer=( {login }) =>{
                         </div>
                         <hr />
                     </form>
-                    <DialogAlert
+                   {/* <DialogAlert
                         show={show}
                         onHide={handleClose}
                         message={message.text}
                         Tittel={message.title}
+                    />*/}
+                    <AlertDialog
+                      open={show}
+                      onHide={handleClose}
+                      message={message.text}
+                      Tittel={message.title}
+
                     />
                 </div>
                 <div className="mb-5 ">
-                    <Link href="#" variant="body2" className="text-footer">
+                    <Link href="/forgotPassword" variant="body2" className="text-footer">
                         Forgot password?
                         </Link>
                     <br />

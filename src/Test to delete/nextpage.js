@@ -6,7 +6,7 @@ export const NextPage = (props) => {
     const currentUser = AuthService.getCurrentUser();
 
 
-    return (<div className="container">
+    return (<MiniDrawer className="container">
             <header className="jumbotron">
                 <h3>
                     <strong>{currentUser.username}</strong> Profile
@@ -39,7 +39,7 @@ export const NextPage = (props) => {
             >
                 logout </button>&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="/home">Next protected page</a>
-        </div>
+        </MiniDrawer>
 
     );
 }

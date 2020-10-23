@@ -10,7 +10,7 @@ const mockLogin = jest.fn((email, password) => {
 
 describe("<SignInContainer />", () => {
     beforeEach(() => {
-        render(<SignInContainer login={mockLogin} />);
+        render(<SignInContainer props={mockLogin} />);
     });
     it("should display required error when value of email is invalid", async () => {
         fireEvent.submit(screen.getByRole("button"));

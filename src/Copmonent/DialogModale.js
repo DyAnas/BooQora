@@ -13,10 +13,9 @@ function DialogAlert(props) {
                    size="md"
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Error </Modal.Title>
+                    <Modal.Title>{props.Tittel}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h2>{props.Tittel}</h2>
                     <p>{props.message}</p>
                     {props.children}
 

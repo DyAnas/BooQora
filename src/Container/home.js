@@ -214,12 +214,7 @@ export const MiniDrawer = (props) =>{
             </Drawer>
 
             <main className={classes.content}>
-                <Router  history={history}>
-                <Switch>
-                    <Route path="/g" exact component={NextPage} />
-                </Switch>
-
-                </Router>
+                {props.children}
             </main>
 
 
