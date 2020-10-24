@@ -5,8 +5,8 @@ import {useForm} from 'react-hook-form';
 import AuthService from '../Authentication/authUser'
 import {Link, Button, TextField} from "@material-ui/core";
 import DialogAlert from '../Copmonent/DialogModale'
-import SignInContainer from "./SignInContainer";
-
+import ValidateEmail from "../Copmonent/Login/ValidateEmail"
+import AlertDialog from "../Copmonent/AlertDialog";
 
 const SignUpContainer=(props ) => {
     // create state with usestat for
@@ -27,29 +27,25 @@ const SignUpContainer=(props ) => {
 
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    // validate email
-    const ValidateEmail = () => {
-        const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
-        const validEmailTietoEvry = "tietoevry.com";
-        const validEmailEvry = "evry.com"
-        const validEmailGmail = "gmail.com" // todo remove
-        if (split[1].trim() === validEmailTietoEvry.trim()
-            || split[1].trim() === validEmailEvry.trim() || split[1].trim()===validEmailGmail.trim()) {
-            return true;
-        } else {
-            setMessage({
-                text: "check if you have correct email or password",
-                title: " Invalid email"   })
-            handleShow();
-        }
+    const handleShow = () => {setTimeout(() => {
+        setShow(false)
+        // show is false after 3 seconds
+    }, 4000);
+        setShow(true);
     }
+    // to show message and go to sign in
+    const SignIn = ()=> {
+       setTimeout( ()=>{
+           props.history.push("/");
+       }, 4000 );
+        handleShow();
+    }
+
 
     // handle submit form
     const onSubmit = data => {
         // check validation before call api
-        if (ValidateEmail()) {
+        if (ValidateEmail(email)) {
             // call register method to send data to api
             const roles = ["user"];
             AuthService.register(firstName, lastName, email, password, roles)
@@ -57,8 +53,9 @@ const SignUpContainer=(props ) => {
                     setMessage({
                         text: Response.data.message,
                         title: "Success"})
-                    handleShow();
-                   return <SignInContainer> </SignInContainer>
+
+                       SignIn(); // to show message and go to sign in
+
                     }, error => {
                         const resMessage =
                             (error.response &&
@@ -66,11 +63,12 @@ const SignUpContainer=(props ) => {
                                 error.response.data.message) ||
                             error.message ||
                             error.toString();
-                    handleShow();
+
                         setMessage({
                             text: resMessage,
                              title: "Error"})
                         console.log("res.message", resMessage);
+                    handleShow();
                     }
                 );
         } else {
@@ -215,11 +213,18 @@ const SignUpContainer=(props ) => {
                                 </Link>
                             </div>
                         </form>
-                        <DialogAlert
+                      {/*  <DialogAlert
                             show={show}
                             onHide={handleClose}
                             message={message.text}
                             Tittel={message.title}
+                        />*/}
+                        <AlertDialog
+                            open={show}
+                            onHide={handleClose}
+                            message={message.text}
+                            Tittel={message.title}
+
                         />
                     </div>
                 </div>

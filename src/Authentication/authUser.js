@@ -11,10 +11,16 @@ class AuthService {
                 password
             })
             .then(Response => {
-                if (Response.data.accessToken) {
+                // todo if not work  when i try to login, localstorage return null
+                // todo maybe Response.data.accessToken return false
+                // todo now without if it's work
+               // if (Response.data.accessToken) {
+
 
                     localStorage.setItem("user", JSON.stringify(Response.data));
-                }
+
+                //}
+                console.log(JSON.parse(localStorage.getItem('user')));
                 return Response.data;
             });
     }

@@ -15,16 +15,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function AlertDialogSlide(props) {
     const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
-    /*const [open, setOpen] = React.useState(false);
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };*/
 
     return (
         <div>
@@ -32,15 +23,15 @@ export default function AlertDialogSlide(props) {
                 open={props.open}
                 TransitionComponent={Transition}
                 maxWidth="lg"
-
+                className="vw-100"
                 keepMounted
                 onClose={props.onHide}
                 aria-labelledby="alert-dialog-slide-title"
                 aria-describedby="alert-dialog-slide-description"
             >
-                <DialogTitle color="primary" id="alert-dialog-slide-title">{props.Tittel}</DialogTitle>
+                <DialogTitle className="p-3 mb-2 bg-info text-white" id="alert-dialog-slide-title">{props.Tittel}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
+                    <DialogContentText className="text-md-left" id="alert-dialog-slide-description">
                         {props.message}
                     </DialogContentText>
                 </DialogContent>

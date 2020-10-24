@@ -3,11 +3,15 @@ import Logo from "../assets/logo1.png"
 import '../Container/LoginStyle.css';
 import { useForm } from "react-hook-form";
 import AuthService from '../Authentication/authUser';
-import DialogAlert from '../Copmonent/DialogModale'
+
 import { Link, Button, TextField } from "@material-ui/core";
 import AlertDialog from '../Copmonent/AlertDialog'
+import ValidateEmail from "../Copmonent/Login/ValidateEmail"
+
+
 const SignInContainer=( props) =>{
 
+    const [token, setToken] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     // useform to controll form
@@ -21,37 +25,32 @@ const SignInContainer=( props) =>{
     const handleClose = () => setShow(false);
     const handleShow = () => {setTimeout(() => {
            setShow(false)
-            // show is true
+            // show is false after 3 seconds
         }, 3000);
         setShow(true);
     }
-        // show is false after 3 second;
-
-    // validate email
-    const ValidateEmail = () => {
-        const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
-        const validEmailTietoEvry = "tietoevry.com";
-        const validEmailEvry = "evry.com"
-        const validEmailGmail = "gmail.com" // todo remove
-        if (split[1].trim() === validEmailTietoEvry.trim()
-            || split[1].trim() === validEmailEvry.trim() || split[1].trim()===validEmailGmail.trim()) {
-            return true;
-        } else {
-            setMessage({
-                text: "check if you have correct email or password",
-                title: " Invalid email"   })
-            handleShow();
-        }
+    const SignIn = ()=> {
+        setTimeout( ()=>{
+            props.history.push("/home");
+        }, 4000 );
+        handleShow();
     }
+
+
     // handle submit form
-    const onSubmit = data =>{
-        // check vaidation befor call api
-        if (ValidateEmail()) {
+    const onSubmit = () =>{
+        // check validation before call api
+
+
+        if (ValidateEmail(email)) {
             AuthService.login(email, password).then(
                 Response => {
-
-                    props.history.push("/home");
-                    window.location.reload();
+                    setMessage({
+                        text: "Welcome ", // todo check Response.data.message
+                        title: "Success"})
+              console.log(Response);
+            SignIn();
+                 //  window.location.reload();
                 },
                 error => {
                     const resMessage =
@@ -62,7 +61,7 @@ const SignInContainer=( props) =>{
                         error.toString();
                     setMessage({
                         text: resMessage,
-                        title: "Error"})
+                        title: "Error "})
                     handleShow();
                 }
             );
@@ -143,7 +142,9 @@ const SignInContainer=( props) =>{
                             </Button>
                         </div>
                         <hr />
+
                     </form>
+
                    {/* <DialogAlert
                         show={show}
                         onHide={handleClose}
