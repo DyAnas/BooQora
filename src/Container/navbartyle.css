@@ -1,0 +1,34 @@
+
+.navbar-dark {
+    background-color: #7beff3;
+    border-radius: 20px;
+     }
+
+.nav-item, .nav-link{ 
+    color: #000000 !important;
+    padding-left: 10px;
+    
+}
+
+.navbar-nav{
+    margin: auto;
+  
+}
+
+.nav-item:hover ,.nav-link:hover{
+    background-color: aquamarine;
+    border-radius: 20px;
+}
+
+.navbar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar img{
+    max-height: 20px;
+}
+.navbar-brand{
+height: 20px;
+}
+

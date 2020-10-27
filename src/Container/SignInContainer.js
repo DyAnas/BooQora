@@ -9,36 +9,37 @@ import AlertDialog from '../Copmonent/AlertDialog'
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
 
 
-const SignInContainer=( props) =>{
+const SignInContainer = (props) => {
 
     const [token, setToken] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     // useform to controll form
-    const { register,handleSubmit, errors } =useForm();
+    const { register, handleSubmit, errors } = useForm();
     // dialog handle
     const [show, setShow] = React.useState(false);
     const [message, setMessage] = React.useState({
         text: "",
-        title:""
+        title: ""
     });
     const handleClose = () => setShow(false);
-    const handleShow = () => {setTimeout(() => {
-           setShow(false)
+    const handleShow = () => {
+        setTimeout(() => {
+            setShow(false)
             // show is false after 3 seconds
         }, 3000);
         setShow(true);
     }
-    const SignIn = ()=> {
-        setTimeout( ()=>{
+    const SignIn = () => {
+        setTimeout(() => {
             props.history.push("/home");
-        }, 4000 );
+        }, 4000);
         handleShow();
     }
 
 
     // handle submit form
-    const onSubmit = () =>{
+    const onSubmit = () => {
         // check validation before call api
 
 
@@ -47,10 +48,11 @@ const SignInContainer=( props) =>{
                 Response => {
                     setMessage({
                         text: "Welcome ", // todo check Response.data.message
-                        title: "Success"})
-              console.log(Response);
-            SignIn();
-                 //  window.location.reload();
+                        title: "Success"
+                    })
+                    console.log(Response);
+                    SignIn();
+                    //  window.location.reload();
                 },
                 error => {
                     const resMessage =
@@ -61,14 +63,16 @@ const SignInContainer=( props) =>{
                         error.toString();
                     setMessage({
                         text: resMessage,
-                        title: "Error "})
+                        title: "Error "
+                    })
                     handleShow();
                 }
             );
         } else {
             setMessage({
-                text:"Email must match tietoevry",
-                title: "Incorrect email or password"})
+                text: "Email must match tietoevry",
+                title: "Incorrect email or password"
+            })
             handleShow();
         }//Authentication
     }
@@ -82,7 +86,7 @@ const SignInContainer=( props) =>{
                     Sign In
                     </h1>
                 <div className="center">
-                    <form onSubmit={handleSubmit(onSubmit)} id="TestForm"  data-test="submit-button" >
+                    <form onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
                         <TextField
                             name="email"
                             error={!!errors.email}
@@ -104,7 +108,7 @@ const SignInContainer=( props) =>{
                             variant="filled"
                             margin="normal"
                             id="input"
-                           className="background_input"
+                            className="background_input"
 
                         />
 
@@ -112,17 +116,18 @@ const SignInContainer=( props) =>{
                             name="password"
                             error={!!errors.password}
                             label="Password"
+                            size="small"
                             inputRef={register({
                                 required: "Required",
                                 pattern: {
-                                    value:  /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/,
+                                    value: /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/,
                                     message: "Must Contain 8 Characters, One Lowercase, One Number and one special character"
                                 }
                             })}
                             helperText={errors.password ? errors.password.message : ""}
                             type="password"
                             fullWidth
-                           value={password}
+                            value={password}
                             onChange={e => setPassword(e.target.value)}
                             className="background_input"
                             variant="filled"
@@ -145,17 +150,17 @@ const SignInContainer=( props) =>{
 
                     </form>
 
-                   {/* <DialogAlert
+                    {/* <DialogAlert
                         show={show}
                         onHide={handleClose}
                         message={message.text}
                         Tittel={message.title}
                     />*/}
                     <AlertDialog
-                      open={show}
-                      onHide={handleClose}
-                      message={message.text}
-                      Tittel={message.title}
+                        open={show}
+                        onHide={handleClose}
+                        message={message.text}
+                        Tittel={message.title}
 
                     />
                 </div>
