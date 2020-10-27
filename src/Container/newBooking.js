@@ -1,5 +1,7 @@
 import React from "react";
 import { NavBar } from "./Navbar";
+import { MapComponent } from "../Copmonent/Map/map";
+
 
 export const NewBooking = () => {
 
@@ -10,7 +12,7 @@ export const NewBooking = () => {
         <div>
             <div className="container">
             <NavBar />
-                <h1>New Bookings</h1>
+               <MapComponent />
 
             </div>
 
