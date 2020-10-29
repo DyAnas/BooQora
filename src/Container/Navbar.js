@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const NavBar = (props) => {
 
 
-    return <nav className="navbar navbar-expand-md navbar-dark" >
+    return <nav className="navbar navbar-expand-md navbar-dark " >
         <a href="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></a>
         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>

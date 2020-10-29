@@ -1,6 +1,6 @@
 .text {
     font-family: "Montserrat", sans-serif!important;
-    font-size: 30px!important;
+    font-size: 20px!important;
     align-items: center!important;
     text-align: center!important;
     color: #0B5C2B!important;
@@ -16,12 +16,14 @@ form {
 }
 .background_input {
     background: #cbeffc !important;
-    width: 80% !important;
-    height: 10% !important;
+    width: 100% !important;
+    height: 3% !important;
 
 
 }
-
+label {
+    font-size: 12px!important;
+}
 .center{
 
     display: flex;
@@ -67,8 +69,8 @@ form {
 .background .center >img{
     position: relative;
     float: left;
-    width:  100px;
-    height: 100px;
+    width:  80px;
+    height: 80px;
     background-position: 50% 50%;
     background-repeat:   no-repeat;
     background-size:     cover;

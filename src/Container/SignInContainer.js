@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Logo from "../assets/logo1.png"
 import '../Styles/LoginStyle.css';
 import { useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import AuthService from '../Authentication/authUser';
 import { Link, Button, TextField } from "@material-ui/core";
 import AlertDialog from '../Copmonent/AlertDialog'
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
-
+import { ReCaptcha , loadReCaptcha} from 'react-recaptcha-v3'
 
 const SignInContainer = (props) => {
 
@@ -35,6 +35,33 @@ const SignInContainer = (props) => {
             props.history.push("/home");
         }, 4000);
         handleShow();
+    }
+    // recaptcha handle
+    useEffect(() => {
+
+        loadReCaptcha("6Lcb99oZAAAAAIjgyT9QY3wA6TyrsHvrLxxjGSGb", Callback);
+    });
+    const [IsVerified, setIsVerified] = React.useState(false)
+    const verifyCallback= (response) => {
+        if (response) {
+            setIsVerified(true); // to remove
+        }
+        /*  const recaptcheSecret = "6Lcb99oZAAAAAD6RFPGG3kRjMZtfafm56Bkl7e-f";
+          const googleVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptcheSecret}&response=${response}`;
+          const responses = await axios.post(googleVerifyUrl);
+          console.log(responses);
+          //const success = response.data;
+         console.log(responses.data);
+          if (responses.data ){
+              // setToken(response); // send token to backend to verify
+              setIsVerified(true); // to remove
+              console.log(responses.data);
+          }
+      }*/
+
+    }
+    const Callback =()=> {
+        console.log("Recaptcha is callback");
     }
 
 
@@ -150,12 +177,14 @@ const SignInContainer = (props) => {
 
                     </form>
 
-                    {/* <DialogAlert
-                        show={show}
-                        onHide={handleClose}
-                        message={message.text}
-                        Tittel={message.title}
-                    />*/}
+                    <ReCaptcha
+                        render="explicit"
+                        sitekey="6Lcb99oZAAAAAIjgyT9QY3wA6TyrsHvrLxxjGSGb"
+                        onloadCallback={Callback}
+                        type="tickbox"
+                        verifyCallback={verifyCallback}
+                        theme="dark"
+                    />
                     <AlertDialog
                         open={show}
                         onHide={handleClose}

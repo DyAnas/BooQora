@@ -81,13 +81,13 @@ const SignUpContainer=(props ) => {
     }
 
     return (
-        <div className=" ipad vh-100 center background position-static ">
+        <div className=" ipad vh-100 center background ">
             <div className="col-md-3  box ipad2  ">
                 <div>
                     <div className="center ">
                         <img src={Logo} alt="logo"/>
                     </div>
-                    <h1 className="text  mb-2 justify-content-center">
+                    <h1 className="text  mb-1 justify-content-center">
                         Sign Up
                     </h1>
                     <div className="center">
@@ -173,6 +173,7 @@ const SignUpContainer=(props ) => {
                                 helperText={errors.password ? errors.password.message : ""}
                                 type="password"
                                 fullWidth
+                                size="small"
                                 onChange={e => setPassword(e.target.value)}
                                 className="background_input"
                                 variant="filled"
@@ -192,6 +193,7 @@ const SignUpContainer=(props ) => {
                                 helperText={errors.confirmPassword ? errors.confirmPassword.message : ""}
                                 type="password"
                                 fullWidth
+                                size="small"
                                 className="background_input"
                                 variant="filled"
                                 margin="normal"
@@ -199,7 +201,7 @@ const SignUpContainer=(props ) => {
                             <div className="center">
                                 <Button
                                     type="submit"
-                                    className="btn-color mt-4"
+                                    className="btn-color mt-2"
                                     variant="contained"
                                 >
                                     Sign up
@@ -207,7 +209,7 @@ const SignUpContainer=(props ) => {
                             </div>
                             <br/>
                             <hr/>
-                            <div className="mb-5 ">
+                            <div className="mb-1 ">
                                 <Link href="/" variant="body2" className="text-footer">
                                     {"I have an account? Sign In"}
                                 </Link>

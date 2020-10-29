@@ -7,7 +7,7 @@ import "../../Styles/mapStyle.css";
 const areas = [
 
     {
-        id: 1,
+        id: "D",
         shape: "poly",
         coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
         preFillColor: "#02f3af",
@@ -16,7 +16,7 @@ const areas = [
 
 
     {
-        id: 2,
+        id: "J",
         shape: "poly",
         coords: [15, 105, 63, 104, 63, 151, 41, 170, 11, 172],
         preFillColor: "#e7df8e",
@@ -24,7 +24,7 @@ const areas = [
     },
 
     {
-        id: 3,
+        id: "C",
         shape: "poly",
         coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
         preFillColor: "#02f3af",
@@ -32,7 +32,7 @@ const areas = [
     },
 
     {
-        id: 4,
+        id: "E",
         shape: "poly",
         coords: [67, 41, 64, 102, 154, 100, 156, 38],
         preFillColor: "#e7df8e",
@@ -40,7 +40,7 @@ const areas = [
     },
 
     {
-        id: 5,
+        id:"F",
         shape: "poly",
         coords: [157, 39, 154, 100, 250, 98, 250, 91, 264, 91, 291, 35],
         preFillColor: "#02f3af",
@@ -48,7 +48,7 @@ const areas = [
     },
 
     {
-        id: 6,
+        id:"B",
         shape: "poly",
         coords: [86, 157, 88, 174, 82, 176, 84, 199, 98, 196, 102, 214, 190, 201, 180, 139],
         preFillColor: "#e5787c",
@@ -56,7 +56,7 @@ const areas = [
     },
 
     {
-        id: 7,
+        id:"A",
         shape: "poly",
         coords: [235, 137, 235, 152, 216, 152, 212, 181, 221, 183, 217, 213, 284, 224, 295, 147],
         preFillColor: "#e5787c",
@@ -70,7 +70,7 @@ export function MapComponent() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    const [Zone, setZone] = useState("");
     const [mapAreas, setMapAreas] = useState({
         name: "choose a floor",
         areas: [
@@ -99,6 +99,7 @@ export function MapComponent() {
     // handle onclick sone
     const enterArea = (area) => {
         console.log(area);
+        setZone(area.id);
         handleShow();
     }
 
@@ -207,6 +208,9 @@ export function MapComponent() {
             });
         }
     }
+    var today = new Date();
+    const  date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
 
 
 
@@ -215,13 +219,14 @@ export function MapComponent() {
             <div className="row   top-row-btn">
                 <div className="btn-group  " role="group"
                     aria-label="Basic example">
-                    <button type="button" className="btn btn-light">Today</button>
+                    <button type="button" className="btn btn-light">{date}</button>
                     <button type="button" className="btn btn-light ml-2">Next</button>
                 </div>
                 <Example
                     show={show}
                     onHide={handleClose}
                     name={mapAreas.name}
+                    Zone={Zone}
                 />
             </div>
             <div className="row  ">

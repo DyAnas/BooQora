@@ -12,8 +12,6 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
                     return <Component {...props} />
                 }
                 else {
-                    console.log("token not valid")
-                    alert("token not valid");
                     return <Redirect to={
                         {
                             pathname: "/",

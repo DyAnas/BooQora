@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const api_url = "http://localhost:8080/api/v1/employees/";
-
+const api_url2 = "http://localhost:8080/";
 class AuthService {
     login(email, password) {
         return axios
@@ -24,7 +24,25 @@ class AuthService {
                 return Response.data;
             });
     }
+    forgotPassword = (email) => {
+        return axios
+            .post(api_url + "forgot-password", {
+                email,
 
+            }).then(response => {
+                localStorage.setItem("user", JSON.stringify(response.data));
+                return  response.data;
+            })
+    }
+    resetPassword = (email, password) => {
+        return axios
+            .post(api_url2 + "reset-password", {
+                email, password
+
+            }).then(response => {
+                return  response.data;
+            })
+    }
 
     logout = () => {
         localStorage.removeItem("user");

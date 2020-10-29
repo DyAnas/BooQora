@@ -5,7 +5,6 @@ import SignUpContainer from "./Container/SignUpContainer";
 import SignInContainer from './Container/SignInContainer'
 import { ProtectedRoute } from "./Authentication/protectedRoute";
 import ForgotPassword from "./Copmonent/Login/ForgotPassword";
-import Verification from "./Copmonent/Login/VerfictionCode";
 import NewPassword from "./Copmonent/Login/NewPassword";
 import { Home } from './Container/home'
 import { About } from './Container/aboutBookora';
@@ -14,19 +13,14 @@ import { MyBooking } from "./Container/myBooking";
 class App extends Component {
 
   render() {
-
     return (
-
       <div className="background vh-100">
-
         <BrowserRouter>
-
           <Switch>
             <Route path="/" exact component={SignInContainer} />
             <Route path="/signup" component={SignUpContainer} />
             <Route path="/forgotPassword" component={ForgotPassword} />
-            <Route path="/Verification" component={Verification} />
-            <Route path="/NewPassword" component={NewPassword} />
+            <ProtectedRoute path="/NewPassword" component={NewPassword} />
             <ProtectedRoute
               path="/home"
               component={Home} />

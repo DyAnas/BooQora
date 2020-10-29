@@ -2,23 +2,28 @@ import React from "react";
 import { Modal, Button,Form } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Example(props) {
+    var today = new Date();
+    const  date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
 
 
     return (
         <>
 
-            <Modal show={props.show} onHide={props.onHide}>
-                <Modal.Header closeButton>
+            <Modal
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={props.show} onHide={props.onHide}>
+                <Modal.Header  className="p-3 mb-2 bg-info text-white"  closeButton>
                     <Modal.Title>Chose date </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                 <h2>{props.name}</h2>
-                    <p>Sone: {props.index}</p>
+                    <p>Zone: {props.Zone}</p>
                     <div className="row">
                         <div className="col-md-6">
                             <Form.Group controlId="dob">
-                                <Form.Label>Select Date</Form.Label>
-                                <Form.Control type="date" name="dob" placeholder="Date of Birth" />
+                                <Form.Label >Date:  {  date}   </Form.Label>
                             </Form.Group>
                         </div>
                     </div>

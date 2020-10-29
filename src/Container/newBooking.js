@@ -10,7 +10,7 @@ export const NewBooking = () => {
 
     return (
         <div>
-            <div className="container newbookingCont">
+            <div className="container newbookingCont ">
                 <NavBar />
                 <div className="row  justify-content-center newbookingRow" >
                     <div className="col-6-sm">
