@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
 import Example from "./DialogAlert";
-import "../Map/mapStyle.css";
+import "../../Styles/mapStyle.css";
 
 const areas = [
 
@@ -104,18 +104,18 @@ export function MapComponent() {
 
     // floor 1 handle
     const handleClickFloor = (floor) => {
-        let items = [];// most be like parameter from api
+        let items = [];// must be like parameter from api
         let areasToShow;
-        let statisticss = [10, 20, 30, 40, 50, 60, 10]; // most be like parameter from api
+        let statisticss = [10, 20, 30, 40, 50, 60, 10]; // must be like parameter from api
         setShowMaps(true);
         if (floor === 1) {
-            items = [ 4,6];
+            items = [4, 6];
             areasToShow = items.map(item => {
                 return areas[item]
             })
             setStatistic({
                 ...statistic,
-                Statistics: [0, 0, 0, 0, 87,0, statisticss[6]]
+                Statistics: [0, 0, 0, 0, 87, 0, statisticss[6]]
             })
             setMapAreas({
                 name: "Floor 1",
@@ -130,7 +130,7 @@ export function MapComponent() {
             })
             setStatistic({
                 ...statistic,
-                Statistics: [0,0,0,statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
+                Statistics: [0, 0, 0, statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
             })
 
             setMapAreas({
@@ -146,7 +146,7 @@ export function MapComponent() {
 
             setStatistic({
                 ...statistic,
-                Statistics: [0,0,0,statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
+                Statistics: [0, 0, 0, statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
             })
             setMapAreas({
                 name: "Floor 3",
@@ -160,7 +160,7 @@ export function MapComponent() {
             })
             setStatistic({
                 ...statistic,
-                Statistics: [statisticss[0],0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
+                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
             })
             setMapAreas({
                 name: "Floor 4",
@@ -173,7 +173,7 @@ export function MapComponent() {
             })
             setStatistic({
                 ...statistic,
-                Statistics: [statisticss[0], 0,statisticss[2], statisticss[3], statisticss[4], statisticss[5], 0]
+                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], 0]
             })
             setMapAreas({
                 name: "Floor 4",
@@ -186,7 +186,7 @@ export function MapComponent() {
             })
             setStatistic({
                 ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3],0,0, 0,0]
+                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], 0, 0, 0, 0]
             })
             setMapAreas({
                 name: "Floor 6",
@@ -199,7 +199,7 @@ export function MapComponent() {
             })
             setStatistic({
                 ...statistic,
-                Statistics: [statisticss[0], 0,statisticss[2],0, 0, 0, 0,0]
+                Statistics: [statisticss[0], 0, statisticss[2], 0, 0, 0, 0, 0]
             })
             setMapAreas({
                 name: "Floor 7",
@@ -207,45 +207,59 @@ export function MapComponent() {
             });
         }
     }
-    return (
-        <div className="container vw-50 overflow-hidden   ml-1 ">
-            <div className="btn-group  float-left ml-5 mt-2 justify-content-center" role="group"
-                 aria-label="Basic example">
-                <button type="button" className="btn btn-light">Today</button>
-                {/*<button type="button" className="btn btn-light ml-2">Next</button>*/}
-            </div>
-            <Example
-                show={show}
-                onHide={handleClose}
-                name={mapAreas.name}
-            />
 
-            <div className="row mt-5 p-1 ml-0 ">
-                <div className="btn-group-vertical float-left ml-0 mr-4 mt-2">
-                    {[...Array(7)].map((x, i) =>
-                        <button className="btn btn-light mt-1 ml-1 mr-1 " key={i}
+
+
+    return (
+        <div className="container ">
+            <div className="row   top-row-btn">
+                <div className="btn-group  " role="group"
+                    aria-label="Basic example">
+                    <button type="button" className="btn btn-light">Today</button>
+                    <button type="button" className="btn btn-light ml-2">Next</button>
+                </div>
+                <Example
+                    show={show}
+                    onHide={handleClose}
+                    name={mapAreas.name}
+                />
+            </div>
+            <div className="row  ">
+
+                <div className="col d-sm-inline-block ">
+
+                    {showMaps ?
+                        <div className="" >
+                            <ImageMapper
+                                src={`${URL}?${query}`}
+                                map={mapAreas}
+                                width={300}
+                                onClick={enterArea}
+                            />
+                            {statistic.Style.map((x, i) =>
+                                <span className={statistic.Style[i]} key={i}>{statistic.Zone[i]}
+                                    <br />
+                                    {statistic.Statistics[i]}%
+                         </span>
+                            )}
+                        </div>
+                        : <div>
+                            <img src={URL} width={300} /></div>}
+
+                </div>
+                <div className="col-6 d-sm-inline-block ">
+                    <div className="btn-group">
+                        {[...Array(7)].map((x, i) =>
+                            <button className="btn btn-light mt-1 ml-1 mr-1 " key={i}
                                 onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
-                    )}
+                        )}
+                    </div>
                 </div>
-                {showMaps &&
-                <div className="container mt-4 float-right ml-5 position-absolute">
-                    <ImageMapper
-                        src={`${URL}?${query}`}
-                        map={mapAreas}
-                        width={300}
-                        onClick={enterArea}
-                    />
-                    {statistic.Style.map((x, i) =>
-                            <span className={statistic.Style[i]} key={i}>{statistic.Zone[i]}
-                                <br/>
-                                {statistic.Statistics[i]}%
-                    </span>
-                    )}
-                </div>
-                }
+
             </div>
 
         </div>
 
     );
 }
+

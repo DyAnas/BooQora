@@ -32,7 +32,7 @@ form {
     color: #454141 !important;
     background-color: #c4daee !important;
     border: 0;
-    -webkit-box-shadow: none;
+  /* -webkit-box-shadow: none;*/ 
 
 
     font-weight: bold!important;
@@ -64,7 +64,7 @@ form {
 
 }
 
- img{
+.background .center >img{
     position: relative;
     float: left;
     width:  100px;
@@ -73,6 +73,8 @@ form {
     background-repeat:   no-repeat;
     background-size:     cover;
 }
+
+
 .text-footer {
     font-size: 12px!important;
     color: #4eb6d6 !important;

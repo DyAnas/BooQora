@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import { Link, Button, TextField } from "@material-ui/core";
+import {  Button, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 
 const NewPassword= (props)=> {

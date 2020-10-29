@@ -1,7 +1,5 @@
-import React, {useState} from "react";
-import Dialog from 'react-bootstrap-dialog';
+import React from "react";
 import { Modal, Button,Form } from 'react-bootstrap'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Example(props) {
 

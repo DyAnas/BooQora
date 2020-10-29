@@ -1,7 +1,7 @@
 import React from "react";
 import AuthService from "../Authentication/authUser";
 import {NavBar} from "./Navbar";
-import "../Container/navbartyle.css";
+
 
 
 export const Home = (props) => {
@@ -11,7 +11,9 @@ export const Home = (props) => {
     return (
 
         <div className="container">
-            <NavBar />
+            {currentUser ? <NavBar /> : null
+        }
+            
          
 
         </div>

@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import Logo from "../assets/logo1.png"
-import './LoginStyle.css';
+import '../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
 import AuthService from '../Authentication/authUser'
 import {Link, Button, TextField} from "@material-ui/core";
-import DialogAlert from '../Copmonent/DialogModale'
+//import DialogAlert from '../Copmonent/DialogModale'
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
 import AlertDialog from "../Copmonent/AlertDialog";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import "../Container/navbartyle.css";
-import logo2 from "../assets/TietoEvry.svg.png"
+import "../Styles/navbarstyle.css";
+import whiteLogo from "../assets/whiteLogo.png"
 import AuthService from '../Authentication/authUser'
 import { faCalendarCheck, faChartLine, faHome, faList } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +14,7 @@ export const NavBar = (props) => {
 
 
     return <nav className="navbar navbar-expand-md navbar-dark" >
-        <a href="#" className="navbar-brand mr-auto"  ><img src={logo2} /></a>
+        <a href="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></a>
         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -26,11 +26,12 @@ export const NavBar = (props) => {
                 <a href="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Booking</a>
 
                 <div className="nav-item dropdown">
-                    <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                    <a href="/aboutBookora" className="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
                     <div className="dropdown-menu">
-                        <a href="#" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</a>
-                        <a href="#" className="dropdown-item">Zone settings</a>
-                        <a href="#" className="dropdown-item">Add new Admin</a>
+                        {/* Edit href */}
+                        <a href="/aboutBookora" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</a>
+                        <a href="/aboutBookora" className="dropdown-item">Zone settings</a>
+                        <a href="/aboutBookora" className="dropdown-item">Add new Admin</a>
                     </div>
                 </div>
                 <a href="/aboutBookora" className="nav-item nav-link">About Bookora</a>

@@ -1,0 +1,34 @@
+
+.navbar-dark {
+    background-color: indigo;
+    border-radius: 14px;
+     }
+
+.nav-item, .nav-link{ 
+    color: #ffffff !important;
+    padding-left: 10px;
+    
+}
+
+.navbar-nav{
+    margin: auto;
+  
+}
+
+.nav-item:hover {
+    background-color: rgb(210, 168, 235);
+    border-radius: 20px;
+    opacity: 0.9;
+    
+}
+
+
+.navbar{
+    margin-bottom: 40px;
+}
+
+.navbar img{
+    max-height: 30px;
+}
+
+

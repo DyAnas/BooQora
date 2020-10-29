@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from "../assets/logo1.png"
-import '../Container/LoginStyle.css';
+import '../Styles/LoginStyle.css';
 import { useForm } from "react-hook-form";
 import AuthService from '../Authentication/authUser';
 
@@ -11,7 +11,7 @@ import ValidateEmail from "../Copmonent/Login/ValidateEmail"
 
 const SignInContainer = (props) => {
 
-    const [token, setToken] = React.useState('')
+  //  const [token, setToken] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     // useform to controll form

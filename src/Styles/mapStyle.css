@@ -1,118 +1,149 @@
-.container {
-    position: relative;
-    text-align: center;
-    color: #1d0707;
-    padding-left: 0!important;
-  
-  }
-  .btn.btn-light:hover{
+
+
+.top-row-btn {
+    padding-bottom: 10px;
+}
+
+.floorandmapRow {}
+
+.btn.btn-light:hover {
     background: #17a2b8;
-  }
-  .btn.btn-light:focus{
+}
+
+.btn.btn-light:focus {
     background: #17a2b8!important;
-  }
-  .btn.btn-light{
+}
+
+.btn.btn-light {
+    color: white !important;
+    background-color: #9575CD;
+}
+
+.btn.btn-light {
     border: 1px solid #4A585C;
-    border-radius: 2px;
+    border-radius: 10px;
     color: #548E6C;
-  }
-  
-  
-  
-  .center{
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .span1{
+}
+
+
+
+
+/* Zone D*/
+
+.span1 {
     position: absolute;
     padding: 5px;
     top: 60px;
-    left: 40px;
+    left: 56px;
     font-size: 14px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
     color: #fff;
-  }
-  .span2{
+}
+
+
+/* Zone J*/
+
+.span2 {
     position: absolute;
     padding: 5px;
     font-size: 12px;
     top: 130px;
-    left: 40px;
+    left: 50px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
     color: #fff;
-  }
-  
-  .span3{
+}
+
+
+/* Zone C*/
+
+.span3 {
     position: absolute;
     padding: 5px;
     font-size: 14px;
     top: 220px;
-    left: 40px;
+    left: 50px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
     color: #fff;
-  }
-  .span4{
+}
+
+
+/* Zone E*/
+
+.span4 {
     position: absolute;
     padding: 5px;
     font-size: 14px;
     top: 70px;
-    left: 110px;
+    left: 120px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
     color: #fff;
-  }
-  .img-style{
-    width: 100px!important;
-    background-color: red;
-  }
-  .span5{
+}
+
+
+/* Zone F*/
+
+.span5 {
     position: absolute;
     padding: 5px;
     font-size: 14px;
     top: 70px;
-    left: 210px;
+    left: 220px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
     color: #fff;
-  }
-  .span6{
+}
+
+
+/* Zone B*/
+
+.span6 {
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    bottom: 45px;
+    left: 150px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone A*/
+
+.span7 {
     position: absolute;
     padding: 5px;
     font-size: 14px;
     bottom: 40px;
-    left: 140px;
+    left: 270px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
     color: #fff;
-  }
-  .span7{
-    position: absolute;
-    padding: 5px;
-    font-size: 14px;
-    bottom: 40px;
-    left: 265px;
-    transform: translate3d(-50%, -50%, 0);
-    border-radius: 5px;
-    pointer-events: none;
-    z-index: 1000;
-    color: #fff;
-  }
-  
+}
+
+
+/* mobile screen */
+
+@media only screen and (max-width: 480px) {
+    .btn-group-vertical {
+        vertical-align: baseline !important;
+    }
+}

@@ -1,4 +1,3 @@
-import React from "react";
 
  const ValidateEmail = (props) => {
     const split = props.split(/[@]+/); //splits string using RegEx on a space OR a comma
