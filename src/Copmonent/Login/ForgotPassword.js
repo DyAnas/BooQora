@@ -13,6 +13,7 @@ const ForgotPassword = (props) => {
         text: "",
         title: ""
     });
+
     const [show, setShow] = React.useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => {
@@ -30,6 +31,7 @@ const ForgotPassword = (props) => {
     }
     const onSubmit = data => {
         if (ValidateEmail(email)){
+
             AuthService.forgotPassword(email).then(
                 Response => {
                     setMessage({
@@ -113,6 +115,7 @@ const ForgotPassword = (props) => {
                             <div className="center">
                                 <Button
                                     type="submit"
+
                                     id="submit"
                                     onClick={() => props.history.push("/")}
                                     className="btn-color mt-4"
