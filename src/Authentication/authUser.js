@@ -34,11 +34,11 @@ class AuthService {
                 return  response.data;
             })
     }
-    verifyCode = (confirmationCode)=> {
-     console.log("confirm code", confirmationCode);
+    verifyCode = (codeConfirmationDto)=> {
+     console.log("confirm code", codeConfirmationDto);
         return axios.get(api_url2 + "confirm-reset", {
                 params:{
-                    confirmationCode: {confirmationCode}
+                    codeConfirmationDto: codeConfirmationDto
                 }
             }).then(response => {
                 console.log("response confirm", response)

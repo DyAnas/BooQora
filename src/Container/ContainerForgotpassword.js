@@ -103,7 +103,7 @@ const ContainerForgotPassword= (props)=> {
             cancel={() => props.history.push("/")}
         />
         }
-        { ShowVerifyCode &&
+        {ShowVerifyCode &&
         <VerifyCode
             onSubmit = {handleSubmit(onSubmitCode)}
             error={errors.confirmationCode}
@@ -122,7 +122,8 @@ const ContainerForgotPassword= (props)=> {
         />
         }
         {ShowRestPassword  &&
-        <div> hei på deg </div>
+       <NewPassword
+        />
 
         }
 
