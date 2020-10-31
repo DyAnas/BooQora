@@ -1,15 +1,15 @@
 import React from "react";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import ValidateEmail from "../Copmonent/Login/ValidateEmail";
 import AuthService from "../Authentication/authUser";
 import ForgotPassword from "../Copmonent/Login/ForgotPassword";
 import AlertDialog from "../Copmonent/AlertDialog";
-import {TextField} from "@material-ui/core";
 import VerifyCode from "../Copmonent/Login/VerifyCode";
 import NewPassword from "../Copmonent/Login/NewPassword";
+import { withRouter } from "react-router-dom";
 
-const ContainerForgotPassword= (props)=> {
-    const {register, handleSubmit, errors} = useForm();
+const ContainerForgotPassword = (props) => {
+    const { register, handleSubmit, errors } = useForm();
     const [email, setEmail] = React.useState('');
     const [confirmationCode, setconfirmationCode] = React.useState('');
     const [message, setMessage] = React.useState({
@@ -34,7 +34,7 @@ const ContainerForgotPassword= (props)=> {
         handleShow();
     }
     const onSubmit = data => {
-        if (ValidateEmail(email)){
+        if (ValidateEmail(email)) {
 
             AuthService.forgotPassword(email).then(
                 Response => {
@@ -42,9 +42,8 @@ const ContainerForgotPassword= (props)=> {
                         text: Response.message,
                         title: "Reset password"
                     })
-                    console.log("response"+Response)
                     SignIn();
-                    if(Response.message.trim()==="This email address does not exist!"){
+                    if (Response.message.trim() === "This email address does not exist!") {
                         setShowVerifyCode(false);
                         setShowForgotpassord(true);
                         setShowRestPassword(false);
@@ -65,17 +64,16 @@ const ContainerForgotPassword= (props)=> {
             handleShow();
         }//Authentication
     }
-    const [ShowVerifyCode, setShowVerifyCode] =React.useState(false)
-    const [ShowRestPassword, setShowRestPassword] =React.useState(false)
-    const [ShowForgotpassord, setShowForgotpassord] =React.useState(true)
-    const onSubmitCode= ()=> {
+    const [ShowVerifyCode, setShowVerifyCode] = React.useState(false)
+    const [ShowRestPassword, setShowRestPassword] = React.useState(false)
+    const [ShowForgotpassord, setShowForgotpassord] = React.useState(true)
+    const onSubmitCode = () => {
         AuthService.verifyCode(confirmationCode).then(
             Response => {
                 setMessage({
                     text: "Success",
                     title: "Verify Code"
                 })
-                console.log("responses"+Response)
 
                 setShowVerifyCode(false);
                 setShowForgotpassord(false);
@@ -86,44 +84,44 @@ const ContainerForgotPassword= (props)=> {
     }
     return (<div>
         {ShowForgotpassord &&
-        <ForgotPassword
-            onSubmit={handleSubmit(onSubmit)}
-            error={errors.email}
-            helperText={errors.email ? errors.email.message : ""}
-            inputRef={register({
-                required: "Required",
-                pattern: {
-                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
-                    message: "Invalid email"
-                }
-            })}
-            email={email}
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            cancel={() => props.history.push("/")}
-        />
+            <ForgotPassword
+                onSubmit={handleSubmit(onSubmit)}
+                error={errors.email}
+                helperText={errors.email ? errors.email.message : ""}
+                inputRef={register({
+                    required: "Required",
+                    pattern: {
+                        value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                        message: "Invalid email"
+                    }
+                })}
+                email={email}
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                cancel={() => props.history.push("/")}
+            />
         }
         {ShowVerifyCode &&
-        <VerifyCode
-            onSubmit = {handleSubmit(onSubmitCode)}
-            error={errors.confirmationCode}
-            helperText={ errors.confirmationCode ? errors.confirmationCode.message : ""}
-            inputRef={register({
-                required: "Required",
-                pattern: {
-                    value: /^[a-zA-Z0-9]+$/,
-                    message: "Invalid Code"
-                }
-            })}
-            value={confirmationCode}
-            onChange={e => setconfirmationCode(e.target.value)}
-            cancel={ ()=> props.history.push("/")}
+            <VerifyCode
+                onSubmit={handleSubmit(onSubmitCode)}
+                error={errors.confirmationCode}
+                helperText={errors.confirmationCode ? errors.confirmationCode.message : ""}
+                inputRef={register({
+                    required: "Required",
+                    pattern: {
+                        value: /^[a-zA-Z0-9]+$/,
+                        message: "Invalid Code"
+                    }
+                })}
+                value={confirmationCode}
+                onChange={e => setconfirmationCode(e.target.value)}
+                cancel={() => props.history.push("/")}
 
-        />
+            />
         }
-        {ShowRestPassword  &&
-       <NewPassword
-        />
+        {ShowRestPassword &&
+            <NewPassword email={email}
+            />
 
         }
 
@@ -136,6 +134,6 @@ const ContainerForgotPassword= (props)=> {
 
         />
 
-     </div>)
+    </div>)
 }
-export default ContainerForgotPassword;
+export default withRouter(ContainerForgotPassword);

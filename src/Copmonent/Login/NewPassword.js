@@ -1,15 +1,15 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import { Link, Button, TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import AuthService from '../../Authentication/authUser';
 import AlertDialog from '../../Copmonent/AlertDialog'
+import { withRouter } from "react-router-dom";
 
-import ValidateEmail from "./ValidateEmail";
 const NewPassword= (props)=> {
     const [password, setPassword] = React.useState('')
     const { register,handleSubmit, watch, errors } =useForm();
-    const [email, setEmail] = React.useState('');
+    const email = props.email;
     const [message, setMessage] = React.useState({
         text: "",
         title: ""
@@ -20,27 +20,33 @@ const NewPassword= (props)=> {
         setTimeout(() => {
             setShow(false)
             // show is false after 3 seconds
-        }, 9000);
+        }, 3000);
         setShow(true);
     }
     const SignIn = () => {
         setTimeout(() => {
             props.history.push("/");
+
         }, 4000);
         handleShow();
 
 
     }
+    const goToSignin = () =>{
+props.history.push("/");
+        
+    }
     const onSubmit = data => {
-        if (ValidateEmail(email)) {
+       
             AuthService.resetPassword(email, password).then(
                 Response => {
                     setMessage({
                         text: "Reset password is successfully!",
                         title: "Reset password"
                     })
-                    console.log(Response)
+                    
                     SignIn();
+                                        
                 },
                 error => {
                     const resMessage =
@@ -56,13 +62,7 @@ const NewPassword= (props)=> {
                     handleShow();
                 }
             );
-        } else {
-            setMessage({
-                text: "Email must match tietoevry",
-                title: "Incorrect email or password"
-            })
-            handleShow();
-        }//Authentication
+      
     }
     return (<div className=" ipad vh-100 center background   " >
             <div className="col-md-3  box ipad2  ">
@@ -77,22 +77,13 @@ const NewPassword= (props)=> {
                         <form  onSubmit={handleSubmit(onSubmit)}  id="TestForm"  data-test="submit-button" >
                             <TextField
                                 name="email"
-                                error={!!errors.email}
+                              
                                 label="Email"
-                                inputRef={register({
-                                    required: "Required",
-                                    pattern: {
-                                        value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
-                                        message: "Invalid email"
-                                    }
-                                })}
-                                value={email}
-                                helperText={errors.email ? errors.email.message : ""}
+                                value={props.email}
                                 type="email"
                                 fullWidth
                                 autocompleted="false"
                                 size="small"
-                                onChange={e => setEmail(e.target.value)}
                                 variant="filled"
                                 margin="normal"
                                 id="input"
@@ -153,7 +144,7 @@ const NewPassword= (props)=> {
                                 <Button
                                     type="submit"
                                     id="submit"
-                                    onClick={()=> props.history.push("/")}
+                                    onClick={goToSignin}
                                     className="btn-color mt-4"
                                     variant="contained"
                                 >
@@ -177,4 +168,6 @@ const NewPassword= (props)=> {
         </div>
     )
 }
-export default NewPassword;
+
+//withRouter to enable props.history.push("/");
+export default withRouter (NewPassword);

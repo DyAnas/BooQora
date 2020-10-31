@@ -4,7 +4,6 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import SignUpContainer from "./Container/SignUpContainer";
 import SignInContainer from './Container/SignInContainer'
 import { ProtectedRoute } from "./Authentication/protectedRoute";
-import ForgotPassword from "./Copmonent/Login/ForgotPassword";
 import NewPassword from "./Copmonent/Login/NewPassword";
 import { Home } from './Container/home'
 import { About } from './Container/aboutBookora';

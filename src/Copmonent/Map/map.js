@@ -249,7 +249,7 @@ export function MapComponent() {
                             )}
                         </div>
                         : <div>
-                            <img src={URL} width={300} /></div>}
+                            <img src={URL} width={300} alt="map"/></div>}
 
                 </div>
                 <div className="col-6 d-sm-inline-block ">

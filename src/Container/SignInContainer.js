@@ -41,11 +41,11 @@ const SignInContainer = (props) => {
 
         loadReCaptcha("6Lcb99oZAAAAAIjgyT9QY3wA6TyrsHvrLxxjGSGb", Callback);
     });
-    const [IsVerified, setIsVerified] = React.useState(false)
+    // const [IsVerified, setIsVerified] = React.useState(false)
     const verifyCallback= (response) => {
-        if (response) {
-            setIsVerified(true); // to remove
-        }
+        // if (response) {
+        //     setIsVerified(true); // to remove
+        // }
         /*  const recaptcheSecret = "6Lcb99oZAAAAAD6RFPGG3kRjMZtfafm56Bkl7e-f";
           const googleVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptcheSecret}&response=${response}`;
           const responses = await axios.post(googleVerifyUrl);
@@ -77,7 +77,7 @@ const SignInContainer = (props) => {
                         text: "Welcome ", // todo check Response.data.message
                         title: "Success"
                     })
-                    console.log(Response);
+
                     SignIn();
                     //  window.location.reload();
                 },

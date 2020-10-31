@@ -27,7 +27,8 @@ const SignUpContainer=(props ) => {
 
 
     const handleClose = () => setShow(false);
-    const handleShow = () => {setTimeout(() => {
+    const handleDialogShow = () => {
+        setTimeout(() => {
         setShow(false)
         // show is false after 3 seconds
     }, 4000);
@@ -35,10 +36,11 @@ const SignUpContainer=(props ) => {
     }
     // to show message and go to sign in
     const SignIn = ()=> {
+        setShow(true);
        setTimeout( ()=>{
            props.history.push("/");
        }, 4000 );
-        handleShow();
+        handleDialogShow();
     }
 
 
@@ -68,14 +70,14 @@ const SignUpContainer=(props ) => {
                             text: resMessage,
                              title: "Error"})
                         console.log("res.message", resMessage);
-                    handleShow();
+                        handleDialogShow();
                     }
                 );
         } else {
             setMessage({
                 text:"Email must match tietoevry",
                  title: "Incorrect email or password"})
-            handleShow();
+                 handleDialogShow();
         }
 
     }

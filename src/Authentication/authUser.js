@@ -11,16 +11,9 @@ class AuthService {
                 password
             })
             .then(Response => {
-                // todo if not work  when i try to login, localstorage return null
-                // todo maybe Response.data.accessToken return false
-                // todo now without if it's work
-               // if (Response.data.accessToken) {
+                localStorage.setItem("user", JSON.stringify(Response.data));
 
-
-                    localStorage.setItem("user", JSON.stringify(Response.data));
-
-                //}
-                console.log(JSON.parse(localStorage.getItem('user')));
+                //  console.log(JSON.parse(localStorage.getItem('user')));
                 return Response.data;
             });
     }
@@ -31,20 +24,18 @@ class AuthService {
 
             }).then(response => {
                 localStorage.setItem("user", JSON.stringify(response.data));
-                return  response.data;
+                return response.data;
             })
     }
-    verifyCode = (codeConfirmationDto)=> {
-     console.log("confirm code", codeConfirmationDto);
+    verifyCode = (codeConfirmationDto) => {
         return axios.get(api_url2 + "confirm-reset", {
-                params:{
-                    codeConfirmationDto: codeConfirmationDto
-                }
-            }).then(response => {
-                console.log("response confirm", response)
+            params: {
+                codeConfirmationDto: codeConfirmationDto
+            }
+        }).then(response => {
 
-                return  response;
-            })
+            return response;
+        })
     }
 
 
@@ -54,7 +45,7 @@ class AuthService {
                 email, password
 
             }).then(response => {
-                return  response.data;
+                return response.data;
             })
     }
 
@@ -62,8 +53,8 @@ class AuthService {
         localStorage.removeItem("user");
     }
 
-    
-    register(firstName, lastName, email, password,role) {
+
+    register(firstName, lastName, email, password, role) {
         return axios.post(api_url + "signup", {
             firstName,
             lastName,

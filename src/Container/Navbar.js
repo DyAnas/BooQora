@@ -8,44 +8,44 @@ import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { Link } from "react-router-dom";
 
 export const NavBar = (props) => {
 
 
     return <nav className="navbar navbar-expand-md navbar-dark " >
-        <a href="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></a>
+        <Link to="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></Link>
         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div className="navbar-nav">
-                <a href="/home" className="nav-item nav-link"><FontAwesomeIcon icon={faHome} /> Home</a>
-                <a href="/newBooking" className="nav-item nav-link active"><FontAwesomeIcon icon={faCalendarCheck} /> New Booking</a>
-                <a href="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Booking</a>
+                <Link to="/home" className="nav-item nav-link"><FontAwesomeIcon icon={faHome} /> Home</Link>
+                <Link to="/newBooking" className="nav-item nav-link active"><FontAwesomeIcon icon={faCalendarCheck} /> New Booking</Link>
+                <Link to="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Booking</Link>
 
                 <div className="nav-item dropdown">
-                    <a href="/aboutBookora" className="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                    <Link to="/aboutBookora" className="nav-link dropdown-toggle" data-toggle="dropdown">Admin</Link>
                     <div className="dropdown-menu">
                         {/* Edit href */}
-                        <a href="/aboutBookora" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</a>
-                        <a href="/aboutBookora" className="dropdown-item">Zone settings</a>
-                        <a href="/aboutBookora" className="dropdown-item">Add new Admin</a>
+                        <Link to="/aboutBookora" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
+                        <Link to="/aboutBookora" className="dropdown-item">Zone settings</Link>
+                        <Link to="/aboutBookora" className="dropdown-item">Add new Admin</Link>
                     </div>
                 </div>
-                <a href="/aboutBookora" className="nav-item nav-link">About Bookora</a>
+                <Link to="/aboutBookora" className="nav-item nav-link">About Bookora</Link>
             </div>
             {AuthService.getCurrentUser() ?
 
                 <div className="navbar-nav">
-                    <a href="#" className="nav-item nav-link" onClick={() => {
+                    <Link to="#" className="nav-item nav-link" onClick={() => {
                         AuthService.logout();
-                    }}>Log out</a>
+                    }}>Log out</Link>
                 </div> :
 
                 <div className="navbar-nav">
-                    <a className="nav-item nav-link">Login</a>
+                    <Link to="#" className="nav-item nav-link">Login</Link>
                 </div>}
 
         </div>
