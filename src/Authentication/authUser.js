@@ -34,6 +34,20 @@ class AuthService {
                 return  response.data;
             })
     }
+    verifyCode = (confirmationCode)=> {
+
+        return axios
+            .get(api_url2 + "confirm-reset", {
+                params:{
+                    confirmationCode: confirmationCode
+                }
+            }).then(response => {
+                console.log("resonse confirm", response);
+                return  response.data;
+            })
+    }
+
+
     resetPassword = (email, password) => {
         return axios
             .post(api_url2 + "reset-password", {
