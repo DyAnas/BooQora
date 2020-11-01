@@ -1,17 +1,16 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Logo from "../assets/logo1.png"
 import '../Styles/LoginStyle.css';
 import { useForm } from "react-hook-form";
 import AuthService from '../Authentication/authUser';
-
 import { Link, Button, TextField } from "@material-ui/core";
 import AlertDialog from '../Copmonent/AlertDialog'
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
-import { ReCaptcha , loadReCaptcha} from 'react-recaptcha-v3'
+import { ReCaptcha, loadReCaptcha } from 'react-recaptcha-v3'
 
 const SignInContainer = (props) => {
 
-  //  const [token, setToken] = React.useState('')
+    //  const [token, setToken] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     // useform to controll form
@@ -42,7 +41,7 @@ const SignInContainer = (props) => {
         loadReCaptcha("6Lcb99oZAAAAAIjgyT9QY3wA6TyrsHvrLxxjGSGb", Callback);
     });
     // const [IsVerified, setIsVerified] = React.useState(false)
-    const verifyCallback= (response) => {
+    const verifyCallback = (response) => {
         // if (response) {
         //     setIsVerified(true); // to remove
         // }
@@ -60,7 +59,7 @@ const SignInContainer = (props) => {
       }*/
 
     }
-    const Callback =()=> {
+    const Callback = () => {
         console.log("Recaptcha is callback");
     }
 
@@ -73,13 +72,22 @@ const SignInContainer = (props) => {
         if (ValidateEmail(email)) {
             AuthService.login(email, password).then(
                 Response => {
-                    setMessage({
-                        text: "Welcome ", // todo check Response.data.message
-                        title: "Success"
-                    })
+                    if (Response.token === "Email is not activated") {
+                        setMessage({
+                            text: Response.token,
+                            title: "Failed"
 
-                    SignIn();
-                    //  window.location.reload();
+                        })
+                             handleShow();
+                    } else {
+                        setMessage({
+                            text: "Welcome ",
+                            title: "Success"
+
+                        })
+                        SignIn();
+
+                    }
                 },
                 error => {
                     const resMessage =
@@ -162,12 +170,15 @@ const SignInContainer = (props) => {
                             id="password"
 
                         />
+                    {/* {    <div>
+                            <p style={{ color: "red" }}>{message.text} <Link to="#">Resend activation </Link></p>
 
+                        </div>} */}
                         <div className="center">
                             <Button
                                 type="submit"
                                 id="submit"
-                                className="btn-color mt-4"
+                                className="btn-color "
                                 variant="contained"
                             >
                                 Sign In
