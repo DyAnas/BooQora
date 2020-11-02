@@ -7,8 +7,16 @@ import AlertDialog from "../Copmonent/AlertDialog";
 import VerifyCode from "../Copmonent/Login/VerifyCode";
 import NewPassword from "../Copmonent/Login/NewPassword";
 import { withRouter } from "react-router-dom";
-
+import { css } from "@emotion/core";
+import BeatLoader from "react-spinners/BeatLoader";
+import {Link} from "@material-ui/core";
+const override = css`
+   display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 const ContainerForgotPassword = (props) => {
+    const [loading, setLoading]=React.useState(false);
     const { register, handleSubmit, errors } = useForm();
     const [email, setEmail] = React.useState('');
     const [confirmationCode, setconfirmationCode] = React.useState('');
@@ -21,17 +29,20 @@ const ContainerForgotPassword = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => {
         setTimeout(() => {
-            setShow(false)
+          //  setShow(false)
+            setLoading(false);
             // show is false after 3 seconds
-        }, 9000);
-        setShow(true);
+        }, 3000);
+      //  setShow(true);
+        setLoading(true);
     }
     const GotToResetPassword = () => {
         setTimeout(() => {
             //setEmail("")
 
         }, 4000);
-        handleShow();
+        setLoading(true);
+       // handleShow();
     }
     const onSubmit = data => {
         if (ValidateEmail(email)) {
@@ -42,7 +53,8 @@ const ContainerForgotPassword = (props) => {
                         text: Response.message,
                         title: "Reset password"
                     })
-                    GotToResetPassword();
+
+                   // GotToResetPassword();
                     if (Response.message.trim() === "This email address does not exist!") {
                         setShowVerifyCode(false);
                         setShowForgotpassord(true);
@@ -61,7 +73,7 @@ const ContainerForgotPassword = (props) => {
                 text: "Email must match tietoevry",
                 title: "Incorrect email or password"
             })
-            handleShow();
+           // handleShow();
         }//Authentication
     }
     const [ShowVerifyCode, setShowVerifyCode] = React.useState(false)
@@ -104,6 +116,7 @@ const ContainerForgotPassword = (props) => {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 cancel={() => props.history.push("/")}
+                message={message.text}
             />
         }
         {ShowVerifyCode &&
@@ -121,11 +134,13 @@ const ContainerForgotPassword = (props) => {
                 value={confirmationCode}
                 onChange={e => setconfirmationCode(e.target.value)}
                 cancel={() => props.history.push("/")}
+                message={message.text}
 
             />
         }
         {ShowRestPassword &&
             <NewPassword email={email}
+                         message={message.text}
             />
 
         }

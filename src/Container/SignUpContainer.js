@@ -40,17 +40,17 @@ const SignUpContainer=(props ) => {
         setShow(false)
             setLoading(false);
         // show is false after 3 seconds
-    }, 4000);
+    }, 2000);
         setLoading(true);
         setShow(true);
     }
     // to show message and go to sign in
     const SignIn = ()=> {
-        setShow(true);
+      //  setShow(true);
        setTimeout( ()=>{
            props.history.push("/");
-       }, 6000 );
-        handleDialogShow();
+       }, 2000 );
+      //  handleDialogShow();
     }
 
 
@@ -82,14 +82,14 @@ const SignUpContainer=(props ) => {
                             text: resMessage,
                              title: "Error"})
                         console.log("res.message", resMessage);
-                        handleDialogShow();
+                       // handleDialogShow();
                     }
                 );
         } else {
             setMessage({
                 text:"Email must match tietoevry",
                  title: "Incorrect email or password"})
-                 handleDialogShow();
+                // handleDialogShow();
         }
 
     }
@@ -105,6 +105,12 @@ const SignUpContainer=(props ) => {
                     <h1 className="text  mb-1 justify-content-center">
                         Sign Up
                     </h1>
+                    <div className="center">
+                        <p style={{ color: "red", marginRight:"10px"}}>{message.text}
+
+                        </p>
+
+                    </div>
                     <div className="center">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <TextField

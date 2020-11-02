@@ -17,6 +17,20 @@ class AuthService {
                 return Response.data;
             });
     }
+
+    ResendActivation(email) {
+        return axios
+            .post(api_url + "reactive-account", {
+                email,
+
+            })
+            .then(Response => {
+             //   localStorage.setItem("user", JSON.stringify(Response.data));
+
+                //  console.log(JSON.parse(localStorage.getItem('user')));
+                return Response.data;
+            });
+    }
     forgotPassword = (email) => {
         return axios
             .post(api_url + "forgot-password", {
