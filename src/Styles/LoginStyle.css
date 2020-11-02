@@ -65,7 +65,10 @@ label {
 
 
 }
-
+.logo img{
+    height: 80px;
+    width: 80px;
+}
 .background .center >img{
     position: relative;
     float: left;

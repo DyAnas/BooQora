@@ -26,7 +26,7 @@ const ContainerForgotPassword = (props) => {
         }, 9000);
         setShow(true);
     }
-    const SignIn = () => {
+    const GotToResetPassword = () => {
         setTimeout(() => {
             //setEmail("")
 
@@ -42,7 +42,7 @@ const ContainerForgotPassword = (props) => {
                         text: Response.message,
                         title: "Reset password"
                     })
-                    SignIn();
+                    GotToResetPassword();
                     if (Response.message.trim() === "This email address does not exist!") {
                         setShowVerifyCode(false);
                         setShowForgotpassord(true);
@@ -70,18 +70,23 @@ const ContainerForgotPassword = (props) => {
     const onSubmitCode = () => {
         AuthService.verifyCode(confirmationCode).then(
             Response => {
-                setMessage({
-                    text: "Success",
-                    title: "Verify Code"
-                })
 
-                setShowVerifyCode(false);
-                setShowForgotpassord(false);
-                setShowRestPassword(true);
-                SignIn();
-            },
+                console.log(Response);
+                if (Response.data === true) {
+                    console.log(Response)
+                    setMessage({
+                        text: "Code is correct",
+                        title: "Reset password"
+                    })
+                    setShowVerifyCode(false);
+                    setShowForgotpassord(false);
+                    setShowRestPassword(true);
+                    GotToResetPassword();
+                }
+            }
         );
     }
+
     return (<div>
         {ShowForgotpassord &&
             <ForgotPassword

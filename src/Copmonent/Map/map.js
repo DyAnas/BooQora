@@ -216,7 +216,11 @@ export function MapComponent() {
 
     return (
         <div className="container ">
+            <div>
+            <h2>New booking</h2>
+            </div>
             <div className="row   top-row-btn">
+
                 <div className="btn-group  " role="group"
                     aria-label="Basic example">
                     <button type="button" className="btn btn-light">{date}</button>

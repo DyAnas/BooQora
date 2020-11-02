@@ -7,10 +7,18 @@ import { Link, Button, TextField } from "@material-ui/core";
 import AlertDialog from '../Copmonent/AlertDialog'
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
 import { ReCaptcha, loadReCaptcha } from 'react-recaptcha-v3'
+import { css } from "@emotion/core";
+import BeatLoader from "react-spinners/BeatLoader";
+const override = css`
+   display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 const SignInContainer = (props) => {
 
     //  const [token, setToken] = React.useState('')
+    const [loading, setLoading]=React.useState(false);
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     // useform to controll form
@@ -24,16 +32,20 @@ const SignInContainer = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => {
         setTimeout(() => {
+            setLoading(false);
             setShow(false)
             // show is false after 3 seconds
         }, 3000);
+        setLoading(true);
         setShow(true);
     }
     const SignIn = () => {
         setTimeout(() => {
+
             props.history.push("/home");
         }, 4000);
-        handleShow();
+        setLoading(true);
+       // handleShow();
     }
     // recaptcha handle
     useEffect(() => {
@@ -45,18 +57,7 @@ const SignInContainer = (props) => {
         // if (response) {
         //     setIsVerified(true); // to remove
         // }
-        /*  const recaptcheSecret = "6Lcb99oZAAAAAD6RFPGG3kRjMZtfafm56Bkl7e-f";
-          const googleVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptcheSecret}&response=${response}`;
-          const responses = await axios.post(googleVerifyUrl);
-          console.log(responses);
-          //const success = response.data;
-         console.log(responses.data);
-          if (responses.data ){
-              // setToken(response); // send token to backend to verify
-              setIsVerified(true); // to remove
-              console.log(responses.data);
-          }
-      }*/
+
 
     }
     const Callback = () => {
@@ -70,6 +71,7 @@ const SignInContainer = (props) => {
 
 
         if (ValidateEmail(email)) {
+
             AuthService.login(email, password).then(
                 Response => {
                     if (Response.token === "Email is not activated") {
@@ -78,13 +80,8 @@ const SignInContainer = (props) => {
                             title: "Failed"
 
                         })
-                             handleShow();
+                          //   handleShow();
                     } else {
-                        setMessage({
-                            text: "Welcome ",
-                            title: "Success"
-
-                        })
                         SignIn();
 
                     }
@@ -170,10 +167,10 @@ const SignInContainer = (props) => {
                             id="password"
 
                         />
-                    {/* {    <div>
+                       <div>
                             <p style={{ color: "red" }}>{message.text} <Link to="#">Resend activation </Link></p>
 
-                        </div>} */}
+                        </div>
                         <div className="center">
                             <Button
                                 type="submit"
@@ -185,7 +182,12 @@ const SignInContainer = (props) => {
                             </Button>
                         </div>
                         <hr />
-
+                        <BeatLoader
+                            css={override}
+                            size={20}
+                            color={"#66f5f5"}
+                            loading={loading}
+                        />
                     </form>
 
                     <ReCaptcha

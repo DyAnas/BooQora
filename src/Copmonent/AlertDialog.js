@@ -4,6 +4,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import DialogActions from "@material-ui/core/DialogActions";
+import Button from "@material-ui/core/Button";
 //import { useTheme } from '@material-ui/core/styles';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -32,14 +34,16 @@ export default function AlertDialogSlide(props) {
                         {props.message}
                     </DialogContentText>
                 </DialogContent>
-            {/*    <DialogActions>
-                    <Button onClick={props.onHide} color="primary">
-                        Ok
+               <DialogActions>
+                   {props.showConfirmation &&
+                    <Button onClick={props.resendConfirmation} className="btn-info">
+                      resend confirmation
                     </Button>
-                    <Button onClick={props.onHide} color="primary">
+                   }
+               {/*      <Button onClick={props.onHide} color="primary">
                         Cancel
-                    </Button>
-                </DialogActions>*/}
+                    </Button>*/}
+                </DialogActions>
             </Dialog>
         </div>
     );

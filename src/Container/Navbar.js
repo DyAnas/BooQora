@@ -16,7 +16,7 @@ export const NavBar = (props) => {
     return <nav className="navbar navbar-expand-md navbar-dark " >
         <Link to="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></Link>
         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span className="navbar-toggler-icon"></span>
+            <span color="black" className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">

@@ -15,12 +15,12 @@
 }
 
 .btn.btn-light {
-    color: white !important;
-    background-color: #9575CD;
+    color: #42c37c !important;
+    background-color: #fafdfd;
 }
 
 .btn.btn-light {
-    border: 1px solid #4A585C;
+    border: 1px solid #d990ec;
     border-radius: 10px;
     color: #548E6C;
 }

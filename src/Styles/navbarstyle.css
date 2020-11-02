@@ -1,17 +1,21 @@
 
 .navbar-dark {
-    background-color: indigo;
+    background-color: #fcfcfc;
     border-radius: 14px;
+    box-shadow: 1px 1px 1px 1px #E1E8EF;
+
+    border: 2px solid #ffffff;
      }
 
 .nav-item, .nav-link{ 
-    color: #ffffff !important;
+    color: #242323 !important;
     padding-left: 10px;
     
 }
 
 .navbar-nav{
     margin: auto;
+    padding: 20px;
   
 }
 

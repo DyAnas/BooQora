@@ -11,11 +11,9 @@ class AuthService {
                 password
             })
             .then(Response => {
-
-          
                 localStorage.setItem("user", JSON.stringify(Response.data));
 
-                  
+                //  console.log(JSON.parse(localStorage.getItem('user')));
                 return Response.data;
             });
     }

@@ -7,9 +7,17 @@ import {Link, Button, TextField} from "@material-ui/core";
 //import DialogAlert from '../Copmonent/DialogModale'
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
 import AlertDialog from "../Copmonent/AlertDialog";
+import { css } from "@emotion/core";
+import BeatLoader from "react-spinners/BeatLoader";
+const override = css`
+   display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 const SignUpContainer=(props ) => {
     // create state with usestat for
+    const [loading, setLoading]=React.useState(false);
     const [firstName, setFirstName] = React.useState('')
     const [lastName, setLastName] = React.useState('')
     const [email, setEmail] = React.useState('')
@@ -30,8 +38,10 @@ const SignUpContainer=(props ) => {
     const handleDialogShow = () => {
         setTimeout(() => {
         setShow(false)
+            setLoading(false);
         // show is false after 3 seconds
     }, 4000);
+        setLoading(true);
         setShow(true);
     }
     // to show message and go to sign in
@@ -39,7 +49,7 @@ const SignUpContainer=(props ) => {
         setShow(true);
        setTimeout( ()=>{
            props.history.push("/");
-       }, 4000 );
+       }, 6000 );
         handleDialogShow();
     }
 
@@ -50,8 +60,10 @@ const SignUpContainer=(props ) => {
         if (ValidateEmail(email)) {
             // call register method to send data to api
             const roles = ["user"];
+            setLoading(true);
             AuthService.register(firstName, lastName, email, password, roles)
                 .then(Response => {
+
                     setMessage({
                         text: Response.data.message,
                         title: "Success"})
@@ -83,10 +95,11 @@ const SignUpContainer=(props ) => {
     }
 
     return (
-        <div className=" ipad vh-100 center background ">
+        <div className=" ipad vh-100 center  ">
             <div className="col-md-3  box ipad2  ">
+
                 <div>
-                    <div className="center ">
+                    <div className="center logo ">
                         <img src={Logo} alt="logo"/>
                     </div>
                     <h1 className="text  mb-1 justify-content-center">
@@ -209,6 +222,12 @@ const SignUpContainer=(props ) => {
                                     Sign up
                                 </Button>
                             </div>
+                            <BeatLoader
+                                css={override}
+                                size={20}
+                                color={"#66f5f5"}
+                                loading={loading}
+                            />
                             <br/>
                             <hr/>
                             <div className="mb-1 ">
