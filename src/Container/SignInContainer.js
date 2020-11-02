@@ -43,7 +43,7 @@ const SignInContainer = (props) => {
         setTimeout(() => {
 
             props.history.push("/home");
-        }, 4000);
+        }, 2000);
         setLoading(true);
        // handleShow();
     }
@@ -80,11 +80,13 @@ const SignInContainer = (props) => {
                             title: "Failed"
 
                         })
-                          //   handleShow();
+                        setshowConfirmation(true)
+                        //    handleShow();
                     } else {
                         SignIn();
 
                     }
+
                 },
                 error => {
                     const resMessage =
@@ -93,21 +95,47 @@ const SignInContainer = (props) => {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
+                    if (resMessage==="Error: Unauthorized"){
+                        setMessage({
+                            text: "Incorrect email or password",
+                            title: "Failed"
+
+                        })
+
+                    }else{
                     setMessage({
                         text: resMessage,
-                        title: "Error "
+                       // title: "Errors "
                     })
-                    handleShow();
+                    }
+                  //  handleShow();
                 }
             );
         } else {
             setMessage({
                 text: "Email must match tietoevry",
-                title: "Incorrect email or password"
+             //   title: "Incorrect email or password"
             })
-            handleShow();
+           // handleShow();
         }//Authentication
     }
+    // handle if email is not active
+    const resendActivation= ()=> {
+        AuthService.ResendActivation(email).then(
+            // todo Response.message show wrong message(User registered successfully!)
+            Response => {
+           console.log(Response.message);
+                setMessage({
+                    text: "Check your email",
+
+                })
+            })
+        setshowConfirmation(false);
+
+    }
+    const [showConfirmation, setshowConfirmation]= React.useState(false);
+
+
     return (<div className=" ipad vh-100 center background   " >
         <div className="col-md-3  box ipad2  ">
             <div>
@@ -117,6 +145,14 @@ const SignInContainer = (props) => {
                 <h1 className="text  mb-2 justify-content-center">
                     Sign In
                     </h1>
+                <div className="center">
+                    <p style={{ color: "red"}}>{message.text}
+                        {showConfirmation &&
+                        <Link style={{  margin:"10px"}}to="#" onClick={resendActivation}>Resend activation </Link>
+                        }
+                    </p>
+
+                </div>
                 <div className="center">
                     <form onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
                         <TextField
@@ -167,10 +203,7 @@ const SignInContainer = (props) => {
                             id="password"
 
                         />
-                       <div>
-                            <p style={{ color: "red" }}>{message.text} <Link to="#">Resend activation </Link></p>
 
-                        </div>
                         <div className="center">
                             <Button
                                 type="submit"
@@ -203,6 +236,8 @@ const SignInContainer = (props) => {
                         onHide={handleClose}
                         message={message.text}
                         Tittel={message.title}
+                        showConfirmation={showConfirmation}
+                        resendConfirmation={resendActivation}
 
                     />
                 </div>

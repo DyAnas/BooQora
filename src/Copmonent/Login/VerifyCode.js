@@ -14,6 +14,10 @@ const VerifyCode = (props) => {
                         Verify Code
                     </h1>
                     <div className="center">
+                        <p style={{ color: "red"}}>{props.message}</p>
+
+                    </div>
+                    <div className="center">
                         <form onSubmit={props.onSubmit} id="TestForm" data-test="submit-button">
                             <TextField
                                 name="code"

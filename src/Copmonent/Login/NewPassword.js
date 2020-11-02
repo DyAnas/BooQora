@@ -74,6 +74,10 @@ props.history.push("/");
                         Reset password
                     </h1>
                     <div className="center">
+                        <p style={{ color: "red"}}>{props.message}</p>
+
+                    </div>
+                    <div className="center">
                         <form  onSubmit={handleSubmit(onSubmit)}  id="TestForm"  data-test="submit-button" >
                             <TextField
                                 name="email"

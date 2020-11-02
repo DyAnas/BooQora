@@ -3,6 +3,8 @@ import Logo from "../../assets/logo1.png"
 import { Button, TextField } from "@material-ui/core";
 
 
+
+
 const ForgotPassword = (props) => {
 
     return (<div className=" ipad vh-100 center background   ">
@@ -14,6 +16,10 @@ const ForgotPassword = (props) => {
                 <h1 className="text  mb-2 justify-content-center">
                     Forgot password
                     </h1>
+                <div className="center">
+                    <p style={{ color: "red"}}>{props.message}</p>
+
+                </div>
                 <div className="center">
                     <form onSubmit={props.onSubmit} id="TestForm" data-test="submit-button">
                         <TextField
