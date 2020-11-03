@@ -1,0 +1,149 @@
+
+
+.top-row-btn {
+    padding-bottom: 10px;
+}
+
+.floorandmapRow {}
+
+.btn.btn-light:hover {
+    background: #17a2b8;
+}
+
+.btn.btn-light:focus {
+    background: #17a2b8!important;
+}
+
+.btn.btn-light {
+    color: #42c37c !important;
+    background-color: #fafdfd;
+}
+
+.btn.btn-light {
+    border: 1px solid #d990ec;
+    border-radius: 10px;
+    color: #548E6C;
+}
+
+
+
+
+/* Zone D*/
+
+.span1 {
+    position: absolute;
+    padding: 5px;
+    top: 60px;
+    left: 56px;
+    font-size: 14px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone J*/
+
+.span2 {
+    position: absolute;
+    padding: 5px;
+    font-size: 12px;
+    top: 130px;
+    left: 50px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone C*/
+
+.span3 {
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    top: 220px;
+    left: 50px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone E*/
+
+.span4 {
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    top: 70px;
+    left: 120px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone F*/
+
+.span5 {
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    top: 70px;
+    left: 220px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone B*/
+
+.span6 {
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    bottom: 45px;
+    left: 150px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* Zone A*/
+
+.span7 {
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    bottom: 40px;
+    left: 270px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #fff;
+}
+
+
+/* mobile screen */
+
+@media only screen and (max-width: 480px) {
+    .btn-group-vertical {
+        vertical-align: baseline !important;
+    }
+}

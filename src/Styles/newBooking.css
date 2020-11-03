@@ -1,0 +1,12 @@
+.mapContainer{
+    margin: auto;
+    background-color: red;
+}
+.newbookingCont{
+}
+.newbookingRow{
+  padding-bottom: 20px;
+  padding-top: 20px; 
+    background-color: white;
+    border-radius: 30px;
+}
