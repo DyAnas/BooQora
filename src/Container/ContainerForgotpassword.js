@@ -3,20 +3,12 @@ import { useForm } from "react-hook-form";
 import ValidateEmail from "../Copmonent/Login/ValidateEmail";
 import AuthService from "../Authentication/authUser";
 import ForgotPassword from "../Copmonent/Login/ForgotPassword";
-import AlertDialog from "../Copmonent/AlertDialog";
 import VerifyCode from "../Copmonent/Login/VerifyCode";
 import NewPassword from "../Copmonent/Login/NewPassword";
 import { withRouter } from "react-router-dom";
-import { css } from "@emotion/core";
-import BeatLoader from "react-spinners/BeatLoader";
-import {Link} from "@material-ui/core";
-const override = css`
-   display: flex;
-    align-items: center;
-    justify-content: center;
-`;
+
+
 const ContainerForgotPassword = (props) => {
-    const [loading, setLoading]=React.useState(false);
     const { register, handleSubmit, errors } = useForm();
     const [email, setEmail] = React.useState('');
     const [confirmationCode, setconfirmationCode] = React.useState('');
@@ -25,25 +17,8 @@ const ContainerForgotPassword = (props) => {
         title: ""
     });
 
-    const [show, setShow] = React.useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => {
-        setTimeout(() => {
-          //  setShow(false)
-            setLoading(false);
-            // show is false after 3 seconds
-        }, 3000);
-      //  setShow(true);
-        setLoading(true);
-    }
-    const GotToResetPassword = () => {
-        setTimeout(() => {
-            //setEmail("")
+    const [loading, setLoading] = React.useState(false);
 
-        }, 4000);
-        setLoading(true);
-       // handleShow();
-    }
     const onSubmit = data => {
         if (ValidateEmail(email)) {
 
@@ -51,10 +26,9 @@ const ContainerForgotPassword = (props) => {
                 Response => {
                     setMessage({
                         text: Response.message,
-                        title: "Reset password"
                     })
 
-                   // GotToResetPassword();
+                    // GotToResetPassword();
                     if (Response.message.trim() === "This email address does not exist!") {
                         setShowVerifyCode(false);
                         setShowForgotpassord(true);
@@ -67,38 +41,53 @@ const ContainerForgotPassword = (props) => {
 
                 },
             );
+            spinnerTimer();
         }
         else {
+            
             setMessage({
                 text: "Email must match tietoevry",
-                title: "Incorrect email or password"
             })
-           // handleShow();
+
         }//Authentication
     }
     const [ShowVerifyCode, setShowVerifyCode] = React.useState(false)
     const [ShowRestPassword, setShowRestPassword] = React.useState(false)
     const [ShowForgotpassord, setShowForgotpassord] = React.useState(true)
+
+
     const onSubmitCode = () => {
+        spinnerTimer();
         AuthService.verifyCode(confirmationCode).then(
             Response => {
 
-                console.log(Response);
                 if (Response.data === true) {
-                    console.log(Response)
+
                     setMessage({
-                        text: "Code is correct",
-                        title: "Reset password"
+                        text: "",
                     })
                     setShowVerifyCode(false);
                     setShowForgotpassord(false);
                     setShowRestPassword(true);
-                    GotToResetPassword();
+
+                }else{
+      
+                    setMessage({
+                        text: "Incorrect Code!!",
+                    })
+    
                 }
+            
             }
         );
     }
+    const spinnerTimer = () => {
+        setTimeout(() => {
 
+            setLoading(false);
+        }, 6000);
+        setLoading(true);
+    }
     return (<div>
         {ShowForgotpassord &&
             <ForgotPassword
@@ -117,6 +106,7 @@ const ContainerForgotPassword = (props) => {
                 onChange={e => setEmail(e.target.value)}
                 cancel={() => props.history.push("/")}
                 message={message.text}
+                loading={loading}
             />
         }
         {ShowVerifyCode &&
@@ -140,20 +130,10 @@ const ContainerForgotPassword = (props) => {
         }
         {ShowRestPassword &&
             <NewPassword email={email}
-                         message={message.text}
+            message={message.text}
             />
 
         }
-
-
-        <AlertDialog
-            open={show}
-            onHide={handleClose}
-            message={message.text}
-            Tittel={message.title}
-
-        />
-
     </div>)
 }
 export default withRouter(ContainerForgotPassword);

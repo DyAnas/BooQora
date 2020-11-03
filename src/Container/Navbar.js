@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/navbarstyle.css";
-import whiteLogo from "../assets/whiteLogo.png"
+import whiteLogo from "../assets/TietoEvry.svg.png"
 import AuthService from '../Authentication/authUser'
 import { faCalendarCheck, faChartLine, faHome, faList } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';

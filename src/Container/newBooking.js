@@ -7,13 +7,12 @@ export const NewBooking = () => {
 
 
 
-
     return (
         <div>
             <div className="container newbookingCont ">
                 <NavBar />
 
-                <div className="row  justify-content-center newbookingRow" >
+                <div className="row justify-content-center newbookingRow" >
 
                     <div className="col-6-sm">
                         <MapComponent />
@@ -21,9 +20,6 @@ export const NewBooking = () => {
                 
                 </div>
             </div>
-
-
-
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import { Button, TextField } from "@material-ui/core";
-
+import { TextField } from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 
 
 
@@ -11,9 +11,11 @@ const ForgotPassword = (props) => {
         <div className="col-md-3  box ipad2  ">
             <div>
                 <div className="center ">
-                    <img src={Logo} alt="logo" />
+                    <img src={Logo} alt="logo" style={{cursor:"pointer"}} onClick={()=>{
+                        props.history.push("/");
+                    }}/>
                 </div>
-                <h1 className="text  mb-2 justify-content-center">
+                <h1 className="text  mb-2 justify-content-center mt-3">
                     Forgot password
                     </h1>
                 <div className="center">
@@ -21,13 +23,13 @@ const ForgotPassword = (props) => {
 
                 </div>
                 <div className="center">
-                    <form onSubmit={props.onSubmit} id="TestForm" data-test="submit-button">
+                    <form onSubmit={props.onSubmit}>
                         <TextField
                             name="email"
                             error={props.error}
                             label="Entre your email"
                             inputRef={props.inputRef}
-                            value={props.email}
+                            // value={props.email}
                             helperText={props.helperText}
                             type="email"
                             fullWidth
@@ -41,29 +43,25 @@ const ForgotPassword = (props) => {
 
                         />
                         <div className="center">
-                            <Button
+                            <button
                                 type="submit"
                                 id="submit"
-                                className="btn-color mt-4"
+                                className="btn btn-info  mt-4 mb-3 text-light"
                                 variant="contained"
                             >
                                 Send email
-                                </Button>
-
+                                </button>
                         </div>
-                        <div className="center">
-                            <Button
-                                type="submit"
-
-                                id="submit"
-                                onClick={props.cancel}
-                                className="btn-color mt-4"
-                                variant="contained"
-                            >
-                                Cancel
-                                </Button>
-
+                        {props.loading ?
+                        <div className=" ">
+                            <div className="spinner-grow spinner-grow-sm text-info ml-1 " role="status">                    
+                      </div>
+                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
+                      </div>
+                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
+                      </div>
                         </div>
+                       : null}
                         <hr />
                     </form>
                 </div>
@@ -72,4 +70,4 @@ const ForgotPassword = (props) => {
     </div>
     )
 }
-export default ForgotPassword;
+export default withRouter (ForgotPassword);

@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../assets/logo1.png";
-import {Button, TextField} from "@material-ui/core";
+import { TextField} from "@material-ui/core";
 
 const VerifyCode = (props) => {
 
@@ -10,11 +10,11 @@ const VerifyCode = (props) => {
                     <div className="center ">
                         <img src={Logo} alt="logo"/>
                     </div>
-                    <h1 className="text  mb-2 justify-content-center">
+                    <h1 className="text  mb-2 justify-content-center mt-2">
                         Verify Code
                     </h1>
                     <div className="center">
-                        <p style={{ color: "red"}}>{props.message}</p>
+                        <p className=" text-center" style={{ color: "red"}}>{props.message}</p>
 
                     </div>
                     <div className="center">
@@ -38,27 +38,24 @@ const VerifyCode = (props) => {
 
                             />
                             <div className="center">
-                                <Button
+                                <button
                                     type="submit"
                                     id="submit"
-                                    className="btn-color mt-4"
+                                    className="btn btn-info  mt-4 mb-3 text-light mr-3"
                                     variant="contained"
                                 >
                                     Verify Code
-                                </Button>
-
-                            </div>
-                            <div className="center">
-                                <Button
+                                </button>
+                                <button
                                     type="submit"
 
                                     id="submit"
                                     onClick={props.cancel}
-                                    className="btn-color mt-4"
+                                    className="btn btn-info  mt-4 mb-3 text-light mr-3"
                                     variant="contained"
                                 >
                                     Cancel
-                                </Button>
+                                </button>
 
                             </div>
                             <hr/>

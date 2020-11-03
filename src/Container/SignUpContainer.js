@@ -3,17 +3,9 @@ import Logo from "../assets/logo1.png"
 import '../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
 import AuthService from '../Authentication/authUser'
-import {Link, Button, TextField} from "@material-ui/core";
-//import DialogAlert from '../Copmonent/DialogModale'
+import {Link, TextField} from "@material-ui/core";
 import ValidateEmail from "../Copmonent/Login/ValidateEmail"
 import AlertDialog from "../Copmonent/AlertDialog";
-import { css } from "@emotion/core";
-import BeatLoader from "react-spinners/BeatLoader";
-const override = css`
-   display: flex;
-    align-items: center;
-    justify-content: center;
-`;
 
 const SignUpContainer=(props ) => {
     // create state with usestat for
@@ -35,15 +27,6 @@ const SignUpContainer=(props ) => {
 
 
     const handleClose = () => setShow(false);
-    const handleDialogShow = () => {
-        setTimeout(() => {
-        setShow(false)
-            setLoading(false);
-        // show is false after 3 seconds
-    }, 2000);
-        setLoading(true);
-        setShow(true);
-    }
     // to show message and go to sign in
     const SignIn = ()=> {
       //  setShow(true);
@@ -188,7 +171,7 @@ const SignUpContainer=(props ) => {
                                     required: "Required",
                                     pattern: {
                                         value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[.!@#$%^&*])[\w!@#$%^&*]{8,}$/,
-                                        message: "Must Contain 8 Characters, One Lowercase, One Number and one special character"
+                                        message: "Must Contain 8 Characters, One Upperxcase, One Number and one special character"
                                     }
                                 })}
                                 helperText={errors.password ? errors.password.message : ""}
@@ -220,21 +203,25 @@ const SignUpContainer=(props ) => {
                                 margin="normal"
                             />
                             <div className="center">
-                                <Button
+                                <button
                                     type="submit"
-                                    className="btn-color mt-2"
+                                    className="btn btn-info pr-4 pl-4 mt-2 text-light"
                                     variant="contained"
+                                    
                                 >
                                     Sign up
-                                </Button>
+                                </button>
                             </div>
-                            <BeatLoader
-                                css={override}
-                                size={20}
-                                color={"#66f5f5"}
-                                loading={loading}
-                            />
-                            <br/>
+                            {loading ?
+                        <div className="mt-2">
+                            <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
+                      </div>
+                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
+                      </div>
+                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
+                      </div>
+                        </div>
+                       : null}
                             <hr/>
                             <div className="mb-1 ">
                                 <Link href="/" variant="body2" className="text-footer">
@@ -242,12 +229,7 @@ const SignUpContainer=(props ) => {
                                 </Link>
                             </div>
                         </form>
-                      {/*  <DialogAlert
-                            show={show}
-                            onHide={handleClose}
-                            message={message.text}
-                            Tittel={message.title}
-                        />*/}
+            
                         <AlertDialog
                             open={show}
                             onHide={handleClose}
