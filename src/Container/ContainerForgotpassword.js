@@ -73,7 +73,7 @@ const ContainerForgotPassword = (props) => {
                 }else{
       
                     setMessage({
-                        text: "Incorrect Code!!",
+                        text: "Incorrect Code!! or code i expired",
                     })
     
                 }

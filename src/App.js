@@ -10,6 +10,7 @@ import { About } from './Container/aboutBookora';
 import { NewBooking } from "./Container/newBooking";
 import { MyBooking } from "./Container/myBooking";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
+import resendConfirm from "./Copmonent/Login/resendActivation";
 class App extends Component {
 
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={SignInContainer} />
             <Route path="/signup" component={SignUpContainer} />
+            <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
             <ProtectedRoute path="/NewPassword" component={NewPassword} />
             <ProtectedRoute
