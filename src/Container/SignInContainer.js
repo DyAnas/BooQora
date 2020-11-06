@@ -93,11 +93,11 @@ const SignInContainer = (props) => {
         })
         setLoading(true);
         AuthService.ResendActivation(email).then(
-            // todo Response.message show wrong message(User registered successfully!)
+
             Response => {
                 setLoading(false)
                 setMessage({
-                    text: "Code is sent!! Check your email",
+                    text: Response.message,
 
                 })
             })

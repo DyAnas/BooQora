@@ -39,7 +39,7 @@ const ResendConfirm = (props) => {
                 Response => {
                     setLoading(false)
                     setMessage({
-                        text: "Code is sent!! Check your email",
+                        text: Response.message,
 
                     })
                     SignIn();
@@ -107,7 +107,7 @@ const ResendConfirm = (props) => {
                                     className="btn btn-info pr-4 pl-4 mt-2 text-light "
                                     variant="contained"
                                 >
-                                    Sign In
+                                   Resend confirm
                                 </button>
                             </div>
                             {loading ?

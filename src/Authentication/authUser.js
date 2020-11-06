@@ -25,12 +25,13 @@ class AuthService {
 
             })
             .then(Response => {
-             //   localStorage.setItem("user", JSON.stringify(Response.data));
+                //   localStorage.setItem("user", JSON.stringify(Response.data));
 
                 //  console.log(JSON.parse(localStorage.getItem('user')));
                 return Response.data;
             });
     }
+
     forgotPassword = (email) => {
         return axios
             .post(api_url + "forgot-password", {
@@ -81,6 +82,7 @@ class AuthService {
     getCurrentUser() {
         return JSON.parse(localStorage.getItem('user'));
     }
+
 
 }
 
