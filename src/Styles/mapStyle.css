@@ -1,4 +1,10 @@
-
+.images{
+    position: relative;
+    text-align: center;
+}
+.react-datepicker-popper {
+    z-index: 9999 !important;
+}
 
 .top-row-btn {
     padding-bottom: 10px;
@@ -26,60 +32,90 @@
 }
 
 
+.title {
+    font-family: "Montserrat", sans-serif!important;
+    font-size: 30px!important;
 
 
-/* Zone D*/
+    color: #e257a3 !important;
 
-.span1 {
-    position: absolute;
-    padding: 5px;
-    top: 60px;
-    left: 56px;
-    font-size: 14px;
-    transform: translate3d(-50%, -50%, 0);
-    border-radius: 5px;
-    pointer-events: none;
-    z-index: 1000;
-    color: #fff;
 }
 
 
-/* Zone J*/
 
-.span2 {
-    position: absolute;
+/* Zone A*/
+
+.span1 {
+    /*position: absolute;*/
+
+
     padding: 5px;
-    font-size: 12px;
-    top: 130px;
-    left: 50px;
+    font-size: 14px;
+    bottom:20px;
+    left: 255px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #fff;
+    color: #ffffff;
+}
+
+
+/* Zone B*/
+
+.span2 {
+    /*position: absolute;*/
+
+
+    padding: 5px;
+    font-size: 14px;
+    bottom: 40px;
+    left: 140px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #ffffff;
 }
 
 
 /* Zone C*/
 
 .span3 {
-    position: absolute;
+    /*position: absolute;*/
     padding: 5px;
     font-size: 14px;
     top: 220px;
-    left: 50px;
+    left: 35px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #fff;
+    color: #ffffff;
+}
+
+
+/* Zone D*/
+
+.span4 {
+    /*position: absolute;*/
+    padding: 5px;
+    top: 60px;
+    left: 40px;
+    font-size: 14px;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    color: #ffffff;
 }
 
 
 /* Zone E*/
 
-.span4 {
-    position: absolute;
+.span5 {
+    /*position: absolute;*/
+
     padding: 5px;
     font-size: 14px;
     top: 70px;
@@ -88,14 +124,15 @@
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #fff;
+    color: #ffffff;
+
 }
 
 
 /* Zone F*/
 
-.span5 {
-    position: absolute;
+.span6 {
+    /*position: absolute;*/
     padding: 5px;
     font-size: 14px;
     top: 70px;
@@ -104,39 +141,23 @@
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #fff;
+    color: #ffffff;
 }
 
 
-/* Zone B*/
-
-.span6 {
-    position: absolute;
-    padding: 5px;
-    font-size: 14px;
-    bottom: 45px;
-    left: 150px;
-    transform: translate3d(-50%, -50%, 0);
-    border-radius: 5px;
-    pointer-events: none;
-    z-index: 1000;
-    color: #fff;
-}
-
-
-/* Zone A*/
+/* Zone G*/
 
 .span7 {
-    position: absolute;
+    /*position: absolute;*/
     padding: 5px;
-    font-size: 14px;
-    bottom: 40px;
-    left: 270px;
+    font-size: 12px;
+    top: 130px;
+    left: 40px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #fff;
+    color: #ffffff;
 }
 
 

@@ -15,7 +15,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="background vh-100">
+      <div className=" vh-100">
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInContainer} />

@@ -10,7 +10,17 @@ export const MyBooking = () => {
         <div>
             <div className="container">
             <NavBar />
-                <h1>My Bookings</h1>
+                <div className="box">
+
+                    <div className=" ">
+                        <h2 className=" ml-3 mb-2 mt-2  title">My booking</h2>
+                        <br/>
+                        <p className=" ml-3">Her is your booking</p>
+                    </div>
+
+
+
+                </div>
 
             </div>
 

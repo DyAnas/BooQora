@@ -36,7 +36,7 @@ export const NavBar = (props) => {
                 </div>
                 <Link to="/aboutBookora" className="nav-item nav-link">About Bookora</Link>
             </div>
-            {AuthService.getCurrentUser() ?
+            {AuthService.   getCurrentUser() ?
 
                 <div className="navbar-nav">
                     <Link to="#" className="nav-item nav-link" onClick={() => {

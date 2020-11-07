@@ -33,10 +33,10 @@ function Example(props) {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={props.onHide}>
+                    <Button variant="outline-danger" onClick={props.onHide}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={props.ConfirmBooking}>
+                    <Button variant="outline-info" onClick={props.ConfirmBooking}>
                        Confirm Booking
                     </Button>
                 </Modal.Footer>
