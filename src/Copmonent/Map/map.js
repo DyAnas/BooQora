@@ -3,32 +3,40 @@ import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
 import Example from "./DialogAlert";
 import "../../Styles/mapStyle.css";
-import {getZoneList} from "../../service/mapService";
+import {getZoneList, CheckStatusOfAllZones, BookPlass} from "../../service/mapService";
 import AuthService from '../../Authentication/authUser';
+import { Form } from 'react-bootstrap'
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const areas = [
     {
-        id:"A",
+        id:1,
+        zone:"A",
         shape: "poly",
         coords: [235, 137, 235, 152, 216, 152, 212, 181, 221, 183, 217, 213, 284, 224, 295, 147],
         preFillColor: "#e5787c",
         fillColor: "#7fb775"
     },
     {
-        id:"B",
+        id:2,
+        zone:"B",
         shape: "poly",
         coords: [86, 157, 88, 174, 82, 176, 84, 199, 98, 196, 102, 214, 190, 201, 180, 139],
         preFillColor: "#e5787c",
         fillColor: "#7fb775"
     },
     {
-        id: "C",
+        id: 3,
+        zone:"C",
         shape: "poly",
         coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
         preFillColor: "#02f3af",
         fillColor: "#7fb775"
     },
     {
-        id: "D",
+        id: 4,
+        zone:"D",
         shape: "poly",
         coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
         preFillColor: "#02f3af",
@@ -36,21 +44,24 @@ const areas = [
     },
 
     {
-        id: "E",
+        id: 5,
+        zone:"E",
         shape: "poly",
         coords: [67, 41, 64, 102, 154, 100, 156, 38],
         preFillColor: "#e7df8e",
         fillColor: "#7fb775"
     },
     {
-        id:"F",
+        id:6,
+        zone:"F",
         shape: "poly",
         coords: [157, 39, 154, 100, 250, 98, 250, 91, 264, 91, 291, 35],
         preFillColor: "#02f3af",
         fillColor: "#7fb775"
     },
     {
-        id: "J",
+        id: 7,
+        zone:"J",
         shape: "poly",
         coords: [15, 105, 63, 104, 63, 151, 41, 170, 11, 172],
         preFillColor: "#e7df8e",
@@ -58,7 +69,7 @@ const areas = [
     },
 
 ];
-const zone = [0,1,2,3,4,5,6]
+
 export function MapComponent() {
     const [query, setQuery] = useState(1);
     //  handle dialog
@@ -76,41 +87,43 @@ export function MapComponent() {
             areas[5]
         ]
     });
-    const [listZone, setListZone] = useState({
-    floor: "",
-       zone: []
-    });
-    /*const getZone=(floor)=> {
-        let items;
+    const [listZone, setListZone] = useState([]);
+
+    const getZone=(floor)=> {
+       let items=[];
         let areasToShow ;
-       let r;
-        let sp;
-        setListZone({
-            zone:[]
-        })
-        getZoneList().then(
+        //setListZone([])
+        getZoneList(floor).then(
             response=> {
-                areasToShow= response.data.zoneDTOList.map((i, index)=> {
-                    listZone.zone+= [i.floor, i.zone, i.activated, i.capacity, ";"];
-                    if( i.floor===floor && i.activated===true){
-
-                    console.log("zone :  "+i.zone+"  id:  "+i.id
-                          +"index: "+index);
-
+               areasToShow= response.data.zoneDTOList.map((i, index)=> {
+                    if( i.activated===true){
+                        items.push(index);
 
                     }
-
+                   return setListZone(items)
                 })
 
-
-                console.log(" listzone: "+ listZone.zone.toString());
             })
+    }
+    const GetStatusOfAllZones=(floorId,date)=> {
+        let items=[];
+        let areasToShow ;
+        //setListZone([])
+        CheckStatusOfAllZones(floorId,date ).then(
+            response=> {
+              console.log(response.data)
+                areasToShow= response.data.map((i, index)=> {
 
+                        items.push(i.totalReservation);
+                        console.log("index :  "+index+"reserve"+i.totalReservation+"  perce:  "+i.bookedPercentage);
+                         return setStatus(items)
+                })
+      console.log("itms", items.toString())
 
-
+            })
     }
 
-*/
+    const [status , setStatus]= useState([]);
     // arrays for name of zone, style, and statistics
     const [statistic, setStatistic] = useState({
         Zone: ["Zone d", "Zone j", "Zone c", "Zone e", "Zone f", "Zone b", "Zone a"],
@@ -123,157 +136,96 @@ export function MapComponent() {
     // to update map areas when floor is clicked
     useEffect(() => {
         setQuery(Math.random());
+
     }, [mapAreas]);
 
-    // todo find solution to remove multi object from mapareas without copy areas every time
+    useEffect(() => {
+        CheckStatusOfAllZones(1,startDate ).then(
+            response=> {
+                console.log(response.data)
+
+            })
+
+    }, []);
     // handle onclick sone
     const enterArea = (area) => {
         console.log(area);
         setZone(area.id);
+
         handleShow();
     }
-
-    // floor 1 handle
+   // todo fix double click to show zone
+    // floor handle
     const handleClickFloor = (floor) => {
-        let items = [];// must be like parameter from api
+        GetStatusOfAllZones(floor, startDate)
         let areasToShow;
-        let statisticss = [10, 20, 30, 40, 50, 60, 10]; // must be like parameter from api
         setShowMaps(true);
-      //  getZoneList();
-      //  getZone(floor);
-     /*   areasToShow = listZone.zone.map(item => {
-            return areas[item]
-        })
-
-        setMapAreas({
-            name: "Floor 1",
-            areas: areasToShow
-        });*/
-        if (floor === 1) {
-            items = [5, 0];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [0, 0, 0, 0, 87, 0, statisticss[6]]
-            })
-            setMapAreas({
-                name: "Floor 1",
-                areas: areasToShow
-            });
-
-
-        } else if (floor === 2) {
-            items = [0, 1, 4, 5];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [0, 0, 0, statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
-            })
-
-            setMapAreas({
-                name: "Floor 2",
-                areas: areasToShow
-            });
-        } else if (floor === 3) {
-            items = [0, 1, 4, 5];
-
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-
-            setStatistic({
-                ...statistic,
-                Statistics: [0, 0, 0, statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
-            })
-            setMapAreas({
-                name: "Floor 3",
-                areas: areasToShow
-            });
-
-        } else if (floor === 4) {
-            items = [0, 1, 2,3, 4, 5];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
-            })
-            setMapAreas({
-                name: "Floor 4",
-                areas: areasToShow
-            });
-        } else if (floor === 5) {
-            items = [1, 2, 3, 4, 5];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], 0]
-            })
-            setMapAreas({
-                name: "Floor 4",
-                areas: areasToShow
-            });
-        } else if (floor === 6) {
-            items = [2, 3, 4];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], 0, 0, 0, 0]
-            })
-            setMapAreas({
-                name: "Floor 6",
-                areas: areasToShow
-            });
-        } else if (floor === 7) {
-            items = [3, 4];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], 0, 0, 0, 0, 0]
-            })
-            setMapAreas({
-                name: "Floor 7",
-                areas: areasToShow
-            });
-        }
+        console.log(" listzone: "+ listZone.toString());
+          getZone(floor);
+         areasToShow = listZone.map(item => {
+                 return areas[item]
+             })
+       setMapAreas({
+              name: floor,
+              areas: areasToShow
+          });
     }
-    var today = new Date();
-    const  date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
+    const [message , setMessage]=useState("");
+    const currentUser = AuthService.getCurrentUser();
+    const  ConfirmBooking= ()=>{
+            BookPlass(startDate, currentUser.id, Zone).then(
+                response=> {
+                    if (response.data.message=== "You already have booking on that day"){
+                        setShow(false);
+                        setMessage("You already have booking on that day");
+                    }else {
+                        setMessage(response.data.message);
+                        setTimeout(() => {
 
+                           setShow(false);
+                           // todo routing to my booking
+                        }, 2000);
+                    }
+                })
+    }
+    const today = new Date();
+    const maxDate=new Date (new Date(today.getFullYear(), today.getMonth(), today.getDay()+7,today.getHours(),today.getMinutes(),today.getSeconds()));
 
-
+    const [startDate, setStartDate] = useState(today);
+    const date=startDate.getFullYear() +'-' + (startDate.getMonth() + 1) + '-' + startDate.getDate();;
     return (
         <div className="container ">
-            <div>
-            <h2>New booking</h2>
+            <div className="text ">
+            <h2 className=" mr-5 mb-5">New booking</h2>
+            <p className="float-left ml-3">Choose a date and Double click on a floor to show zone.</p>
             </div>
-            <div className="row   top-row-btn">
 
-                <div className="btn-group  " role="group"
-                    aria-label="Basic example">
-                    <button type="button" className="btn btn-light">{date}</button>
-                    <button type="button" className="btn btn-light ml-2">Next</button>
-                </div>
+            <div className="col-md-6 ">
+
+                <div className="mb-5">
+                    {/* todo datapicker show under image when man choose a floor*/}
+                    <DatePicker
+                        selected={startDate}
+                        onChange={date => setStartDate(date)}
+                        startDate={startDate}
+                        minDate={startDate}
+                        maxDate={maxDate}
+                      className="btn btn-info position-fixed float-left"
+                   />
+
                 <Example
                     show={show}
                     onHide={handleClose}
                     name={mapAreas.name}
                     Zone={Zone}
+                    ConfirmBooking={ConfirmBooking}
+                    messages={message}
+                    dates={date}
                 />
-            </div>
-            <div className="row  ">
+                </div>
+
+
 
                 <div className="col d-sm-inline-block ">
 
@@ -288,7 +240,7 @@ export function MapComponent() {
                             {statistic.Style.map((x, i) =>
                                 <span className={statistic.Style[i]} key={i}>{statistic.Zone[i]}
                                     <br />
-                                    {statistic.Statistics[i]}%
+                                    {status[i]}%
                          </span>
                             )}
                         </div>
@@ -296,7 +248,7 @@ export function MapComponent() {
                             <img src={URL} width={300} alt="map"/></div>}
 
                 </div>
-                <div className="col-6 d-sm-inline-block ">
+                <div className="col-6 d-sm-inline-block mt-4">
                     <div className="btn-group">
                         {[...Array(7)].map((x, i) =>
                             <button className="btn btn-light mt-1 ml-1 mr-1 " key={i}

@@ -22,8 +22,12 @@ const NewPassword = (props) => {
 
         AuthService.resetPassword(email, password).then(
             Response => {
-
+                if (Response.message!== "you have used the old password"){
                 goToSignin();
+                }
+                setMessage({
+                    text: Response.message
+                })
             },
             error => {
                 const resMessage =
