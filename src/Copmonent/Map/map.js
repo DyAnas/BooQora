@@ -89,14 +89,15 @@ const [Color, setColor]=useState("")
         areas: [
         ]
     });
-    const [listZone, setListZone] = useState([]);
 // method to get all active zones
     const GetActiveZone=(floor)=> {
        let items=[];
        let areasToShow;
         getZoneList(floor).then(
             response=> {
+                console.log(response.data.zoneDTOList)
                 response.data.zoneDTOList.map((i, index)=> {
+                    areas[index].id=i.id
                     if( i.activated===true){
                         items.push(index);
                         return areas[index]
@@ -117,10 +118,12 @@ const [Color, setColor]=useState("")
         let items=[];
         CheckStatusOfAllZones(floorId,date ).then(
             response=> {
+
                 response.data.map((i, index)=> {
                         items.push(i.bookedPercentage);
                       // to change color of zone depend to percentage of booking
-                        if (i.bookedPercentage < 40){
+
+                    if (i.bookedPercentage < 40){
                         areas[index].preFillColor="#02f3af"
                         }else if(i.bookedPercentage > 40 || i.bookedPercentage < 70){
                             areas[index].preFillColor="#e7df8e"
@@ -157,13 +160,15 @@ const [Color, setColor]=useState("")
 
 
     }, []);
+
     // handle onclick sone
     const enterArea = (area) => {
         console.log(area);
-        setZoneID(area.id);
+        setZoneID(area.id); // todo send id that is in database
         setZone(area.zone)
         setMessage("");
         handleShow();
+
     }
     // floor handle
     const handleClickFloor = (floor) => {
