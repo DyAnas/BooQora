@@ -2,7 +2,7 @@ import React from "react";
 import { NavBar } from "./Navbar";
 import MapComponent  from "../Copmonent/Map/map";
 import "../Styles/newBooking.css";
-
+import MyBookings from "../Copmonent/Booking/myBooking";
 export const NewBooking = () => {
 
 

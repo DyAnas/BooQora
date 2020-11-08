@@ -31,7 +31,11 @@
     color: #548E6C;
 }
 
+.WithStyles\(ForwardRef\(TableCell\)\)-head-2 {
+    color: #fff;
+    background-color: #e257a3 !important;
 
+}
 .title {
     font-family: "Montserrat", sans-serif!important;
     font-size: 30px!important;
@@ -41,9 +45,13 @@
 
 }
 
+.MuiTableCell-root {
+    padding-bottom: 3px !important;
+    padding-left: 15px!important;
+    padding-top: 5px!important;
+}
 
-
-/* Zone A*/
+    /* Zone A*/
 
 .span1 {
     /*position: absolute;*/

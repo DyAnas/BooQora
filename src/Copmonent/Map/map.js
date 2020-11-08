@@ -72,7 +72,11 @@ const [Color, setColor]=useState("")
         },
 
     ];
-
+    const today = new Date();
+    const [startDate, setStartDate] = useState(today);
+    const date=startDate.getFullYear() +'-' + (startDate.getMonth() + 1) + '-' + startDate.getDate();
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 7);
     const [query, setQuery] = useState(1);
     //  handle dialog
     const [show, setShow] = useState(false);
@@ -144,8 +148,8 @@ const [Color, setColor]=useState("")
     // to update map areas when floor is clicked
     useEffect(() => {
            setQuery(Math.random());
-
-    }, [mapAreas]);
+          GetStatusOfAllZones(floor, startDate)
+    }, [mapAreas, startDate]);
     const [floor , setFloor]=useState(1)
     // todo create a method to check if employee have a booking on today
     useEffect(() => {
@@ -161,8 +165,6 @@ const [Color, setColor]=useState("")
         setMessage("");
         handleShow();
     }
-
-   // todo fix double click to show zone
     // floor handle
     const handleClickFloor = (floor) => {
         setMessage("")
@@ -195,17 +197,13 @@ const [Color, setColor]=useState("")
     }
     // handle calender
     // today and maxDate to show in calendar
-    const today = new Date();
-    const maxDate=new Date (new Date(today.getFullYear(), today.getMonth(), today.getDay()+7,today.getHours(),today.getMinutes(),today.getSeconds()));
 
-    const [startDate, setStartDate] = useState(today);
-    const date=startDate.getFullYear() +'-' + (startDate.getMonth() + 1) + '-' + startDate.getDate();;
     return (
         <div className="container ">
             <div className=" ">
             <h2 className=" ml-3 mb-2 mt-2  title">New booking</h2>
                 <br/>
-            <p className=" ml-3">Choose a date and Double click on a floor to show zone.</p>
+            <p className=" ml-3">Choose a date and click on a floor to show zone.</p>
             </div>
             <div className="center col-md-6">
                 <p style={{ color: "red"}}>{message}</p>
@@ -215,7 +213,6 @@ const [Color, setColor]=useState("")
             <div className="col-md-6 ">
 
                 <div className="mb-3">
-                    {/* todo datapicker show under image when man choose a floor*/}
                     <DatePicker
                         selected={startDate}
                         onChange={date => setStartDate(date)}

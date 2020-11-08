@@ -18,26 +18,9 @@ export async function getZoneList(floor) {
     return response;
     }
 
-export async function checkStatusOfAZoneOnADay(zoneId, date) {
-    let token= AuthService.getCurrentUser().token;
-    const response = await axios.post(api_url2, {
-
-           // Authorization: 'Bearer ' + token,
-            zoneId: 1,
-            date: date
-
-
-    }, {
-        headers:{
-            Authorization: 'Bearer ' + token,
-        }
-    })
-    return response;
-}
 export async function BookPlass(date, employeeId, zoneId ) {
     let token= AuthService.getCurrentUser().token;
     const response = await axios.post(api_url3+"bookings/book", {
-        // Authorization: 'Bearer ' + token,
         date: date,
         employeeId: employeeId,
         zoneId:zoneId
