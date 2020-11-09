@@ -11,11 +11,12 @@ import { NewBooking } from "./Container/newBooking";
 import { MyBooking } from "./Container/myBooking";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
 import resendConfirm from "./Copmonent/Login/resendActivation";
+import Statistics from "./Container/Statistics";
 class App extends Component {
 
   render() {
     return (
-      <div className=" vh-100">
+      <div className=" ">
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInContainer} />
@@ -33,6 +34,9 @@ class App extends Component {
             <ProtectedRoute
               path="/myBookings"
               component={MyBooking} />
+            <ProtectedRoute
+                path="/Statistics"
+                component={Statistics} />
             <ProtectedRoute
               path="/aboutBookora"
               component={About} />

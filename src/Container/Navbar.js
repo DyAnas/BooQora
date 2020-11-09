@@ -29,7 +29,7 @@ export const NavBar = (props) => {
                     <Link to="/aboutBookora" className="nav-link dropdown-toggle" data-toggle="dropdown">Admin</Link>
                     <div className="dropdown-menu">
                         {/* Edit href */}
-                        <Link to="/aboutBookora" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
+                        <Link to="/Statistics" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
                         <Link to="/aboutBookora" className="dropdown-item">Zone settings</Link>
                         <Link to="/aboutBookora" className="dropdown-item">Add new Admin</Link>
                     </div>

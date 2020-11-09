@@ -12,6 +12,7 @@ import AuthService from '../../Authentication/authUser';
 import {Button} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import DeletIcon from '@material-ui/icons/Delete';
+import TablePagination from '@material-ui/core/TablePagination';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -79,11 +80,19 @@ export default function MyBookings() {
         getAllBooking();
 
 
-    }, [ListBooking,]);
+    }, [ListBooking, ]);
     // todo create dialog to confirm deleting
-    // remove one booking
 
+    const [page, setPage] = React.useState(0);
+    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
 
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(+event.target.value);
+        setPage(0);
+    };
     // to show delete icon in cell
     const deleteIcon =index=>
         (<IconButton onClick={()=>removeBooking(index)}>
@@ -91,12 +100,12 @@ export default function MyBookings() {
             </IconButton>
         );
     return (
-        <div>
+        <div className="">
             <div className="center col-md-6">
                 <p style={{ color: "red"}}>{message}</p>
 
             </div>
-        <TableContainer component={Paper}>
+            <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
                 <TableHead className= "btn-group-sm">
                     <TableRow >
@@ -108,7 +117,7 @@ export default function MyBookings() {
                     </TableRow>
                 </TableHead>
                 <TableBody  className="table-body">
-                   {ListBooking.map((item, index) => (
+                   {ListBooking.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, index) => (
                         <StyledTableRow key={index}>
                             <StyledTableCell align="left">{item.bookingId}</StyledTableCell>
                             <StyledTableCell align="left">{item.date}</StyledTableCell>
@@ -117,13 +126,25 @@ export default function MyBookings() {
                             <StyledTableCell align="left"
 
                             >{deleteIcon(item.bookingId)}</StyledTableCell>
-                           {/* <IconButton className="m-2" variant="outlined" color="primary"
-                                    onClick={removeBooking(item.employeeId)}>Remove</IconButton>*/}
+
                         </StyledTableRow>
                     ))}
                 </TableBody>
             </Table>
+                <TablePagination
+                    rowsPerPageOptions={[5,10]}
+                    component="div"
+                    count={ListBooking.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onChangePage={handleChangePage}
+                    onChangeRowsPerPage={handleChangeRowsPerPage}
+                />
         </TableContainer>
-</div>
+
+
+
+        </div>
     );
 }
+
