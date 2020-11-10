@@ -3,242 +3,243 @@ import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
 import Example from "./DialogAlert";
 import "../../Styles/mapStyle.css";
+import {getZoneList, CheckStatusOfAllZones, BookPlass} from "../../service/mapService";
+import AuthService from '../../Authentication/authUser';
+import { Form } from 'react-bootstrap'
+import { withRouter } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const areas = [
+const MapComponent=(props)=> {
+const [Color, setColor]=useState("")
+    const areas = [
+        {
+            id:1,
+            zone:"Zone A",
+            shape: "poly",
+            coords: [235, 137, 235, 152, 216, 152, 212, 181, 221, 183, 217, 213, 284, 224, 295, 147],
+            preFillColor:  "",
+            fillColor: "#7fb775"
+        },
+        {
+            id:2,
+            zone:"Zone B",
+            shape: "poly",
+            coords: [86, 157, 88, 174, 82, 176, 84, 199, 98, 196, 102, 214, 190, 201, 180, 139],
+            preFillColor: "",
+            fillColor: "#7fb775"
+        },
+        {
+            id: 3,
+            zone:"Zone C",
+            shape: "poly",
+            coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
+            preFillColor: "",
+            fillColor: "#7fb775"
+        },
+        {
+            id: 4,
+            zone:"Zone D",
+            shape: "poly",
+            coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
+            preFillColor: "",
+            fillColor: "#7fb775"
+        },
 
-    {
-        id: "D",
-        shape: "poly",
-        coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
-        preFillColor: "#02f3af",
-        fillColor: "#7fb775"
-    },
+        {
+            id: 5,
+            zone:"Zone E",
+            shape: "poly",
+            coords: [67, 41, 64, 102, 154, 100, 156, 38],
+            preFillColor: "",
+            fillColor: "#7fb775"
+        },
+        {
+            id:6,
+            zone:"Zone F",
+            shape: "poly",
+            coords: [157, 39, 154, 100, 250, 98, 250, 91, 264, 91, 291, 35],
+            preFillColor: "#02f3af",
+            fillColor: "#7fb775"
+        },
+        {
+            id: 7,
+            zone:"Zone G",
+            shape: "poly",
+            coords: [15, 105, 63, 104, 63, 151, 41, 170, 11, 172],
+            preFillColor: "",
+            fillColor: "#7fb775"
+        },
 
-
-    {
-        id: "J",
-        shape: "poly",
-        coords: [15, 105, 63, 104, 63, 151, 41, 170, 11, 172],
-        preFillColor: "#e7df8e",
-        fillColor: "#7fb775"
-    },
-
-    {
-        id: "C",
-        shape: "poly",
-        coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
-        preFillColor: "#02f3af",
-        fillColor: "#7fb775"
-    },
-
-    {
-        id: "E",
-        shape: "poly",
-        coords: [67, 41, 64, 102, 154, 100, 156, 38],
-        preFillColor: "#e7df8e",
-        fillColor: "#7fb775"
-    },
-
-    {
-        id:"F",
-        shape: "poly",
-        coords: [157, 39, 154, 100, 250, 98, 250, 91, 264, 91, 291, 35],
-        preFillColor: "#02f3af",
-        fillColor: "#7fb775"
-    },
-
-    {
-        id:"B",
-        shape: "poly",
-        coords: [86, 157, 88, 174, 82, 176, 84, 199, 98, 196, 102, 214, 190, 201, 180, 139],
-        preFillColor: "#e5787c",
-        fillColor: "#7fb775"
-    },
-
-    {
-        id:"A",
-        shape: "poly",
-        coords: [235, 137, 235, 152, 216, 152, 212, 181, 221, 183, 217, 213, 284, 224, 295, 147],
-        preFillColor: "#e5787c",
-        fillColor: "#7fb775"
-    },
-];
-
-export function MapComponent() {
+    ];
+    const today = new Date();
+    const [startDate, setStartDate] = useState(today);
+    const date=startDate.getFullYear() +'-' + (startDate.getMonth() + 1) + '-' + startDate.getDate();
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 7);
     const [query, setQuery] = useState(1);
     //  handle dialog
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [Zone, setZone] = useState("");
+    const [ZoneID, setZoneID] = useState();
+    const [Zone, setZone] = useState();
     const [mapAreas, setMapAreas] = useState({
         name: "choose a floor",
         areas: [
-            areas[0],
-            areas[2],
-            areas[3],
-            areas[4],
-            areas[5]
         ]
     });
+// method to get all active zones
+    const GetActiveZone=(floor)=> {
+       let items=[];
+       let areasToShow;
+        getZoneList(floor).then(
+            response=> {
+                console.log(response.data.zoneDTOList)
+                response.data.zoneDTOList.map((i, index)=> {
+                    areas[index].id=i.id
+                    if( i.activated===true){
+                        items.push(index);
+                        return areas[index]
+                    }
+                })
+                areasToShow= items.map(item=> {
+                    return areas[item]
+                })
+                setMapAreas({
+                    name: floor.toString(),
+                    areas: areasToShow
+                })
+               // return setListZone(items)
+            })
+    }
+    // method to get all statistics of zones
+    const GetStatusOfAllZones=(floorId,date)=> {
+        let items=[];
+        CheckStatusOfAllZones(floorId,date ).then(
+            response=> {
+
+                response.data.map((i, index)=> {
+                        items.push(i.bookedPercentage);
+                      // to change color of zone depend to percentage of booking
+
+                    if (i.bookedPercentage < 40){
+                        areas[index].preFillColor="#02f3af"
+                        }else if(i.bookedPercentage > 40 || i.bookedPercentage < 70){
+                            areas[index].preFillColor="#e7df8e"
+                        }
+                        else {
+                            areas[index].preFillColor="#7fb775"
+                        }
+
+                })
+                return setStatus(items)
+
+
+            })
+    }
+
+    const [status , setStatus]= useState([]);
     // arrays for name of zone, style, and statistics
     const [statistic, setStatistic] = useState({
-        Zone: ["Zone d", "Zone j", "Zone c", "Zone e", "Zone f", "Zone b", "Zone a"],
-        Style: ["span1", "span2", "span3", "span4", "span5", "span6", "span7"],
-        Statistics: [0, 0, 0, 0, 0, 0, 0]
+        Style: ["span1  position-absolute", "span2  position-absolute", "span3  position-absolute",
+            "span4  position-absolute", "span5  position-absolute", "span6  position-absolute", "span7  position-absolute"],
+
     });
-    // to show maps when today is clicked
-    const [showMaps, setShowMaps] = useState(false);
+
 
     // to update map areas when floor is clicked
     useEffect(() => {
-        setQuery(Math.random());
-    }, [mapAreas]);
+           setQuery(Math.random());
+          GetStatusOfAllZones(floor, startDate)
+    }, [mapAreas, startDate]);
+    const [floor , setFloor]=useState(1)
+    // todo create a method to check if employee have a booking on today
+    useEffect(() => {
+        // todo method send date and employee id and get response boolean if he have a booking
 
-    // todo find solution to remove multi object from mapareas without copy areas every time
+
+    }, []);
+
     // handle onclick sone
     const enterArea = (area) => {
         console.log(area);
-        setZone(area.id);
+        setZoneID(area.id); // todo send id that is in database
+        setZone(area.zone)
+        setMessage("");
         handleShow();
-    }
 
-    // floor 1 handle
+    }
+    // floor handle
     const handleClickFloor = (floor) => {
-        let items = [];// must be like parameter from api
-        let areasToShow;
-        let statisticss = [10, 20, 30, 40, 50, 60, 10]; // must be like parameter from api
-        setShowMaps(true);
-        if (floor === 1) {
-            items = [4, 6];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [0, 0, 0, 0, 87, 0, statisticss[6]]
-            })
-            setMapAreas({
-                name: "Floor 1",
-                areas: areasToShow
-            });
+        setMessage("")
+        GetStatusOfAllZones(floor, startDate)
+        GetActiveZone(floor);
+        setFloor(floor)
 
-
-        } else if (floor === 2) {
-            items = [3, 4, 5, 6];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [0, 0, 0, statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
-            })
-
-            setMapAreas({
-                name: "Floor 2",
-                areas: areasToShow
-            });
-        } else if (floor === 3) {
-            items = [3, 4, 5, 6];
-
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-
-            setStatistic({
-                ...statistic,
-                Statistics: [0, 0, 0, statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
-            })
-            setMapAreas({
-                name: "Floor 3",
-                areas: areasToShow
-            });
-
-        } else if (floor === 4) {
-            items = [0, 2, 3, 4, 5, 6];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], statisticss[6]]
-            })
-            setMapAreas({
-                name: "Floor 4",
-                areas: areasToShow
-            });
-        } else if (floor === 5) {
-            items = [0, 2, 3, 4, 5];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], statisticss[4], statisticss[5], 0]
-            })
-            setMapAreas({
-                name: "Floor 4",
-                areas: areasToShow
-            });
-        } else if (floor === 6) {
-            items = [0, 3, 2];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], statisticss[3], 0, 0, 0, 0]
-            })
-            setMapAreas({
-                name: "Floor 6",
-                areas: areasToShow
-            });
-        } else if (floor === 7) {
-            items = [0, 2];
-            areasToShow = items.map(item => {
-                return areas[item]
-            })
-            setStatistic({
-                ...statistic,
-                Statistics: [statisticss[0], 0, statisticss[2], 0, 0, 0, 0, 0]
-            })
-            setMapAreas({
-                name: "Floor 7",
-                areas: areasToShow
-            });
-        }
     }
-    var today = new Date();
-    const  date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    const ShowDialog = () => {
+        setTimeout(() => {
+             setShow(false)
+            props.history.push("/myBookings");
+        }, 3000);
+        setShow(true);
+    }
 
-
-
+    const [message , setMessage]=useState("");
+    const currentUser = AuthService.getCurrentUser();
+    const  ConfirmBooking= ()=>{
+            BookPlass(startDate, currentUser.id, ZoneID).then(
+                response=> {
+                    if (response.data.message=== "You already have booking on that day"){
+                        setShow(false);
+                        setMessage("You already have booking on that day");
+                    }else {
+                        setMessage(response.data.message);
+                        ShowDialog();
+                    }
+                })
+    }
+    // handle calender
+    // today and maxDate to show in calendar
 
     return (
         <div className="container ">
-            <div>
-            <h2>New booking</h2>
+            <div className=" ">
+            <h2 className=" ml-3 mb-2 mt-2  title">New booking</h2>
+                <br/>
+            <p className=" ml-3">Choose a date and click on a floor to show zone.</p>
             </div>
-            <div className="row   top-row-btn">
+            <div className="center col-md-6">
+                <p style={{ color: "red"}}>{message}</p>
 
-                <div className="btn-group  " role="group"
-                    aria-label="Basic example">
-                    <button type="button" className="btn btn-light">{date}</button>
-                    <button type="button" className="btn btn-light ml-2">Next</button>
-                </div>
+            </div>
+
+            <div className="col-md-6 ">
+
+                <div className="mb-3">
+                    <DatePicker
+                        selected={startDate}
+                        onChange={date => setStartDate(date)}
+                        startDate={startDate}
+                        minDate={today}
+                        maxDate={maxDate}
+                      className="btn btn-info Calendar1 float-left"
+                   />
+
                 <Example
                     show={show}
                     onHide={handleClose}
                     name={mapAreas.name}
                     Zone={Zone}
+                    ConfirmBooking={ConfirmBooking}
+                    messages={message}
+                    dates={date}
                 />
-            </div>
-            <div className="row  ">
+                </div>
 
-                <div className="col d-sm-inline-block ">
-
-                    {showMaps ?
-                        <div className="" >
+                <div className="col d-sm-inline-block  ">
+                        <div className="images" >
                             <ImageMapper
                                 src={`${URL}?${query}`}
                                 map={mapAreas}
@@ -246,21 +247,21 @@ export function MapComponent() {
                                 onClick={enterArea}
                             />
                             {statistic.Style.map((x, i) =>
-                                <span className={statistic.Style[i]} key={i}>{statistic.Zone[i]}
+
+                                <span className={statistic.Style[i]} key={i}> {areas[i].zone}
                                     <br />
-                                    {statistic.Statistics[i]}%
+                                    {status[i]}%
+
                          </span>
                             )}
                         </div>
-                        : <div>
-                            <img src={URL} width={300} alt="map"/></div>}
 
                 </div>
-                <div className="col-6 d-sm-inline-block ">
+                <div className="col-6 d-sm-inline-block mt-4">
                     <div className="btn-group">
                         {[...Array(7)].map((x, i) =>
                             <button className="btn btn-light mt-1 ml-1 mr-1 " key={i}
-                                onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
+                                onClick={() => handleClickFloor(i + 1)} >{i + 1}</button>
                         )}
                     </div>
                 </div>
@@ -271,4 +272,5 @@ export function MapComponent() {
 
     );
 }
+export default withRouter(MapComponent);
 

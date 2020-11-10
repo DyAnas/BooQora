@@ -1,0 +1,17 @@
+.mainRow{
+    padding: 10px;
+    background-color: white;
+    border-radius: 25px;
+    
+}
+
+.table  {
+    text-align: center;
+    
+}
+
+.table th {
+    vertical-align: middle;
+
+}
+

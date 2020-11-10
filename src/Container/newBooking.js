@@ -1,18 +1,18 @@
 import React from "react";
 import { NavBar } from "./Navbar";
-import { MapComponent } from "../Copmonent/Map/map";
+import MapComponent  from "../Copmonent/Map/map";
 import "../Styles/newBooking.css";
-
+import MyBookings from "../Copmonent/Booking/myBooking";
 export const NewBooking = () => {
 
 
 
     return (
         <div>
-            <div className="container newbookingCont ">
+            <div className="container  ">
                 <NavBar />
 
-                <div className="row justify-content-center newbookingRow" >
+                <div className="row justify-content-center box" >
 
                     <div className="col-6-sm">
                         <MapComponent />

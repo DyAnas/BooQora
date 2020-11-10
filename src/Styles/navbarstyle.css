@@ -8,7 +8,7 @@
      }
 
 .nav-item, .nav-link{ 
-    color: #242323 !important;
+    color: #a2056d !important;
     padding-left: 10px;
     
 }
@@ -20,8 +20,8 @@
 }
 
 .nav-item:hover {
-    background-color: rgb(210, 168, 235);
-    border-radius: 20px;
+    background-color: #d787aa;
+
     opacity: 0.9;
     
 }

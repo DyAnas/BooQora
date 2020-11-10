@@ -23,7 +23,7 @@ const ForgotPassword = (props) => {
 
                 </div>
                 <div className="center">
-                    <form onSubmit={props.onSubmit}>
+                    <form style={{ width:"80%"}} onSubmit={props.onSubmit}>
                         <TextField
                             name="email"
                             error={props.error}

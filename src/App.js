@@ -9,16 +9,19 @@ import { Home } from './Container/home'
 import { About } from './Container/aboutBookora';
 import { NewBooking } from "./Container/newBooking";
 import { MyBooking } from "./Container/myBooking";
+import { ZoneSettings } from "./Copmonent/AdminPages/ZoneSettings";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
+import resendConfirm from "./Copmonent/Login/resendActivation";
 class App extends Component {
 
   render() {
     return (
-      <div className="background vh-100">
+      <div className=" vh-100">
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInContainer} />
             <Route path="/signup" component={SignUpContainer} />
+            <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
             <ProtectedRoute path="/NewPassword" component={NewPassword} />
             <ProtectedRoute
@@ -34,7 +37,11 @@ class App extends Component {
             <ProtectedRoute
               path="/aboutBookora"
               component={About} />
+               <ProtectedRoute
+              path="/zonesettings"
+              component={ZoneSettings} />
             <Route path="*" component={() => "404 Not Found "} />
+            
           </Switch>
 
         </BrowserRouter>

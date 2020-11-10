@@ -93,11 +93,11 @@ const SignInContainer = (props) => {
         })
         setLoading(true);
         AuthService.ResendActivation(email).then(
-            // todo Response.message show wrong message(User registered successfully!)
+
             Response => {
                 setLoading(false)
                 setMessage({
-                    text: "Code is sent!! Check your email",
+                    text: Response.message,
 
                 })
             })
@@ -130,7 +130,7 @@ const SignInContainer = (props) => {
 
                 </div>
                 <div className="center">
-                    <form onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
+                    <form style={{ width:"85%"}} onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
                         <TextField
                             name="email"
                             error={!!errors.email}
