@@ -130,7 +130,7 @@ const SignInContainer = (props) => {
 
                 </div>
                 <div className="center">
-                    <form onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
+                    <form style={{ width:"85%"}} onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
                         <TextField
                             name="email"
                             error={!!errors.email}

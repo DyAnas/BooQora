@@ -95,7 +95,7 @@ const SignUpContainer=(props ) => {
 
                     </div>
                     <div className="center">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form style={{ width:"85%"}} onSubmit={handleSubmit(onSubmit)}>
                             <TextField
                                 name="firstName"
                                 id="firstName"
