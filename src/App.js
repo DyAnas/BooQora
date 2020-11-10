@@ -12,6 +12,8 @@ import { MyBooking } from "./Container/myBooking";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
 import resendConfirm from "./Copmonent/Login/resendActivation";
 import Statistics from "./Container/Statistics";
+import StatusFloor from "./Copmonent/Statistics/Chart";
+import ChartContainer from "./Container/ChartContainer"
 class App extends Component {
 
   render() {
@@ -40,6 +42,9 @@ class App extends Component {
             <ProtectedRoute
               path="/aboutBookora"
               component={About} />
+            <ProtectedRoute
+                path="/StatusFloor"
+                component={ChartContainer} />
             <Route path="*" component={() => "404 Not Found "} />
           </Switch>
 
