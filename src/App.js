@@ -9,6 +9,7 @@ import { Home } from './Container/home'
 import { About } from './Container/aboutBookora';
 import { NewBooking } from "./Container/newBooking";
 import { MyBooking } from "./Container/myBooking";
+import { ZoneSettings } from "./Copmonent/AdminPages/ZoneSettings";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
 import resendConfirm from "./Copmonent/Login/resendActivation";
 class App extends Component {
@@ -36,7 +37,11 @@ class App extends Component {
             <ProtectedRoute
               path="/aboutBookora"
               component={About} />
+               <ProtectedRoute
+              path="/zonesettings"
+              component={ZoneSettings} />
             <Route path="*" component={() => "404 Not Found "} />
+            
           </Switch>
 
         </BrowserRouter>

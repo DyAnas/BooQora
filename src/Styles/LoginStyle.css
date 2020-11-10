@@ -9,11 +9,10 @@
 
 
 form {
-    width: 85%!important;
     text-align: center!important;
-
-
 }
+
+
 .background_input {
     background: #cbeffc !important;
     width: 100% !important;
@@ -114,7 +113,7 @@ label {
         width: 100% !important;
     }
     form {
-        width: 16rem!important;
+        
         text-align: center!important;
 
 

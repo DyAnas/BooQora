@@ -30,7 +30,7 @@ export const NavBar = (props) => {
                     <div className="dropdown-menu">
                         {/* Edit href */}
                         <Link to="/aboutBookora" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
-                        <Link to="/aboutBookora" className="dropdown-item">Zone settings</Link>
+                        <Link to="/zonesettings" className="dropdown-item">Zone settings</Link>
                         <Link to="/aboutBookora" className="dropdown-item">Add new Admin</Link>
                     </div>
                 </div>
