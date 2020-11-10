@@ -5,13 +5,11 @@ import Example from "./DialogAlert";
 import "../../Styles/mapStyle.css";
 import {getZoneList, CheckStatusOfAllZones, BookPlass} from "../../service/mapService";
 import AuthService from '../../Authentication/authUser';
-import { Form } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const MapComponent=(props)=> {
-const [Color, setColor]=useState("")
     const areas = [
         {
             id:1,
@@ -129,12 +127,12 @@ const [Color, setColor]=useState("")
                       // to change color of zone depend to percentage of booking
 
                     if (i.bookedPercentage < 40){
-                        areas[index].preFillColor="#02f3af"
+                        areas[index].preFillColor='rgb(158,233,162)'
                         }else if(i.bookedPercentage > 40 || i.bookedPercentage < 70){
-                            areas[index].preFillColor="#e7df8e"
+                            areas[index].preFillColor='rgba(255, 206, 86, 0.6)';
                         }
                         else {
-                            areas[index].preFillColor="#7fb775"
+                            areas[index].preFillColor='rgba(255, 99, 132, 0.6)';
                         }
 
                 })

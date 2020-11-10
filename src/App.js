@@ -12,11 +12,13 @@ import { MyBooking } from "./Container/myBooking";
 import { ZoneSettings } from "./Copmonent/AdminPages/ZoneSettings";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
 import resendConfirm from "./Copmonent/Login/resendActivation";
+import ChartContainer from "./Container/ChartContainer";
+import Statistics from "./Container/Statistics";
 class App extends Component {
 
   render() {
     return (
-      <div className=" vh-100">
+      <div className=" mvh-100">
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInContainer} />
@@ -40,6 +42,12 @@ class App extends Component {
                <ProtectedRoute
               path="/zonesettings"
               component={ZoneSettings} />
+            <ProtectedRoute
+                path="/StatusFloor"
+                component={ChartContainer} />
+            <ProtectedRoute
+                path="/Statistics"
+                component={Statistics} />
             <Route path="*" component={() => "404 Not Found "} />
             
           </Switch>

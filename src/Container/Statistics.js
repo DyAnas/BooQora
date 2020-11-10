@@ -6,13 +6,13 @@ import MyBookings from "../Copmonent/Booking/myBooking";
  const Statistics= ()=> {
 
      return(
-         <div className="container">
+         <div className="container ">
              <NavBar />
              <div className="box ">
                  <div className="container ">
                      <div className=" row center">
                          <div className=" col-sm-6">
-                             <h2 className="  title">My booking</h2>
+                             <h2 className="  title">All Booking</h2>
                              <br/>
                              <p className=" ml-3">Here is a weekly booking</p>
 

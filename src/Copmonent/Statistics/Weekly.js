@@ -13,6 +13,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import DatePicker from "react-datepicker";
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import 'bootstrap-daterangepicker/daterangepicker.css';
+
+
 const StyledTableCell = withStyles((theme) => ({
     head: {
         backgroundColor: theme.palette.common.black,
@@ -56,18 +58,18 @@ export default function WeeklyStatistics() {
     const [message , setMessage]=useState("");
     // todo add floor to list
 
-    const getAllBooking =(startDate, endDate)=> {
+    const getAllBooking =()=> {
         console.log(endDate)
-        getAllBookingOfEmployeeInAPeriod(email, startDate, endDate).then(
+        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
             response =>{
-                setListBooking(response.data.bookingToshowDtoLists);
+                setListBooking(response.data.bookingofEmployeeDTOList);
 
             })
     }
 
     useEffect(() => {
+        getAllBooking();
 
-        getAllBooking(startDate, endDate);
 
 
     }, [startDate, endDate]);
@@ -93,11 +95,29 @@ export default function WeeklyStatistics() {
 
             </div>
             <div className="container">
-                <DateRangePicker
-                    initialSettings={{ startDate: startDate, endDate: endDate}}
-                >
-                    <button className="btn-info mb-4">Click Me To Open Picker!</button>
-                </DateRangePicker>
+                <div className="row">
+                    <div className="col-md-6 labelsDate">
+                        <labels style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </labels>
+                <DatePicker
+                    selected={startDate}
+                    onChange={date => setStartDate(date)}
+                    startDate={startDate}
+                    clearAriaLabel="From"
+                    className="btn btn-info Calendar1 float-left"
+                />
+                    </div>
+                        <div className="col-md-6">
+                            <labels style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </labels>
+                <DatePicker
+                    selected={endDate}
+                    onChange={date => setEndDate(date)}
+                    startDate={startDate}
+
+                    className="btn btn-info Calendar1 float-left"
+                />
+
+                    </div>
+                </div>
             </div>
             <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="customized table">
@@ -107,6 +127,7 @@ export default function WeeklyStatistics() {
                             <StyledTableCell align="left">Date&nbsp;</StyledTableCell>
                             <StyledTableCell align="left">Floor&nbsp;</StyledTableCell>
                             <StyledTableCell align="left">Zone&nbsp;</StyledTableCell>
+                            <StyledTableCell align="left">Email&nbsp;</StyledTableCell>
 
                         </TableRow>
                     </TableHead>
@@ -117,6 +138,7 @@ export default function WeeklyStatistics() {
                                 <StyledTableCell align="left">{item.date}</StyledTableCell>
                                 <StyledTableCell align="left">{item.floor}</StyledTableCell>
                                 <StyledTableCell align="left">{item.zoneName}</StyledTableCell>
+                                <StyledTableCell align="left">{item.email}</StyledTableCell>
 
 
                             </StyledTableRow>
@@ -124,7 +146,7 @@ export default function WeeklyStatistics() {
                     </TableBody>
                 </Table>
                 <TablePagination
-                    rowsPerPageOptions={[5,10]}
+                    rowsPerPageOptions={[5,10, 25, 50]}
                     component="div"
                     count={ListBooking.length}
                     rowsPerPage={rowsPerPage}
