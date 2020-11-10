@@ -2,14 +2,12 @@ import axios from "axios";
 import AuthService from '../Authentication/authUser';
 
 const api_url = "http://localhost:8080/api/v1/bookings/";
-const api_url2="http://localhost:8080/api/v1/zones/"
-const api_url3 = "http://localhost:8080/api/v1/"
 
 
-export async function getAllBookingOfEmployeeInAPeriod (email, from, to) {
+
+export async function getAllBookingOfEmployeeInAPeriod ( from, to) {
     let token= AuthService.getCurrentUser().token;
-    const response = await axios.post(api_url+"getAllBookingOfEmployeeInAPeriod", {
-        email:email,
+    const response = await axios.post(api_url+"getAllBookingOfEmployeesInAPeriodAdmin", {
         from: from,
         to: to
     }, {
@@ -20,7 +18,7 @@ export async function getAllBookingOfEmployeeInAPeriod (email, from, to) {
     return response;
 }
 
-export async function DeleteBookings (bookingId) {
+    export async function DeleteBookings (bookingId) {
     let token= AuthService.getCurrentUser().token;
     const response = await axios.post(api_url+"deleteBooking", {
         bookingId:bookingId
@@ -31,4 +29,5 @@ export async function DeleteBookings (bookingId) {
     })
     return response;
 }
+
 

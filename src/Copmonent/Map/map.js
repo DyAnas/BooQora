@@ -5,13 +5,11 @@ import Example from "./DialogAlert";
 import "../../Styles/mapStyle.css";
 import {getZoneList, CheckStatusOfAllZones, BookPlass} from "../../service/mapService";
 import AuthService from '../../Authentication/authUser';
-import { Form } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const MapComponent=(props)=> {
-const [Color, setColor]=useState("")
     const areas = [
         {
             id:1,
@@ -72,16 +70,21 @@ const [Color, setColor]=useState("")
         },
 
     ];
+    const [query, setQuery] = useState(1);
+    // handle calender
+    // today and maxDate to show in calendar
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
     const date=startDate.getFullYear() +'-' + (startDate.getMonth() + 1) + '-' + startDate.getDate();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
-    const [query, setQuery] = useState(1);
+
     //  handle dialog
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    // handle zone
     const [ZoneID, setZoneID] = useState();
     const [Zone, setZone] = useState();
     const [mapAreas, setMapAreas] = useState({
@@ -100,7 +103,7 @@ const [Color, setColor]=useState("")
                     areas[index].id=i.id
                     if( i.activated===true){
                         items.push(index);
-                        return areas[index]
+
                     }
                 })
                 areasToShow= items.map(item=> {
@@ -110,7 +113,7 @@ const [Color, setColor]=useState("")
                     name: floor.toString(),
                     areas: areasToShow
                 })
-               // return setListZone(items)
+
             })
     }
     // method to get all statistics of zones
@@ -124,12 +127,12 @@ const [Color, setColor]=useState("")
                       // to change color of zone depend to percentage of booking
 
                     if (i.bookedPercentage < 40){
-                        areas[index].preFillColor="#02f3af"
+                        areas[index].preFillColor='rgb(158,233,162)'
                         }else if(i.bookedPercentage > 40 || i.bookedPercentage < 70){
-                            areas[index].preFillColor="#e7df8e"
+                            areas[index].preFillColor='rgba(255, 206, 86, 0.6)';
                         }
                         else {
-                            areas[index].preFillColor="#7fb775"
+                            areas[index].preFillColor='rgba(255, 99, 132, 0.6)';
                         }
 
                 })
@@ -140,31 +143,22 @@ const [Color, setColor]=useState("")
     }
 
     const [status , setStatus]= useState([]);
-    // arrays for name of zone, style, and statistics
-    const [statistic, setStatistic] = useState({
-        Style: ["span1  position-absolute", "span2  position-absolute", "span3  position-absolute",
-            "span4  position-absolute", "span5  position-absolute", "span6  position-absolute", "span7  position-absolute"],
-
-    });
+    // arrays style of zone
+    const  Style =["span1  position-absolute", "span2  position-absolute", "span3  position-absolute",
+            "span4  position-absolute", "span5  position-absolute", "span6  position-absolute", "span7  position-absolute"];
 
 
-    // to update map areas when floor is clicked
+    // to update map areas when floor is clicked and date is changed
     useEffect(() => {
            setQuery(Math.random());
           GetStatusOfAllZones(floor, startDate)
     }, [mapAreas, startDate]);
     const [floor , setFloor]=useState(1)
-    // todo create a method to check if employee have a booking on today
-    useEffect(() => {
-        // todo method send date and employee id and get response boolean if he have a booking
 
-
-    }, []);
-
-    // handle onclick sone
+    // handle onclick zone
     const enterArea = (area) => {
         console.log(area);
-        setZoneID(area.id); // todo send id that is in database
+        setZoneID(area.id);
         setZone(area.zone)
         setMessage("");
         handleShow();
@@ -187,6 +181,7 @@ const [Color, setColor]=useState("")
     }
 
     const [message , setMessage]=useState("");
+    // confirm booking
     const currentUser = AuthService.getCurrentUser();
     const  ConfirmBooking= ()=>{
             BookPlass(startDate, currentUser.id, ZoneID).then(
@@ -200,8 +195,7 @@ const [Color, setColor]=useState("")
                     }
                 })
     }
-    // handle calender
-    // today and maxDate to show in calendar
+
 
     return (
         <div className="container ">
@@ -246,9 +240,9 @@ const [Color, setColor]=useState("")
                                 width={300}
                                 onClick={enterArea}
                             />
-                            {statistic.Style.map((x, i) =>
+                            {Style.map((x, i) =>
 
-                                <span className={statistic.Style[i]} key={i}> {areas[i].zone}
+                                <span className={Style[i]} key={i}> {areas[i].zone}
                                     <br />
                                     {status[i]}%
 

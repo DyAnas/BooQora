@@ -22,7 +22,7 @@ const SignInContainer = (props) => {
     const SignIn = () => {
         setTimeout(() => {
 
-            props.history.push("/home");
+            props.history.push("/newBooking");
         }, 2000);
         setLoading(true);
     }

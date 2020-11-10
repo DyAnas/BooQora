@@ -11,7 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export const NavBar = (props) => {
-
+const currentUser= AuthService.getCurrentUser().roles;
+console.log(currentUser.toString())
 
     return <nav className="navbar navbar-expand-md navbar-light bg-light " >
         <Link to="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></Link>
@@ -24,19 +25,21 @@ export const NavBar = (props) => {
                 <Link to="/home" className="nav-item nav-link"><FontAwesomeIcon icon={faHome} /> Home</Link>
                 <Link to="/newBooking" className="nav-item nav-link active"><FontAwesomeIcon icon={faCalendarCheck} /> New Booking</Link>
                 <Link to="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Booking</Link>
-
+                {currentUser[1]==="ROLE_ADMIN" || currentUser[0]==="ROLE_ADMIN" &&
                 <div className="nav-item dropdown">
                     <Link to="/aboutBookora" className="nav-link dropdown-toggle" data-toggle="dropdown">Admin</Link>
                     <div className="dropdown-menu">
                         {/* Edit href */}
-                        <Link to="/aboutBookora" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
+                        <Link to="/Statistics" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
                         <Link to="/zonesettings" className="dropdown-item">Zone settings</Link>
                         <Link to="/aboutBookora" className="dropdown-item">Add new Admin</Link>
+                        <Link to="/StatusFloor" className="dropdown-item">Status floor</Link>
                     </div>
                 </div>
+                }
                 <Link to="/aboutBookora" className="nav-item nav-link">About Bookora</Link>
             </div>
-            {AuthService.   getCurrentUser() ?
+            {AuthService.getCurrentUser() ?
 
                 <div className="navbar-nav">
                     <Link to="#" className="nav-item nav-link" onClick={() => {
