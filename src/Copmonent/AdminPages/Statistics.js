@@ -1,9 +1,7 @@
 import React from "react";
-import WeeklyStatistics from "../Copmonent/Statistics/Weekly";
-import {NavBar} from "./Navbar";
-import MyBookings from "../Copmonent/Booking/myBooking";
-
- const Statistics= ()=> {
+import WeeklyStatistics from "../AdminPages/Statistics/Weekly";
+import {NavBar} from "../../Container/Navbar";
+ const Archive= ()=> {
 
      return(
          <div className="container ">
@@ -28,4 +26,4 @@ import MyBookings from "../Copmonent/Booking/myBooking";
      )
 
 }
-export default Statistics;
+export default Archive;

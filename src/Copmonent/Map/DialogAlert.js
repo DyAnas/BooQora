@@ -2,10 +2,6 @@ import React from "react";
 import { Modal, Button,Form } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Example(props) {
-    var today = new Date();
-    const  date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-
     return (
         <>
 

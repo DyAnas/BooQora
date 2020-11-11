@@ -9,7 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { getAllBookingOfEmployeeInAPeriod, DeleteBookings } from "../../service/bookingService";
 import AuthService from '../../Authentication/authUser';
-import { Button } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import DeletIcon from '@material-ui/icons/Delete';
 
@@ -59,7 +58,9 @@ export default function MyBookings() {
     const getAllBooking = () => {
         getAllBookingOfEmployeeInAPeriod(email, from, to).then(
             response => {
+                
                 setListBooking(response.data.bookingToshowDtoLists);
+                
             })
     }
     const removeBooking = (item) => {
@@ -79,7 +80,7 @@ export default function MyBookings() {
         getAllBooking();
 
 
-    }, [ListBooking,]);
+    }, [ListBooking]);
     // todo create dialog to confirm deleting
     // remove one booking
 

@@ -40,9 +40,7 @@ export default function AlertDialogSlide(props) {
                       resend confirmation
                     </Button>
                    }
-               {/*      <Button onClick={props.onHide} color="primary">
-                        Cancel
-                    </Button>*/}
+        
                 </DialogActions>
             </Dialog>
         </div>

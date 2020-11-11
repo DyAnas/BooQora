@@ -5,7 +5,6 @@ import SignUpContainer from "./Container/SignUpContainer";
 import SignInContainer from './Container/SignInContainer'
 import { ProtectedRoute } from "./Authentication/protectedRoute";
 import NewPassword from "./Copmonent/Login/NewPassword";
-import { Home } from './Container/home'
 import { About } from './Container/aboutBookora';
 import { NewBooking } from "./Container/newBooking";
 import { MyBooking } from "./Container/myBooking";
@@ -13,7 +12,8 @@ import { ZoneSettings } from "./Copmonent/AdminPages/ZoneSettings";
 import ContainerForgotPassword from "./Container/ContainerForgotpassword";
 import resendConfirm from "./Copmonent/Login/resendActivation";
 import ChartContainer from "./Container/ChartContainer";
-import Statistics from "./Container/Statistics";
+import Archive from "./Copmonent/AdminPages/Statistics";
+import { NotFoundPage } from "../src/Container/NotFoundPage";
 class App extends Component {
 
   render() {
@@ -25,10 +25,7 @@ class App extends Component {
             <Route path="/signup" component={SignUpContainer} />
             <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
-            <ProtectedRoute path="/NewPassword" component={NewPassword} />
-            <ProtectedRoute
-              path="/home"
-              component={Home} />
+            <ProtectedRoute path="/NewPassword" component={NewPassword} />           
             <ProtectedRoute
               path="/newBooking"
               component={NewBooking} />
@@ -43,12 +40,12 @@ class App extends Component {
               path="/zonesettings"
               component={ZoneSettings} />
             <ProtectedRoute
-                path="/StatusFloor"
+                path="/statistics"
                 component={ChartContainer} />
             <ProtectedRoute
-                path="/Statistics"
-                component={Statistics} />
-            <Route path="*" component={() => "404 Not Found "} />
+                path="/archive"
+                component={Archive} />
+            <Route path="*" component={NotFoundPage} />
             
           </Switch>
 
