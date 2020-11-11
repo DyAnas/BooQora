@@ -15,18 +15,24 @@ export const ZoneSettings = () => {
     const [message, setMessage] = useState("Choose a floor to edit")
 
     useEffect(() => {
+
+        setChooseZone("Choose Zone");
+        setCapacity(0)
         let items = []
         getZoneList(floor).then(response => {
             response.data.zoneDTOList.map((i, index) => {
                 items.push(i)
+
+
             })
+
 
             return setZone(items)
 
         })
 
-    }, [floor]);
 
+    }, [floor]);
 
     const HandlerZone = (Zone) => {
         setZoneID(Zone.id);

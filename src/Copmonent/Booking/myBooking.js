@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { getAllBookingOfEmployeeInAPeriod, DeleteBookings } from "../../service/bookingService";
+import {getAllBookingOfEmployeeInAPeriodEmployee, getAllBookingOfEmployeeInAPeriod, DeleteBookings } from "../../service/bookingService";
 import AuthService from '../../Authentication/authUser';
 import IconButton from "@material-ui/core/IconButton";
 import DeletIcon from '@material-ui/icons/Delete';
@@ -49,14 +49,12 @@ export default function MyBookings() {
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
     const today = new Date();
-    const [from, setFrom] = useState(today);
-    const [to, setTo] = useState(maxDate);
     const email = AuthService.getCurrentUser().email;
     const [ListBooking, setListBooking] = useState([]);
     const [message, setMessage] = useState("");
     // todo add floor to list
     const getAllBooking = () => {
-        getAllBookingOfEmployeeInAPeriod(email, from, to).then(
+        getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
             response => {
                 
                 setListBooking(response.data.bookingToshowDtoLists);
