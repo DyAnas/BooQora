@@ -1,30 +1,30 @@
 import React from "react";
-import StatusFloor from "../Copmonent/Statistics/ChartFloor";
+import StatusFloor from "../Copmonent/AdminPages/Statistics/ChartFloor";
 import { NavBar } from "./Navbar";
-import StatusBuilding from "../Copmonent/Statistics/ChartBuilding";
+import StatusBuilding from "../Copmonent/AdminPages/Statistics/ChartBuilding";
 
-const ChartContainer =()=> {
+const ChartContainer = () => {
 
     return (
         <div>
-                <div className="container  ">
+            <div className="container  ">
                 <NavBar />
 
                 <div className="row justify-content-center box" >
-               <div className="container">
-               <div className="row">
+                    <div className="container">
+                        <div className="row">
 
-                    <div className="col-md-6 mt-4 mb-4">
-                        <StatusFloor />
+                            <div className="col-md-6 mt-4 ">
+                                <StatusFloor />
+                            </div>
+                            <div className="col-md-6 mt-4 ">
+                                <StatusBuilding />
+                            </div>
+                        </div>
                     </div>
-                 <div className="col-md-6 mt-4">
-                     <StatusBuilding />
-                    </div>
-             </div>
                 </div>
             </div>
-                </div>
         </div>
-       )
+    )
 }
 export default ChartContainer;

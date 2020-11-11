@@ -7,11 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {getAllBookingOfEmployeeInAPeriod, DeleteBookings} from "../../service/bookingService";
-import AuthService from '../../Authentication/authUser';
+import {getAllBookingOfEmployeeInAPeriod} from "../../../service/bookingService";
+//import AuthService from '../../Authentication/authUser';
 import TablePagination from '@material-ui/core/TablePagination';
-import DatePicker from "react-datepicker";
-import DateRangePicker from 'react-bootstrap-daterangepicker';
+import DatePicker  from "react-datepicker";
 import 'bootstrap-daterangepicker/daterangepicker.css';
 
 
@@ -53,26 +52,21 @@ export default function WeeklyStatistics() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
-    const email = AuthService.getCurrentUser().email;
+   // const email = AuthService.getCurrentUser().email;
     const [ListBooking, setListBooking]= useState([]);
-    const [message , setMessage]=useState("");
-    // todo add floor to list
+    //const [message , setMessage]=useState("");
+    let message="";
 
-    const getAllBooking =()=> {
-        console.log(endDate)
+    // todo add floor to list
+    
+    useEffect(() => {
         getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
             response =>{
                 setListBooking(response.data.bookingofEmployeeDTOList);
-
             })
-    }
-
-    useEffect(() => {
-        getAllBooking();
-
-
-
     }, [startDate, endDate]);
+
+
     // todo create dialog to confirm deleting
 
     const [page, setPage] = React.useState(0);
@@ -97,7 +91,7 @@ export default function WeeklyStatistics() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 labelsDate">
-                        <labels style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </labels>
+                        <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
                 <DatePicker
                     selected={startDate}
                     onChange={date => setStartDate(date)}
@@ -107,7 +101,7 @@ export default function WeeklyStatistics() {
                 />
                     </div>
                         <div className="col-md-6">
-                            <labels style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </labels>
+                            <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </h2>
                 <DatePicker
                     selected={endDate}
                     onChange={date => setEndDate(date)}

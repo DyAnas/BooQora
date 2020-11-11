@@ -1,18 +1,17 @@
-import React, {useEffect, useState} from "react";
-
-import { Bar, Line, Pie } from 'react-chartjs-2';
-import {CheckStatusOfAllFloorPeriod } from "../../service/AdminStatistics";
+import React, { useEffect, useState } from "react";
+import { Bar } from 'react-chartjs-2';
+import { CheckStatusOfAllFloorPeriod } from "../../../service/AdminStatistics";
 import DatePicker from "react-datepicker";
 
-const  StatusBuilding =()=>{
-    const [data, setData]=useState([])
-    const [floor, setFloor]=useState(1)
+const StatusBuilding = () => {
+    const [data, setData] = useState([])
+    // const [floor, setFloor]=useState(1)
     const [barData, setBarData] = useState({
         labels: ['Floor 1', 'Floor 2', 'Floor 3', 'Floor 4', 'Floor 5', 'Floor 6', 'Floor 7'],
         datasets: [
             {
                 label: "Status Build By floor",
-                data:[],
+                data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
                     'rgba(54, 162, 235, 0.6)',
@@ -23,8 +22,8 @@ const  StatusBuilding =()=>{
             }
         ]
     });
-// set options
-    const [barOptions, setBarOptions] = useState({
+    // set options
+    const barOptions = {
         options: {
             scales: {
                 yAxes: [
@@ -45,22 +44,23 @@ const  StatusBuilding =()=>{
                 position: 'top'
             }
         }
-    });
-    const [colors, setColors]=useState([])
-    const statusBuilding= ()=> {
+    };
 
-        let item =[]
-        let color= []
-        CheckStatusOfAllFloorPeriod( startDate, endDate).then(response => {
+    const [colors, setColors] = useState([])
+    const statusBuilding = () => {
+
+        let item = []
+        let color = []
+        CheckStatusOfAllFloorPeriod(startDate, endDate).then(response => {
             console.log(response.data)
-            response.data.map((i, index)=> {
+            response.data.map((i, index) => {
                 item.push(i.totalBooking)
-                if (i.totalBooking < 30 ){
-                    color[index]=  'rgba(75, 192, 192, 0.6)';
-                }else if (i.totalBooking >30 || i.totalBooking < 70){
-                    color[index]=  'rgba(255, 206, 86, 0.6)';
-                }else {
-                    color[index]=   'rgba(255, 99, 132, 0.6)';
+                if (i.totalBooking < 30) {
+                    color[index] = 'rgba(75, 192, 192, 0.6)';
+                } else if (i.totalBooking > 30 || i.totalBooking < 70) {
+                    color[index] = 'rgba(255, 206, 86, 0.6)';
+                } else {
+                    color[index] = 'rgba(255, 99, 132, 0.6)';
                 }
             })
             setData(item)
@@ -72,7 +72,7 @@ const  StatusBuilding =()=>{
             datasets: [
                 {
                     label: 'Status Building By Floor',
-                    data:data,
+                    data: data,
                     backgroundColor: colors,
                     borderWidth: 3
                 }
@@ -85,7 +85,7 @@ const  StatusBuilding =()=>{
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
     const [endDate, setEndDate] = useState(today);
-    useEffect(()=> {
+    useEffect(() => {
         statusBuilding();
     }, [startDate, endDate]);
     // today and maxDate to show in calendar
@@ -101,7 +101,7 @@ const  StatusBuilding =()=>{
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 labelsDate">
-                        <labels style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </labels>
+                        <label style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0">From </label>
                         <DatePicker
                             selected={startDate}
                             onChange={date => setStartDate(date)}
@@ -111,7 +111,7 @@ const  StatusBuilding =()=>{
                         />
                     </div>
                     <div className="col-md-6">
-                        <labels style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </labels>
+                        <label style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0">To </label>
                         <DatePicker
                             selected={endDate}
                             onChange={date => setEndDate(date)}

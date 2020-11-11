@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 import { Bar} from 'react-chartjs-2';
-import {CheckStatusOfAllZones} from "../../service/mapService";
+import {CheckStatusOfAllZones} from "../../../service/mapService";
 import DatePicker from "react-datepicker";
 
 const  StatusFloor =()=>{
@@ -23,6 +23,9 @@ const  StatusFloor =()=>{
             }
         ]
     });
+    const today = new Date();
+    const [startDate, setStartDate] = useState(today);
+
 // set options
     const [barOptions, setBarOptions] = useState({
         options: {
@@ -47,7 +50,9 @@ const  StatusFloor =()=>{
         }
     });
     const [colors, setColors]=useState([])
-    const statusFloor= ()=> {
+
+    useEffect(()=> {
+      
         let item =[]
         let color= []
         CheckStatusOfAllZones(floor, startDate).then(response => {
@@ -101,14 +106,10 @@ const  StatusFloor =()=>{
 
         })
 
-    }
+        }, [startDate , floor]);
 
-    const today = new Date();
-    const [startDate, setStartDate] = useState(today);
+  
 
-    useEffect(()=> {
-       statusFloor();
-   }, [startDate , floor]);
     // today and maxDate to show in calendar
 
 
@@ -124,13 +125,13 @@ const  StatusFloor =()=>{
                     selected={startDate}
                     onChange={date => setStartDate(date)}
                     startDate={startDate}
-
+small
                     className="btn btn-info Calendar1 float-left"
                 />
                 </div>
                     <div className="col-sm-5 ml-2">
                 <div className="dropdown">
-                    <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                    <button className="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         floor: {floor}
                     </button>
