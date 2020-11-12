@@ -14,6 +14,7 @@ import resendConfirm from "./Copmonent/Login/resendActivation";
 import ChartContainer from "./Container/ChartContainer";
 import Archive from "./Copmonent/AdminPages/Statistics";
 import { NotFoundPage } from "../src/Container/NotFoundPage";
+import { CreateNewAdmin } from "./Copmonent/AdminPages/CreateNewAdmin";
 class App extends Component {
 
   render() {
@@ -33,6 +34,9 @@ class App extends Component {
             <ProtectedRoute
               path="/myBookings"
               component={MyBooking} />
+              <ProtectedRoute
+              path="/addNewAdmin"
+              component={CreateNewAdmin} />
             <ProtectedRoute
               path="/aboutBookora"
               component={About} />

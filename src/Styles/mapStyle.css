@@ -54,7 +54,7 @@
     /* Zone A*/
 
 .span1 {
-    /*position: absolute;*/
+    position: absolute;
 
 
     padding: 5px;
@@ -72,7 +72,7 @@
 /* Zone B*/
 
 .span2 {
-    /*position: absolute;*/
+    position: absolute;
 
 
     padding: 5px;
@@ -90,7 +90,7 @@
 /* Zone C*/
 
 .span3 {
-    /*position: absolute;*/
+    position: absolute;
     padding: 5px;
     font-size: 14px;
     top: 220px;
@@ -106,7 +106,7 @@
 /* Zone D*/
 
 .span4 {
-    /*position: absolute;*/
+    position: absolute;
     padding: 5px;
     top: 60px;
     left: 40px;
@@ -122,7 +122,7 @@
 /* Zone E*/
 
 .span5 {
-    /*position: absolute;*/
+    position: absolute;
 
     padding: 5px;
     font-size: 14px;
@@ -140,7 +140,7 @@
 /* Zone F*/
 
 .span6 {
-    /*position: absolute;*/
+    position: absolute;
     padding: 5px;
     font-size: 14px;
     top: 70px;
@@ -156,7 +156,7 @@
 /* Zone G*/
 
 .span7 {
-    /*position: absolute;*/
+    position: absolute;
     padding: 5px;
     font-size: 12px;
     top: 130px;
