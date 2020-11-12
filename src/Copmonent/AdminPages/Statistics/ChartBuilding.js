@@ -107,7 +107,8 @@ const StatusBuilding = () => {
                             onChange={date => setStartDate(date)}
                             startDate={startDate}
                             clearAriaLabel="From"
-                            className="btn btn-info Calendar1 float-left"
+                            className="btn btn-info Calendar1 float-left btn-sm w-75"
+
                         />
                     </div>
                     <div className="col-md-6">
@@ -117,7 +118,7 @@ const StatusBuilding = () => {
                             onChange={date => setEndDate(date)}
                             startDate={startDate}
 
-                            className="btn btn-info Calendar1 float-left"
+                            className="btn btn-info Calendar1 float-left btn-sm w-75"
                         />
 
                     </div>

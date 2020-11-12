@@ -119,17 +119,17 @@ const  StatusFloor =()=>{
             <div className="container ">
                     <h2> Status Floor </h2>
                 <p className="text"> Choose a date and floor to show status</p>
-                <div className="row">
+                <div className="row ">
                 <div className="col-sm-5">
                 <DatePicker
                     selected={startDate}
                     onChange={date => setStartDate(date)}
                     startDate={startDate}
-small
-                    className="btn btn-info Calendar1 float-left"
+
+                    className="btn btn-info Calendar1 float-left btn-sm w-75"
                 />
                 </div>
-                    <div className="col-sm-5 ml-2">
+                    <div className="col-sm ml-2">
                 <div className="dropdown">
                     <button className="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

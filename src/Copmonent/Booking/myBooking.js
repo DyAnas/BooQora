@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {getAllBookingOfEmployeeInAPeriodEmployee, getAllBookingOfEmployeeInAPeriod, DeleteBookings } from "../../service/bookingService";
+import {getAllBookingOfEmployeeInAPeriodEmployee, DeleteBookings } from "../../service/bookingService";
 import AuthService from '../../Authentication/authUser';
 import IconButton from "@material-ui/core/IconButton";
 import DeletIcon from '@material-ui/icons/Delete';
@@ -62,10 +62,8 @@ export default function MyBookings() {
             })
     }
     const removeBooking = (item) => {
-        console.log(item)
         DeleteBookings(item).then(
             response => {
-                console.log(response.data.message)
                 setTimeout(() => {
                     setMessage("")
                 }, 3000);
@@ -93,7 +91,6 @@ export default function MyBookings() {
         <div>
             <div className="center col-md-6">
                 <p style={{ color: "red" }}>{message}</p>
-
             </div>
             <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="customized table">
@@ -116,8 +113,6 @@ export default function MyBookings() {
                                 <StyledTableCell align="left"
 
                                 >{deleteIcon(item.bookingId)}</StyledTableCell>
-                                {/* <IconButton className="m-2" variant="outlined" color="primary"
-                                    onClick={removeBooking(item.employeeId)}>Remove</IconButton>*/}
                             </StyledTableRow>
                         ))}
                     </TableBody>

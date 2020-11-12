@@ -15,3 +15,24 @@
 
 }
 
+
+.tableStyle td{
+    vertical-align: middle;
+
+
+}
+
+
+.tableStyle th{
+    vertical-align: middle;
+    font-size: 80%;
+}
+
+.table thead th {
+
+    vertical-align: middle;
+}
+
+.tableStyle{
+    text-align: left;
+}

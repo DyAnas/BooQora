@@ -88,12 +88,13 @@ export const ZoneSettings = () => {
                             <div className="form-group ">
                                 <div className="table-responsive-sm">
                                     <table className="table ">
-                                        <tr>
-                                            <th scope="row">Floor Nr: </th>
-                                            <td><strong>{floor}</strong></td>
-                                        </tr>
 
                                         <tbody>
+                                            <tr>
+                                                <th scope="row">Floor Nr: </th>
+                                                <td><strong>{floor}</strong></td>
+                                            </tr>
+
                                             <tr>
                                                 <th scope="row">Zone: </th>
                                                 <td>
@@ -118,10 +119,16 @@ export const ZoneSettings = () => {
 
                                             <tr>
                                                 <th scope="row">Capacity: </th>
-                                                <td><input type="number"
-                                                    onChange={event => setCapacity(event.target.value)}
-                                                    value={Capacity} className="form-control" size="1" id="exampleDropdownFormPassword1" placeholder="Capacity" /></td>
-
+                                                <td>
+                                                    <input type="number"
+                                                        onChange={event => setCapacity(event.target.value)}
+                                                        value={Capacity}
+                                                        className="form-control"
+                                                        size="1"
+                                                        id="exampleDropdownFormPassword1"
+                                                        placeholder="Capacity" 
+                                                        style={{maxWidth:"27%"}}/>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Accesibility:</th>
