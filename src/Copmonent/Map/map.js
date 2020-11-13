@@ -271,7 +271,7 @@ const MapComponent = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm d-none d-md-block" >
+                <div className="col-sm d-none d-md-block" style={{backgroundColor:"red"}} >
                     
                 </div>
 

@@ -14,10 +14,10 @@ const ChartContainer = () => {
                     <div className="container">
                         <div className="row">
 
-                            <div className="col-md-6 mt-4 ">
+                            <div className="col-md-6 col-sm mt-4 ">
                                 <StatusFloor />
                             </div>
-                            <div className="col-md-6 mt-4 ">
+                            <div className="col-md-6- col-sm mt-4 ">
                                 <StatusBuilding />
                             </div>
                         </div>

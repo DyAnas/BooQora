@@ -15,11 +15,14 @@ import ChartContainer from "./Container/ChartContainer";
 import Archive from "./Copmonent/AdminPages/Statistics";
 import { NotFoundPage } from "../src/Container/NotFoundPage";
 import { CreateNewAdmin } from "./Copmonent/AdminPages/CreateNewAdmin";
+import { NavBar } from "../src/Container/Navbar";
+
 class App extends Component {
 
   render() {
     return (
-      <div className=" mvh-100">
+      <div className=" contianer">
+     
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInContainer} />

@@ -2,7 +2,8 @@ import React from "react";
 import "../Styles/navbarstyle.css";
 import whiteLogo from "../assets/TietoEvry.svg.png"
 import AuthService from '../Authentication/authUser'
-import { faCalendarCheck, faChartLine, faCog, faInfo, faList, faTable, faUserCircle, faUserPlus, faUserShield } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarCheck, faChartLine, faCog, faInfo, faList,
+     faTable, faUserCircle, faUserPlus, faUserShield } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';

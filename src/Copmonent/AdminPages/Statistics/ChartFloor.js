@@ -1,18 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
-import { Bar} from 'react-chartjs-2';
-import {CheckStatusOfAllZones} from "../../../service/mapService";
+import { Bar } from 'react-chartjs-2';
+import { CheckStatusOfAllZones } from "../../../service/mapService";
 import DatePicker from "react-datepicker";
+import { Row } from "react-bootstrap";
 
-const  StatusFloor =()=>{
-  const [data, setData]=useState([])
-    const [floor, setFloor]=useState(1)
+const StatusFloor = () => {
+    const [data, setData] = useState([])
+    const [floor, setFloor] = useState(1)
     const [barData, setBarData] = useState({
         labels: ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E', 'Zone F', 'Zone G'],
         datasets: [
             {
-                label: "Status Floor" + floor+"By Zone",
-                data:[],
+                label: "Status Floor" + floor + "By Zone",
+                data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
                     'rgba(54, 162, 235, 0.6)',
@@ -26,7 +27,7 @@ const  StatusFloor =()=>{
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
 
-// set options
+    // set options
     const [barOptions, setBarOptions] = useState({
         options: {
             scales: {
@@ -40,7 +41,7 @@ const  StatusFloor =()=>{
             },
             title: {
                 display: true,
-                text: 'Status Floor ' + 1+' By Zone',
+                text: 'Status Floor ' + 1 + ' By Zone',
                 fontSize: 25
             },
             legend: {
@@ -49,22 +50,22 @@ const  StatusFloor =()=>{
             }
         }
     });
-    const [colors, setColors]=useState([])
+    const [colors, setColors] = useState([])
 
-    useEffect(()=> {
-      
-        let item =[]
-        let color= []
+    useEffect(() => {
+
+        let item = []
+        let color = []
         CheckStatusOfAllZones(floor, startDate).then(response => {
             console.log(response.data)
-            response.data.map((i, index)=> {
+            response.data.map((i, index) => {
                 item.push(i.bookedPercentage)
-                if (i.bookedPercentage < 30 ){
-                    color[index]=  'rgba(75, 192, 192, 0.6)';
-                }else if (i.bookedPercentage >30 || i.bookedPercentage < 70){
-                    color[index]=  'rgba(255, 206, 86, 0.6)';
-                }else {
-                    color[index]=   'rgba(255, 99, 132, 0.6)';
+                if (i.bookedPercentage < 30) {
+                    color[index] = 'rgba(75, 192, 192, 0.6)';
+                } else if (i.bookedPercentage > 30 || i.bookedPercentage < 70) {
+                    color[index] = 'rgba(255, 206, 86, 0.6)';
+                } else {
+                    color[index] = 'rgba(255, 99, 132, 0.6)';
                 }
             })
             setData(item)
@@ -83,7 +84,7 @@ const  StatusFloor =()=>{
                 },
                 title: {
                     display: true,
-                    text: 'Status Floor ' + floor+' By Zone',
+                    text: 'Status Floor ' + floor + ' By Zone',
                     fontSize: 25
                 },
                 legend: {
@@ -97,8 +98,8 @@ const  StatusFloor =()=>{
             ...barData,
             datasets: [
                 {
-                    label:  "Status Floor " + floor+" By Zone",
-                    data:data,
+                    label: "Status Floor " + floor + " By Zone",
+                    data: data,
                     backgroundColor: colors,
                     borderWidth: 3
                 }
@@ -106,9 +107,9 @@ const  StatusFloor =()=>{
 
         })
 
-        }, [startDate , floor]);
+    }, [startDate, floor]);
 
-  
+
 
     // today and maxDate to show in calendar
 
@@ -116,42 +117,48 @@ const  StatusFloor =()=>{
     return (
 
 
-            <div className="container ">
-                    <h2> Status Floor </h2>
-                <p className="text"> Choose a date and floor to show status</p>
-                <div className="row ">
+        <div className="container ">
+            <h2> Status Floor </h2>
+            <p className="text"> Choose a date and floor to show status</p>
+            <div className="row ">
                 <div className="col-sm-5">
-                <DatePicker
-                    selected={startDate}
-                    onChange={date => setStartDate(date)}
-                    startDate={startDate}
+                    <DatePicker
+                        selected={startDate}
+                        onChange={date => setStartDate(date)}
+                        startDate={startDate}
 
-                    className="btn btn-info Calendar1 float-left btn-sm w-75"
-                />
+                        className="btn btn-info Calendar1 float-left btn-sm w-75"
+                    />
                 </div>
-                    <div className="col-sm ml-2">
-                <div className="dropdown">
-                    <button className="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
+                <div className="col-sm ml-2">
+                    <div className="dropdown">
+                        <button className="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        floor: {floor}
-                    </button>
-                    <div className="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                        {[...Array(7)].map((x, i) =>
-                            <a className="dropdown-item " href="#" key={i}
-                                    onClick={() => setFloor(i+1)} >{i + 1}</a>
-                        )}
+                            floor: {floor}
+                        </button>
+                        <div className="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                            {[...Array(7)].map((x, i) =>
+                                <a className="dropdown-item " href="#" key={i}
+                                    onClick={() => setFloor(i + 1)} >{i + 1}</a>
+                            )}
 
 
+                        </div>
                     </div>
                 </div>
-                    </div>
-                </div>
-                <Bar
-                    data={barData}
-                    options={barOptions.options} />
             </div>
-        )
+            <div className="row">
+                <div className="col ">
+                    <Bar
+                        data={barData}
+                        options={barOptions.options} />
+                </div>
+
+            </div>
+
+        </div>
+    )
 
 }
 
-        export default StatusFloor;
+export default StatusFloor;
