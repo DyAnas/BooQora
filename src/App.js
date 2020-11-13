@@ -16,7 +16,7 @@ import Archive from "./Copmonent/AdminPages/Statistics";
 import { NotFoundPage } from "../src/Container/NotFoundPage";
 import { CreateNewAdmin } from "./Copmonent/AdminPages/CreateNewAdmin";
 import { NavBar } from "../src/Container/Navbar";
-
+import   AuthService  from "./Authentication/authUser";
 class App extends Component {
 
   render() {

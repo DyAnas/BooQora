@@ -19,7 +19,6 @@ export const CreateNewAdmin = () => {
 
 
     const handleFindEmployee = () => {
-
         FindEmployee(email).then(
             response => {
                 console.log(response.data);
@@ -35,11 +34,9 @@ export const CreateNewAdmin = () => {
                 }
             }, error => { //Need return from API
                 console.log(error);
-                setMessage(error.message)
+                setMessage(error.data.message)
                 setUserFound(false);
             });
-
-
 
     }
 
@@ -65,17 +62,17 @@ export const CreateNewAdmin = () => {
         }
         UpgradeUserToAdmin(email, roleToApi).then(
             response => {
-
-                setMessage(response.message)
+                console.log(response.data);
+                setMessage(response.data.message)
                 setUserFound(false);
 
             }, error => {
-                
-                setMessage(error.message);
+
+                setMessage(error.data.message);
                 //     setUserFound(false);
             })
 
-           
+
     }
 
 
