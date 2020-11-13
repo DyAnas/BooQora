@@ -8,7 +8,9 @@ const api_url3 = "http://localhost:8080/api/v1/"
 
 
 export async function getZoneList(floor) {
+    
     let token= AuthService.getCurrentUser().token;
+
     const response = await axios.get(api_url+floor, {
         headers: {
             Authorization: 'Bearer ' + token

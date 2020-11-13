@@ -8,6 +8,8 @@ import AuthService from '../../Authentication/authUser';
 import { withRouter } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import circle from "../../assets/circle.png";
+import { Doughnut } from 'react-chartjs-2';
 
 const MapComponent = (props) => {
     const areas = [
@@ -111,7 +113,7 @@ const MapComponent = (props) => {
                         items.push(index);
 
                     }
-                    
+
                 })
                 areasToShow = items.map(item => {
                     return areas[item]
@@ -203,6 +205,27 @@ const MapComponent = (props) => {
     }
 
 
+
+    // const [floor, setFloor]=useState(1)
+    const [barData, setBarData] = useState({
+        labels: ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'],
+        datasets: [
+            {
+                label: "Status Build By floor",
+                data: [10, 23, 55, 33, 20, 34, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(75, 192, 192, 0.6)'
+                ],
+                borderWidth: 3
+            }
+        ]
+    });
+
     return (
         <div className="container container-sm" >
             <div className="row d-flex text-center flex-column">
@@ -216,10 +239,10 @@ const MapComponent = (props) => {
                 <p style={{ color: "red" }}>{message}</p>
 
             </div>
-            <div className="row ">
-                <div className="col-md-6 pr-0">
+            <div className="row mr-0 ml-0">
+                <div className="col-md-6 pl-5 pr-0 m-0">
 
-                    <div className="mb-3 text-center">
+                    <div className="mb-3">
 
 
                         <DatePicker
@@ -271,8 +294,12 @@ const MapComponent = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm d-none d-md-block" >
-                    
+                <div className="col-sm-5 d-none d-md-block" >
+                <Doughnut
+                        data={barData}
+                        width={60}
+                        height={50}
+                    />
                 </div>
 
 
