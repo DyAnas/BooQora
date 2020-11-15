@@ -1,10 +1,11 @@
 
 /*
  1. Style for Mobile
- 2. Create New Admin. (changethe status to admin (need api))
+
  3. Confirm delete en Booking (Messages).
  4. Message confirm settings change
-5. NavBar rendering many times.
+
+6. update status directly when date is changed
 
 
 <div class="aui-message closeable shadowed fadeout success">

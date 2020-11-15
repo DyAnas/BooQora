@@ -80,8 +80,6 @@ export const CreateNewAdmin = () => {
 
 
     return <div className="container  ">
-        <NavBar />
-
         <div className="row text-center d-block mx-auto mainRow " >
 
             <h3 className=" mb-4 ">Upgrade a user to admin</h3>

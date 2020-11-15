@@ -9,7 +9,7 @@ export const About = (props) => {
     return (
 
         <div className="container">
-            <NavBar />
+
             <header className="jumbotron">
                 <h3>
                     <strong>{currentUser.username}</strong> Profile

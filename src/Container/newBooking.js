@@ -10,7 +10,7 @@ export const NewBooking = () => {
         <div >
 
             <div className="container-sm " >
-                <NavBar />
+
                 <div className="row justify-content-center " >
 
                     <div className="col-6-sm" style={{ backgroundColor: "white", borderRadius: "20px", padding: "10px" }}>

@@ -30,28 +30,36 @@ class App extends Component {
             <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
             <ProtectedRoute path="/NewPassword" component={NewPassword} />           
-            <ProtectedRoute
-              path="/newBooking"
-              component={NewBooking} />
 
-            <ProtectedRoute
-              path="/myBookings"
-              component={MyBooking} />
-              <ProtectedRoute
-              path="/addNewAdmin"
-              component={CreateNewAdmin} />
-            <ProtectedRoute
-              path="/aboutBookora"
-              component={About} />
-               <ProtectedRoute
-              path="/zonesettings"
-              component={ZoneSettings} />
-            <ProtectedRoute
-                path="/statistics"
-                component={ChartContainer} />
-            <ProtectedRoute
-                path="/archive"
-                component={Archive} />
+              <div className="container">
+              <ProtectedRoute>
+                <NavBar />
+
+              </ProtectedRoute>
+                <ProtectedRoute
+                    path="/newBooking"
+                    component={NewBooking} />
+
+                <ProtectedRoute
+                    path="/myBookings"
+                    component={MyBooking} />
+                <ProtectedRoute
+                    path="/addNewAdmin"
+                    component={CreateNewAdmin} />
+                <ProtectedRoute
+                    path="/aboutBookora"
+                    component={About} />
+                <ProtectedRoute
+                    path="/zonesettings"
+                    component={ZoneSettings} />
+                <ProtectedRoute
+                    path="/statistics"
+                    component={ChartContainer} />
+                <ProtectedRoute
+                    path="/archive"
+                    component={Archive} />
+              </div>
+
             <Route path="*" component={NotFoundPage} />
             
           </Switch>

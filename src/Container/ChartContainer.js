@@ -8,8 +8,6 @@ const ChartContainer = () => {
     return (
         <div>
             <div className="container  ">
-                <NavBar />
-
                 <div className=" box" >
                     <div className="container">
                         <div className="row">

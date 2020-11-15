@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 
+
 export const NavBar = (props) => {
     const currentUser = AuthService.getCurrentUser().roles;
     console.log(currentUser.toString())

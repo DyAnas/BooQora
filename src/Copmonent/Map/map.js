@@ -86,7 +86,7 @@ const MapComponent = (props) => {
         },
 
     ];
-    const [query, setQuery] = useState(1);
+    const [query, setQuery] = useState(2);
     // handle calender
     // today and maxDate to show in calendar
     const today = new Date();
@@ -153,7 +153,7 @@ const MapComponent = (props) => {
                     }
 
                 })
-                console.log(items.toString())
+
                 setBarData({
                     labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
                     datasets: [
@@ -179,19 +179,27 @@ const MapComponent = (props) => {
     }
 
     const [barData, setBarData] = useState({});
+    const [floor, setFloor] = useState(1)
 
+    // floor handle
+    const handleClickFloor = (floor) => {
+        setMessage("")
+        GetStatusOfAllZones(floor, startDate)
+         GetActiveZone(floor);
+        setFloor(floor);
 
-
-
-
+    }
     // to update map areas when floor is clicked and date is changed
     useEffect(() => {
         setQuery(Math.random());
-        GetStatusOfAllZones(floor, startDate)
-    }, [mapAreas, startDate, barData ]);
 
+    }, [mapAreas,startDate]);
+    let items = [];
+useEffect(()=> {
 
-    const [floor, setFloor] = useState(1)
+    setQuery(Math.random());
+}, [ floor, startDate, mapAreas]);
+
 
     // handle onclick zone
     const enterArea = (area) => {
@@ -201,16 +209,7 @@ const MapComponent = (props) => {
         handleShow();
 
     }
-    // floor handle
-    const handleClickFloor = (floor) => {
-        setMessage("")
-        GetStatusOfAllZones(floor, startDate)
-        GetActiveZone(floor);
-        setFloor(floor);
 
-
-
-    }
     const ShowDialog = () => {
         setTimeout(() => {
             setShow(false)

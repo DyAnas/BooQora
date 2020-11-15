@@ -8,7 +8,6 @@ export const MyBooking = () => {
 
     return (
             <div className="container">
-             <NavBar />
                 <div className="box ">
                  <div className="container ">
                     <div className=" row center">

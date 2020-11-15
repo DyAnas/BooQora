@@ -5,7 +5,6 @@ import BookingsArchives from "./Statistics/Archive";
 
      return(
          <div className="container ">
-             <NavBar />
              <div className="box ">
                  <div className="container ">
                      <div className=" row center">
