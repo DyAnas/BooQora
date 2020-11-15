@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button,Form } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-function Example(props) {
+function BookDialog(props) {
     return (
         <>
 
@@ -41,7 +41,7 @@ function Example(props) {
     );
 }
 
-export default Example;
+export default BookDialog;
 
 
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
-import Example from "./DialogAlert";
+import BookDialog from "./DialogAlert";
 import "../../Styles/mapStyle.css";
 import { getZoneList, CheckStatusOfAllZones, BookPlass } from "../../service/mapService";
 import AuthService from '../../Authentication/authUser';
@@ -15,6 +15,7 @@ const MapComponent = (props) => {
     const areas = [
         {
             id: 1,
+            status:0,
             style: "span1",
             zone: "Zone A",
             shape: "poly",
@@ -24,6 +25,7 @@ const MapComponent = (props) => {
         },
         {
             id: 2,
+            status:0,
             style: "span2",
             zone: "Zone B",
             shape: "poly",
@@ -33,6 +35,7 @@ const MapComponent = (props) => {
         },
         {
             id: 3,
+            status:0,
             style: "span3",
             zone: "Zone C",
             shape: "poly",
@@ -42,6 +45,7 @@ const MapComponent = (props) => {
         },
         {
             id: 4,
+            status:0,
             zone: "Zone D",
             style: "span4",
             shape: "poly",
@@ -52,6 +56,7 @@ const MapComponent = (props) => {
 
         {
             id: 5,
+            status:0,
             zone: "Zone E",
             style: "span5",
             shape: "poly",
@@ -61,6 +66,7 @@ const MapComponent = (props) => {
         },
         {
             id: 6,
+            status:0,
             zone: "Zone F",
             style: "span6",
             shape: "poly",
@@ -70,6 +76,7 @@ const MapComponent = (props) => {
         },
         {
             id: 7,
+            status:0,
             zone: "Zone G",
             style: "span7",
             shape: "poly",
@@ -123,6 +130,7 @@ const MapComponent = (props) => {
                     areas: areasToShow
                 })
 
+
             })
     }
     // method to get all statistics of zones
@@ -134,7 +142,7 @@ const MapComponent = (props) => {
                 response.data.map((i, index) => {
                     items.push(i.bookedPercentage);
                     // to change color of zone depend to percentage of booking
-
+                    areas[index].status=i.bookedPercentage;
                     if (i.bookedPercentage < 40) {
                         areas[index].preFillColor = 'rgb(158,233,162)'
                     } else if (i.bookedPercentage > 40 || i.bookedPercentage < 70) {
@@ -145,23 +153,44 @@ const MapComponent = (props) => {
                     }
 
                 })
-                return setStatus(items)
+                console.log(items.toString())
+                setBarData({
+                    labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
+                    datasets: [
+                        {
+                            label:"Status Floor" + floorId + "By Zone",
+                            data: items,
+                            backgroundColor: [
+                                'rgba(255,99,132,0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgb(75,192,169)',
+                                'rgb(161,75,192)',
+                                'rgb(158,224,209)'
+                            ],
+                            borderWidth: 3
+                        }
+                    ]
+                })
+
 
 
             })
     }
 
-    const [status, setStatus] = useState([]);
-    // arrays style of zone
-    // const Style = ["span1  position-absolute", "span2  position-absolute", "span3  position-absolute",
-    //     "span4  position-absolute", "span5  position-absolute", "span6  position-absolute", "span7  position-absolute"];
+    const [barData, setBarData] = useState({});
+
+
+
 
 
     // to update map areas when floor is clicked and date is changed
     useEffect(() => {
         setQuery(Math.random());
         GetStatusOfAllZones(floor, startDate)
-    }, [mapAreas, startDate]);
+    }, [mapAreas, startDate, barData ]);
+
+
     const [floor, setFloor] = useState(1)
 
     // handle onclick zone
@@ -177,7 +206,9 @@ const MapComponent = (props) => {
         setMessage("")
         GetStatusOfAllZones(floor, startDate)
         GetActiveZone(floor);
-        setFloor(floor)
+        setFloor(floor);
+
+
 
     }
     const ShowDialog = () => {
@@ -207,29 +238,11 @@ const MapComponent = (props) => {
 
 
     // const [floor, setFloor]=useState(1)
-    const [barData, setBarData] = useState({
-        labels: ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7'],
-        datasets: [
-            {
-                label: "Status Build By floor",
-                data: [10, 23, 55, 33, 20, 34, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(75, 192, 192, 0.6)'
-                ],
-                borderWidth: 3
-            }
-        ]
-    });
 
     return (
         <div className="container container-sm" >
             <div className="row d-flex text-center flex-column">
-                <div className="col-sm">
+                <div className="col-sm-8">
                     <h3 className="">New booking</h3>
 
                     <p className="justify-text">Choose a date and click on a floor to show zone.</p>
@@ -240,11 +253,9 @@ const MapComponent = (props) => {
 
             </div>
             <div className="row mr-0 ml-0">
-                <div className="col-md-6 pl-5 pr-0 m-0">
+                <div className="col-md-6 pl-5 m-auto">
 
                     <div className="mb-3">
-
-
                         <DatePicker
                             selected={startDate}
                             onChange={date => setStartDate(date)}
@@ -254,8 +265,7 @@ const MapComponent = (props) => {
                             className="btn btn-info Calendar1 float-left btn-sm"
 
                         />
-
-                        <Example
+                        <BookDialog
                             show={show}
                             onHide={handleClose}
                             name={mapAreas.name}
@@ -274,12 +284,12 @@ const MapComponent = (props) => {
                                 width={300}
                                 onClick={enterArea}
                             />
+
                             {mapAreas.areas.map((x, i) =>
 
                                 <span className={mapAreas.areas[i].style} key={i}> {mapAreas.areas[i].zone}
                                     <br />
-                                    {status[i]}%
-
+                                    {mapAreas.areas[i].status}%
                          </span>
                             )}
                         </div>
@@ -294,7 +304,9 @@ const MapComponent = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-5 d-none d-md-block" >
+
+
+                <div className="col-sm-5 d-none d-md-block m-auto" >
                 <Doughnut
                         data={barData}
                         width={60}

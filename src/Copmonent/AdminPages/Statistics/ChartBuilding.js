@@ -94,31 +94,30 @@ const StatusBuilding = () => {
     return (
 
 
-        <div className="container ">
+        <div className=" ">
 
-            <h2> Status Building </h2>
+            <h2  className="  title"> Status Building </h2>
             <p className="text"> Choose a date to show status</p>
-            <div className="container">
+            <div className="">
                 <div className="row">
                     <div className="col-md-6 labelsDate">
-                        <label style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0">From </label>
+                        <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
                         <DatePicker
                             selected={startDate}
                             onChange={date => setStartDate(date)}
                             startDate={startDate}
                             clearAriaLabel="From"
-                            className="btn btn-info Calendar1 float-left btn-sm w-75"
-
+                            className="btn btn-info Calendar1 float-left"
                         />
                     </div>
                     <div className="col-md-6">
-                        <label style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0">To </label>
+                        <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </h2>
                         <DatePicker
                             selected={endDate}
                             onChange={date => setEndDate(date)}
                             startDate={startDate}
 
-                            className="btn btn-info Calendar1 float-left btn-sm w-75"
+                            className="btn btn-info Calendar1 float-left"
                         />
 
                     </div>

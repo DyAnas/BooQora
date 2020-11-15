@@ -10,7 +10,7 @@ const ChartContainer = () => {
             <div className="container  ">
                 <NavBar />
 
-                <div className="row justify-content-center box" >
+                <div className=" box" >
                     <div className="container">
                         <div className="row">
 

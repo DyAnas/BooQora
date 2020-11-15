@@ -1,6 +1,6 @@
 import React from "react";
-import WeeklyStatistics from "../AdminPages/Statistics/Weekly";
 import {NavBar} from "../../Container/Navbar";
+import BookingsArchives from "./Statistics/Archive";
  const Archive= ()=> {
 
      return(
@@ -12,11 +12,10 @@ import {NavBar} from "../../Container/Navbar";
                          <div className=" col-sm-6">
                              <h2 className="  title">All Booking</h2>
                              <br/>
-                             <p className=" ml-3">Here is a weekly booking</p>
 
                          </div>
                          <div className="col-md-8 d-sm-inline-block  ">
-                             <WeeklyStatistics />
+                             <BookingsArchives />
                          </div>
                      </div>
                  </div>

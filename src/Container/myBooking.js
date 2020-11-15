@@ -14,8 +14,7 @@ export const MyBooking = () => {
                     <div className=" row center">
                         <div className=" col-sm-6">
                         <h2 className="  title">My booking</h2>
-                        <br/>
-                        <p className=" ml-3">Here is your booking</p>
+
 
                     </div>
                     <div className="col-md-8 d-sm-inline-block  ">

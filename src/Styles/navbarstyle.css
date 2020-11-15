@@ -16,12 +16,23 @@
 }
 
 .nav-item:hover {
-    background-color: #d787aa;
+    background-color: #a2e7f1;
 
     opacity: 0.9;
     
 }
+.dropdown-menu {
+    z-index: 9999 !important;
+    position: absolute!important;
+    background-color: white;
+}
 
+
+ .dropdown-item{
+     z-index: 9999 !important;
+
+     background-color: white
+ }
 
 .navbar{
     margin-bottom: 40px;

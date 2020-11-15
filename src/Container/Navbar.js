@@ -22,15 +22,18 @@ export const NavBar = (props) => {
             <span className=" navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div className=" navbar-collapse collapse justify-content-between" id="navbarCollapse">
             <div className="navbar-nav">
                 <Link to="/newBooking" className="nav-item nav-link active"><FontAwesomeIcon icon={faCalendarCheck} /> New Booking</Link>
                 <Link to="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Bookings</Link>
                 <Link to="/aboutBookora" className="nav-item nav-link"><FontAwesomeIcon icon={faInfo} /> About Bookora</Link>
+
+
                 {currentUser[1] === "ROLE_ADMIN" || currentUser[0] === "ROLE_ADMIN" ?
                     <div className="nav-item dropdown">
-                        <Link to="/aboutBookora" className="nav-link dropdown-toggle" data-toggle="dropdown"><FontAwesomeIcon icon={faUserShield} /> Admin</Link>
-                        <div className="dropdown-menu">
+                        <Link  className="nav-link dropdown-toggle" data-toggle="dropdown"
+                        ><FontAwesomeIcon icon={faUserShield} /> Admin</Link>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <Link to="/statistics" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
                             <Link to="/zonesettings" className="dropdown-item"><FontAwesomeIcon icon={faCog} /> Zone settings</Link>
                             <Link to="/addNewAdmin" className="dropdown-item"><FontAwesomeIcon icon={faUserPlus} /> Add new Admin</Link>

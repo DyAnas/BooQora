@@ -11,6 +11,7 @@ import {getAllBookingOfEmployeeInAPeriodEmployee, DeleteBookings } from "../../s
 import AuthService from '../../Authentication/authUser';
 import IconButton from "@material-ui/core/IconButton";
 import DeletIcon from '@material-ui/icons/Delete';
+import MaterialTable from "material-table";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -76,9 +77,18 @@ export default function MyBookings() {
         getAllBooking();
 
 
-    }, [ListBooking]);
+    }, []);
     // todo create dialog to confirm deleting
     // remove one booking
+    const [columns , setColumns]= useState(
+        [
+            { title: "Booking Id", field: "bookingId" },
+            { title: "Date", field: "date",},
+            { title: "Floor", field: "floor" },
+            { title: "Zone", field: "zoneName",},
+            { title: "Email", field: "email",},
+        ]
+    )
 
 
     // to show delete icon in cell
@@ -92,7 +102,9 @@ export default function MyBookings() {
             <div className="center col-md-6">
                 <p style={{ color: "red" }}>{message}</p>
             </div>
-            <TableContainer component={Paper}>
+
+
+           {/* <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="customized table">
                     <TableHead className="btn-group-sm">
                         <TableRow >
@@ -117,7 +129,21 @@ export default function MyBookings() {
                         ))}
                     </TableBody>
                 </Table>
-            </TableContainer>
+            </TableContainer>*/}
+
+            <MaterialTable
+                title="Your booking "
+                columns={columns}
+                data={ListBooking}
+
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#e553a4',
+                        color: '#FFF'
+                    },
+
+                }}
+            />
         </div>
     );
 }

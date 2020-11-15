@@ -46,9 +46,8 @@ const useStyles = makeStyles({
 
 
 
-export default function WeeklyStatistics() {
+export default function WeeklyStatisticssss() {
     const classes = useStyles();
-
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
@@ -67,7 +66,7 @@ export default function WeeklyStatistics() {
     }, [startDate, endDate]);
 
 
-    // todo create dialog to confirm deleting
+
 
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
