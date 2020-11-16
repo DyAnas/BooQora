@@ -16,7 +16,8 @@ import Archive from "./Copmonent/AdminPages/Statistics";
 import { NotFoundPage } from "../src/Container/NotFoundPage";
 import { CreateNewAdmin } from "./Copmonent/AdminPages/CreateNewAdmin";
 import { NavBar } from "../src/Container/Navbar";
-import   AuthService  from "./Authentication/authUser";
+import {NavigationBar} from "./Copmonent/NavigationBar";
+
 class App extends Component {
 
   render() {
@@ -33,7 +34,7 @@ class App extends Component {
 
               <div className="container">
               <ProtectedRoute>
-                <NavBar />
+                <NavigationBar />
 
               </ProtectedRoute>
                 <ProtectedRoute

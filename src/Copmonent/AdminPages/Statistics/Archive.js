@@ -31,8 +31,11 @@ const [columns , setColumns]= useState(
     const [selectedRow, setSelectedRow] = useState(null);
 
         return (
-                <div className="">
+            <div>
+                <div className="container">
+                    <h2 className="title">All Booking</h2>
                     <div className="row">
+
                         <div className="col-md-6 labelsDate">
                             <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
                             <DatePicker
@@ -55,6 +58,7 @@ const [columns , setColumns]= useState(
 
                         </div>
 
+                </div>
                 </div>
                    <MaterialTable
                 title="List booking by period"

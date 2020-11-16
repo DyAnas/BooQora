@@ -86,7 +86,7 @@ export default function MyBookings() {
             { title: "Date", field: "date",},
             { title: "Floor", field: "floor" },
             { title: "Zone", field: "zoneName",},
-            { title: "Email", field: "email",},
+
         ]
     )
 
@@ -104,32 +104,7 @@ export default function MyBookings() {
             </div>
 
 
-           {/* <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="customized table">
-                    <TableHead className="btn-group-sm">
-                        <TableRow >
-                            <StyledTableCell align="left">Booking ID</StyledTableCell>
-                            <StyledTableCell align="left">Date&nbsp;</StyledTableCell>
-                            <StyledTableCell align="left">Floor&nbsp;</StyledTableCell>
-                            <StyledTableCell align="left">Zone&nbsp;</StyledTableCell>
-                            <StyledTableCell align="left">Edit&nbsp;</StyledTableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody className="table-body">
-                        {ListBooking.map((item, index) => (
-                            <StyledTableRow key={index}>
-                                <StyledTableCell align="left">{item.bookingId}</StyledTableCell>
-                                <StyledTableCell align="left">{item.date}</StyledTableCell>
-                                <StyledTableCell align="left">{item.floor}</StyledTableCell>
-                                <StyledTableCell align="left">{item.zoneName}</StyledTableCell>
-                                <StyledTableCell align="left"
-
-                                >{deleteIcon(item.bookingId)}</StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>*/}
+         <h2 className="title"> My Booking </h2>
 
             <MaterialTable
                 title="Your booking "

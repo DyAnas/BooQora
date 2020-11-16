@@ -123,9 +123,14 @@ const StatusBuilding = () => {
                     </div>
                 </div>
             </div>
+            <div>
             <Bar
                 data={barData}
-                options={barOptions.options} />
+                options={barOptions.options}
+                width={100}
+                height={85}
+            />
+            </div>
         </div>
     )
 

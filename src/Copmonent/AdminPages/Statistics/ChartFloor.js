@@ -150,11 +150,13 @@ const StatusFloor = () => {
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col ">
+            <div className="">
+                <div className=" ">
                     <Bar
                         data={barData}
-                        options={barOptions.options} />
+                        options={barOptions.options}
+                        width={100}
+                        height={85}/>
                 </div>
 
             </div>

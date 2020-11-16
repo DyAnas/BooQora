@@ -82,7 +82,7 @@ export const CreateNewAdmin = () => {
     return <div className="container  ">
         <div className="row text-center d-block mx-auto mainRow " >
 
-            <h3 className=" mb-4 ">Upgrade a user to admin</h3>
+            <h3 className=" mb-4 mt-5 title">Upgrade a user to admin</h3>
             <div className=" col " >
 
 
@@ -91,7 +91,7 @@ export const CreateNewAdmin = () => {
 
                 <div className="col col-sm-6 mx-auto   " style={{ borderRadius: "20px", padding: "15px", margin: "3px" }}>
 
-                    <div className="d-flex justify-content-center flex-column">
+                    <div className="d-flex justify-content-center center flex-column">
 
                         <strong >Find User:</strong>
 
@@ -104,7 +104,7 @@ export const CreateNewAdmin = () => {
                             onChange={e => setEmail(e.target.value)}
                             variant="filled"
                             margin="normal"
-                            className="background_input"
+                            className="background_input  w-50"
                         />
                         <strong style={{ color: "red" }}>{message}</strong>
                         <div>

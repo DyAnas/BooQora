@@ -11,7 +11,8 @@
 
 .navbar-nav{
     margin: auto;
-    padding: 20px;
+    padding:10px;
+    font-size: 12px;
   
 }
 
@@ -36,6 +37,10 @@
 
 .navbar{
     margin-bottom: 40px;
+    box-shadow: 1px 1px 1px 1px #E1E8EF;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #ffffff;
+    border-radius: 25px;
 }
 
 .navbar img{
@@ -47,3 +52,27 @@
     .navbar {
 margin-bottom: 0px;
 }}
+
+@media all and (min-width:991px) {
+    .dropdown:after{
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: opacity .15s ease-in-out;
+        opacity: 0;
+        visibility:hidden;
+
+        pointer-events: none;
+    }
+    .dropdown.show .nav-link{
+        position:relative;
+        z-index:12;
+    }
+    .dropdown.show:after{
+        z-index:10; opacity:1;
+        visibility:visible;
+        position: fixed;
+    }
+}

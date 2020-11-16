@@ -64,9 +64,9 @@ export const ZoneSettings = () => {
     }
 
 
-    return <div>
+    return <div className="">
         <div className="container  ">
-            <div className="row text-center d-block mx-auto mainRow " >
+            <div className="row text-center d-block mx-auto box " >
 
                 <h3 className=" mb-5 ">Zone Settings</h3>
                 <div className=" col " >
