@@ -40,6 +40,8 @@ export default function AlertDialogSlide(props) {
                       resend confirmation
                     </Button>
                    }
+
+
         
                 </DialogActions>
             </Dialog>

@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
-import BookDialog from "./DialogAlert";
+import BookDialog from "./ConfirmBooking";
 import "../../Styles/mapStyle.css";
-import { getZoneList, CheckStatusOfAllZones, BookPlass } from "../../service/mapService";
+import {getZoneList, CheckStatusOfAllZones, BookPlass} from "../../service/mapService";
 import AuthService from '../../Authentication/authUser';
-import { withRouter } from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import circle from "../../assets/circle.png";
-import { Doughnut } from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
 
 const MapComponent = (props) => {
     const areas = [
         {
             id: 1,
-            status:0,
+            status: 0,
             style: "span1",
             zone: "Zone A",
             shape: "poly",
@@ -25,7 +24,7 @@ const MapComponent = (props) => {
         },
         {
             id: 2,
-            status:0,
+            status: 0,
             style: "span2",
             zone: "Zone B",
             shape: "poly",
@@ -35,7 +34,7 @@ const MapComponent = (props) => {
         },
         {
             id: 3,
-            status:0,
+            status: 0,
             style: "span3",
             zone: "Zone C",
             shape: "poly",
@@ -45,7 +44,7 @@ const MapComponent = (props) => {
         },
         {
             id: 4,
-            status:0,
+            status: 0,
             zone: "Zone D",
             style: "span4",
             shape: "poly",
@@ -56,7 +55,7 @@ const MapComponent = (props) => {
 
         {
             id: 5,
-            status:0,
+            status: 0,
             zone: "Zone E",
             style: "span5",
             shape: "poly",
@@ -66,7 +65,7 @@ const MapComponent = (props) => {
         },
         {
             id: 6,
-            status:0,
+            status: 0,
             zone: "Zone F",
             style: "span6",
             shape: "poly",
@@ -76,7 +75,7 @@ const MapComponent = (props) => {
         },
         {
             id: 7,
-            status:0,
+            status: 0,
             zone: "Zone G",
             style: "span7",
             shape: "poly",
@@ -105,8 +104,7 @@ const MapComponent = (props) => {
     const [Zone, setZone] = useState();
     const [mapAreas, setMapAreas] = useState({
         name: "choose a floor",
-        areas: [
-        ]
+        areas: []
     });
     // method to get all active zones
     const GetActiveZone = (floor) => {
@@ -142,13 +140,12 @@ const MapComponent = (props) => {
                 response.data.map((i, index) => {
                     items.push(i.bookedPercentage);
                     // to change color of zone depend to percentage of booking
-                    areas[index].status=i.bookedPercentage;
+                    areas[index].status = i.bookedPercentage;
                     if (i.bookedPercentage < 40) {
                         areas[index].preFillColor = 'rgb(158,233,162)'
                     } else if (i.bookedPercentage > 40 || i.bookedPercentage < 70) {
                         areas[index].preFillColor = 'rgba(255, 206, 86, 0.6)';
-                    }
-                    else {
+                    } else {
                         areas[index].preFillColor = 'rgba(255, 99, 132, 0.6)';
                     }
 
@@ -158,7 +155,7 @@ const MapComponent = (props) => {
                     labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
                     datasets: [
                         {
-                            label:"Status Floor" + floorId + "By Zone",
+                            label: "Status Floor" + floorId + "By Zone",
                             data: items,
                             backgroundColor: [
                                 'rgba(255,99,132,0.6)',
@@ -174,7 +171,6 @@ const MapComponent = (props) => {
                 })
 
 
-
             })
     }
 
@@ -185,7 +181,7 @@ const MapComponent = (props) => {
     const handleClickFloor = (floor) => {
         setMessage("")
         GetStatusOfAllZones(floor, startDate)
-         GetActiveZone(floor);
+        GetActiveZone(floor);
         setFloor(floor);
 
     }
@@ -193,12 +189,12 @@ const MapComponent = (props) => {
     useEffect(() => {
         setQuery(Math.random());
 
-    }, [mapAreas,startDate]);
+    }, [mapAreas, startDate]);
     let items = [];
-useEffect(()=> {
+    useEffect(() => {
 
-    setQuery(Math.random());
-}, [ floor, startDate, mapAreas]);
+        setQuery(Math.random());
+    }, [floor, startDate, mapAreas]);
 
 
     // handle onclick zone
@@ -215,6 +211,7 @@ useEffect(()=> {
             setShow(false)
             props.history.push("/myBookings");
         }, 3000);
+        setLoading(true);
         setShow(true);
     }
 
@@ -224,22 +221,23 @@ useEffect(()=> {
     const ConfirmBooking = () => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
+
                 if (response.data.message === "You already have booking on that day") {
                     setShow(false);
                     setMessage("You already have booking on that day");
                 } else {
                     setMessage(response.data.message);
+
                     ShowDialog();
                 }
             })
     }
-
-
+    const [loading, setLoading] = React.useState(false);
 
     // const [floor, setFloor]=useState(1)
 
     return (
-        <div className="container container-sm" >
+        <div className="container container-sm">
             <div className="row d-flex text-center flex-column">
                 <div className="col-sm-8">
                     <h3 className="">New booking</h3>
@@ -248,8 +246,7 @@ useEffect(()=> {
                 </div>
             </div>
             <div className="center col-md-6">
-                <p style={{ color: "red" }}>{message}</p>
-
+                <p style={{color: "red"}}>{message}</p>
             </div>
             <div className="row mr-0 ml-0">
                 <div className="col-md-6 pl-5 m-auto">
@@ -272,11 +269,12 @@ useEffect(()=> {
                             ConfirmBooking={ConfirmBooking}
                             messages={message}
                             dates={date}
+                            loading={loading}
                         />
                     </div>
 
                     <div className="col d-sm-inline-block  ">
-                        <div className="images" >
+                        <div className="images">
                             <ImageMapper
                                 src={`${URL}?${query}`}
                                 map={mapAreas}
@@ -286,34 +284,29 @@ useEffect(()=> {
 
                             {mapAreas.areas.map((x, i) =>
 
-                                <span className={mapAreas.areas[i].style} key={i}> {mapAreas.areas[i].zone}
-                                    <br />
-                                    {mapAreas.areas[i].status}%
-                         </span>
+                                    <span className={mapAreas.areas[i].style} key={i}> {mapAreas.areas[i].zone}
+                                        <br/>
+                                        {mapAreas.areas[i].status}%
+                                     </span>
                             )}
                         </div>
-
                     </div>
                     <div className="col d-sm-inline-block mt-4">
                         <div className="btn-group">
                             {[...Array(7)].map((x, i) =>
                                 <button className="btn btn-light mt-1 ml-1 mr-1 " key={i}
-                                    onClick={() => handleClickFloor(i + 1)} >{i + 1}</button>
+                                        onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
                             )}
                         </div>
                     </div>
                 </div>
-
-
-                <div className="col-sm-5 d-none d-md-block m-auto" >
-                <Doughnut
+                <div className="col-sm-5 d-none d-md-block m-auto">
+                    <Doughnut
                         data={barData}
                         width={60}
                         height={50}
                     />
                 </div>
-
-
             </div>
         </div>
 

@@ -63,19 +63,19 @@ export default function MyBookings() {
             })
     }
     const removeBooking = (item) => {
-        DeleteBookings(item).then(
+        console.log("item  to remov",item);
+        DeleteBookings(item.bookingId).then(
             response => {
                 setTimeout(() => {
                     setMessage("")
                 }, 3000);
                 setMessage(response.data.message)
+                getAllBooking();
             }
         )
     }
     useEffect(() => {
-
         getAllBooking();
-
 
     }, []);
     // todo create dialog to confirm deleting
@@ -118,6 +118,14 @@ export default function MyBookings() {
                     },
 
                 }}
+                actions={[
+                    rowData => ({
+                        icon: 'delete',
+                        tooltip: 'Delete Booking',
+                        onClick: (event, rowData) => removeBooking(rowData),
+
+                    })
+                ]}
             />
         </div>
     );

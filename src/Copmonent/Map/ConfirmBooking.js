@@ -1,7 +1,8 @@
 import React from "react";
 import { Modal, Button,Form } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-function BookDialog(props) {
+import DialogActions from "@material-ui/core/DialogActions";
+function    BookDialog(props) {
     return (
         <>
 
@@ -11,6 +12,7 @@ function BookDialog(props) {
                 show={props.show } onHide={props.onHide}>
                 <Modal.Header  className="p-3 mb-2 bg-info text-white"  closeButton>
                     <Modal.Title>Confirm Booking </Modal.Title>
+
                 </Modal.Header>
                 <Modal.Body>
                 <h2>Floor: {props.name}</h2>
@@ -26,9 +28,21 @@ function BookDialog(props) {
 
                         </div>
                     </div>
-
+                    {props.loading ?
+                        <div className="mt-2 container">
+                            <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                            </div>
+                            <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                            </div>
+                            <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                            </div>
+                        </div>
+                        : null}
                 </Modal.Body>
+
                 <Modal.Footer>
+
+
                     <Button variant="outline-danger" onClick={props.onHide}>
                         Close
                     </Button>
