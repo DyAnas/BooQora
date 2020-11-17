@@ -29,7 +29,7 @@ const StatusBuilding = () => {
                 yAxes: [
                     {
                         ticks: {
-                            max: 100,
+                            max: 200,
                             beginAtZero: true
                         }
                     }
@@ -37,7 +37,7 @@ const StatusBuilding = () => {
             },
             title: {
                 display: true,
-                text: 'Status Building By Floor',
+                text: 'Quantity Status Building By Floor',
                 fontSize: 25
             },
             legend: {

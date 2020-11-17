@@ -11,7 +11,7 @@ const StatusFloor = () => {
         labels: ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E', 'Zone F', 'Zone G'],
         datasets: [
             {
-                label: "Status Floor" + floor + "By Zone",
+                label: "Percentage Status Floor" + floor + "By Zone",
                 data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
@@ -40,7 +40,7 @@ const StatusFloor = () => {
             },
             title: {
                 display: true,
-                text: 'Status Floor ' + 1 + ' By Zone',
+                text: 'Percentage Status Floor ' + 1 + ' By Zone',
                 fontSize: 25
             },
             legend: {
@@ -85,7 +85,7 @@ const StatusFloor = () => {
                 },
                 title: {
                     display: true,
-                    text: 'Status Floor ' + floor + ' By Zone',
+                    text: 'Percentage Status Floor ' + floor + ' By Zone',
                     fontSize: 25
                 },
                 legend: {
@@ -99,7 +99,7 @@ const StatusFloor = () => {
             ...barData,
             datasets: [
                 {
-                    label: "Status Floor " + floor + " By Zone",
+                    label: " Percentage Status Floor " + floor + " By Zone",
                     data: data,
                     backgroundColor: colors,
                     borderWidth: 3
