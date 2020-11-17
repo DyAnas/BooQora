@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import MaterialTable from "material-table";
-import {getAllBookingOfEmployeeInAPeriod} from "../../../service/AdminStatistics";
+import {getAllBookingOfEmployeeInAPeriod} from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
-
+import en from "date-fns/locale/en-GB";
 export default function BookingsArchives() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -10,16 +10,16 @@ export default function BookingsArchives() {
 
 
     useEffect(() => {
-        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
+      /*  getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
             response =>{
                 setListBooking(response.data.bookingofEmployeeDTOList);
 
-            })
+            })*/
 
 
-    }, [startDate, endDate]);
+    }, []);
 
-const [columns , setColumns]= useState(
+const columns =
     [
         { title: "Booking Id", field: "bookingId" },
         { title: "Date", field: "date",},
@@ -27,15 +27,21 @@ const [columns , setColumns]= useState(
         { title: "Zone", field: "zoneName",},
         { title: "Email", field: "email",},
     ]
-)
-    const [selectedRow, setSelectedRow] = useState(null);
 
+    const [selectedRow, setSelectedRow] = useState(null);
+  const onSubmit =()=> {
+    getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
+        response =>{
+            setListBooking(response.data.bookingofEmployeeDTOList);
+
+        })
+
+}
         return (
             <div>
-                <div className="container">
-                    <h2 className="title">All Booking</h2>
-                    <div className="row">
 
+                <div className="container">
+                    <div className="row">
                         <div className="col-md-6 labelsDate">
                             <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
                             <DatePicker
@@ -44,6 +50,8 @@ const [columns , setColumns]= useState(
                                 startDate={startDate}
                                 clearAriaLabel="From"
                                 className="btn btn-info Calendar1 float-left"
+                                locale={en}
+                                showWeekNumbers
                             />
                         </div>
                         <div className="col-md-6">
@@ -52,14 +60,18 @@ const [columns , setColumns]= useState(
                                 selected={endDate}
                                 onChange={date => setEndDate(date)}
                                 startDate={startDate}
-
+                                locale={en}
+                                showWeekNumbers
                                 className="btn btn-info Calendar1 float-left"
                             />
 
                         </div>
 
                 </div>
-                </div>
+                    <div className="">
+                        <button className="btn-info" onClick={onSubmit}>Show Booking</button>
+                  <div className="table col-12 mt-4">
+
                    <MaterialTable
                 title="List booking by period"
                 columns={columns}
@@ -76,8 +88,9 @@ const [columns , setColumns]= useState(
                 }}
                    />
 
-
-
+                  </div>
+                </div>
+                </div>
             </div>
         );
 }

@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { NavBar } from "../../Container/Navbar";
-import { Checkbox, TextField } from '@material-ui/core'
+import React, {useState} from 'react';
+import {Checkbox, TextField} from '@material-ui/core'
 import "../../Styles/admin.css";
-import { FindEmployee, UpgradeUserToAdmin } from '../../service/AdminStatistics'
-
+import {FindEmployee, UpgradeUserToAdmin} from '../../service/AdminService/AdminStatistics'
 
 
 export const CreateNewAdmin = () => {

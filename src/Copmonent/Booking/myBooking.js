@@ -1,52 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import {getAllBookingOfEmployeeInAPeriodEmployee, DeleteBookings } from "../../service/bookingService";
-import AuthService from '../../Authentication/authUser';
-import IconButton from "@material-ui/core/IconButton";
-import DeletIcon from '@material-ui/icons/Delete';
+import React, {useEffect, useState} from 'react';
+import {DeleteBookings, getAllBookingOfEmployeeInAPeriodEmployee} from "../../service/BookingService/bookingService";
+import AuthService from '../../service/Authentication/authUser';
 import MaterialTable from "material-table";
 
-const StyledTableCell = withStyles((theme) => ({
-    head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
-    },
-    body: {
-        fontSize: 12,
-    },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-    root: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
-    },
-}))(TableRow);
-
-
-
-
-
-const useStyles = makeStyles({
-    table: {
-        minWidth: 350,
-        maxWidth: 700,
-    },
-});
-
-
-
-
 export default function MyBookings() {
-    const classes = useStyles();
+
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
     const today = new Date();
@@ -80,7 +38,7 @@ export default function MyBookings() {
     }, []);
     // todo create dialog to confirm deleting
     // remove one booking
-    const [columns , setColumns]= useState(
+    const columns =
         [
             { title: "Booking Id", field: "bookingId" },
             { title: "Date", field: "date",},
@@ -88,15 +46,10 @@ export default function MyBookings() {
             { title: "Zone", field: "zoneName",},
 
         ]
-    )
 
 
-    // to show delete icon in cell
-    const deleteIcon = index =>
-        (<IconButton onClick={() => removeBooking(index)}>
-            <DeletIcon color="secondary" />
-        </IconButton>
-        );
+
+
     return (
         <div>
             <div className="center col-md-6">

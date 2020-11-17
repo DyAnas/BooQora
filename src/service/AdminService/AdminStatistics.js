@@ -41,6 +41,9 @@ export async function UpgradeUserToAdmin(email,roleArray) {
 
 export async function getAllBookingOfEmployeeInAPeriod(from, to) {
     let token = AuthService.getCurrentUser().token;
+
+    console.log("from",from)
+    console.log("to",to)
     const response = await axios.post(api_url2 + "getAllBookingOfEmployeesInAPeriodAdmin", {
         from: from,
         to: to

@@ -1,9 +1,7 @@
 import React from "react";
-import {NavBar} from "../../Container/Navbar";
 import BookingsArchives from "./Statistics/Archive";
-import StatusFloor from "./Statistics/ChartFloor";
-import StatusBuilding from "./Statistics/ChartBuilding";
- const Archive= ()=> {
+
+const Archive= ()=> {
 
      return(
 

@@ -1,11 +1,11 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import ValidateEmail from "../Copmonent/Login/ValidateEmail";
-import AuthService from "../Authentication/authUser";
-import ForgotPassword from "../Copmonent/Login/ForgotPassword";
-import VerifyCode from "../Copmonent/Login/VerifyCode";
-import NewPassword from "../Copmonent/Login/NewPassword";
-import { withRouter } from "react-router-dom";
+import {useForm} from "react-hook-form";
+import ValidateEmail from "../../Copmonent/Login/ValidateEmail";
+import AuthService from "../../service/Authentication/authUser";
+import ForgotPassword from "../../Copmonent/Login/ForgotPassword";
+import VerifyCode from "../../Copmonent/Login/VerifyCode";
+import NewPassword from "../../Copmonent/Login/NewPassword";
+import {withRouter} from "react-router-dom";
 
 
 const ContainerForgotPassword = (props) => {

@@ -1,8 +1,7 @@
 import React from "react";
-import SignUpContainer from "../Container/SignUpContainer";
+import SignUpContainer from "../Container/Login/SignUpContainer";
 import 'mutationobserver-shim';
-import { render, screen, fireEvent, wait } from "@testing-library/react";
-import SignInContainer from "../Container/SignInContainer";
+import {fireEvent, render, screen} from "@testing-library/react";
 
 const mockSignUp = jest.fn((firstName, lastName,  email, password, confirmPassword ) => {
     return Promise.resolve({firstName, lastName,  email, password, confirmPassword });

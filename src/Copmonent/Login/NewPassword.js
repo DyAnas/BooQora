@@ -1,9 +1,9 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import { TextField } from "@material-ui/core";
-import { useForm } from "react-hook-form";
-import AuthService from '../../Authentication/authUser';
-import { withRouter } from "react-router-dom";
+import {TextField} from "@material-ui/core";
+import {useForm} from "react-hook-form";
+import AuthService from '../../service/Authentication/authUser';
+import {withRouter} from "react-router-dom";
 
 const NewPassword = (props) => {
     const [password, setPassword] = React.useState('')

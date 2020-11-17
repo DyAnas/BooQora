@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../assets/logo1.png";
-import { TextField} from "@material-ui/core";
+import {TextField} from "@material-ui/core";
 
 const VerifyCode = (props) => {
 

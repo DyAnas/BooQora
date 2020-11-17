@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import { Route, Switch, BrowserRouter } from "react-router-dom";
-import SignUpContainer from "./Container/SignUpContainer";
-import SignInContainer from './Container/SignInContainer'
-import { ProtectedRoute } from "./Authentication/protectedRoute";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import SignUpContainer from "./Container/Login/SignUpContainer";
+import SignInContainer from './Container/Login/SignInContainer'
+import {ProtectedRoute} from "./service/Authentication/protectedRoute";
 import NewPassword from "./Copmonent/Login/NewPassword";
-import { About } from './Container/aboutBookora';
-import { NewBooking } from "./Container/newBooking";
-import { MyBooking } from "./Container/myBooking";
-import { ZoneSettings } from "./Copmonent/AdminPages/ZoneSettings";
-import ContainerForgotPassword from "./Container/ContainerForgotpassword";
+import {About} from './Container/About/aboutBookora';
+import {NewBooking} from "./Container/Booking/newBooking";
+import {MyBooking} from "./Container/Booking/myBooking";
+import {ZoneSettings} from "./Copmonent/AdminPages/ZoneSettings";
+import ContainerForgotPassword from "./Container/Login/ContainerForgotpassword";
 import resendConfirm from "./Copmonent/Login/resendActivation";
-import ChartContainer from "./Container/ChartContainer";
+import ChartContainer from "./Container/Statistics/ChartContainer";
 import Archive from "./Copmonent/AdminPages/Statistics";
-import { NotFoundPage } from "../src/Container/NotFoundPage";
-import { CreateNewAdmin } from "./Copmonent/AdminPages/CreateNewAdmin";
-import { NavBar } from "../src/Container/Navbar";
-import {NavigationBar} from "./Copmonent/NavigationBar";
+import {NotFoundPage} from "../src/Container/NotFoundPage";
+import {CreateNewAdmin} from "./Copmonent/AdminPages/CreateNewAdmin";
+import {NavigationBar} from "./Copmonent/Layout/NavigationBar";
 
 class App extends Component {
 

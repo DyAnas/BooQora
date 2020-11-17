@@ -1,7 +1,7 @@
 import React from "react";
-import { Modal, Button,Form } from 'react-bootstrap'
+import {Button, Form, Modal} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DialogActions from "@material-ui/core/DialogActions";
+
 function    BookDialog(props) {
     return (
         <>

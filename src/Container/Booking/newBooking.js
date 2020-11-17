@@ -1,7 +1,7 @@
 import React from "react";
-import { NavBar } from "./Navbar";
-import MapComponent from "../Copmonent/Map/map";
-import "../Styles/newBooking.css";
+import MapComponent from "../../Copmonent/Booking/map";
+import "../../Styles/newBooking.css";
+
 export const NewBooking = () => {
 
 

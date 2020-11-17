@@ -1,11 +1,11 @@
-import React, { useState} from 'react';
-import Logo from "../assets/logo1.png"
-import '../Styles/LoginStyle.css';
+import React, {useState} from 'react';
+import Logo from "../../assets/logo1.png"
+import '../../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
-import AuthService from '../Authentication/authUser'
+import AuthService from '../../service/Authentication/authUser'
 import {Link, TextField} from "@material-ui/core";
-import ValidateEmail from "../Copmonent/Login/ValidateEmail"
-import AlertDialog from "../Copmonent/AlertDialog";
+import ValidateEmail from "../../Copmonent/Login/ValidateEmail"
+import AlertDialog from "../../Copmonent/Login/AlertDialog";
 
 const SignUpContainer=(props ) => {
     // create state with usestat for

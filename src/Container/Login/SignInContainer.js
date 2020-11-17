@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from "../assets/logo1.png"
-import '../Styles/LoginStyle.css';
-import { useForm } from "react-hook-form";
-import AuthService from '../Authentication/authUser';
-import { Link, TextField } from "@material-ui/core";
-import ValidateEmail from "../Copmonent/Login/ValidateEmail"
+import Logo from "../../assets/logo1.png"
+import '../../Styles/LoginStyle.css';
+import {useForm} from "react-hook-form";
+import AuthService from '../../service/Authentication/authUser';
+import {Link, TextField} from "@material-ui/core";
+import ValidateEmail from "../../Copmonent/Login/ValidateEmail"
 
 const SignInContainer = (props) => {
 

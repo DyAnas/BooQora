@@ -1,7 +1,6 @@
 import React from "react";
-import { NavBar } from "./Navbar";
-import MyBookings from "../Copmonent/Booking/myBooking";
-import BookingsArchives from "../Copmonent/AdminPages/Statistics/Archive";
+import MyBookings from "../../Copmonent/Booking/myBooking";
+
 export const MyBooking = () => {
 
 

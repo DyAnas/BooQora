@@ -1,8 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import { TextField } from "@material-ui/core";
-import { withRouter } from "react-router-dom";
-
+import {TextField} from "@material-ui/core";
+import {withRouter} from "react-router-dom";
 
 
 const ForgotPassword = (props) => {

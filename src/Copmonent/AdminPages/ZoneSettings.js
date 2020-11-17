@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { NavBar } from "../../Container/Navbar";
+import React, {useEffect, useState} from "react";
 import "../../Styles/admin.css";
-import { getZoneList } from "../../service/mapService";
-import { ChangeZone } from "../../service/ZoneSetting";
-import { Checkbox } from '@material-ui/core'
+import {getZoneList} from "../../service/BookingService/mapService";
+import {ChangeZone} from "../../service/AdminService/ZoneSetting";
+import {Checkbox} from '@material-ui/core'
+
 export const ZoneSettings = () => {
     const [edit, setEdit] = useState(false);
     const [floor, setFloor] = useState(1)
@@ -21,7 +21,7 @@ export const ZoneSettings = () => {
         let items = []
         getZoneList(floor).then(response => {
             response.data.zoneDTOList.map((i, index) => {
-                items.push(i)
+                return items.push(i)
 
 
             })

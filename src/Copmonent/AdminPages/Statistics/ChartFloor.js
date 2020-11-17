@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
-
-import { Bar } from 'react-chartjs-2';
-import { CheckStatusOfAllZones } from "../../../service/mapService";
+import React, {useEffect, useState} from "react";
+import {Bar} from 'react-chartjs-2';
+import {CheckStatusOfAllZones} from "../../../service/BookingService/mapService";
 import DatePicker from "react-datepicker";
-import { Row } from "react-bootstrap";
+import en from "date-fns/locale/en-GB";
 
 const StatusFloor = () => {
     const [data, setData] = useState([])
@@ -59,7 +58,7 @@ const StatusFloor = () => {
         CheckStatusOfAllZones(floor, startDate).then(response => {
             console.log(response.data)
             response.data.map((i, index) => {
-                item.push(i.bookedPercentage)
+
                 if (i.bookedPercentage < 30) {
                     color[index] = 'rgba(75, 192, 192, 0.6)';
                 } else if (i.bookedPercentage > 30 || i.bookedPercentage < 70) {
@@ -67,6 +66,7 @@ const StatusFloor = () => {
                 } else {
                     color[index] = 'rgba(255, 99, 132, 0.6)';
                 }
+                return  item.push(i.bookedPercentage);
             })
             setData(item)
             setColors(color)
@@ -128,6 +128,8 @@ const StatusFloor = () => {
                         onChange={date => setStartDate(date)}
                         startDate={startDate}
                         clearAriaLabel="From"
+                        locale={en}
+                        showWeekNumbers
                         className="btn btn-info Calendar1 float-left"
                     />
                 </div>
@@ -141,7 +143,7 @@ const StatusFloor = () => {
                         </button>
                         <div className="dropdown-menu " aria-labelledby="dropdownMenuButton">
                             {[...Array(7)].map((x, i) =>
-                                <a className="dropdown-item " href="#" key={i}
+                                <a className="dropdown-item" href="#" key={i}
                                     onClick={() => setFloor(i + 1)} >{i + 1}</a>
                             )}
 

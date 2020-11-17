@@ -1,19 +1,25 @@
 import React from "react";
-import "../Styles/navbarstyle.css";
-import whiteLogo from "../assets/TietoEvry.svg.png"
-import AuthService from '../Authentication/authUser'
-import { faCalendarCheck, faChartLine, faCog, faInfo, faList,
-     faTable, faUserCircle, faUserPlus, faUserShield } from "@fortawesome/free-solid-svg-icons";
+import "../../Styles/navbarstyle.css";
+import whiteLogo from "../../assets/TietoEvry.svg.png"
+import AuthService from '../../service/Authentication/authUser'
+import {
+    faCalendarCheck,
+    faChartLine,
+    faCog,
+    faInfo,
+    faList,
+    faTable,
+    faUserCircle,
+    faUserPlus
+} from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
 
 
-
-export const NavBar = (props) => {
+export const NavigationBar = (props) => {
     const currentUser = AuthService.getCurrentUser().roles;
     console.log(currentUser.toString())
 
@@ -30,18 +36,16 @@ export const NavBar = (props) => {
                 <Link to="/aboutBookora" className="nav-item nav-link"><FontAwesomeIcon icon={faInfo} /> About Bookora</Link>
 
 
-                {currentUser[1] === "ROLE_ADMIN" || currentUser[0] === "ROLE_ADMIN" ?
-                    <div className="nav-item dropdown">
-                        <Link  className="nav-link dropdown-toggle" data-toggle="dropdown"
-                        ><FontAwesomeIcon icon={faUserShield} /> Admin</Link>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <Link to="/statistics" className="dropdown-item"><FontAwesomeIcon icon={faChartLine} /> Statistics</Link>
-                            <Link to="/zonesettings" className="dropdown-item"><FontAwesomeIcon icon={faCog} /> Zone settings</Link>
-                            <Link to="/addNewAdmin" className="dropdown-item"><FontAwesomeIcon icon={faUserPlus} /> Add new Admin</Link>
-                            <Link to="/archive" className="dropdown-item"><FontAwesomeIcon icon={faTable} /> Archive</Link>
-                        </div>
-                    </div>
-                    : null}
+
+
+                  <Link to="/statistics" className="nav-item nav-link"><FontAwesomeIcon
+                    icon={faChartLine}/> Statistics</Link>
+                    <Link to="/zonesettings"  className="nav-item nav-link"><FontAwesomeIcon icon={faCog} /> Zone settings</Link>
+                    <Link to="/addNewAdmin"  className="nav-item nav-link"><FontAwesomeIcon icon={faUserPlus} /> Add new Admin</Link>
+                    <Link to="/archive"  className="nav-item nav-link"><FontAwesomeIcon icon={faTable} /> Archive</Link>
+
+
+
             </div>
             {AuthService.getCurrentUser() ?
 

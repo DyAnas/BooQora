@@ -1,14 +1,17 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
 import BookDialog from "./ConfirmBooking";
 import "../../Styles/mapStyle.css";
-import {getZoneList, CheckStatusOfAllZones, BookPlass} from "../../service/mapService";
-import AuthService from '../../Authentication/authUser';
+import {BookPlass, CheckStatusOfAllZones, getZoneList} from "../../service/BookingService/mapService";
+import AuthService from '../../service/Authentication/authUser';
 import {withRouter} from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {Doughnut} from 'react-chartjs-2';
+import en from "date-fns/locale/en-GB";
+
+
 
 const MapComponent = (props) => {
     const areas = [
@@ -115,10 +118,10 @@ const MapComponent = (props) => {
                 response.data.zoneDTOList.map((i, index) => {
                     areas[index].id = i.id
                     if (i.activated === true) {
-                        items.push(index);
+                       return items.push(index);
 
                     }
-
+                     return null;
                 })
                 areasToShow = items.map(item => {
                     return areas[item]
@@ -138,7 +141,7 @@ const MapComponent = (props) => {
             response => {
 
                 response.data.map((i, index) => {
-                    items.push(i.bookedPercentage);
+
                     // to change color of zone depend to percentage of booking
                     areas[index].status = i.bookedPercentage;
                     if (i.bookedPercentage < 40) {
@@ -148,7 +151,7 @@ const MapComponent = (props) => {
                     } else {
                         areas[index].preFillColor = 'rgba(255, 99, 132, 0.6)';
                     }
-
+                     return items.push(i.bookedPercentage);
                 })
 
                 setBarData({
@@ -189,12 +192,11 @@ const MapComponent = (props) => {
     useEffect(() => {
         setQuery(Math.random());
 
-    }, [mapAreas, startDate]);
-    let items = [];
+    }, [mapAreas, startDate, ]);
+
     useEffect(() => {
 
-        setQuery(Math.random());
-    }, [floor, startDate, mapAreas]);
+    }, [floor, startDate, areas]);
 
 
     // handle onclick zone
@@ -234,7 +236,7 @@ const MapComponent = (props) => {
     }
     const [loading, setLoading] = React.useState(false);
 
-    // const [floor, setFloor]=useState(1)
+
 
     return (
         <div className="container container-sm">
@@ -259,7 +261,8 @@ const MapComponent = (props) => {
                             minDate={today}
                             maxDate={maxDate}
                             className="btn btn-info Calendar1 float-left btn-sm"
-
+                            locale={en}
+                            showWeekNumbers
                         />
                         <BookDialog
                             show={show}

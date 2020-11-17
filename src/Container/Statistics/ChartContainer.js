@@ -1,7 +1,6 @@
 import React from "react";
-import StatusFloor from "../Copmonent/AdminPages/Statistics/ChartFloor";
-import { NavBar } from "./Navbar";
-import StatusBuilding from "../Copmonent/AdminPages/Statistics/ChartBuilding";
+import StatusFloor from "../../Copmonent/AdminPages/Statistics/ChartFloor";
+import StatusBuilding from "../../Copmonent/AdminPages/Statistics/ChartBuilding";
 
 const ChartContainer = () => {
 
