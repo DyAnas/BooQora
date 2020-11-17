@@ -29,6 +29,7 @@ const StatusBuilding = () => {
                 yAxes: [
                     {
                         ticks: {
+                            max: 100,
                             beginAtZero: true
                         }
                     }

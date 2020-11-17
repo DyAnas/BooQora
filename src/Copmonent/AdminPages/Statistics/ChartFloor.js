@@ -77,6 +77,7 @@ const StatusFloor = () => {
                     yAxes: [
                         {
                             ticks: {
+                                max: 100,
                                 beginAtZero: true
                             }
                         }
