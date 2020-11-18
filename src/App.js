@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import SignUpContainer from "./Container/Login/SignUpContainer";
@@ -30,13 +30,11 @@ class App extends Component {
             <Route path="/signup" component={SignUpContainer} />
             <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
-            <ProtectedRoute path="/NewPassword" component={NewPassword} />           
+            <ProtectedRoute path="/NewPassword" component={NewPassword} />
             <>
               <div className="container">
-              <ProtectedRoute>
-                <NavigationBar />
+              <ProtectedRoute component={NavigationBar} />
 
-              </ProtectedRoute>
                 <ProtectedRoute
                     path="/newBooking"
                     component={NewBooking} />
@@ -51,7 +49,7 @@ class App extends Component {
                     path="/aboutBookora"
                     component={About} />
                 <ProtectedRoute
-                    path="/zonesettings"
+                      path="/zonesettings"
                     component={ZoneSettings} />
                 <ProtectedRoute
                     path="/statistics"

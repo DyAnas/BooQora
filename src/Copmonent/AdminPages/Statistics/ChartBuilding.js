@@ -7,7 +7,7 @@ const StatusBuilding = () => {
     const [data, setData] = useState([])
     // const [floor, setFloor]=useState(1)
     const [barData, setBarData] = useState({
-        labels: ['Floor 1', 'Floor 2', 'Floor 3', 'Floor 4', 'Floor 5', 'Floor 6', 'Floor 7'],
+      labels: ['Floor 1', 'Floor 2', 'Floor 3', 'Floor 4', 'Floor 5', 'Floor 6', 'Floor 7'],
         datasets: [
             {
                 label: "Status Build By floor",
@@ -29,7 +29,6 @@ const StatusBuilding = () => {
                 yAxes: [
                     {
                         ticks: {
-                            max: 200,
                             beginAtZero: true
                         }
                     }
@@ -37,7 +36,7 @@ const StatusBuilding = () => {
             },
             title: {
                 display: true,
-                text: 'Quantity Status Building By Floor',
+                text: 'Status Building By Floor',
                 fontSize: 25
             },
             legend: {

@@ -20,8 +20,6 @@ import {Link} from "react-router-dom";
 
 
 export const NavigationBar = (props) => {
-    const currentUser = AuthService.getCurrentUser().roles;
-    console.log(currentUser.toString() + "0  "+currentUser[0]+"1  "+currentUser[1])
 
     return <nav className="navbar navbar-expand-md navbar-light bg-light " >
         <Link to="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></Link>
@@ -35,7 +33,8 @@ export const NavigationBar = (props) => {
                 <Link to="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Bookings</Link>
                 <Link to="/aboutBookora" className="nav-item nav-link"><FontAwesomeIcon icon={faInfo} /> About Bookora</Link>
 
-                {currentUser[0] === "ROLE_ADMIN" || currentUser[1] === "ROLE_ADMIN" ?
+                {localStorage.length!==0 && AuthService.getCurrentUser().roles[0] === "ROLE_ADMIN"
+                 ||AuthService.getCurrentUser().roles[1] === "ROLE_ADMIN" ?
                 <>
                     <Link to="/statistics" className="nav-item nav-link"><FontAwesomeIcon
                         icon={faChartLine}/> Statistics</Link>
