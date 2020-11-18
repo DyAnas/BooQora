@@ -1,6 +1,6 @@
 
- const ValidateEmail = (props) => {
-    const split = props.split(/[@]+/); //splits string using RegEx on a space OR a comma
+ const ValidateEmail = (email) => {
+    const split = email.split(/[@]+/); //splits string using RegEx on a space OR a comma
     const validEmailTietoEvry = "tietoevry.com";
     const validEmailEvry = "evry.com"
 

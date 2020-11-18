@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import MaterialTable from "material-table";
 import {getAllBookingOfEmployeeInAPeriod} from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
@@ -8,16 +8,18 @@ export default function BookingsArchives() {
     const [endDate, setEndDate] = useState(new Date());
     const [ListBooking, setListBooking]= useState([]);
 
+    const getAllBooking= (response)=> {
+        setListBooking(response.data.bookingofEmployeeDTOList);
 
+    }
+
+    const fetchBooking= useCallback(() => {
+        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(getAllBooking)
+    }, [startDate, endDate])
     useEffect(() => {
-      /*  getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
-            response =>{
-                setListBooking(response.data.bookingofEmployeeDTOList);
+        fetchBooking()
+    }, [fetchBooking])
 
-            })*/
-
-
-    }, []);
 
 const columns =
     [
@@ -29,14 +31,9 @@ const columns =
     ]
 
     const [selectedRow, setSelectedRow] = useState(null);
-  const onSubmit =()=> {
-    getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(
-        response =>{
-            setListBooking(response.data.bookingofEmployeeDTOList);
 
-        })
 
-}
+
         return (
             <div>
 
@@ -66,11 +63,7 @@ const columns =
                             />
 
 
-                        </div>
-
                 </div>
-                    <div className="">
-                        <button className="btn-info" onClick={onSubmit}>Show Booking</button>
                   <div className="table col-12 mt-4">
 
                    <MaterialTable
@@ -78,7 +71,8 @@ const columns =
                 columns={columns}
                 data={ListBooking}
                 onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.id))}
-                options={{
+                  options={{
+                    filtering: true,
                     headerStyle: {
                         backgroundColor: '#e553a4',
                         color: '#FFF'
@@ -87,6 +81,7 @@ const columns =
                         backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
                     })
                 }}
+
                    />
 
                   </div>

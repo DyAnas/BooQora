@@ -105,7 +105,7 @@ export const ZoneSettings = () => {
                                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                                                             {Zone.map((i, index) =>
-                                                                <a href="/#" key={i.id} onClick={() => HandlerZone(i)} className="dropdown-item"> {"Zone (" + i.zone + ")"} </a>
+                                                                <a href="#" key={i.id} onClick={() => HandlerZone(i)} className="dropdown-item"> {"Zone (" + i.zone + ")"} </a>
 
                                                             )}
 

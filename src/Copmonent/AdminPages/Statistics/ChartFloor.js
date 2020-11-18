@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {Bar} from 'react-chartjs-2';
 import {CheckStatusOfAllZones} from "../../../service/BookingService/mapService";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
 
+
 const StatusFloor = () => {
-    const [data, setData] = useState([])
     const [floor, setFloor] = useState(1)
     const [barData, setBarData] = useState({
         labels: ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E', 'Zone F', 'Zone G'],
@@ -49,16 +49,10 @@ const StatusFloor = () => {
             }
         }
     });
-    const [colors, setColors] = useState([])
-
-    useEffect(() => {
-
+    const getStatus= (response)=> {
         let item = []
         let color = []
-        CheckStatusOfAllZones(floor, startDate).then(response => {
-            console.log(response.data)
             response.data.map((i, index) => {
-
                 if (i.bookedPercentage < 30) {
                     color[index] = 'rgba(75, 192, 192, 0.6)';
                 } else if (i.bookedPercentage > 30 || i.bookedPercentage < 70) {
@@ -68,9 +62,8 @@ const StatusFloor = () => {
                 }
                 return  item.push(i.bookedPercentage);
             })
-            setData(item)
-            setColors(color)
-        })
+
+
         setBarOptions({
             options: {
                 scales: {
@@ -100,17 +93,20 @@ const StatusFloor = () => {
             datasets: [
                 {
                     label: " Percentage Status Floor " + floor + " By Zone",
-                    data: data,
-                    backgroundColor: colors,
+                    data: item,
+                    backgroundColor: color,
                     borderWidth: 3
                 }
             ]
-
         })
 
-    }, [startDate, floor]);
-
-
+}
+    const fetchBooking= useCallback(() => {
+        CheckStatusOfAllZones(floor, startDate).then(getStatus)
+    }, [startDate, floor,])
+    useEffect(() => {
+        fetchBooking()
+    }, [fetchBooking])
 
     // today and maxDate to show in calendar
 

@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {Bar} from 'react-chartjs-2';
 import {CheckStatusOfAllFloorPeriod} from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
+
 const StatusBuilding = () => {
-    const [data, setData] = useState([])
-    // const [floor, setFloor]=useState(1)
     const [barData, setBarData] = useState({
       labels: ['Floor 1', 'Floor 2', 'Floor 3', 'Floor 4', 'Floor 5', 'Floor 6', 'Floor 7'],
         datasets: [
@@ -29,6 +28,7 @@ const StatusBuilding = () => {
                 yAxes: [
                     {
                         ticks: {
+                            max: 200,
                             beginAtZero: true
                         }
                     }
@@ -46,15 +46,11 @@ const StatusBuilding = () => {
         }
     };
 
-    const [colors, setColors] = useState([])
-    const statusBuilding = () => {
-
+    const statusBuilding = (response) => {
         let item = []
         let color = []
-        CheckStatusOfAllFloorPeriod(startDate, endDate).then(response => {
-            console.log(response.data)
+         //   console.log(response.data)
             response.data.map((i, index) => {
-
                 if (i.totalBooking < 30) {
                     color[index] = 'rgba(75, 192, 192, 0.6)';
                 } else if (i.totalBooking > 30 || i.totalBooking < 70) {
@@ -64,17 +60,17 @@ const StatusBuilding = () => {
                 }
                 return item.push(i.totalBooking);
             })
-            setData(item)
-            setColors(color)
-        })
+           // setData(item)
+
+
 
         setBarData({
             ...barData,
             datasets: [
                 {
                     label: 'Status Building By Floor',
-                    data: data,
-                    backgroundColor: colors,
+                    data: item,
+                    backgroundColor: color,
                     borderWidth: 3
                 }
             ]
@@ -86,11 +82,14 @@ const StatusBuilding = () => {
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
     const [endDate, setEndDate] = useState(today);
-    useEffect(() => {
-        statusBuilding();
-    }, [startDate, endDate]);
-    // today and maxDate to show in calendar
 
+
+    const fetchBooking= useCallback(() => {
+        CheckStatusOfAllFloorPeriod(startDate, endDate).then(statusBuilding)
+    }, [startDate, endDate,])
+    useEffect(() => {
+        fetchBooking()
+    }, [fetchBooking])
 
     return (
 

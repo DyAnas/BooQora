@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {DeleteBookings, getAllBookingOfEmployeeInAPeriodEmployee} from "../../service/BookingService/bookingService";
 import AuthService from '../../service/Authentication/authUser';
 import MaterialTable from "material-table";
-
-export default function MyBookings() {
-
+import { useHistory } from 'react-router-dom';
+export default function MyBookings(props) {
+    const history = useHistory();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
     const today = new Date();
@@ -15,9 +15,24 @@ export default function MyBookings() {
     const getAllBooking = () => {
         getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
             response => {
-                
+
                 setListBooking(response.data.bookingToshowDtoLists);
-                
+
+            },  (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if(error.response.status===401){
+                    localStorage.clear()
+                    history.push("/");
+                    window.location.reload();
+                }
+
+                alert(resMessage);
+
             })
     }
     const removeBooking = (item) => {
@@ -29,14 +44,30 @@ export default function MyBookings() {
                 }, 3000);
                 setMessage(response.data.message)
                 getAllBooking();
+            }, (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if(error.response.status===401){
+                    localStorage.clear()
+                    props.history.push("/");
+                    window.location.reload();
+                }
+
+                alert(resMessage);
+
             }
-        )
+
+    )
     }
+
     useEffect(() => {
         getAllBooking();
-
     }, []);
-    // todo create dialog to confirm deleting
+
     // remove one booking
     const columns =
         [

@@ -37,7 +37,6 @@ const SignInContainer = (props) => {
 
         // check validation before call api
         if (ValidateEmail(email)) {
-
             AuthService.login(email, password).then(
                 Response => {
                     if (Response.token === "Email is not activated") {

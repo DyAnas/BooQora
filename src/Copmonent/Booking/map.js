@@ -5,7 +5,7 @@ import BookDialog from "./ConfirmBooking";
 import "../../Styles/mapStyle.css";
 import {BookPlass, CheckStatusOfAllZones, getZoneList} from "../../service/BookingService/mapService";
 import AuthService from '../../service/Authentication/authUser';
-import {withRouter} from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {Doughnut} from 'react-chartjs-2';
@@ -115,31 +115,53 @@ const MapComponent = (props) => {
         let areasToShow;
         getZoneList(floor).then(
             response => {
-                response.data.zoneDTOList.map((i, index) => {
-                    areas[index].id = i.id
-                    if (i.activated === true) {
-                       return items.push(index);
+                console.log(response)
+             //   if(response!=="token is expired") {
+                    response.data.zoneDTOList.map((i, index) => {
+                        areas[index].id = i.id
+                        if (i.activated === true) {
+                            return items.push(index);
 
-                    }
-                     return null;
-                })
-                areasToShow = items.map(item => {
-                    return areas[item]
-                })
-                setMapAreas({
-                    name: floor.toString(),
-                    areas: areasToShow
-                })
+                        }
+                        return null;
+                    })
+                    areasToShow = items.map(item => {
+                        return areas[item]
+                    })
+                    setMapAreas({
+                        name: floor.toString(),
+                        areas: areasToShow
+                    })
 
+               /* }else {
+                    props.history.push("/");
+                    //  window.location.reload();
+                }*/
+            },
+            (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if(error.response.status===401){
+                    localStorage.clear()
+                  props.history.push("/");
+                 window.location.reload();
+                 }
 
-            })
+                setMessage(resMessage);
+
+            } )
+
     }
     // method to get all statistics of zones
     const GetStatusOfAllZones = (floorId, date) => {
         let items = [];
         CheckStatusOfAllZones(floorId, date).then(
             response => {
-
+              //  if(!response!=="token is expired") {
                 response.data.map((i, index) => {
 
                     // to change color of zone depend to percentage of booking
@@ -174,7 +196,23 @@ const MapComponent = (props) => {
                 })
 
 
-            })
+            }, (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if(error.response.status===401){
+                    localStorage.clear()
+                    props.history.push("/");
+                    window.location.reload();
+                }
+
+                setMessage(resMessage);
+
+            } )
+
     }
 
     const [barData, setBarData] = useState({});

@@ -1,6 +1,6 @@
 import React from "react";
 import "../../Styles/navbarstyle.css";
-import whiteLogo from "../../assets/TietoEvry.svg.png"
+import whiteLogo from "../../assets/whiteLogo.png"
 import AuthService from '../../service/Authentication/authUser'
 import {
     faCalendarCheck,
@@ -33,8 +33,8 @@ export const NavigationBar = (props) => {
                 <Link to="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Bookings</Link>
                 <Link to="/aboutBookora" className="nav-item nav-link"><FontAwesomeIcon icon={faInfo} /> About Bookora</Link>
 
-                {localStorage.length!==0 && AuthService.getCurrentUser().roles[0] === "ROLE_ADMIN"
-                 ||AuthService.getCurrentUser().roles[1] === "ROLE_ADMIN" ?
+                {(localStorage.length!==0) && (AuthService.getCurrentUser().roles[0] === "ROLE_ADMIN"
+                 ||AuthService.getCurrentUser().roles[1] === "ROLE_ADMIN") ?
                 <>
                     <Link to="/statistics" className="nav-item nav-link"><FontAwesomeIcon
                         icon={faChartLine}/> Statistics</Link>

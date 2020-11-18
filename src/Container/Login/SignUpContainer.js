@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Logo from "../../assets/logo1.png"
+
 import '../../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
 import AuthService from '../../service/Authentication/authUser'
@@ -83,7 +83,7 @@ const SignUpContainer=(props ) => {
 
                 <div>
                     <div className="center logo ">
-                        <img src={Logo} alt="logo"/>
+                        <img src="../../../assets/logo1.png" alt="logo"/>
                     </div>
                     <h1 className="text  mb-1 justify-content-center">
                         Sign Up

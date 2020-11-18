@@ -1,19 +1,22 @@
 import axios from "axios";
-
+import authHeader from "./authHeader";
 
 const api_url = "http://localhost:8080/api/v1/employees/";
 const api_url2 = "http://localhost:8080/";
 class AuthService {
+
     login(email, password) {
+
         return axios
             .post(api_url + "signin", {
                 email,
                 password
             })
             .then(Response => {
-                localStorage.setItem("user", JSON.stringify(Response.data));
-
-                //  console.log(JSON.parse(localStorage.getItem('user')));
+                if (Response.data.token) {
+                    localStorage.setItem("user", JSON.stringify(Response.data));
+                    console.log(authHeader().Authorization)
+                }
                 return Response.data;
             });
     }
@@ -25,9 +28,7 @@ class AuthService {
 
             })
             .then(Response => {
-                //   localStorage.setItem("user", JSON.stringify(Response.data));
 
-                //  console.log(JSON.parse(localStorage.getItem('user')));
                 return Response.data;
             });
     }
@@ -38,6 +39,7 @@ class AuthService {
                 email,
 
             }).then(response => {
+                console.log(response.data.token)
                 localStorage.setItem("user", JSON.stringify(response.data));
                 return response.data;
             })
@@ -80,6 +82,8 @@ class AuthService {
     }
 
     getCurrentUser() {
+
+
         return JSON.parse(localStorage.getItem('user'));
     }
 
