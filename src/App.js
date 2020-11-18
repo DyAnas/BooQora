@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import SignUpContainer from "./Container/Login/SignUpContainer";
@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
             <ProtectedRoute path="/NewPassword" component={NewPassword} />           
-
+            <>
               <div className="container">
               <ProtectedRoute>
                 <NavigationBar />
@@ -60,7 +60,7 @@ class App extends Component {
                     path="/archive"
                     component={Archive} />
               </div>
-
+            </>
             <Route path="*" component={NotFoundPage} />
             
           </Switch>
