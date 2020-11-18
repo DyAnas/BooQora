@@ -10,10 +10,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {Doughnut} from 'react-chartjs-2';
 import en from "date-fns/locale/en-GB";
-
+import { useHistory } from 'react-router-dom';
 
 
 const MapComponent = (props) => {
+    const history = useHistory();
     const areas = [
         {
             id: 1,
@@ -133,10 +134,7 @@ const MapComponent = (props) => {
                         areas: areasToShow
                     })
 
-               /* }else {
-                    props.history.push("/");
-                    //  window.location.reload();
-                }*/
+
             },
             (error) => {
                 const resMessage =
@@ -147,7 +145,7 @@ const MapComponent = (props) => {
                     error.toString();
                 if(error.response.status===401){
                     localStorage.clear()
-                  props.history.push("/");
+                    history.push("/");
                  window.location.reload();
                  }
 
@@ -207,9 +205,8 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                     window.location.reload();
+                    alert("You most sign in again");
                 }
-
-                setMessage(resMessage);
 
             } )
 

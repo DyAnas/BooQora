@@ -29,9 +29,10 @@ export default function MyBookings(props) {
                     localStorage.clear()
                     history.push("/");
                     window.location.reload();
+                    alert("You most sign in again");
                 }
 
-                alert(resMessage);
+
 
             })
     }
