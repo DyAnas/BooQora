@@ -45,7 +45,12 @@ export const CreateNewAdmin = () => {
 
                     setUserFound(false);
                     setMessage("Email is not found")
-                }else {
+                } if(error.response.status===400){
+
+                    setUserFound(false);
+                    setMessage("Incorrect Email")
+                }
+                else {
                     setMessage(resMessage)
                 }
                // setMessage(error.response.status)
@@ -77,17 +82,38 @@ export const CreateNewAdmin = () => {
             roleToApi = ["user", "admin"]
 
         }
+        if (validateEmail(email)){
         UpgradeUserToAdmin(email, roleToApi).then(
             response => {
                 console.log(response.data);
                 setMessage(response.data.message)
                 setUserFound(false);
 
-            }, error => {
+            },(error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                console.log(resMessage);
+                if(error.response.status===404){
 
-                setMessage(error.data.message);
-                //     setUserFound(false);
+                    setUserFound(false);
+                    setMessage("Email is not found")
+                }else if(error.response.status===400){
+
+                    setUserFound(false);
+                    setMessage("Incorrect Email")
+                }
+
+                // setMessage(error.response.status)
+
             })
+
+    } else {
+        setMessage( "Email must match tietoEvry")
+    }
 
 
     }

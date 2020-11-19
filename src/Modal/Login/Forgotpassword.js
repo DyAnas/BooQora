@@ -26,7 +26,7 @@ const Forgotpassword = (props) => {
                     setMessage({
                         text: Response.message,
                     })
-
+                    spinnerTimer();
                     // GotToResetPassword();
                     if (Response.message.trim() === "This email address does not exist!") {
                         setShowVerifyCode(false);
@@ -38,9 +38,39 @@ const Forgotpassword = (props) => {
                         setShowRestPassword(false);
                     }
 
-                },
+                }, error => {
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    if (resMessage === "Error: Unauthorized") {
+                        setMessage({
+                            text: "Incorrect email or password",
+                        })
+                    }
+                    else if (resMessage === "No message available") {
+                        setMessage({
+                            text: "Email is not registered",
+
+                        })
+                    }else if(error.response.status===404){
+                        setMessage({
+                            text: "Email is not exist,",
+
+                        })
+                    }
+
+                    else {
+                        setMessage({
+                            text: resMessage,
+                        })
+                    }
+
+                }
             );
-            spinnerTimer();
+
         }
         else {
             

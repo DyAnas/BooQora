@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from "../assets/logo1.png"
-import '../Styles/LoginStyle.css';
+import Logo from "../../assets/logo1.png"
+import '../../Styles/LoginStyle.css';
 import {useForm} from "react-hook-form";
-import AuthService from '../service/Authentication/authUser';
+import AuthService from '../../service/Authentication/authUser';
 import {Link, TextField} from "@material-ui/core";
-import validateEmail from "../Component/Login/ValidateEmail"
+import validateEmail from "./ValidateEmail"
 
 const ResendConfirm = (props) => {
 
@@ -18,9 +18,9 @@ const ResendConfirm = (props) => {
         text: "",
         title: ""
     });
-    const goTo = () => {
+    const goToSignIn = () => {
         setTimeout(() => {
-            props.history.push("/home");
+            props.history.push("/");
         }, 2000);
         setLoading(true);
     }
@@ -40,8 +40,18 @@ const ResendConfirm = (props) => {
                         text: Response.message,
 
                     })
-                    goTo();
-                })
+                    goToSignIn();
+                },(error) => {
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+
+                    setMessage(resMessage);
+
+                } )
         } else {
             setMessage({
                 text: "Email must match tietoevry",
@@ -136,4 +146,4 @@ const ResendConfirm = (props) => {
         </div>
     );
 }
-
+export  default ResendConfirm;

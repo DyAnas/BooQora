@@ -28,17 +28,32 @@ const NewPassword = (props) => {
                 setMessage({
                     text: Response.message
                 })
-            },
-            error => {
+            }, error => {
                 const resMessage =
                     (error.response &&
                         error.response.data &&
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-                setMessage({
-                    text: resMessage,
-                })
+                if (resMessage === "Error: Unauthorized") {
+                    setMessage({
+                        text: "Incorrect email or password",
+                    })
+                } else if (resMessage === "No message available") {
+                    setMessage({
+                        text: "Email is not registered",
+
+                    })
+                } else if (error.response.status === 400) {
+                    setMessage({
+                        text: "You can't change password to old password,",
+
+                    })
+                } else {
+                    setMessage({
+                        text: resMessage,
+                    })
+                }
 
             }
         );

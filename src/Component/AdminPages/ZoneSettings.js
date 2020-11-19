@@ -3,6 +3,7 @@ import "../../Styles/admin.css";
 import {getZoneList} from "../../service/BookingService/mapService";
 import {ChangeZone} from "../../service/AdminService/ZoneSetting";
 import {Checkbox} from '@material-ui/core'
+import {useHistory} from "react-router-dom";
 
 export const ZoneSettings = () => {
     const [edit, setEdit] = useState(false);
@@ -13,7 +14,7 @@ export const ZoneSettings = () => {
     const [Active, setActive] = useState(false)
     const [ChooseZone, setChooseZone] = useState("Choose Zone")
     const [message, setMessage] = useState("Choose a floor to edit")
-
+    const history = useHistory();
     useEffect(() => {
 
         setChooseZone("Choose Zone");
@@ -21,20 +22,30 @@ export const ZoneSettings = () => {
         let items = []
         getZoneList(floor).then(response => {
             response.data.zoneDTOList.map((i, index) => {
-                return items.push(i)
-
-
-            })
-
-
+                return items.push(i)})
             return setZone(items)
+        }, (error) => {
+            const resMessage =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            if(error.response.status===401){
+                localStorage.clear()
+                history.push("/");
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+
+            setMessage(resMessage);
 
         })
 
 
     }, [floor]);
 
-    const HandlerZone = (Zone) => {
+    const handlerZone = (Zone) => {
         setZoneID(Zone.id);
         setCapacity(Zone.capacity);
         setActive(Zone.activated)
@@ -54,11 +65,27 @@ export const ZoneSettings = () => {
 
     }
 
-    const HandleSaveSetting = () => {
-
+    const handleSaveSetting = () => {
         ChangeZone(floor, ZoneID, Capacity, Active).then(
             response => {
                 setMessage(response.data.message);
+            } ,
+            (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if(error.response.status===401){
+                    localStorage.clear()
+                    history.push("/");
+                    window.location.reload();
+
+                }
+
+                setMessage(resMessage);
+
             })
 
     }
@@ -105,7 +132,7 @@ export const ZoneSettings = () => {
                                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                                                             {Zone.map((i, index) =>
-                                                                <a href="#" key={i.id} onClick={() => HandlerZone(i)} className="dropdown-item"> {"Zone (" + i.zone + ")"} </a>
+                                                                <a href="#" key={i.id} onClick={() => handlerZone(i)} className="dropdown-item"> {"Zone (" + i.zone + ")"} </a>
 
                                                             )}
 
@@ -151,7 +178,7 @@ export const ZoneSettings = () => {
 
                             </div>
                             <button
-                                onClick={HandleSaveSetting}
+                                onClick={handleSaveSetting}
                                 type="submit" className="btn btn-light mr-2">Save</button>
                             <button className="btn btn-light">Cancel</button>
                         </form>
