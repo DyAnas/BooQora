@@ -45,10 +45,15 @@ export const CreateNewAdmin = () => {
 
                     setUserFound(false);
                     setMessage("Email is not found")
-                } if(error.response.status===400){
+                }else if(error.response.status===400){
 
                     setUserFound(false);
                     setMessage("Incorrect Email")
+                }else if(error.response.status===401){
+                    localStorage.clear()
+                    history.push("/");
+                    window.location.reload();
+                    alert("You have been inactive for a while. For your security, please sign in again");
                 }
                 else {
                     setMessage(resMessage)
@@ -105,6 +110,11 @@ export const CreateNewAdmin = () => {
 
                     setUserFound(false);
                     setMessage("Incorrect Email")
+                }else if(error.response.status===401){
+                    localStorage.clear()
+                    history.push("/");
+                    window.location.reload();
+                    alert("You have been inactive for a while. For your security, please sign in again");
                 }
 
                 // setMessage(error.response.status)

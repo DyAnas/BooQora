@@ -277,6 +277,11 @@ const MapComponent = (props) => {
                     window.location.reload();
                     setMessage(resMessage)
                     alert("You have been inactive for a while. For your security, please sign in again");
+                }else if (error.response.status === 400) {
+
+                    setMessage("You already have booking on that day")
+                    setShow(false);
+
                 }
             }
             )

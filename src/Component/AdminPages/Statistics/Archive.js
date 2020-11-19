@@ -3,18 +3,39 @@ import MaterialTable from "material-table";
 import {getAllBookingOfEmployeeInAPeriod} from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
+import {useHistory} from "react-router-dom";
 export default function BookingsArchives() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [ListBooking, setListBooking]= useState([]);
-
-    const getAllBooking= (response)=> {
+    const history = useHistory();
+    const getAllBooking= (response,error)=> {
+        if (response){
         setListBooking(response.data.bookingofEmployeeDTOList);
+        }
+      /*  console.log(response.error)
 
+        console.log(error)
+           if(response){
+
+                localStorage.clear()
+                history.push("/");
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+*/
     }
 
     const fetchBooking= useCallback(() => {
-        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(getAllBooking)
+        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(getAllBooking, error=> {
+            if( error.status===401) {
+
+                localStorage.clear()
+                history.push("/");
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+        })
     }, [startDate, endDate])
     useEffect(() => {
         fetchBooking()
