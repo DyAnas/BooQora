@@ -31,9 +31,9 @@ export const CreateNewAdmin = () => {
 
                 setMessage("")
 
-               /* if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
+                if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
                     setCheckBoxValueAdmin(true)
-                }*/
+                }
             },(error) => {
                 const resMessage =
                     (error.response &&
@@ -51,11 +51,7 @@ export const CreateNewAdmin = () => {
                // setMessage(error.response.status)
 
             })
-        /*error => { //Need return from API
-                console.log(error);
-                setMessage(error.data.message)
-                setUserFound(false);
-            })*/;
+
         } else {
             setMessage( "Email must match tietoEvry")
         }
