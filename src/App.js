@@ -9,8 +9,7 @@ import {About} from './Modal/About/aboutBookora';
 import {NewBooking} from "./Modal/Booking/newBooking";
 import {MyBooking} from "./Modal/Booking/myBooking";
 import {ZoneSettings} from "./Component/AdminPages/ZoneSettings";
-import ContainerForgotPassword from "./Modal/Login/ContainerForgotpassword";
-import resendConfirm from "./Component/Login/resendActivation";
+import ContainerForgotPassword from "./Modal/Login/Forgotpassword";
 import ChartContainer from "./Modal/Statistics/ChartContainer";
 import Archive from "./Component/AdminPages/Statistics";
 import {NotFoundPage} from "./Modal/NotFoundPage";
@@ -29,7 +28,6 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={SignInContainer} />
             <Route path="/signup" component={SignUpContainer} />
-            <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
             <ProtectedRoute path="/NewPassword" component={NewPassword} />
             <>

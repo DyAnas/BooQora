@@ -1,58 +1,56 @@
 import React, {useState} from 'react';
-
 import '../../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
 import AuthService from '../../service/Authentication/authUser'
 import {Link, TextField} from "@material-ui/core";
-import ValidateEmail from "../../Component/Login/ValidateEmail"
-import AlertDialog from "../../Component/Login/AlertDialog";
-
-const SignUpContainer=(props ) => {
-    // create state with usestat for
-    const [loading, setLoading]=React.useState(false);
+import validateEmail from "../../Component/Login/ValidateEmail"
+import Logo from "../../assets/logo1.png"
+const SignUpContainer = (props) => {
+    // create state with useStat for
+    const [loading, setLoading] = React.useState(false);
     const [firstName, setFirstName] = React.useState('')
     const [lastName, setLastName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
 
-  // const [confirmPassword, setConfirmPassword] = useState('')
     // useForm to control form
     const {register, handleSubmit, watch, errors} = useForm();
     // dialog handle
-    const [show, setShow] = useState(false);
     const [message, setMessage] = useState({
         text: "",
-        title:""
+        title: ""
     });
 
 
-    const handleClose = () => setShow(false);
     // to show message and go to sign in
-    const SignIn = ()=> {
-      //  setShow(true);
-       setTimeout( ()=>{
-           props.history.push("/");
-       }, 2000 );
-      //  handleDialogShow();
+    const signIn = () => {
+        setTimeout(() => {
+            setLoading(false)
+            props.history.push("/");
+        }, 2000);
+        setLoading(true);
+
     }
 
 
     // handle submit form
     const onSubmit = data => {
+        setMessage({
+            text: "",
+
+        })
         // check validation before call api
-        if (ValidateEmail(email)) {
+        if (validateEmail(email)) {
             // call register method to send data to api
             const roles = ["user"];
             setLoading(true);
             AuthService.register(firstName, lastName, email, password, roles)
                 .then(Response => {
-
-                    setMessage({
-                        text: Response.data.message,
-                        title: "Success"})
-
-                       SignIn(); // to show message and go to sign in
-
+                        setMessage({
+                            text: Response.data.message,
+                            title: "Success"
+                        })
+                        signIn(); // to show message and go to sign in
                     }, error => {
                         const resMessage =
                             (error.response &&
@@ -60,19 +58,19 @@ const SignUpContainer=(props ) => {
                                 error.response.data.message) ||
                             error.message ||
                             error.toString();
-
                         setMessage({
                             text: resMessage,
-                             title: "Error"})
-                        console.log("res.message", resMessage);
-                       // handleDialogShow();
+                            title: "Error"
+                        })
+
+                   signIn();
                     }
                 );
         } else {
             setMessage({
-                text:"Email must match tietoevry",
-                 title: "Incorrect email or password"})
-                // handleDialogShow();
+                text: "Email must match tietoevry",
+                title: "Incorrect email or password"
+            })
         }
 
     }
@@ -80,22 +78,19 @@ const SignUpContainer=(props ) => {
     return (
         <div className=" ipad vh-100 center  ">
             <div className="col-md-3  box ipad2  ">
-
                 <div>
                     <div className="center logo ">
-                        <img src="../../../assets/logo1.png" alt="logo"/>
+                        <img src={Logo} alt="logo"/>
                     </div>
                     <h1 className="text  mb-1 justify-content-center">
                         Sign Up
                     </h1>
                     <div className="center">
-                        <p style={{ color: "red", marginRight:"10px"}}>{message.text}
-
-                        </p>
+                        <p style={{color: "red", marginRight: "10px"}}>{message.text}</p>
 
                     </div>
                     <div className="center">
-                        <form style={{ width:"85%"}} onSubmit={handleSubmit(onSubmit)}>
+                        <form style={{width: "85%"}} onSubmit={handleSubmit(onSubmit)}>
                             <TextField
                                 name="firstName"
                                 id="firstName"
@@ -207,21 +202,21 @@ const SignUpContainer=(props ) => {
                                     type="submit"
                                     className="btn btn-info pr-4 pl-4 mt-2 text-light"
                                     variant="contained"
-                                    
+
                                 >
                                     Sign up
                                 </button>
                             </div>
                             {loading ?
-                        <div className="mt-2">
-                            <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
-                      </div>
-                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
-                      </div>
-                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
-                      </div>
-                        </div>
-                       : null}
+                                <div className="mt-2">
+                                    <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                    </div>
+                                    <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                    </div>
+                                    <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                    </div>
+                                </div>
+                                : null}
                             <hr/>
                             <div className="mb-1 ">
                                 <Link href="/" variant="body2" className="text-footer">
@@ -229,14 +224,6 @@ const SignUpContainer=(props ) => {
                                 </Link>
                             </div>
                         </form>
-            
-                        <AlertDialog
-                            open={show}
-                            onHide={handleClose}
-                            message={message.text}
-                            Tittel={message.title}
-
-                        />
                     </div>
                 </div>
             </div>

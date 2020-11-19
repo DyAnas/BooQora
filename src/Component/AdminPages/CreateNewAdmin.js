@@ -2,40 +2,63 @@ import React, {useState} from 'react';
 import {Checkbox, TextField} from '@material-ui/core'
 import "../../Styles/admin.css";
 import {FindEmployee, UpgradeUserToAdmin} from '../../service/AdminService/AdminStatistics'
+import {useHistory} from "react-router-dom";
+import validateEmail from "../Login/ValidateEmail";
+import {useForm} from "react-hook-form";
 
 
 export const CreateNewAdmin = () => {
-
-
+    const history = useHistory();
     const [email, setEmail] = useState("")
     const [userFound, setUserFound] = useState(false)
     const [message, setMessage] = useState("")
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [checkBoxValueAdmin, setCheckBoxValueAdmin] = useState(false)
+    const { register, handleSubmit, errors } = useForm();
     let roleToApi = [];
 
 
     const handleFindEmployee = () => {
+        if (validateEmail(email)){
         FindEmployee(email).then(
             response => {
                 console.log(response.data);
-                setFirstname(response.data.firstName)
-                setLastname(response.data.lastName)
+                setFirstname(response.data.firstName.toUpperCase())
+                setLastname(response.data.lastName.toUpperCase())
                 setEmail(response.data.email)
                 setUserFound(true);
 
                 setMessage("")
 
-                if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
+               /* if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
                     setCheckBoxValueAdmin(true)
+                }*/
+            },(error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if(error.response.status===404){
+
+                    setUserFound(false);
+                    setMessage("Email is not found")
+                }else {
+                    setMessage(resMessage)
                 }
-            }, error => { //Need return from API
+               // setMessage(error.response.status)
+
+            })
+        /*error => { //Need return from API
                 console.log(error);
                 setMessage(error.data.message)
                 setUserFound(false);
-            });
-
+            })*/;
+        } else {
+            setMessage( "Email must match tietoEvry")
+        }
     }
 
 
@@ -92,27 +115,39 @@ export const CreateNewAdmin = () => {
                     <div className="d-flex justify-content-center center flex-column">
 
                         <strong >Find User:</strong>
-
+                        <form style={{ width:"85%"}} onSubmit={handleSubmit(handleFindEmployee)} id="TestForm" data-test="submit-button" >
                         <TextField
                             name="email"
-                            id="email"
+                            error={!!errors.email}
                             label="Email"
+                            inputRef={register({
+                                required: "Required",
+                                pattern: {
+                                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+                                    message: "Invalid email"
+                                }
+                            })}
+                            helperText={errors.email ? errors.email.message : ""}
                             type="email"
+                            fullWidth
+                            autocompleted="false"
                             size="small"
                             onChange={e => setEmail(e.target.value)}
                             variant="filled"
                             margin="normal"
-                            className="background_input  w-50"
+                            id="input"
+                            className="background_input"
+
                         />
                         <strong style={{ color: "red" }}>{message}</strong>
                         <div>
 
                             <button
                                 className="btn btn-light "
-                                onClick={handleFindEmployee}
                             >Find</button>
 
                         </div>
+                        </form>
                     </div>
 
 
@@ -126,11 +161,11 @@ export const CreateNewAdmin = () => {
                                 <tbody>
                                     <tr>
                                         <th scope="row">First Name:</th>
-                                        <td className="text-primary">{firstname.toUpperCase()}</td>
+                                        <td className="text-primary">{firstname}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Last Name:</th>
-                                        <td className="text-primary">{lastname.toUpperCase()}</td>
+                                        <td className="text-primary">{lastname}</td>
                                     </tr>
                                     <tr>
 

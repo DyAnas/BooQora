@@ -7,40 +7,12 @@ export const About = (props) => {
 
     return (
 
-        <div className="container">
+        <div className="container box">
 
-            <header className="jumbotron">
-                <h3>
-                    <strong>{currentUser.username}</strong> Profile
-          </h3>
-            </header>
-            <p>
-                <strong>Token:</strong>{" "}
-                {currentUser.accessToken}
-
-            </p>
-            <p>
-                <strong>Id:</strong>{" "}
-                {currentUser.id}
-            </p>
-            <p>
-                <strong>Email:</strong>{" "}
-                {currentUser.email}
-            </p>
-            <strong>Authorities:</strong>
-            <ul>
-                {
-                    currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-            </ul>
-
-            <button onClick={() => {
-                AuthService.logout();
-                props.history.push("/")
-
-            }}
-            >
-                logout </button>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="/next">Next protected page</a>
+         <h2 className="text">About Bookora</h2>
+            <div className="text-center">
+            <p>Bokkor is a booking system</p>
+            </div>
         </div>
     );
 }

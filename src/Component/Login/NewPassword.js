@@ -18,7 +18,7 @@ const NewPassword = (props) => {
         props.history.push("/");
 
     }
-    const onSubmit = data => {
+    const onSubmit = () => {
 
         AuthService.resetPassword(email, password).then(
             Response => {

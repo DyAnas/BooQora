@@ -9,7 +9,7 @@ const StatusBuilding = () => {
       labels: ['Floor 1', 'Floor 2', 'Floor 3', 'Floor 4', 'Floor 5', 'Floor 6', 'Floor 7'],
         datasets: [
             {
-                label: "Status Build By floor",
+                label: "Quantity Status Build By floor",
                 data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
@@ -36,7 +36,7 @@ const StatusBuilding = () => {
             },
             title: {
                 display: true,
-                text: 'Status Building By Floor',
+                text: "Quantity Status Build By floor",
                 fontSize: 25
             },
             legend: {
@@ -68,7 +68,7 @@ const StatusBuilding = () => {
             ...barData,
             datasets: [
                 {
-                    label: 'Status Building By Floor',
+                    label: "Quantity Status Build By floor",
                     data: item,
                     backgroundColor: color,
                     borderWidth: 3

@@ -1,6 +1,6 @@
 import React from "react";
 import {useForm} from "react-hook-form";
-import ValidateEmail from "../../Component/Login/ValidateEmail";
+import validateEmail from "../../Component/Login/ValidateEmail";
 import AuthService from "../../service/Authentication/authUser";
 import ForgotPassword from "../../Component/Login/ForgotPassword";
 import VerifyCode from "../../Component/Login/VerifyCode";
@@ -8,7 +8,7 @@ import NewPassword from "../../Component/Login/NewPassword";
 import {withRouter} from "react-router-dom";
 
 
-const ContainerForgotPassword = (props) => {
+const Forgotpassword = (props) => {
     const { register, handleSubmit, errors } = useForm();
     const [email, setEmail] = React.useState('');
     const [confirmationCode, setconfirmationCode] = React.useState('');
@@ -20,8 +20,7 @@ const ContainerForgotPassword = (props) => {
     const [loading, setLoading] = React.useState(false);
 
     const onSubmit = data => {
-        if (ValidateEmail(email)) {
-
+        if (validateEmail(email)) {
             AuthService.forgotPassword(email).then(
                 Response => {
                     setMessage({
@@ -136,4 +135,4 @@ const ContainerForgotPassword = (props) => {
         }
     </div>)
 }
-export default withRouter(ContainerForgotPassword);
+export default withRouter(Forgotpassword);

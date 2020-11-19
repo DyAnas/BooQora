@@ -11,13 +11,11 @@ export default function MyBookings(props) {
     const email = AuthService.getCurrentUser().email;
     const [ListBooking, setListBooking] = useState([]);
     const [message, setMessage] = useState("");
-    // todo add floor to list
+
     const getAllBooking = () => {
         getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
             response => {
-
                 setListBooking(response.data.bookingToshowDtoLists);
-
             },  (error) => {
                 const resMessage =
                     (error.response &&
@@ -31,9 +29,7 @@ export default function MyBookings(props) {
                     window.location.reload();
                     alert("You most sign in again");
                 }
-
-
-
+                setMessage(resMessage)
             })
     }
     const removeBooking = (item) => {
@@ -54,15 +50,13 @@ export default function MyBookings(props) {
                     error.toString();
                 if(error.response.status===401){
                     localStorage.clear()
-                    props.history.push("/");
+                    history.push("/");
                     window.location.reload();
+                    alert("You have been inactive for a while. For your security, please sign in again");
                 }
+                setMessage(resMessage)
 
-                alert(resMessage);
-
-            }
-
-    )
+            })
     }
 
     useEffect(() => {
@@ -76,26 +70,18 @@ export default function MyBookings(props) {
             { title: "Date", field: "date",},
             { title: "Floor", field: "floor" },
             { title: "Zone", field: "zoneName",},
-
         ]
-
-
-
 
     return (
         <div>
             <div className="center col-md-6">
                 <p style={{ color: "red" }}>{message}</p>
             </div>
-
-
          <h2 className="title"> My Booking </h2>
-
             <MaterialTable
                 title="Your booking "
                 columns={columns}
                 data={ListBooking}
-
                 options={{
                     headerStyle: {
                         backgroundColor: '#e553a4',

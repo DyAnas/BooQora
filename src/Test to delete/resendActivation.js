@@ -1,27 +1,25 @@
 import React from 'react';
-import Logo from "../../assets/logo1.png"
-import '../../Styles/LoginStyle.css';
+import Logo from "../assets/logo1.png"
+import '../Styles/LoginStyle.css';
 import {useForm} from "react-hook-form";
-import AuthService from '../../service/Authentication/authUser';
+import AuthService from '../service/Authentication/authUser';
 import {Link, TextField} from "@material-ui/core";
-import ValidateEmail from "../Login/ValidateEmail"
+import validateEmail from "../Component/Login/ValidateEmail"
 
 const ResendConfirm = (props) => {
 
-    //  const [token, setToken] = React.useState('')
     const [loading, setLoading] = React.useState(false);
     const [email, setEmail] = React.useState('')
 
-    // useform to controll form
+    // useForm to controll form
     const { register, handleSubmit, errors } = useForm();
     // dialog handle
     const [message, setMessage] = React.useState({
         text: "",
         title: ""
     });
-    const SignIn = () => {
+    const goTo = () => {
         setTimeout(() => {
-
             props.history.push("/home");
         }, 2000);
         setLoading(true);
@@ -33,7 +31,7 @@ const ResendConfirm = (props) => {
             text: "",
 
         })
-        if (ValidateEmail(email)) {
+        if (validateEmail(email)) {
             setLoading(true);
             AuthService.ResendActivation(email).then(
                 Response => {
@@ -42,7 +40,7 @@ const ResendConfirm = (props) => {
                         text: Response.message,
 
                     })
-                    SignIn();
+                    goTo();
                 })
         } else {
             setMessage({
@@ -139,4 +137,3 @@ const ResendConfirm = (props) => {
     );
 }
 
-export default ResendConfirm;

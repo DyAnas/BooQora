@@ -5,14 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function    BookDialog(props) {
     return (
         <>
-
             <Modal
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={props.show } onHide={props.onHide}>
                 <Modal.Header  className="p-3 mb-2 bg-info text-white"  closeButton>
                     <Modal.Title>Confirm Booking </Modal.Title>
-
                 </Modal.Header>
                 <Modal.Body>
                 <h2>Floor: {props.name}</h2>
@@ -25,11 +23,10 @@ function    BookDialog(props) {
                         </div>
                         <div className="center col-md-6">
                             <p style={{ color: "red"}}>{props.messages}</p>
-
                         </div>
                     </div>
                     {props.loading ?
-                        <div className="mt-2 container">
+                        <div className="mt-2 container center">
                             <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
                             </div>
                             <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">

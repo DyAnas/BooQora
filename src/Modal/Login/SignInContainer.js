@@ -4,24 +4,22 @@ import '../../Styles/LoginStyle.css';
 import {useForm} from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
 import {Link, TextField} from "@material-ui/core";
-import ValidateEmail from "../../Component/Login/ValidateEmail"
+import validateEmail from "../../Component/Login/ValidateEmail"
 
 const SignInContainer = (props) => {
 
-    //  const [token, setToken] = React.useState('')
     const [loading, setLoading] = React.useState(false);
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
-    // useform to controll form
+    // useForm to control form
     const { register, handleSubmit, errors } = useForm();
     // dialog handle
     const [message, setMessage] = React.useState({
         text: "",
         title: ""
     });
-    const SignIn = () => {
+    const signIn = () => {
         setTimeout(() => {
-
             props.history.push("/newBooking");
         }, 2000);
         setLoading(true);
@@ -29,26 +27,17 @@ const SignInContainer = (props) => {
 
     // handle submit form
     const onSubmit = () => {
-
         setMessage({
             text: "",
 
         })
 
         // check validation before call api
-        if (ValidateEmail(email)) {
+        if (validateEmail(email)) {
             AuthService.login(email, password).then(
-                Response => {
-                    if (Response.token === "Email is not activated") {
-                        setMessage({
-                            text: Response.token,
+                () => {
 
-                        })
-                        setshowConfirmation(true)
-                    } else {
-                        SignIn();
-
-                    }
+                    signIn();
 
                 },
                 error => {
@@ -68,6 +57,12 @@ const SignInContainer = (props) => {
                             text: "Email is not registered",
 
                         })
+                    }else if(error.response.status===400){
+                        setMessage({
+                            text: "Email is not active,",
+
+                        })
+                        setshowConfirmation(true)
                     }
 
                     else {
@@ -80,7 +75,7 @@ const SignInContainer = (props) => {
             );
         } else {
             setMessage({
-                text: "Email must match tietoevry",
+                text: "Email must match tietoEvry",
             })
         }//Authentication
     }
@@ -104,7 +99,6 @@ const SignInContainer = (props) => {
 
     }
     const [showConfirmation, setshowConfirmation] = React.useState(false);
-
 
     return (<div className=" ipad vh-100 center background   " >
         <div className="col-md-3  box ipad2  ">

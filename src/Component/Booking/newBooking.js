@@ -94,7 +94,7 @@ const MapComponent = (props) => {
     // today and maxDate to show in calendar
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
-    const date = startDate.getFullYear() + '-' + (startDate.getMonth() + 1) + '-' + startDate.getDate();
+    const date =+ startDate.getDate()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
 
@@ -102,7 +102,7 @@ const MapComponent = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    const [loading, setLoading] = useState(false);
     // handle zone
     const [ZoneID, setZoneID] = useState();
     const [Zone, setZone] = useState();
@@ -111,13 +111,12 @@ const MapComponent = (props) => {
         areas: []
     });
     // method to get all active zones
-    const GetActiveZone = (floor) => {
+    const getActiveZone = (floor) => {
         let items = [];
         let areasToShow;
         getZoneList(floor).then(
             response => {
                 console.log(response)
-             //   if(response!=="token is expired") {
                     response.data.zoneDTOList.map((i, index) => {
                         areas[index].id = i.id
                         if (i.activated === true) {
@@ -133,8 +132,6 @@ const MapComponent = (props) => {
                         name: floor.toString(),
                         areas: areasToShow
                     })
-
-
             },
             (error) => {
                 const resMessage =
@@ -147,6 +144,7 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     history.push("/");
                  window.location.reload();
+
                  }
 
                 setMessage(resMessage);
@@ -155,11 +153,10 @@ const MapComponent = (props) => {
 
     }
     // method to get all statistics of zones
-    const GetStatusOfAllZones = (floorId, date) => {
+    const getStatusOfAllZones = (floorId, date) => {
         let items = [];
         CheckStatusOfAllZones(floorId, date).then(
             response => {
-              //  if(!response!=="token is expired") {
                 response.data.map((i, index) => {
 
                     // to change color of zone depend to percentage of booking
@@ -193,7 +190,6 @@ const MapComponent = (props) => {
                     ]
                 })
 
-
             }, (error) => {
                 const resMessage =
                     (error.response &&
@@ -205,7 +201,8 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                     window.location.reload();
-                    alert("You most sign in again");
+                    setMessage(resMessage)
+                    alert("You have been inactive for a while. For your security, please sign in again");
                 }
 
             } )
@@ -218,8 +215,8 @@ const MapComponent = (props) => {
     // floor handle
     const handleClickFloor = (floor) => {
         setMessage("")
-        GetStatusOfAllZones(floor, startDate)
-        GetActiveZone(floor);
+        getStatusOfAllZones(floor, startDate)
+        getActiveZone(floor);
         setFloor(floor);
 
     }
@@ -243,7 +240,7 @@ const MapComponent = (props) => {
 
     }
 
-    const ShowDialog = () => {
+    const showDialog = () => {
         setTimeout(() => {
             setShow(false)
             props.history.push("/myBookings");
@@ -255,7 +252,7 @@ const MapComponent = (props) => {
     const [message, setMessage] = useState("");
     // confirm booking
     const currentUser = AuthService.getCurrentUser();
-    const ConfirmBooking = () => {
+    const confirmBooking = () => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
 
@@ -265,11 +262,26 @@ const MapComponent = (props) => {
                 } else {
                     setMessage(response.data.message);
 
-                    ShowDialog();
+                    showDialog();
                 }
-            })
+            }, (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+                if (error.response.status === 401) {
+                    localStorage.clear()
+                    props.history.push("/");
+                    window.location.reload();
+                    setMessage(resMessage)
+                    alert("You have been inactive for a while. For your security, please sign in again");
+                }
+            }
+            )
     }
-    const [loading, setLoading] = React.useState(false);
+
 
 
 
@@ -304,7 +316,7 @@ const MapComponent = (props) => {
                             onHide={handleClose}
                             name={mapAreas.name}
                             Zone={Zone}
-                            ConfirmBooking={ConfirmBooking}
+                            ConfirmBooking={confirmBooking}
                             messages={message}
                             dates={date}
                             loading={loading}
