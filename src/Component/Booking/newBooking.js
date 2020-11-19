@@ -249,6 +249,7 @@ const MapComponent = (props) => {
         setShow(true);
     }
 
+
     const [message, setMessage] = useState("");
     // confirm booking
     const currentUser = AuthService.getCurrentUser();

@@ -37,12 +37,22 @@ export async function BookPlass(date, employeeId, zoneId ) {
         headers:{
             Authorization: 'Bearer ' + token,
         }
-    })
+
+    }).catch(error=> {
+            if( error.response.status===401) {
+
+                localStorage.clear()
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+
+            return error;
+        }
+    )
     return response;
 }
 export async function CheckStatusOfAllZones(floorId,date ) {
-   // let response= "response false"
-  //  if(AuthService.checkTokenExpirationMiddleware()){
+
     let token= AuthService.getCurrentUser().token;
      const response = await axios.post(api_url2+"checkStatusOfAllZoneInAFloor", {
         // Authorization: 'Bearer ' + token,
@@ -52,7 +62,17 @@ export async function CheckStatusOfAllZones(floorId,date ) {
         headers:{
             Authorization: 'Bearer ' + token,
         }
-    })
+    }).catch(error=> {
+             if( error.response.status===401) {
+
+                 localStorage.clear()
+                 window.location.reload();
+                 alert("You have been inactive for a while. For your security, please sign in again");
+             }
+
+             return error;
+         }
+     )
 
     return response;
 

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import authHeader from "../Authentication/authHeader";
 import {useHistory} from "react-router-dom";
+
 const api_url = "http://localhost:8080/api/v1/zones/";
 const api_url2 = "http://localhost:8080/api/v1/bookings/";
 const api_url3 = "http://localhost:8080/api/v1/employees/email/";
@@ -14,7 +15,17 @@ export async function FindEmployee(email) {
             headers: {
                 Authorization: authHeader().Authorization,
             }
-        })
+        }).catch(error=> {
+            if( error.response.status===401) {
+
+                localStorage.clear()
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+
+            return error;
+        }
+    )
     return response;
 }
 
@@ -29,7 +40,17 @@ export async function UpgradeUserToAdmin(email,roleArray) {
             headers: {
                 Authorization: authHeader().Authorization,
             }
-        })
+        }).catch(error=> {
+            if( error.response.status===401) {
+
+                localStorage.clear()
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+
+            return error;
+        }
+    )
     return response;
 }
 
@@ -45,14 +66,26 @@ export async function getAllBookingOfEmployeeInAPeriod(from, to) {
             Authorization: authHeader().Authorization,
         }
     }).catch(error=> {
-        if( error.status===401) {
+        if( error.response.status===401) {
 
             localStorage.clear()
-          //  history.push("/");
             window.location.reload();
             alert("You have been inactive for a while. For your security, please sign in again");
         }
-    })
+
+        return error;
+    }
+    ).catch(error=> {
+            if( error.response.status===401) {
+
+                localStorage.clear()
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+
+            return error;
+        }
+    )
     return response;
 }
 
@@ -64,7 +97,17 @@ export async function CheckStatusOfAllFloorPeriod(from, to) {
         headers: {
             Authorization: authHeader().Authorization,
         }
-    })
+    }).catch(error=> {
+            if( error.response.status===401) {
+
+                localStorage.clear()
+                window.location.reload();
+                alert("You have been inactive for a while. For your security, please sign in again");
+            }
+
+            return error;
+        }
+    )
     return response;
 }
 

@@ -15,6 +15,14 @@ export async function getAllBookingOfEmployeeInAPeriodEmployee (email, from, to)
         headers:{
             Authorization: 'Bearer ' + token,
         }
+    }).catch(error=> {
+        if( error.response.status===401) {
+            localStorage.clear()
+            window.location.reload();
+            alert("You have been inactive for a while. For your security, please sign in again");
+        }
+
+        return error;
     })
     return response;
 }

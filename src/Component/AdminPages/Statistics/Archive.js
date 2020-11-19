@@ -9,33 +9,13 @@ export default function BookingsArchives() {
     const [endDate, setEndDate] = useState(new Date());
     const [ListBooking, setListBooking]= useState([]);
     const history = useHistory();
-    const getAllBooking= (response,error)=> {
-        if (response){
-        setListBooking(response.data.bookingofEmployeeDTOList);
-        }
-      /*  console.log(response.error)
+    const getAllBooking= (response)=> {
+         setListBooking(response.data.bookingofEmployeeDTOList);
 
-        console.log(error)
-           if(response){
-
-                localStorage.clear()
-                history.push("/");
-                window.location.reload();
-                alert("You have been inactive for a while. For your security, please sign in again");
-            }
-*/
     }
 
     const fetchBooking= useCallback(() => {
-        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(getAllBooking, error=> {
-            if( error.status===401) {
-
-                localStorage.clear()
-                history.push("/");
-                window.location.reload();
-                alert("You have been inactive for a while. For your security, please sign in again");
-            }
-        })
+        getAllBookingOfEmployeeInAPeriod(startDate, endDate).then(getAllBooking)
     }, [startDate, endDate])
     useEffect(() => {
         fetchBooking()
