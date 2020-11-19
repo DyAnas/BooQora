@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import SignUpContainer from "./Container/Login/SignUpContainer";
-import SignInContainer from './Container/Login/SignInContainer'
+import SignUpContainer from "./Modal/Login/SignUpContainer";
+import SignInContainer from './Modal/Login/SignInContainer'
 import {ProtectedRoute} from "./service/Authentication/protectedRoute";
-import NewPassword from "./Copmonent/Login/NewPassword";
-import {About} from './Container/About/aboutBookora';
-import {NewBooking} from "./Container/Booking/newBooking";
-import {MyBooking} from "./Container/Booking/myBooking";
-import {ZoneSettings} from "./Copmonent/AdminPages/ZoneSettings";
-import ContainerForgotPassword from "./Container/Login/ContainerForgotpassword";
-import resendConfirm from "./Copmonent/Login/resendActivation";
-import ChartContainer from "./Container/Statistics/ChartContainer";
-import Archive from "./Copmonent/AdminPages/Statistics";
-import {NotFoundPage} from "../src/Container/NotFoundPage";
-import {CreateNewAdmin} from "./Copmonent/AdminPages/CreateNewAdmin";
-import {NavigationBar} from "./Copmonent/Layout/NavigationBar";
+import NewPassword from "./Component/Login/NewPassword";
+import {About} from './Modal/About/aboutBookora';
+import {NewBooking} from "./Modal/Booking/newBooking";
+import {MyBooking} from "./Modal/Booking/myBooking";
+import {ZoneSettings} from "./Component/AdminPages/ZoneSettings";
+import ContainerForgotPassword from "./Modal/Login/ContainerForgotpassword";
+import resendConfirm from "./Component/Login/resendActivation";
+import ChartContainer from "./Modal/Statistics/ChartContainer";
+import Archive from "./Component/AdminPages/Statistics";
+import {NotFoundPage} from "./Modal/NotFoundPage";
+import {CreateNewAdmin} from "./Component/AdminPages/CreateNewAdmin";
+import {NavigationBar} from "./Component/Layout/NavigationBar";
 
 
 class App extends Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import MyBookings from "../../Copmonent/Booking/myBooking";
+import MyBookings from "../../Component/Booking/myBooking";
 
 export const MyBooking = () => {
 

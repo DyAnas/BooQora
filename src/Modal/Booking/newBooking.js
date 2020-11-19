@@ -1,5 +1,5 @@
 import React from "react";
-import MapComponent from "../../Copmonent/Booking/map";
+import MapComponent from "../../Component/Booking/map";
 import "../../Styles/newBooking.css";
 
 export const NewBooking = () => {

@@ -4,8 +4,8 @@ import '../../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
 import AuthService from '../../service/Authentication/authUser'
 import {Link, TextField} from "@material-ui/core";
-import ValidateEmail from "../../Copmonent/Login/ValidateEmail"
-import AlertDialog from "../../Copmonent/Login/AlertDialog";
+import ValidateEmail from "../../Component/Login/ValidateEmail"
+import AlertDialog from "../../Component/Login/AlertDialog";
 
 const SignUpContainer=(props ) => {
     // create state with usestat for

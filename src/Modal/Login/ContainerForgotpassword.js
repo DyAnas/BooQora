@@ -1,10 +1,10 @@
 import React from "react";
 import {useForm} from "react-hook-form";
-import ValidateEmail from "../../Copmonent/Login/ValidateEmail";
+import ValidateEmail from "../../Component/Login/ValidateEmail";
 import AuthService from "../../service/Authentication/authUser";
-import ForgotPassword from "../../Copmonent/Login/ForgotPassword";
-import VerifyCode from "../../Copmonent/Login/VerifyCode";
-import NewPassword from "../../Copmonent/Login/NewPassword";
+import ForgotPassword from "../../Component/Login/ForgotPassword";
+import VerifyCode from "../../Component/Login/VerifyCode";
+import NewPassword from "../../Component/Login/NewPassword";
 import {withRouter} from "react-router-dom";
 
 
