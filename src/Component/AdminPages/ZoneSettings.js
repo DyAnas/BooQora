@@ -81,6 +81,7 @@ export const ZoneSettings = () => {
                     localStorage.clear()
                     history.push("/");
                     window.location.reload();
+                    alert("You have been inactive for a while. For your security, please sign in again");
 
                 }
 

@@ -1,9 +1,17 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState, forwardRef } from "react";
 import MaterialTable from "material-table";
 import {getAllBookingOfEmployeeInAPeriod} from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
 
+import Filter from '@material-ui/icons/FindInPageOutlined';
+
+
+const tableIcons = {
+
+    Filter: forwardRef((props, ref) => <Filter style={{color: "green"}} {...props} ref={ref} />),
+
+};
 export default function BookingsArchives() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -69,11 +77,13 @@ const columns =
 
                    <MaterialTable
                 title="List booking by period"
+                icons={tableIcons}
                 columns={columns}
                 data={ListBooking}
                 onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.id))}
                   options={{
                     filtering: true,
+
                     headerStyle: {
                         backgroundColor: '#e553a4',
                         color: '#FFF'

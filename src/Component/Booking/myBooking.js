@@ -27,7 +27,7 @@ export default function MyBookings(props) {
                     localStorage.clear()
                     history.push("/");
                     window.location.reload();
-                    alert("You most sign in again");
+                    alert("You have been inactive for a while. For your security, please sign in again");
                 }
                 setMessage(resMessage)
             })

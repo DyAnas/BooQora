@@ -163,7 +163,9 @@ export const CreateNewAdmin = () => {
                             className="background_input w-75 center"
 
                         />
-                        <strong style={{ color: "red" }}>{message}</strong>
+                            <div className="center ">
+                                <p style={{color: "red"}}>{message}</p>
+                            </div>
                         <div>
 
                             <button
