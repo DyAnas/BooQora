@@ -152,7 +152,7 @@ export const ZoneSettings = () => {
                                                         size="1"
                                                         id="exampleDropdownFormPassword1"
                                                         placeholder="Capacity" 
-                                                        style={{maxWidth:"27%"}}/>
+                                                        style={{maxWidth:"35%"}}/>
                                                 </td>
                                             </tr>
                                             <tr>

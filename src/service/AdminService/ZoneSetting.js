@@ -15,14 +15,7 @@ export async function ChangeZone(floor,zoneId, capacity, activated) {
         headers:{
             Authorization: authHeader().Authorization,
         }
-    }).catch(error=> {
-        if( error.response.status===401) {
-            localStorage.clear()
-            window.location.reload();
-            alert("You have been inactive for a while. For your security, please sign in again");
-        }
 
-        return error;
     })
     return response;
 }

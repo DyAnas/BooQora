@@ -171,6 +171,7 @@ const MapComponent = (props) => {
                      return items.push(i.bookedPercentage);
                 })
 
+                console.log("items", items.toString())
                 setBarData({
                     labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
                     datasets: [
@@ -256,15 +257,10 @@ const MapComponent = (props) => {
     const confirmBooking = () => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
-
-                if (response.data.message === "You already have booking on that day") {
-                    setShow(false);
-                    setMessage("You already have booking on that day");
-                } else {
+                console.log(response)
                     setMessage(response.data.message);
-
                     showDialog();
-                }
+
             }, (error) => {
                 const resMessage =
                     (error.response &&

@@ -12,7 +12,7 @@ import {ZoneSettings} from "./Component/AdminPages/ZoneSettings";
 import ContainerForgotPassword from "./Modal/Login/Forgotpassword";
 import resendConfirm from "./Component/Login/resendActivation";
 import ChartContainer from "./Modal/Statistics/ChartContainer";
-import Archive from "./Component/AdminPages/Statistics";
+import Archive from "./Modal/Statistics/Statistics";
 import {NotFoundPage} from "./Modal/NotFoundPage";
 import {CreateNewAdmin} from "./Component/AdminPages/CreateNewAdmin";
 import {NavigationBar} from "./Component/Layout/NavigationBar";

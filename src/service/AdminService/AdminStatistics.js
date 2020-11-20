@@ -15,15 +15,6 @@ export async function FindEmployee(email) {
             headers: {
                 Authorization: authHeader().Authorization,
             }
-        }).catch(error=> {
-            if( error.response.status===401) {
-
-                localStorage.clear()
-                window.location.reload();
-                alert("You have been inactive for a while. For your security, please sign in again");
-            }
-
-            return error;
         }
     )
     return response;
@@ -40,15 +31,7 @@ export async function UpgradeUserToAdmin(email,roleArray) {
             headers: {
                 Authorization: authHeader().Authorization,
             }
-        }).catch(error=> {
-            if( error.response.status===401) {
 
-                localStorage.clear()
-                window.location.reload();
-                alert("You have been inactive for a while. For your security, please sign in again");
-            }
-
-            return error;
         }
     )
     return response;
@@ -67,7 +50,6 @@ export async function getAllBookingOfEmployeeInAPeriod(from, to) {
         }
     }).catch(error=> {
         if( error.response.status===401) {
-
             localStorage.clear()
             window.location.reload();
             alert("You have been inactive for a while. For your security, please sign in again");
@@ -77,7 +59,6 @@ export async function getAllBookingOfEmployeeInAPeriod(from, to) {
     }
     ).catch(error=> {
             if( error.response.status===401) {
-
                 localStorage.clear()
                 window.location.reload();
                 alert("You have been inactive for a while. For your security, please sign in again");

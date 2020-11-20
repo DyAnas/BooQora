@@ -20,9 +20,6 @@ export async function getZoneList(floor) {
         })
 
 
-//}
-
-
     return response;
     }
 
@@ -38,16 +35,7 @@ export async function BookPlass(date, employeeId, zoneId ) {
             Authorization: 'Bearer ' + token,
         }
 
-    }).catch(error=> {
-            if( error.response.status===401) {
-
-                localStorage.clear()
-                window.location.reload();
-                alert("You have been inactive for a while. For your security, please sign in again");
-            }
-
-            return error;
-        }
+    }
     )
     return response;
 }

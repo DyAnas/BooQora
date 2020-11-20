@@ -3,12 +3,12 @@ import MaterialTable from "material-table";
 import {getAllBookingOfEmployeeInAPeriod} from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
-import {useHistory} from "react-router-dom";
+
 export default function BookingsArchives() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [ListBooking, setListBooking]= useState([]);
-    const history = useHistory();
+
     const getAllBooking= (response)=> {
          setListBooking(response.data.bookingofEmployeeDTOList);
 

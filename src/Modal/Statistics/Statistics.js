@@ -1,5 +1,5 @@
 import React from "react";
-import BookingsArchives from "./Statistics/Archive";
+import BookingsArchives from "../../Component/AdminPages/Statistics/Archive";
 
 const Archive= ()=> {
 

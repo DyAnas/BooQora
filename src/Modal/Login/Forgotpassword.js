@@ -141,7 +141,7 @@ const Forgotpassword = (props) => {
         {ShowVerifyCode &&
             <VerifyCode
                 onSubmit={handleSubmit(onSubmitCode)}
-                error={errors.confirmationCode}
+                error={!!errors.confirmationCode}
                 helperText={errors.confirmationCode ? errors.confirmationCode.message : ""}
                 inputRef={register({
                     required: "Required",

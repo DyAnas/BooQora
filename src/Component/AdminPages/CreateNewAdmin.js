@@ -90,7 +90,6 @@ export const CreateNewAdmin = () => {
         if (validateEmail(email)){
         UpgradeUserToAdmin(email, roleToApi).then(
             response => {
-                console.log(response.data);
                 setMessage(response.data.message)
                 setUserFound(false);
 
@@ -103,7 +102,6 @@ export const CreateNewAdmin = () => {
                     error.toString();
                 console.log(resMessage);
                 if(error.response.status===404){
-
                     setUserFound(false);
                     setMessage("Email is not found")
                 }else if(error.response.status===400){
@@ -117,7 +115,7 @@ export const CreateNewAdmin = () => {
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }
 
-                // setMessage(error.response.status)
+                 setMessage(resMessage)
 
             })
 
@@ -125,13 +123,7 @@ export const CreateNewAdmin = () => {
         setMessage( "Email must match tietoEvry")
     }
 
-
     }
-
-
-
-
-
     return <div className="container  ">
         <div className="row text-center d-block mx-auto mainRow " >
 
@@ -168,7 +160,7 @@ export const CreateNewAdmin = () => {
                             variant="filled"
                             margin="normal"
                             id="input"
-                            className="background_input"
+                            className="background_input w-75 center"
 
                         />
                         <strong style={{ color: "red" }}>{message}</strong>
