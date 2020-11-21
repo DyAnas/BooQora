@@ -115,7 +115,7 @@ const SignInContainer = (props) => {
 
 
                 <div className="center">
-                    <p style={{ color: "red" }}>{message.text}
+                    <p id="erorrMessage" style={{ color: "red" }}>{message.text}
                         {showConfirmation &&
                             <Link style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
                         }
@@ -197,12 +197,12 @@ const SignInContainer = (props) => {
 
                     </form>
                 </div>
-                <div className="mb-5 ">
-                    <Link href="/forgotPassword" variant="body2" className="text-footer">
+                <div className="d-flex flex-column mb-5 ">
+                    <Link id="forgetPassword" href="/forgotPassword" variant="body2" className="text-footer">
                         Forgot password?
                         </Link>
-                    <br />
-                    <Link href="/signup" variant="body2" className="text-footer">
+                   
+                    <Link href="/signup" variant="body2" className="text-footer" style={{marginTop:"10px"}}>
                         Don't have an account? Sign Up
                         </Link>
                 </div>
