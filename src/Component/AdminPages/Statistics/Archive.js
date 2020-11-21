@@ -18,7 +18,7 @@ export default function BookingsArchives() {
     const [ListBooking, setListBooking]= useState([]);
 
     const getAllBooking= (response)=> {
-         setListBooking(response.data.bookingofEmployeeDTOList);
+         setListBooking(response.data.bookingOfEmployeeDTOList);
 
     }
 

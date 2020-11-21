@@ -15,7 +15,7 @@ export default function MyBookings(props) {
     const getAllBooking = () => {
         getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
             response => {
-                setListBooking(response.data.bookingToshowDtoLists);
+                setListBooking(response.data.bookingToShowDtoLists);
             },  (error) => {
                 const resMessage =
                     (error.response &&
