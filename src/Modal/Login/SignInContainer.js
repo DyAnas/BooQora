@@ -59,7 +59,7 @@ const SignInContainer = (props) => {
                         })
                     }else if(error.response.status===400){
                         setMessage({
-                            text: "Email is not active,",
+                            text: "Email is not actived,",
 
                         })
                         setshowConfirmation(true)
@@ -115,7 +115,7 @@ const SignInContainer = (props) => {
 
 
                 <div className="center">
-                    <p id="erorrMessage" style={{ color: "red" }}>{message.text}
+                    <p id="errorMessage" name="errorMessage" style={{ color: "red" }}>{message.text}
                         {showConfirmation &&
                             <Link style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
                         }

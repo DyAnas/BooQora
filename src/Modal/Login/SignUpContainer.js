@@ -86,7 +86,7 @@ const SignUpContainer = (props) => {
                         Sign Up
                     </h1>
                     <div className="center">
-                        <p style={{color: "red", marginRight: "10px"}}>{message.text}</p>
+                        <p name="errorMessage" style={{color: "red", marginRight: "10px"}}>{message.text}</p>
 
                     </div>
                     <div className="center">
@@ -166,7 +166,7 @@ const SignUpContainer = (props) => {
                                     required: "Required",
                                     pattern: {
                                         value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[.!@#$%^&*])[\w!@#$%^&*]{8,}$/,
-                                        message: "Must Contain 8 Characters, One Upperxcase, One Number and one special character"
+                                        message: "Must Contain 8 Characters, One UpperCase, One Number and one special character"
                                     }
                                 })}
                                 helperText={errors.password ? errors.password.message : ""}
