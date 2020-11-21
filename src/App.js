@@ -1,25 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import { Route, Switch, BrowserRouter } from "react-router-dom";
-import SignUpContainer from "./Container/SignUpContainer";
-import SignInContainer from './Container/SignInContainer'
-import { ProtectedRoute } from "./Authentication/protectedRoute";
-import NewPassword from "./Copmonent/Login/NewPassword";
-import { About } from './Container/aboutBookora';
-import { NewBooking } from "./Container/newBooking";
-import { MyBooking } from "./Container/myBooking";
-import { ZoneSettings } from "./Copmonent/AdminPages/ZoneSettings";
-import ContainerForgotPassword from "./Container/ContainerForgotpassword";
-import resendConfirm from "./Copmonent/Login/resendActivation";
-import ChartContainer from "./Container/ChartContainer";
-import Archive from "./Copmonent/AdminPages/Statistics";
-import { NotFoundPage } from "../src/Container/NotFoundPage";
-import { CreateNewAdmin } from "./Copmonent/AdminPages/CreateNewAdmin";
-import { NavBar } from "../src/Container/Navbar";
-import   AuthService  from "./Authentication/authUser";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import SignUpContainer from "./Modal/Login/SignUpContainer";
+import SignInContainer from './Modal/Login/SignInContainer'
+import {ProtectedRoute} from "./service/Authentication/protectedRoute";
+import NewPassword from "./Component/Login/NewPassword";
+import {About} from './Modal/About/aboutBookora';
+import {NewBooking} from "./Modal/Booking/newBooking";
+import {MyBooking} from "./Modal/Booking/myBooking";
+import {ZoneSettings} from "./Component/AdminPages/ZoneSettings";
+import ContainerForgotPassword from "./Modal/Login/Forgotpassword";
+import resendConfirm from "./Component/Login/resendActivation";
+import ChartContainer from "./Modal/Statistics/ChartContainer";
+import Archive from "./Modal/Statistics/Statistics";
+import {NotFoundPage} from "./Modal/NotFoundPage";
+import {CreateNewAdmin} from "./Component/AdminPages/CreateNewAdmin";
+import {NavigationBar} from "./Component/Layout/NavigationBar";
+import authHeader from "./service/Authentication/authHeader";
+import jwtDecode from "jwt-decode";
 class App extends Component {
 
   render() {
+console.log(authHeader().Authorization);
+
     return (
       <div className=" contianer">
      
@@ -29,29 +32,35 @@ class App extends Component {
             <Route path="/signup" component={SignUpContainer} />
             <Route path="/resend-activation" component={resendConfirm} />
             <Route path="/forgotPassword" component={ContainerForgotPassword} />
-            <ProtectedRoute path="/NewPassword" component={NewPassword} />           
-            <ProtectedRoute
-              path="/newBooking"
-              component={NewBooking} />
+            <ProtectedRoute path="/NewPassword" component={NewPassword} />
+            <>
+              <div className="container">
+              <ProtectedRoute component={NavigationBar} />
 
-            <ProtectedRoute
-              path="/myBookings"
-              component={MyBooking} />
-              <ProtectedRoute
-              path="/addNewAdmin"
-              component={CreateNewAdmin} />
-            <ProtectedRoute
-              path="/aboutBookora"
-              component={About} />
-               <ProtectedRoute
-              path="/zonesettings"
-              component={ZoneSettings} />
-            <ProtectedRoute
-                path="/statistics"
-                component={ChartContainer} />
-            <ProtectedRoute
-                path="/archive"
-                component={Archive} />
+                <ProtectedRoute
+                    path="/newBooking"
+                    component={NewBooking} />
+
+                <ProtectedRoute
+                    path="/myBookings"
+                    component={MyBooking} />
+                <ProtectedRoute
+                    path="/addNewAdmin"
+                    component={CreateNewAdmin} />
+                <ProtectedRoute
+                    path="/aboutBookora"
+                    component={About} />
+                <ProtectedRoute
+                      path="/zonesettings"
+                    component={ZoneSettings} />
+                <ProtectedRoute
+                    path="/statistics"
+                    component={ChartContainer} />
+                <ProtectedRoute
+                    path="/archive"
+                    component={Archive} />
+              </div>
+            </>
             <Route path="*" component={NotFoundPage} />
             
           </Switch>
