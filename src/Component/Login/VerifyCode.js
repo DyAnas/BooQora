@@ -34,14 +34,14 @@ const VerifyCode = (props) => {
                                 onChange={props.onChange}
                                 variant="filled"
                                 margin="normal"
-                                id="input"
+                                id="verifyCodeInput"
                                 className="background_input"
 
                             />
                             <div className="center">
                                 <button
                                     type="submit"
-                                    id="submit"
+                                    id="verifyCode"
                                     className="btn btn-info  mt-4 mb-3 text-light mr-3"
                                     variant="contained"
                                 >
@@ -50,7 +50,7 @@ const VerifyCode = (props) => {
                                 <button
                                     type="submit"
 
-                                    id="submit"
+                                    id="cancel"
                                     onClick={props.cancel}
                                     className="btn btn-info  mt-4 mb-3 text-light mr-3"
                                     variant="contained"

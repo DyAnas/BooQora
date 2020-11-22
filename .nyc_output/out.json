@@ -1,6 +1,6 @@
 {
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authHeader.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authHeader.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authHeader.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authHeader.js",
     "statementMap": {
       "0": {
         "start": {
@@ -144,29 +144,29 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 1,
-      "2": 1,
+      "0": 4,
+      "1": 4,
+      "2": 4,
       "3": 0
     },
     "f": {
-      "0": 1
+      "0": 4
     },
     "b": {
       "0": [
-        1,
+        4,
         0
       ],
       "1": [
-        1,
-        1
+        4,
+        4
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f996fd529c3a3910664b9d96dc4b7cd7eb85984b"
+    "hash": "f03cc5493c723d53990d1087ad8119f2345718e2"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authUser.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authUser.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authUser.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authUser.js",
     "statementMap": {
       "0": {
         "start": {
@@ -762,57 +762,57 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 2,
-      "2": 1,
-      "3": 1,
-      "4": 1,
-      "5": 1,
-      "6": 1,
-      "7": 0,
-      "8": 0,
-      "9": 2,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 2,
-      "15": 0,
-      "16": 0,
-      "17": 2,
+      "0": 54,
+      "1": 54,
+      "2": 8,
+      "3": 4,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 1,
+      "8": 1,
+      "9": 54,
+      "10": 5,
+      "11": 3,
+      "12": 3,
+      "13": 3,
+      "14": 54,
+      "15": 1,
+      "16": 1,
+      "17": 54,
       "18": 0,
       "19": 0,
-      "20": 2,
+      "20": 54,
       "21": 0,
-      "22": 0,
-      "23": 13
+      "22": 1,
+      "23": 32
     },
     "f": {
-      "0": 1,
-      "1": 1,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 0,
+      "0": 8,
+      "1": 4,
+      "2": 1,
+      "3": 1,
+      "4": 5,
+      "5": 3,
+      "6": 1,
+      "7": 1,
       "8": 0,
       "9": 0,
       "10": 0,
-      "11": 0,
-      "12": 13
+      "11": 1,
+      "12": 32
     },
     "b": {
       "0": [
-        1,
+        4,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "86261bf91e876c3fcdda2012e791aa02c09f07e4"
+    "hash": "950fbe1393956f1a16b5a575bf8dc70f2735535b"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js",
     "statementMap": {
       "0": {
         "start": {
@@ -996,33 +996,33 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 1,
-      "2": 1,
-      "3": 1,
-      "4": 1,
-      "5": 1,
-      "6": 1,
-      "7": 0
+      "0": 54,
+      "1": 19,
+      "2": 19,
+      "3": 19,
+      "4": 19,
+      "5": 19,
+      "6": 14,
+      "7": 5
     },
     "f": {
-      "0": 1
+      "0": 19
     },
     "b": {
       "0": [
-        1,
-        0
+        14,
+        5
       ],
       "1": [
-        1,
-        0
+        19,
+        5
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "370f25ea33a2892a6a9dfbf79dc472c8a5237d6c"
+    "hash": "8e0d2e399b0e81885cccfabbe8507956b49e42e4"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1030,7 +1030,7 @@
           "column": 24
         },
         "end": {
-          "line": 240,
+          "line": 235,
           "column": 1
         }
       },
@@ -1100,217 +1100,177 @@
           "column": 23
         },
         "end": {
-          "line": 30,
+          "line": 25,
           "column": 5
         }
       },
       "8": {
         "start": {
           "line": 24,
-          "column": 8
+          "column": 12
         },
         "end": {
-          "line": 27,
-          "column": 17
+          "line": 24,
+          "column": 36
         }
       },
       "9": {
         "start": {
-          "line": 25,
-          "column": 12
+          "line": 29,
+          "column": 21
         },
         "end": {
-          "line": 25,
-          "column": 29
+          "line": 79,
+          "column": 5
         }
       },
       "10": {
         "start": {
-          "line": 26,
-          "column": 12
+          "line": 31,
+          "column": 8
         },
         "end": {
-          "line": 26,
-          "column": 36
+          "line": 77,
+          "column": 9
         }
       },
       "11": {
         "start": {
-          "line": 28,
-          "column": 8
+          "line": 33,
+          "column": 26
         },
         "end": {
-          "line": 28,
-          "column": 25
+          "line": 33,
+          "column": 34
         }
       },
       "12": {
         "start": {
           "line": 34,
-          "column": 21
+          "column": 12
         },
         "end": {
-          "line": 84,
-          "column": 5
+          "line": 34,
+          "column": 29
         }
       },
       "13": {
         "start": {
-          "line": 36,
-          "column": 8
+          "line": 35,
+          "column": 12
         },
         "end": {
-          "line": 82,
-          "column": 9
+          "line": 66,
+          "column": 18
         }
       },
       "14": {
         "start": {
-          "line": 38,
-          "column": 26
+          "line": 46,
+          "column": 24
         },
         "end": {
-          "line": 38,
-          "column": 34
+          "line": 46,
+          "column": 37
         }
       },
       "15": {
         "start": {
-          "line": 39,
-          "column": 12
+          "line": 49,
+          "column": 28
         },
         "end": {
-          "line": 39,
-          "column": 29
+          "line": 53,
+          "column": 44
         }
       },
       "16": {
         "start": {
-          "line": 40,
-          "column": 12
+          "line": 54,
+          "column": 20
         },
         "end": {
-          "line": 71,
-          "column": 18
+          "line": 62,
+          "column": 22
         }
       },
       "17": {
         "start": {
-          "line": 42,
-          "column": 20
+          "line": 64,
+          "column": 19
         },
         "end": {
-          "line": 50,
-          "column": 22
+          "line": 64,
+          "column": 32
         }
       },
       "18": {
         "start": {
-          "line": 51,
-          "column": 24
+          "line": 68,
+          "column": 12
         },
         "end": {
-          "line": 51,
-          "column": 37
+          "line": 76,
+          "column": 14
         }
       },
       "19": {
         "start": {
-          "line": 54,
-          "column": 28
+          "line": 81,
+          "column": 4
         },
         "end": {
-          "line": 58,
-          "column": 44
+          "line": 234,
+          "column": 6
         }
       },
       "20": {
         "start": {
-          "line": 59,
-          "column": 20
+          "line": 114,
+          "column": 47
         },
         "end": {
-          "line": 67,
-          "column": 22
+          "line": 114,
+          "column": 75
         }
       },
       "21": {
         "start": {
-          "line": 69,
-          "column": 19
+          "line": 135,
+          "column": 47
         },
         "end": {
-          "line": 69,
-          "column": 32
+          "line": 135,
+          "column": 74
         }
       },
       "22": {
         "start": {
-          "line": 73,
-          "column": 12
+          "line": 158,
+          "column": 47
         },
         "end": {
-          "line": 81,
-          "column": 14
+          "line": 158,
+          "column": 71
         }
       },
       "23": {
         "start": {
-          "line": 86,
-          "column": 4
+          "line": 179,
+          "column": 47
         },
         "end": {
-          "line": 239,
-          "column": 6
+          "line": 179,
+          "column": 74
         }
       },
       "24": {
         "start": {
-          "line": 119,
-          "column": 47
-        },
-        "end": {
-          "line": 119,
-          "column": 75
-        }
-      },
-      "25": {
-        "start": {
-          "line": 140,
-          "column": 47
-        },
-        "end": {
-          "line": 140,
-          "column": 74
-        }
-      },
-      "26": {
-        "start": {
-          "line": 163,
-          "column": 47
-        },
-        "end": {
-          "line": 163,
-          "column": 71
-        }
-      },
-      "27": {
-        "start": {
-          "line": 184,
-          "column": 47
-        },
-        "end": {
-          "line": 184,
-          "column": 74
-        }
-      },
-      "28": {
-        "start": {
-          "line": 197,
+          "line": 192,
           "column": 55
         },
         "end": {
-          "line": 197,
+          "line": 192,
           "column": 110
         }
       }
@@ -1334,7 +1294,7 @@
             "column": 35
           },
           "end": {
-            "line": 240,
+            "line": 235,
             "column": 1
           }
         },
@@ -1358,7 +1318,7 @@
             "column": 29
           },
           "end": {
-            "line": 30,
+            "line": 25,
             "column": 5
           }
         },
@@ -1368,228 +1328,204 @@
         "name": "(anonymous_2)",
         "decl": {
           "start": {
-            "line": 24,
-            "column": 19
+            "line": 29,
+            "column": 21
           },
           "end": {
-            "line": 24,
-            "column": 20
+            "line": 29,
+            "column": 22
           }
         },
         "loc": {
           "start": {
-            "line": 24,
-            "column": 25
+            "line": 29,
+            "column": 29
           },
           "end": {
-            "line": 27,
-            "column": 9
+            "line": 79,
+            "column": 5
           }
         },
-        "line": 24
+        "line": 29
       },
       "3": {
         "name": "(anonymous_3)",
         "decl": {
           "start": {
-            "line": 34,
-            "column": 21
+            "line": 36,
+            "column": 22
           },
           "end": {
-            "line": 34,
-            "column": 22
+            "line": 36,
+            "column": 23
           }
         },
         "loc": {
           "start": {
-            "line": 34,
-            "column": 29
+            "line": 36,
+            "column": 34
           },
           "end": {
-            "line": 84,
-            "column": 5
+            "line": 47,
+            "column": 21
           }
         },
-        "line": 34
+        "line": 36
       },
       "4": {
         "name": "(anonymous_4)",
         "decl": {
           "start": {
-            "line": 41,
-            "column": 22
-          },
-          "end": {
-            "line": 41,
-            "column": 23
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 41,
-            "column": 34
-          },
-          "end": {
-            "line": 52,
-            "column": 21
-          }
-        },
-        "line": 41
-      },
-      "5": {
-        "name": "(anonymous_5)",
-        "decl": {
-          "start": {
-            "line": 52,
+            "line": 47,
             "column": 23
           },
           "end": {
-            "line": 52,
+            "line": 47,
             "column": 24
           }
         },
         "loc": {
           "start": {
-            "line": 52,
+            "line": 47,
             "column": 32
           },
           "end": {
-            "line": 70,
+            "line": 65,
             "column": 21
           }
         },
-        "line": 52
+        "line": 47
+      },
+      "5": {
+        "name": "(anonymous_5)",
+        "decl": {
+          "start": {
+            "line": 114,
+            "column": 42
+          },
+          "end": {
+            "line": 114,
+            "column": 43
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 114,
+            "column": 47
+          },
+          "end": {
+            "line": 114,
+            "column": 75
+          }
+        },
+        "line": 114
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 119,
+            "line": 135,
             "column": 42
           },
           "end": {
-            "line": 119,
+            "line": 135,
             "column": 43
           }
         },
         "loc": {
           "start": {
-            "line": 119,
+            "line": 135,
             "column": 47
           },
           "end": {
-            "line": 119,
-            "column": 75
+            "line": 135,
+            "column": 74
           }
         },
-        "line": 119
+        "line": 135
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 140,
+            "line": 158,
             "column": 42
           },
           "end": {
-            "line": 140,
+            "line": 158,
             "column": 43
           }
         },
         "loc": {
           "start": {
-            "line": 140,
+            "line": 158,
             "column": 47
           },
           "end": {
-            "line": 140,
-            "column": 74
+            "line": 158,
+            "column": 71
           }
         },
-        "line": 140
+        "line": 158
       },
       "8": {
         "name": "(anonymous_8)",
         "decl": {
           "start": {
-            "line": 163,
+            "line": 179,
             "column": 42
           },
           "end": {
-            "line": 163,
+            "line": 179,
             "column": 43
           }
         },
         "loc": {
           "start": {
-            "line": 163,
+            "line": 179,
             "column": 47
           },
           "end": {
-            "line": 163,
-            "column": 71
+            "line": 179,
+            "column": 74
           }
         },
-        "line": 163
+        "line": 179
       },
       "9": {
         "name": "(anonymous_9)",
         "decl": {
           "start": {
-            "line": 184,
-            "column": 42
-          },
-          "end": {
-            "line": 184,
-            "column": 43
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 184,
-            "column": 47
-          },
-          "end": {
-            "line": 184,
-            "column": 74
-          }
-        },
-        "line": 184
-      },
-      "10": {
-        "name": "(anonymous_10)",
-        "decl": {
-          "start": {
-            "line": 197,
+            "line": 192,
             "column": 46
           },
           "end": {
-            "line": 197,
+            "line": 192,
             "column": 47
           }
         },
         "loc": {
           "start": {
-            "line": 197,
+            "line": 192,
             "column": 55
           },
           "end": {
-            "line": 197,
+            "line": 192,
             "column": 110
           }
         },
-        "line": 197
+        "line": 192
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 36,
+            "line": 31,
             "column": 8
           },
           "end": {
-            "line": 82,
+            "line": 77,
             "column": 9
           }
         },
@@ -1597,35 +1533,35 @@
         "locations": [
           {
             "start": {
-              "line": 36,
+              "line": 31,
               "column": 8
             },
             "end": {
-              "line": 82,
+              "line": 77,
               "column": 9
             }
           },
           {
             "start": {
-              "line": 36,
+              "line": 31,
               "column": 8
             },
             "end": {
-              "line": 82,
+              "line": 77,
               "column": 9
             }
           }
         ],
-        "line": 36
+        "line": 31
       },
       "1": {
         "loc": {
           "start": {
-            "line": 54,
+            "line": 49,
             "column": 28
           },
           "end": {
-            "line": 58,
+            "line": 53,
             "column": 44
           }
         },
@@ -1633,65 +1569,65 @@
         "locations": [
           {
             "start": {
-              "line": 54,
+              "line": 49,
               "column": 29
             },
             "end": {
-              "line": 54,
+              "line": 49,
               "column": 43
             }
           },
           {
             "start": {
-              "line": 55,
+              "line": 50,
               "column": 32
             },
             "end": {
-              "line": 55,
+              "line": 50,
               "column": 51
             }
           },
           {
             "start": {
-              "line": 56,
+              "line": 51,
               "column": 32
             },
             "end": {
-              "line": 56,
+              "line": 51,
               "column": 59
             }
           },
           {
             "start": {
-              "line": 57,
+              "line": 52,
               "column": 28
             },
             "end": {
-              "line": 57,
+              "line": 52,
               "column": 41
             }
           },
           {
             "start": {
-              "line": 58,
+              "line": 53,
               "column": 28
             },
             "end": {
-              "line": 58,
+              "line": 53,
               "column": 44
             }
           }
         ],
-        "line": 54
+        "line": 49
       },
       "2": {
         "loc": {
           "start": {
-            "line": 115,
+            "line": 110,
             "column": 44
           },
           "end": {
-            "line": 115,
+            "line": 110,
             "column": 92
           }
         },
@@ -1699,35 +1635,35 @@
         "locations": [
           {
             "start": {
-              "line": 115,
+              "line": 110,
               "column": 63
             },
             "end": {
-              "line": 115,
+              "line": 110,
               "column": 87
             }
           },
           {
             "start": {
-              "line": 115,
+              "line": 110,
               "column": 90
             },
             "end": {
-              "line": 115,
+              "line": 110,
               "column": 92
             }
           }
         ],
-        "line": 115
+        "line": 110
       },
       "3": {
         "loc": {
           "start": {
-            "line": 136,
+            "line": 131,
             "column": 44
           },
           "end": {
-            "line": 136,
+            "line": 131,
             "column": 90
           }
         },
@@ -1735,35 +1671,35 @@
         "locations": [
           {
             "start": {
-              "line": 136,
+              "line": 131,
               "column": 62
             },
             "end": {
-              "line": 136,
+              "line": 131,
               "column": 85
             }
           },
           {
             "start": {
-              "line": 136,
+              "line": 131,
               "column": 88
             },
             "end": {
-              "line": 136,
+              "line": 131,
               "column": 90
             }
           }
         ],
-        "line": 136
+        "line": 131
       },
       "4": {
         "loc": {
           "start": {
-            "line": 159,
+            "line": 154,
             "column": 44
           },
           "end": {
-            "line": 159,
+            "line": 154,
             "column": 84
           }
         },
@@ -1771,35 +1707,35 @@
         "locations": [
           {
             "start": {
-              "line": 159,
+              "line": 154,
               "column": 59
             },
             "end": {
-              "line": 159,
+              "line": 154,
               "column": 79
             }
           },
           {
             "start": {
-              "line": 159,
+              "line": 154,
               "column": 82
             },
             "end": {
-              "line": 159,
+              "line": 154,
               "column": 84
             }
           }
         ],
-        "line": 159
+        "line": 154
       },
       "5": {
         "loc": {
           "start": {
-            "line": 180,
+            "line": 175,
             "column": 44
           },
           "end": {
-            "line": 180,
+            "line": 175,
             "column": 90
           }
         },
@@ -1807,35 +1743,35 @@
         "locations": [
           {
             "start": {
-              "line": 180,
+              "line": 175,
               "column": 62
             },
             "end": {
-              "line": 180,
+              "line": 175,
               "column": 85
             }
           },
           {
             "start": {
-              "line": 180,
+              "line": 175,
               "column": 88
             },
             "end": {
-              "line": 180,
+              "line": 175,
               "column": 90
             }
           }
         ],
-        "line": 180
+        "line": 175
       },
       "6": {
         "loc": {
           "start": {
-            "line": 197,
+            "line": 192,
             "column": 55
           },
           "end": {
-            "line": 197,
+            "line": 192,
             "column": 110
           }
         },
@@ -1843,35 +1779,35 @@
         "locations": [
           {
             "start": {
-              "line": 197,
+              "line": 192,
               "column": 55
             },
             "end": {
-              "line": 197,
+              "line": 192,
               "column": 82
             }
           },
           {
             "start": {
-              "line": 197,
+              "line": 192,
               "column": 86
             },
             "end": {
-              "line": 197,
+              "line": 192,
               "column": 110
             }
           }
         ],
-        "line": 197
+        "line": 192
       },
       "7": {
         "loc": {
           "start": {
-            "line": 200,
+            "line": 195,
             "column": 44
           },
           "end": {
-            "line": 200,
+            "line": 195,
             "column": 104
           }
         },
@@ -1879,35 +1815,35 @@
         "locations": [
           {
             "start": {
-              "line": 200,
+              "line": 195,
               "column": 69
             },
             "end": {
-              "line": 200,
+              "line": 195,
               "column": 99
             }
           },
           {
             "start": {
-              "line": 200,
+              "line": 195,
               "column": 102
             },
             "end": {
-              "line": 200,
+              "line": 195,
               "column": 104
             }
           }
         ],
-        "line": 200
+        "line": 195
       },
       "8": {
         "loc": {
           "start": {
-            "line": 218,
+            "line": 213,
             "column": 29
           },
           "end": {
-            "line": 227,
+            "line": 222,
             "column": 38
           }
         },
@@ -1915,118 +1851,113 @@
         "locations": [
           {
             "start": {
-              "line": 219,
+              "line": 214,
               "column": 32
             },
             "end": {
-              "line": 226,
+              "line": 221,
               "column": 38
             }
           },
           {
             "start": {
-              "line": 227,
+              "line": 222,
               "column": 34
             },
             "end": {
-              "line": 227,
+              "line": 222,
               "column": 38
             }
           }
         ],
-        "line": 218
+        "line": 213
       }
     },
     "s": {
-      "0": 2,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
+      "0": 54,
+      "1": 223,
+      "2": 223,
+      "3": 223,
+      "4": 223,
+      "5": 223,
+      "6": 223,
+      "7": 223,
+      "8": 1,
+      "9": 223,
+      "10": 2,
+      "11": 1,
+      "12": 1,
+      "13": 1,
       "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
-      "27": 0,
-      "28": 0
+      "15": 1,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "19": 223,
+      "20": 30,
+      "21": 38,
+      "22": 75,
+      "23": 56,
+      "24": 4
     },
     "f": {
-      "0": 0,
-      "1": 0,
-      "2": 0,
+      "0": 223,
+      "1": 1,
+      "2": 2,
       "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0
+      "4": 1,
+      "5": 30,
+      "6": 38,
+      "7": 75,
+      "8": 56,
+      "9": 4
     },
     "b": {
       "0": [
-        0,
-        0
+        1,
+        1
       ],
       "1": [
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         0,
         0
       ],
       "2": [
-        0,
-        0
+        3,
+        220
       ],
       "3": [
-        0,
-        0
+        3,
+        220
       ],
       "4": [
-        0,
-        0
+        3,
+        220
       ],
       "5": [
-        0,
-        0
+        3,
+        220
       ],
       "6": [
-        0,
-        0
+        4,
+        2
       ],
       "7": [
-        0,
-        0
+        3,
+        220
       ],
       "8": [
-        0,
-        0
+        2,
+        221
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "967410b8b91a4ccebcf3fe418c6b6fd718607195"
+    "hash": "39b7fc933f23ce35e5f529e38dd5459b264b6721"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2034,7 +1965,7 @@
           "column": 24
         },
         "end": {
-          "line": 238,
+          "line": 228,
           "column": 1
         }
       },
@@ -2084,21 +2015,11 @@
           "column": 27
         },
         "end": {
-          "line": 25,
+          "line": 24,
           "column": 5
         }
       },
       "6": {
-        "start": {
-          "line": 21,
-          "column": 8
-        },
-        "end": {
-          "line": 23,
-          "column": 17
-        }
-      },
-      "7": {
         "start": {
           "line": 22,
           "column": 12
@@ -2108,253 +2029,253 @@
           "column": 46
         }
       },
+      "7": {
+        "start": {
+          "line": 27,
+          "column": 21
+        },
+        "end": {
+          "line": 91,
+          "column": 5
+        }
+      },
       "8": {
         "start": {
-          "line": 24,
+          "line": 30,
           "column": 8
         },
         "end": {
-          "line": 24,
-          "column": 25
+          "line": 90,
+          "column": 9
         }
       },
       "9": {
         "start": {
-          "line": 28,
-          "column": 21
+          "line": 31,
+          "column": 12
         },
         "end": {
-          "line": 104,
-          "column": 5
+          "line": 79,
+          "column": 14
         }
       },
       "10": {
         "start": {
-          "line": 31,
-          "column": 8
+          "line": 34,
+          "column": 20
         },
         "end": {
-          "line": 103,
-          "column": 9
+          "line": 34,
+          "column": 37
         }
       },
       "11": {
         "start": {
-          "line": 32,
-          "column": 12
+          "line": 39,
+          "column": 24
         },
         "end": {
-          "line": 92,
-          "column": 14
+          "line": 43,
+          "column": 40
         }
       },
       "12": {
         "start": {
-          "line": 35,
+          "line": 44,
           "column": 20
         },
         "end": {
-          "line": 35,
-          "column": 37
+          "line": 76,
+          "column": 21
         }
       },
       "13": {
         "start": {
-          "line": 40,
+          "line": 45,
           "column": 24
         },
         "end": {
-          "line": 44,
-          "column": 40
+          "line": 53,
+          "column": 26
         }
       },
       "14": {
         "start": {
-          "line": 45,
-          "column": 20
+          "line": 55,
+          "column": 25
         },
         "end": {
-          "line": 89,
+          "line": 76,
           "column": 21
         }
       },
       "15": {
         "start": {
-          "line": 46,
+          "line": 56,
           "column": 24
         },
         "end": {
-          "line": 54,
+          "line": 64,
           "column": 26
         }
       },
       "16": {
         "start": {
-          "line": 56,
-          "column": 25
+          "line": 65,
+          "column": 26
         },
         "end": {
-          "line": 89,
+          "line": 76,
           "column": 21
         }
       },
       "17": {
         "start": {
-          "line": 57,
+          "line": 66,
           "column": 24
         },
         "end": {
-          "line": 65,
+          "line": 74,
           "column": 26
         }
       },
       "18": {
         "start": {
-          "line": 66,
-          "column": 26
-        },
-        "end": {
-          "line": 89,
-          "column": 21
-        }
-      },
-      "19": {
-        "start": {
-          "line": 67,
+          "line": 75,
           "column": 24
         },
         "end": {
           "line": 75,
-          "column": 26
+          "column": 49
+        }
+      },
+      "19": {
+        "start": {
+          "line": 81,
+          "column": 12
+        },
+        "end": {
+          "line": 89,
+          "column": 14
         }
       },
       "20": {
         "start": {
-          "line": 76,
-          "column": 24
+          "line": 92,
+          "column": 32
         },
         "end": {
-          "line": 76,
-          "column": 49
+          "line": 96,
+          "column": 7
         }
       },
       "21": {
         "start": {
-          "line": 80,
-          "column": 24
+          "line": 93,
+          "column": 8
         },
         "end": {
-          "line": 88,
-          "column": 26
+          "line": 95,
+          "column": 14
         }
       },
       "22": {
         "start": {
-          "line": 94,
-          "column": 12
+          "line": 98,
+          "column": 29
         },
         "end": {
-          "line": 102,
-          "column": 14
+          "line": 115,
+          "column": 5
         }
       },
       "23": {
         "start": {
-          "line": 106,
-          "column": 29
+          "line": 99,
+          "column": 8
         },
         "end": {
-          "line": 123,
-          "column": 5
+          "line": 99,
+          "column": 25
         }
       },
       "24": {
         "start": {
-          "line": 107,
+          "line": 100,
           "column": 8
         },
         "end": {
-          "line": 107,
-          "column": 25
+          "line": 112,
+          "column": 14
         }
       },
       "25": {
         "start": {
-          "line": 108,
-          "column": 8
+          "line": 102,
+          "column": 16
         },
         "end": {
-          "line": 120,
-          "column": 14
+          "line": 102,
+          "column": 33
         }
       },
       "26": {
         "start": {
-          "line": 110,
+          "line": 103,
           "column": 16
         },
         "end": {
-          "line": 110,
-          "column": 33
+          "line": 111,
+          "column": 18
         }
       },
       "27": {
         "start": {
-          "line": 111,
-          "column": 16
+          "line": 113,
+          "column": 8
         },
         "end": {
-          "line": 119,
-          "column": 18
+          "line": 113,
+          "column": 35
         }
       },
       "28": {
         "start": {
-          "line": 121,
-          "column": 8
+          "line": 116,
+          "column": 52
         },
         "end": {
-          "line": 121,
-          "column": 35
+          "line": 116,
+          "column": 73
         }
       },
       "29": {
         "start": {
-          "line": 124,
-          "column": 52
+          "line": 118,
+          "column": 4
         },
         "end": {
-          "line": 124,
-          "column": 73
+          "line": 227,
+          "column": 6
         }
       },
       "30": {
         "start": {
-          "line": 126,
-          "column": 4
+          "line": 159,
+          "column": 43
         },
         "end": {
-          "line": 237,
-          "column": 6
+          "line": 159,
+          "column": 67
         }
       },
       "31": {
         "start": {
-          "line": 169,
+          "line": 183,
           "column": 43
         },
         "end": {
-          "line": 169,
-          "column": 67
-        }
-      },
-      "32": {
-        "start": {
-          "line": 193,
-          "column": 43
-        },
-        "end": {
-          "line": 193,
+          "line": 183,
           "column": 70
         }
       }
@@ -2378,7 +2299,7 @@
             "column": 35
           },
           "end": {
-            "line": 238,
+            "line": 228,
             "column": 1
           }
         },
@@ -2402,7 +2323,7 @@
             "column": 33
           },
           "end": {
-            "line": 25,
+            "line": 24,
             "column": 5
           }
         },
@@ -2412,204 +2333,204 @@
         "name": "(anonymous_2)",
         "decl": {
           "start": {
-            "line": 21,
-            "column": 19
+            "line": 27,
+            "column": 21
           },
           "end": {
-            "line": 21,
-            "column": 20
+            "line": 27,
+            "column": 22
           }
         },
         "loc": {
           "start": {
-            "line": 21,
-            "column": 25
+            "line": 27,
+            "column": 27
           },
           "end": {
-            "line": 23,
-            "column": 9
+            "line": 91,
+            "column": 5
           }
         },
-        "line": 21
+        "line": 27
       },
       "3": {
         "name": "(anonymous_3)",
         "decl": {
           "start": {
-            "line": 28,
-            "column": 21
-          },
-          "end": {
-            "line": 28,
-            "column": 22
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 28,
-            "column": 27
-          },
-          "end": {
-            "line": 104,
-            "column": 5
-          }
-        },
-        "line": 28
-      },
-      "4": {
-        "name": "(anonymous_4)",
-        "decl": {
-          "start": {
-            "line": 33,
+            "line": 32,
             "column": 16
           },
           "end": {
-            "line": 33,
+            "line": 32,
             "column": 17
           }
         },
         "loc": {
           "start": {
-            "line": 33,
-            "column": 22
+            "line": 32,
+            "column": 30
+          },
+          "end": {
+            "line": 36,
+            "column": 17
+          }
+        },
+        "line": 32
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 37,
+            "column": 16
           },
           "end": {
             "line": 37,
             "column": 17
           }
         },
-        "line": 33
+        "loc": {
+          "start": {
+            "line": 37,
+            "column": 25
+          },
+          "end": {
+            "line": 78,
+            "column": 17
+          }
+        },
+        "line": 37
       },
       "5": {
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 38,
-            "column": 16
+            "line": 92,
+            "column": 32
           },
           "end": {
-            "line": 38,
-            "column": 17
+            "line": 92,
+            "column": 33
           }
         },
         "loc": {
           "start": {
-            "line": 38,
-            "column": 25
+            "line": 93,
+            "column": 8
           },
           "end": {
-            "line": 91,
-            "column": 17
+            "line": 95,
+            "column": 14
           }
         },
-        "line": 38
+        "line": 93
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 106,
+            "line": 98,
             "column": 29
           },
           "end": {
-            "line": 106,
+            "line": 98,
             "column": 30
           }
         },
         "loc": {
           "start": {
-            "line": 106,
+            "line": 98,
             "column": 35
           },
           "end": {
-            "line": 123,
+            "line": 115,
             "column": 5
           }
         },
-        "line": 106
+        "line": 98
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 109,
+            "line": 101,
             "column": 12
           },
           "end": {
-            "line": 109,
+            "line": 101,
             "column": 13
           }
         },
         "loc": {
           "start": {
-            "line": 109,
+            "line": 101,
             "column": 24
           },
           "end": {
-            "line": 120,
+            "line": 112,
             "column": 13
           }
         },
-        "line": 109
+        "line": 101
       },
       "8": {
         "name": "(anonymous_8)",
         "decl": {
           "start": {
-            "line": 169,
+            "line": 159,
             "column": 38
           },
           "end": {
-            "line": 169,
+            "line": 159,
             "column": 39
           }
         },
         "loc": {
           "start": {
-            "line": 169,
+            "line": 159,
             "column": 43
           },
           "end": {
-            "line": 169,
+            "line": 159,
             "column": 67
           }
         },
-        "line": 169
+        "line": 159
       },
       "9": {
         "name": "(anonymous_9)",
         "decl": {
           "start": {
-            "line": 193,
+            "line": 183,
             "column": 38
           },
           "end": {
-            "line": 193,
+            "line": 183,
             "column": 39
           }
         },
         "loc": {
           "start": {
-            "line": 193,
+            "line": 183,
             "column": 43
           },
           "end": {
-            "line": 193,
+            "line": 183,
             "column": 70
           }
         },
-        "line": 193
+        "line": 183
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 31,
+            "line": 30,
             "column": 8
           },
           "end": {
-            "line": 103,
+            "line": 90,
             "column": 9
           }
         },
@@ -2617,35 +2538,35 @@
         "locations": [
           {
             "start": {
-              "line": 31,
+              "line": 30,
               "column": 8
             },
             "end": {
-              "line": 103,
+              "line": 90,
               "column": 9
             }
           },
           {
             "start": {
-              "line": 31,
+              "line": 30,
               "column": 8
             },
             "end": {
-              "line": 103,
+              "line": 90,
               "column": 9
             }
           }
         ],
-        "line": 31
+        "line": 30
       },
       "1": {
         "loc": {
           "start": {
-            "line": 40,
+            "line": 39,
             "column": 24
           },
           "end": {
-            "line": 44,
+            "line": 43,
             "column": 40
           }
         },
@@ -2653,65 +2574,65 @@
         "locations": [
           {
             "start": {
-              "line": 40,
+              "line": 39,
               "column": 25
             },
             "end": {
-              "line": 40,
+              "line": 39,
               "column": 39
             }
           },
           {
             "start": {
-              "line": 41,
+              "line": 40,
               "column": 28
             },
             "end": {
-              "line": 41,
+              "line": 40,
               "column": 47
             }
           },
           {
             "start": {
-              "line": 42,
+              "line": 41,
               "column": 28
             },
             "end": {
-              "line": 42,
+              "line": 41,
               "column": 55
             }
           },
           {
             "start": {
-              "line": 43,
+              "line": 42,
               "column": 24
             },
             "end": {
-              "line": 43,
+              "line": 42,
               "column": 37
             }
           },
           {
             "start": {
-              "line": 44,
+              "line": 43,
               "column": 24
             },
             "end": {
-              "line": 44,
+              "line": 43,
               "column": 40
             }
           }
         ],
-        "line": 40
+        "line": 39
       },
       "2": {
         "loc": {
           "start": {
-            "line": 45,
+            "line": 44,
             "column": 20
           },
           "end": {
-            "line": 89,
+            "line": 76,
             "column": 21
           }
         },
@@ -2719,35 +2640,35 @@
         "locations": [
           {
             "start": {
-              "line": 45,
+              "line": 44,
               "column": 20
             },
             "end": {
-              "line": 89,
+              "line": 76,
               "column": 21
             }
           },
           {
             "start": {
-              "line": 45,
+              "line": 44,
               "column": 20
             },
             "end": {
-              "line": 89,
+              "line": 76,
               "column": 21
             }
           }
         ],
-        "line": 45
+        "line": 44
       },
       "3": {
         "loc": {
           "start": {
-            "line": 56,
+            "line": 55,
             "column": 25
           },
           "end": {
-            "line": 89,
+            "line": 76,
             "column": 21
           }
         },
@@ -2755,35 +2676,35 @@
         "locations": [
           {
             "start": {
-              "line": 56,
+              "line": 55,
               "column": 25
             },
             "end": {
-              "line": 89,
+              "line": 76,
               "column": 21
             }
           },
           {
             "start": {
-              "line": 56,
+              "line": 55,
               "column": 25
             },
             "end": {
-              "line": 89,
+              "line": 76,
               "column": 21
             }
           }
         ],
-        "line": 56
+        "line": 55
       },
       "4": {
         "loc": {
           "start": {
-            "line": 66,
+            "line": 65,
             "column": 26
           },
           "end": {
-            "line": 89,
+            "line": 76,
             "column": 21
           }
         },
@@ -2791,71 +2712,35 @@
         "locations": [
           {
             "start": {
-              "line": 66,
+              "line": 65,
               "column": 26
             },
             "end": {
-              "line": 89,
+              "line": 76,
               "column": 21
             }
           },
           {
             "start": {
-              "line": 66,
+              "line": 65,
               "column": 26
             },
             "end": {
-              "line": 89,
+              "line": 76,
               "column": 21
             }
           }
         ],
-        "line": 66
+        "line": 65
       },
       "5": {
         "loc": {
           "start": {
-            "line": 141,
-            "column": 25
-          },
-          "end": {
-            "line": 142,
-            "column": 120
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 141,
-              "column": 25
-            },
-            "end": {
-              "line": 141,
-              "column": 41
-            }
-          },
-          {
-            "start": {
-              "line": 142,
-              "column": 28
-            },
-            "end": {
-              "line": 142,
-              "column": 120
-            }
-          }
-        ],
-        "line": 141
-      },
-      "6": {
-        "loc": {
-          "start": {
-            "line": 164,
+            "line": 154,
             "column": 40
           },
           "end": {
-            "line": 164,
+            "line": 154,
             "column": 80
           }
         },
@@ -2863,35 +2748,35 @@
         "locations": [
           {
             "start": {
-              "line": 164,
+              "line": 154,
               "column": 55
             },
             "end": {
-              "line": 164,
+              "line": 154,
               "column": 75
             }
           },
           {
             "start": {
-              "line": 164,
+              "line": 154,
               "column": 78
             },
             "end": {
-              "line": 164,
+              "line": 154,
               "column": 80
             }
           }
         ],
-        "line": 164
+        "line": 154
       },
-      "7": {
+      "6": {
         "loc": {
           "start": {
-            "line": 189,
+            "line": 179,
             "column": 40
           },
           "end": {
-            "line": 189,
+            "line": 179,
             "column": 86
           }
         },
@@ -2899,35 +2784,35 @@
         "locations": [
           {
             "start": {
-              "line": 189,
+              "line": 179,
               "column": 58
             },
             "end": {
-              "line": 189,
+              "line": 179,
               "column": 81
             }
           },
           {
             "start": {
-              "line": 189,
+              "line": 179,
               "column": 84
             },
             "end": {
-              "line": 189,
+              "line": 179,
               "column": 86
             }
           }
         ],
-        "line": 189
+        "line": 179
       },
-      "8": {
+      "7": {
         "loc": {
           "start": {
-            "line": 211,
+            "line": 201,
             "column": 25
           },
           "end": {
-            "line": 220,
+            "line": 210,
             "column": 34
           }
         },
@@ -2935,121 +2820,116 @@
         "locations": [
           {
             "start": {
-              "line": 212,
+              "line": 202,
               "column": 28
             },
             "end": {
-              "line": 219,
+              "line": 209,
               "column": 34
             }
           },
           {
             "start": {
-              "line": 220,
+              "line": 210,
               "column": 30
             },
             "end": {
-              "line": 220,
+              "line": 210,
               "column": 34
             }
           }
         ],
-        "line": 211
+        "line": 201
       }
     },
     "s": {
-      "0": 2,
-      "1": 31,
-      "2": 31,
-      "3": 31,
-      "4": 31,
-      "5": 31,
-      "6": 1,
-      "7": 0,
-      "8": 1,
-      "9": 31,
-      "10": 1,
-      "11": 1,
-      "12": 1,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 31,
-      "24": 0,
-      "25": 0,
-      "26": 0,
-      "27": 0,
-      "28": 0,
-      "29": 31,
-      "30": 31,
-      "31": 18,
-      "32": 9
+      "0": 54,
+      "1": 345,
+      "2": 345,
+      "3": 345,
+      "4": 345,
+      "5": 345,
+      "6": 4,
+      "7": 345,
+      "8": 10,
+      "9": 8,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 2,
+      "14": 2,
+      "15": 1,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "19": 2,
+      "20": 345,
+      "21": 1,
+      "22": 345,
+      "23": 1,
+      "24": 1,
+      "25": 1,
+      "26": 1,
+      "27": 1,
+      "28": 345,
+      "29": 345,
+      "30": 169,
+      "31": 120
     },
     "f": {
-      "0": 31,
-      "1": 1,
-      "2": 0,
-      "3": 1,
-      "4": 1,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 18,
-      "9": 9
+      "0": 345,
+      "1": 4,
+      "2": 10,
+      "3": 4,
+      "4": 4,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 169,
+      "9": 120
     },
     "b": {
       "0": [
-        1,
-        0
+        8,
+        2
       ],
       "1": [
-        0,
-        0,
-        0,
-        0,
+        4,
+        4,
+        4,
+        1,
         0
       ],
       "2": [
-        0,
-        0
+        2,
+        2
       ],
       "3": [
-        0,
-        0
+        1,
+        1
       ],
       "4": [
-        0,
+        1,
         0
       ],
       "5": [
-        31,
-        0
+        2,
+        343
       ],
       "6": [
-        0,
-        31
+        2,
+        343
       ],
       "7": [
-        0,
-        31
-      ],
-      "8": [
         1,
-        30
+        344
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "42cec4371608c0c8d12fc3df10d339d21c48226e"
+    "hash": "32a00275a840e32f35482d913b8130613c215696"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3191,27 +3071,27 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 8,
-      "2": 2,
-      "3": 2,
+      "0": 54,
+      "1": 32,
+      "2": 8,
+      "3": 8,
       "4": 0
     },
     "f": {
-      "0": 8,
-      "1": 2
+      "0": 32,
+      "1": 8
     },
     "b": {
       "0": [
-        2,
+        8,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a2c6d5052fa5c96a645748c3f7ef1ad69b2ecbc8"
+    "hash": "b6933b40a8c026f7529125e04cf1a2e25980afb8"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\NewPassword.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\NewPassword.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\NewPassword.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\NewPassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3979,7 +3859,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -4053,10 +3933,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0612c4c3c114704e67c1dc1b1dccd0fcbfb00304"
+    "hash": "2b3b6688b1343bda9160e1fbeec9d6cc63ecee52"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\About\\aboutBookora.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\About\\aboutBookora.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\About\\aboutBookora.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\About\\aboutBookora.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4107,7 +3987,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0
     },
     "f": {
@@ -4115,10 +3995,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d283574aaa298c19c93f153fbffa070ff10c9511"
+    "hash": "50347ebe8147b5776913b626f319f038e6717acf"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4196,22 +4076,22 @@
       }
     },
     "s": {
-      "0": 6
+      "0": 8
     },
     "f": {
-      "0": 6
+      "0": 8
     },
     "b": {
       "0": [
         0,
-        6
+        8
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "bc25ead9c9616373e494be483c2f5f5060336e4c"
+    "hash": "9d6a0a212eb2b7512807ad5348e6fb476f5af1ac"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\mapService.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\mapService.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\mapService.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\mapService.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4521,28 +4401,28 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 2,
-      "2": 2,
-      "3": 1,
-      "4": 1,
-      "5": 1,
+      "0": 54,
+      "1": 54,
+      "2": 54,
+      "3": 0,
+      "4": 0,
+      "5": 0,
       "6": 0,
       "7": 0,
       "8": 0,
-      "9": 1,
-      "10": 1,
+      "9": 0,
+      "10": 0,
       "11": 0,
       "12": 0,
       "13": 0,
       "14": 0,
       "15": 0,
-      "16": 1
+      "16": 0
     },
     "f": {
-      "0": 1,
+      "0": 0,
       "1": 0,
-      "2": 1,
+      "2": 0,
       "3": 0
     },
     "b": {
@@ -4552,10 +4432,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ac7a4eed27b3a30e181bce6723f38f9c1244ff48"
+    "hash": "018e7ff0e541fd85797056a3c77d0ad26209a866"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\newBooking.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\newBooking.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\newBooking.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\newBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4563,7 +4443,7 @@
           "column": 21
         },
         "end": {
-          "line": 399,
+          "line": 398,
           "column": 1
         }
       },
@@ -4620,11 +4500,11 @@
       "6": {
         "start": {
           "line": 99,
-          "column": 17
+          "column": 16
         },
         "end": {
           "line": 99,
-          "column": 104
+          "column": 106
         }
       },
       "7": {
@@ -5443,47 +5323,47 @@
           "column": 4
         },
         "end": {
-          "line": 398,
+          "line": 397,
           "column": 6
         }
       },
       "89": {
         "start": {
-          "line": 342,
+          "line": 341,
           "column": 46
         },
         "end": {
-          "line": 342,
+          "line": 341,
           "column": 64
         }
       },
       "90": {
         "start": {
-          "line": 372,
+          "line": 371,
           "column": 36
         },
         "end": {
-          "line": 375,
+          "line": 374,
           "column": 44
         }
       },
       "91": {
         "start": {
-          "line": 382,
+          "line": 381,
           "column": 32
         },
         "end": {
-          "line": 383,
+          "line": 382,
           "column": 96
         }
       },
       "92": {
         "start": {
-          "line": 383,
+          "line": 382,
           "column": 55
         },
         "end": {
-          "line": 383,
+          "line": 382,
           "column": 78
         }
       }
@@ -5507,7 +5387,7 @@
             "column": 32
           },
           "end": {
-            "line": 399,
+            "line": 398,
             "column": 1
           }
         },
@@ -5997,97 +5877,97 @@
         "name": "(anonymous_21)",
         "decl": {
           "start": {
-            "line": 342,
+            "line": 341,
             "column": 38
           },
           "end": {
-            "line": 342,
+            "line": 341,
             "column": 39
           }
         },
         "loc": {
           "start": {
-            "line": 342,
+            "line": 341,
             "column": 46
           },
           "end": {
-            "line": 342,
+            "line": 341,
             "column": 64
           }
         },
-        "line": 342
+        "line": 341
       },
       "22": {
         "name": "(anonymous_22)",
         "decl": {
           "start": {
-            "line": 370,
+            "line": 369,
             "column": 48
           },
           "end": {
-            "line": 370,
+            "line": 369,
             "column": 49
           }
         },
         "loc": {
           "start": {
-            "line": 372,
+            "line": 371,
             "column": 36
           },
           "end": {
-            "line": 375,
+            "line": 374,
             "column": 44
           }
         },
-        "line": 372
+        "line": 371
       },
       "23": {
         "name": "(anonymous_23)",
         "decl": {
           "start": {
-            "line": 381,
+            "line": 380,
             "column": 47
           },
           "end": {
-            "line": 381,
+            "line": 380,
             "column": 48
           }
         },
         "loc": {
           "start": {
-            "line": 382,
+            "line": 381,
             "column": 32
           },
           "end": {
-            "line": 383,
+            "line": 382,
             "column": 96
           }
         },
-        "line": 382
+        "line": 381
       },
       "24": {
         "name": "(anonymous_24)",
         "decl": {
           "start": {
-            "line": 383,
+            "line": 382,
             "column": 49
           },
           "end": {
-            "line": 383,
+            "line": 382,
             "column": 50
           }
         },
         "loc": {
           "start": {
-            "line": 383,
+            "line": 382,
             "column": 55
           },
           "end": {
-            "line": 383,
+            "line": 382,
             "column": 78
           }
         },
-        "line": 383
+        "line": 382
       }
     },
     "branchMap": {
@@ -6579,53 +6459,53 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 6,
-      "2": 6,
-      "3": 6,
-      "4": 6,
-      "5": 6,
-      "6": 6,
-      "7": 6,
-      "8": 6,
-      "9": 6,
-      "10": 6,
+      "0": 54,
+      "1": 8,
+      "2": 8,
+      "3": 8,
+      "4": 8,
+      "5": 8,
+      "6": 8,
+      "7": 8,
+      "8": 8,
+      "9": 8,
+      "10": 8,
       "11": 0,
-      "12": 6,
-      "13": 1,
-      "14": 6,
-      "15": 6,
-      "16": 6,
-      "17": 6,
-      "18": 6,
-      "19": 1,
-      "20": 1,
-      "21": 1,
-      "22": 7,
-      "23": 7,
-      "24": 2,
-      "25": 5,
-      "26": 1,
-      "27": 2,
-      "28": 1,
+      "12": 8,
+      "13": 0,
+      "14": 8,
+      "15": 8,
+      "16": 8,
+      "17": 8,
+      "18": 8,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "28": 0,
       "29": 0,
       "30": 0,
       "31": 0,
       "32": 0,
       "33": 0,
       "34": 0,
-      "35": 6,
-      "36": 1,
-      "37": 1,
-      "38": 1,
-      "39": 7,
-      "40": 7,
-      "41": 6,
-      "42": 1,
-      "43": 1,
+      "35": 8,
+      "36": 0,
+      "37": 0,
+      "38": 0,
+      "39": 0,
+      "40": 0,
+      "41": 0,
+      "42": 0,
+      "43": 0,
       "44": 0,
-      "45": 7,
-      "46": 1,
+      "45": 0,
+      "46": 0,
       "47": 0,
       "48": 0,
       "49": 0,
@@ -6633,27 +6513,27 @@
       "51": 0,
       "52": 0,
       "53": 0,
-      "54": 6,
-      "55": 6,
-      "56": 6,
-      "57": 1,
-      "58": 1,
-      "59": 1,
-      "60": 6,
-      "61": 2,
-      "62": 6,
-      "63": 6,
-      "64": 1,
-      "65": 1,
-      "66": 1,
-      "67": 6,
+      "54": 8,
+      "55": 8,
+      "56": 8,
+      "57": 0,
+      "58": 0,
+      "59": 0,
+      "60": 8,
+      "61": 4,
+      "62": 8,
+      "63": 8,
+      "64": 0,
+      "65": 0,
+      "66": 0,
+      "67": 8,
       "68": 0,
       "69": 0,
       "70": 0,
       "71": 0,
       "72": 0,
-      "73": 6,
-      "74": 6,
+      "73": 8,
+      "74": 8,
       "75": 0,
       "76": 0,
       "77": 0,
@@ -6667,43 +6547,43 @@
       "85": 0,
       "86": 0,
       "87": 0,
-      "88": 6,
+      "88": 8,
       "89": 0,
-      "90": 12,
-      "91": 42,
-      "92": 1
+      "90": 16,
+      "91": 56,
+      "92": 0
     },
     "f": {
-      "0": 6,
+      "0": 8,
       "1": 0,
-      "2": 1,
-      "3": 1,
-      "4": 1,
-      "5": 7,
-      "6": 2,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
       "7": 0,
-      "8": 1,
-      "9": 1,
-      "10": 7,
+      "8": 0,
+      "9": 0,
+      "10": 0,
       "11": 0,
-      "12": 1,
-      "13": 2,
-      "14": 6,
-      "15": 1,
+      "12": 0,
+      "13": 4,
+      "14": 8,
+      "15": 0,
       "16": 0,
       "17": 0,
       "18": 0,
       "19": 0,
       "20": 0,
       "21": 0,
-      "22": 12,
-      "23": 42,
-      "24": 1
+      "22": 16,
+      "23": 56,
+      "24": 0
     },
     "b": {
       "0": [
-        2,
-        5
+        0,
+        0
       ],
       "1": [
         0,
@@ -6717,16 +6597,16 @@
         0
       ],
       "3": [
-        6,
-        1
+        0,
+        0
       ],
       "4": [
-        1,
+        0,
         0
       ],
       "5": [
-        1,
-        1
+        0,
+        0
       ],
       "6": [
         0,
@@ -6756,10 +6636,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "384c14149bdff866f7524ee69089e83a54c6b69a"
+    "hash": "78838821cef8992386af7b07cd8555b1652a7f9d"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\newBooking.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\newBooking.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\newBooking.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\newBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6810,18 +6690,18 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
-      "1": 1
+      "0": 54,
+      "1": 4
     },
     "f": {
-      "0": 1
+      "0": 4
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1b962e749a4f0c015c3fffb539e64b70d8168c08"
+    "hash": "b1252934c4dae25ab1deba5212e37c1116b53e15"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\bookingService.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\bookingService.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\bookingService.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\bookingService.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6946,7 +6826,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -6960,10 +6840,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "3d5380d12abac26e5872949173d6abf804292174"
+    "hash": "eeacc3745a257675e71527fc045f67d3948a9f36"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\myBooking.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\myBooking.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\myBooking.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\myBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7863,10 +7743,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f912cae7b3f2af5d0609c90f639e64c0384f7078"
+    "hash": "7d747d12ca59ee067ebcd66ac4b2b9dec394cd12"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\myBooking.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\myBooking.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\myBooking.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\myBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7917,7 +7797,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0
     },
     "f": {
@@ -7925,10 +7805,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "69340e5931462165a1e3c993f8d5403d0927b728"
+    "hash": "0982b1cf2a9a62a9d87ca84b7a1a701052c42e5f"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7989,7 +7869,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0
     },
@@ -7998,10 +7878,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "367090d5d7248b791b1af2a0507c335041af3eac"
+    "hash": "d5bba5b5bd99f970c7c35be53d20390977642b8e"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9167,7 +9047,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -9267,10 +9147,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "71c5680aeccf8b41afbda305d950f256a9410c82"
+    "hash": "4436ba11d4db1061891abde388f21747c404b5a2"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9392,25 +9272,25 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 0,
+      "0": 54,
+      "1": 161,
       "2": 0
     },
     "f": {
-      "0": 0,
+      "0": 161,
       "1": 0
     },
     "b": {
       "0": [
-        0,
-        0
+        6,
+        155
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "02a075333c3133b5ea30b2409b3c651f0ae303a5"
+    "hash": "98a2ed06108ae7d5c55374f3903369acf48e1211"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\VerifyCode.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\VerifyCode.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\VerifyCode.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\VerifyCode.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9461,18 +9341,18 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
-      "1": 0
+      "0": 54,
+      "1": 18
     },
     "f": {
-      "0": 0
+      "0": 18
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9e636068fce1899c996e5bd0682a616bbf316d5c"
+    "hash": "c98e80b438957fed64ad7d3b292a572dfd56d6e7"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9480,7 +9360,7 @@
           "column": 23
         },
         "end": {
-          "line": 202,
+          "line": 191,
           "column": 1
         }
       },
@@ -9530,7 +9410,7 @@
           "column": 21
         },
         "end": {
-          "line": 113,
+          "line": 103,
           "column": 5
         }
       },
@@ -9540,7 +9420,7 @@
           "column": 8
         },
         "end": {
-          "line": 112,
+          "line": 102,
           "column": 9
         }
       },
@@ -9550,7 +9430,7 @@
           "column": 12
         },
         "end": {
-          "line": 98,
+          "line": 88,
           "column": 14
         }
       },
@@ -9656,291 +9536,221 @@
       },
       "18": {
         "start": {
-          "line": 50,
+          "line": 63,
           "column": 20
         },
         "end": {
-          "line": 95,
+          "line": 73,
           "column": 21
         }
       },
       "19": {
         "start": {
-          "line": 51,
+          "line": 64,
           "column": 24
         },
         "end": {
-          "line": 59,
+          "line": 72,
           "column": 26
         }
       },
       "20": {
         "start": {
-          "line": 61,
-          "column": 25
+          "line": 92,
+          "column": 12
         },
         "end": {
-          "line": 95,
-          "column": 21
+          "line": 100,
+          "column": 14
         }
       },
       "21": {
         "start": {
-          "line": 63,
-          "column": 24
+          "line": 104,
+          "column": 48
         },
         "end": {
-          "line": 71,
-          "column": 26
+          "line": 104,
+          "column": 69
         }
       },
       "22": {
         "start": {
-          "line": 73,
-          "column": 26
+          "line": 105,
+          "column": 52
         },
         "end": {
-          "line": 95,
-          "column": 21
+          "line": 105,
+          "column": 73
         }
       },
       "23": {
         "start": {
-          "line": 74,
-          "column": 24
+          "line": 106,
+          "column": 54
         },
         "end": {
-          "line": 82,
-          "column": 26
+          "line": 106,
+          "column": 74
         }
       },
       "24": {
         "start": {
-          "line": 86,
-          "column": 24
+          "line": 109,
+          "column": 25
         },
         "end": {
-          "line": 94,
-          "column": 26
+          "line": 133,
+          "column": 5
         }
       },
       "25": {
         "start": {
-          "line": 102,
-          "column": 12
+          "line": 110,
+          "column": 8
         },
         "end": {
           "line": 110,
-          "column": 14
+          "column": 23
         }
       },
       "26": {
         "start": {
-          "line": 114,
-          "column": 48
+          "line": 111,
+          "column": 8
         },
         "end": {
-          "line": 114,
-          "column": 69
+          "line": 132,
+          "column": 10
         }
       },
       "27": {
         "start": {
-          "line": 115,
-          "column": 52
+          "line": 113,
+          "column": 16
         },
         "end": {
-          "line": 115,
-          "column": 73
+          "line": 129,
+          "column": 17
         }
       },
       "28": {
         "start": {
-          "line": 116,
-          "column": 54
+          "line": 114,
+          "column": 20
         },
         "end": {
-          "line": 116,
-          "column": 74
+          "line": 114,
+          "column": 45
         }
       },
       "29": {
         "start": {
-          "line": 119,
-          "column": 25
+          "line": 115,
+          "column": 20
         },
         "end": {
-          "line": 144,
-          "column": 5
+          "line": 115,
+          "column": 48
         }
       },
       "30": {
         "start": {
-          "line": 120,
-          "column": 8
+          "line": 116,
+          "column": 20
         },
         "end": {
-          "line": 120,
-          "column": 23
+          "line": 116,
+          "column": 46
         }
       },
       "31": {
         "start": {
-          "line": 121,
-          "column": 8
+          "line": 120,
+          "column": 20
         },
         "end": {
-          "line": 143,
-          "column": 10
+          "line": 128,
+          "column": 22
         }
       },
       "32": {
         "start": {
-          "line": 123,
-          "column": 14
+          "line": 134,
+          "column": 25
         },
         "end": {
-          "line": 123,
-          "column": 44
+          "line": 140,
+          "column": 5
         }
       },
       "33": {
         "start": {
-          "line": 124,
-          "column": 16
+          "line": 135,
+          "column": 8
         },
         "end": {
-          "line": 140,
+          "line": 138,
           "column": 17
         }
       },
       "34": {
         "start": {
-          "line": 125,
-          "column": 20
+          "line": 137,
+          "column": 12
         },
         "end": {
-          "line": 125,
-          "column": 45
+          "line": 137,
+          "column": 30
         }
       },
       "35": {
         "start": {
-          "line": 126,
-          "column": 20
+          "line": 139,
+          "column": 8
         },
         "end": {
-          "line": 126,
-          "column": 48
+          "line": 139,
+          "column": 25
         }
       },
       "36": {
         "start": {
-          "line": 127,
-          "column": 20
+          "line": 141,
+          "column": 4
         },
         "end": {
-          "line": 127,
-          "column": 46
+          "line": 190,
+          "column": 11
         }
       },
       "37": {
         "start": {
-          "line": 131,
-          "column": 20
+          "line": 159,
+          "column": 31
         },
         "end": {
-          "line": 139,
-          "column": 22
+          "line": 159,
+          "column": 55
         }
       },
       "38": {
         "start": {
-          "line": 145,
-          "column": 25
+          "line": 179,
+          "column": 31
         },
         "end": {
-          "line": 151,
-          "column": 5
+          "line": 179,
+          "column": 66
         }
       },
       "39": {
         "start": {
-          "line": 146,
-          "column": 8
-        },
-        "end": {
-          "line": 149,
-          "column": 17
-        }
-      },
-      "40": {
-        "start": {
-          "line": 148,
-          "column": 12
-        },
-        "end": {
-          "line": 148,
-          "column": 30
-        }
-      },
-      "41": {
-        "start": {
-          "line": 150,
-          "column": 8
-        },
-        "end": {
-          "line": 150,
-          "column": 25
-        }
-      },
-      "42": {
-        "start": {
-          "line": 152,
-          "column": 4
-        },
-        "end": {
-          "line": 201,
-          "column": 11
-        }
-      },
-      "43": {
-        "start": {
-          "line": 170,
-          "column": 31
-        },
-        "end": {
-          "line": 170,
-          "column": 55
-        }
-      },
-      "44": {
-        "start": {
-          "line": 171,
+          "line": 180,
           "column": 30
         },
         "end": {
-          "line": 171,
-          "column": 53
-        }
-      },
-      "45": {
-        "start": {
-          "line": 190,
-          "column": 31
-        },
-        "end": {
-          "line": 190,
-          "column": 66
-        }
-      },
-      "46": {
-        "start": {
-          "line": 191,
-          "column": 30
-        },
-        "end": {
-          "line": 191,
+          "line": 180,
           "column": 53
         }
       }
@@ -9964,7 +9774,7 @@
             "column": 34
           },
           "end": {
-            "line": 202,
+            "line": 191,
             "column": 1
           }
         },
@@ -9988,7 +9798,7 @@
             "column": 29
           },
           "end": {
-            "line": 113,
+            "line": 103,
             "column": 5
           }
         },
@@ -10036,7 +9846,7 @@
             "column": 28
           },
           "end": {
-            "line": 97,
+            "line": 87,
             "column": 17
           }
         },
@@ -10046,193 +9856,169 @@
         "name": "(anonymous_4)",
         "decl": {
           "start": {
-            "line": 119,
+            "line": 109,
             "column": 25
           },
           "end": {
-            "line": 119,
+            "line": 109,
             "column": 26
           }
         },
         "loc": {
           "start": {
-            "line": 119,
+            "line": 109,
             "column": 31
           },
           "end": {
-            "line": 144,
+            "line": 133,
             "column": 5
           }
         },
-        "line": 119
+        "line": 109
       },
       "5": {
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 122,
+            "line": 112,
             "column": 12
           },
           "end": {
-            "line": 122,
+            "line": 112,
             "column": 13
           }
         },
         "loc": {
           "start": {
-            "line": 122,
+            "line": 112,
             "column": 24
           },
           "end": {
-            "line": 142,
+            "line": 131,
             "column": 13
           }
         },
-        "line": 122
+        "line": 112
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 145,
+            "line": 134,
             "column": 25
           },
           "end": {
-            "line": 145,
+            "line": 134,
             "column": 26
           }
         },
         "loc": {
           "start": {
-            "line": 145,
+            "line": 134,
             "column": 31
           },
           "end": {
-            "line": 151,
+            "line": 140,
             "column": 5
           }
         },
-        "line": 145
+        "line": 134
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 146,
+            "line": 135,
             "column": 19
           },
           "end": {
-            "line": 146,
+            "line": 135,
             "column": 20
           }
         },
         "loc": {
           "start": {
-            "line": 146,
+            "line": 135,
             "column": 25
           },
           "end": {
-            "line": 149,
+            "line": 138,
             "column": 9
           }
         },
-        "line": 146
+        "line": 135
       },
       "8": {
         "name": "(anonymous_8)",
         "decl": {
           "start": {
-            "line": 170,
+            "line": 159,
             "column": 26
           },
           "end": {
-            "line": 170,
+            "line": 159,
             "column": 27
           }
         },
         "loc": {
           "start": {
-            "line": 170,
+            "line": 159,
             "column": 31
           },
           "end": {
-            "line": 170,
+            "line": 159,
             "column": 55
           }
         },
-        "line": 170
+        "line": 159
       },
       "9": {
         "name": "(anonymous_9)",
         "decl": {
           "start": {
-            "line": 171,
-            "column": 24
-          },
-          "end": {
-            "line": 171,
-            "column": 25
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 171,
-            "column": 30
-          },
-          "end": {
-            "line": 171,
-            "column": 53
-          }
-        },
-        "line": 171
-      },
-      "10": {
-        "name": "(anonymous_10)",
-        "decl": {
-          "start": {
-            "line": 190,
+            "line": 179,
             "column": 26
           },
           "end": {
-            "line": 190,
+            "line": 179,
             "column": 27
           }
         },
         "loc": {
           "start": {
-            "line": 190,
+            "line": 179,
             "column": 31
           },
           "end": {
-            "line": 190,
+            "line": 179,
             "column": 66
           }
         },
-        "line": 190
+        "line": 179
       },
-      "11": {
-        "name": "(anonymous_11)",
+      "10": {
+        "name": "(anonymous_10)",
         "decl": {
           "start": {
-            "line": 191,
+            "line": 180,
             "column": 24
           },
           "end": {
-            "line": 191,
+            "line": 180,
             "column": 25
           }
         },
         "loc": {
           "start": {
-            "line": 191,
+            "line": 180,
             "column": 30
           },
           "end": {
-            "line": 191,
+            "line": 180,
             "column": 53
           }
         },
-        "line": 191
+        "line": 180
       }
     },
     "branchMap": {
@@ -10243,7 +10029,7 @@
             "column": 8
           },
           "end": {
-            "line": 112,
+            "line": 102,
             "column": 9
           }
         },
@@ -10255,7 +10041,7 @@
               "column": 8
             },
             "end": {
-              "line": 112,
+              "line": 102,
               "column": 9
             }
           },
@@ -10265,7 +10051,7 @@
               "column": 8
             },
             "end": {
-              "line": 112,
+              "line": 102,
               "column": 9
             }
           }
@@ -10377,11 +10163,11 @@
       "3": {
         "loc": {
           "start": {
-            "line": 50,
+            "line": 63,
             "column": 20
           },
           "end": {
-            "line": 95,
+            "line": 73,
             "column": 21
           }
         },
@@ -10389,107 +10175,35 @@
         "locations": [
           {
             "start": {
-              "line": 50,
+              "line": 63,
               "column": 20
             },
             "end": {
-              "line": 95,
+              "line": 73,
               "column": 21
             }
           },
           {
             "start": {
-              "line": 50,
+              "line": 63,
               "column": 20
             },
             "end": {
-              "line": 95,
+              "line": 73,
               "column": 21
             }
           }
         ],
-        "line": 50
+        "line": 63
       },
       "4": {
         "loc": {
           "start": {
-            "line": 61,
-            "column": 25
-          },
-          "end": {
-            "line": 95,
-            "column": 21
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 61,
-              "column": 25
-            },
-            "end": {
-              "line": 95,
-              "column": 21
-            }
-          },
-          {
-            "start": {
-              "line": 61,
-              "column": 25
-            },
-            "end": {
-              "line": 95,
-              "column": 21
-            }
-          }
-        ],
-        "line": 61
-      },
-      "5": {
-        "loc": {
-          "start": {
-            "line": 73,
-            "column": 26
-          },
-          "end": {
-            "line": 95,
-            "column": 21
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 73,
-              "column": 26
-            },
-            "end": {
-              "line": 95,
-              "column": 21
-            }
-          },
-          {
-            "start": {
-              "line": 73,
-              "column": 26
-            },
-            "end": {
-              "line": 95,
-              "column": 21
-            }
-          }
-        ],
-        "line": 73
-      },
-      "6": {
-        "loc": {
-          "start": {
-            "line": 124,
+            "line": 113,
             "column": 16
           },
           "end": {
-            "line": 140,
+            "line": 129,
             "column": 17
           }
         },
@@ -10497,35 +10211,35 @@
         "locations": [
           {
             "start": {
-              "line": 124,
+              "line": 113,
               "column": 16
             },
             "end": {
-              "line": 140,
+              "line": 129,
               "column": 17
             }
           },
           {
             "start": {
-              "line": 124,
+              "line": 113,
               "column": 16
             },
             "end": {
-              "line": 140,
+              "line": 129,
               "column": 17
             }
           }
         ],
-        "line": 124
+        "line": 113
       },
-      "7": {
+      "5": {
         "loc": {
           "start": {
-            "line": 156,
+            "line": 145,
             "column": 9
           },
           "end": {
-            "line": 173,
+            "line": 162,
             "column": 14
           }
         },
@@ -10533,35 +10247,35 @@
         "locations": [
           {
             "start": {
-              "line": 156,
+              "line": 145,
               "column": 9
             },
             "end": {
-              "line": 156,
+              "line": 145,
               "column": 26
             }
           },
           {
             "start": {
-              "line": 157,
+              "line": 146,
               "column": 12
             },
             "end": {
-              "line": 173,
+              "line": 162,
               "column": 14
             }
           }
         ],
-        "line": 156
+        "line": 145
       },
-      "8": {
+      "6": {
         "loc": {
           "start": {
-            "line": 160,
+            "line": 149,
             "column": 28
           },
           "end": {
-            "line": 160,
+            "line": 149,
             "column": 68
           }
         },
@@ -10569,35 +10283,35 @@
         "locations": [
           {
             "start": {
-              "line": 160,
+              "line": 149,
               "column": 43
             },
             "end": {
-              "line": 160,
+              "line": 149,
               "column": 63
             }
           },
           {
             "start": {
-              "line": 160,
+              "line": 149,
               "column": 66
             },
             "end": {
-              "line": 160,
+              "line": 149,
               "column": 68
             }
           }
         ],
-        "line": 160
+        "line": 149
       },
-      "9": {
+      "7": {
         "loc": {
           "start": {
-            "line": 176,
+            "line": 165,
             "column": 9
           },
           "end": {
-            "line": 194,
+            "line": 183,
             "column": 14
           }
         },
@@ -10605,35 +10319,35 @@
         "locations": [
           {
             "start": {
-              "line": 176,
+              "line": 165,
               "column": 9
             },
             "end": {
-              "line": 176,
+              "line": 165,
               "column": 23
             }
           },
           {
             "start": {
-              "line": 178,
+              "line": 167,
               "column": 12
             },
             "end": {
-              "line": 194,
+              "line": 183,
               "column": 14
             }
           }
         ],
-        "line": 176
+        "line": 165
       },
-      "10": {
+      "8": {
         "loc": {
           "start": {
-            "line": 181,
+            "line": 170,
             "column": 28
           },
           "end": {
-            "line": 181,
+            "line": 170,
             "column": 90
           }
         },
@@ -10641,35 +10355,35 @@
         "locations": [
           {
             "start": {
-              "line": 181,
+              "line": 170,
               "column": 54
             },
             "end": {
-              "line": 181,
+              "line": 170,
               "column": 85
             }
           },
           {
             "start": {
-              "line": 181,
+              "line": 170,
               "column": 88
             },
             "end": {
-              "line": 181,
+              "line": 170,
               "column": 90
             }
           }
         ],
-        "line": 181
+        "line": 170
       },
-      "11": {
+      "9": {
         "loc": {
           "start": {
-            "line": 196,
+            "line": 185,
             "column": 9
           },
           "end": {
-            "line": 198,
+            "line": 187,
             "column": 14
           }
         },
@@ -10677,149 +10391,133 @@
         "locations": [
           {
             "start": {
-              "line": 196,
+              "line": 185,
               "column": 9
             },
             "end": {
-              "line": 196,
+              "line": 185,
               "column": 25
             }
           },
           {
             "start": {
-              "line": 197,
+              "line": 186,
               "column": 12
             },
             "end": {
-              "line": 198,
+              "line": 187,
               "column": 14
             }
           }
         ],
-        "line": 196
+        "line": 185
       }
     },
     "s": {
-      "0": 2,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
+      "0": 54,
+      "1": 180,
+      "2": 180,
+      "3": 180,
+      "4": 180,
+      "5": 180,
+      "6": 7,
+      "7": 5,
+      "8": 3,
+      "9": 3,
+      "10": 3,
       "11": 0,
       "12": 0,
       "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
-      "27": 0,
+      "14": 3,
+      "15": 3,
+      "16": 3,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 180,
+      "22": 180,
+      "23": 180,
+      "24": 180,
+      "25": 1,
+      "26": 1,
+      "27": 1,
       "28": 0,
       "29": 0,
       "30": 0,
-      "31": 0,
-      "32": 0,
-      "33": 0,
+      "31": 1,
+      "32": 180,
+      "33": 4,
       "34": 0,
-      "35": 0,
-      "36": 0,
-      "37": 0,
-      "38": 0,
-      "39": 0,
-      "40": 0,
-      "41": 0,
-      "42": 0,
-      "43": 0,
-      "44": 0,
-      "45": 0,
-      "46": 0
+      "35": 4,
+      "36": 180,
+      "37": 132,
+      "38": 6,
+      "39": 1
     },
     "f": {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
+      "0": 180,
+      "1": 7,
+      "2": 3,
+      "3": 2,
+      "4": 1,
+      "5": 1,
+      "6": 4,
       "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
-      "11": 0
+      "8": 132,
+      "9": 6,
+      "10": 1
     },
     "b": {
       "0": [
-        0,
-        0
+        5,
+        2
       ],
       "1": [
         0,
-        0
+        3
       ],
       "2": [
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
         0,
         0
       ],
       "3": [
-        0,
+        2,
         0
       ],
       "4": [
         0,
-        0
+        1
       ],
       "5": [
-        0,
-        0
+        180,
+        161
       ],
       "6": [
         0,
-        0
+        161
       ],
       "7": [
-        0,
-        0
+        180,
+        22
       ],
       "8": [
         0,
-        0
+        22
       ],
       "9": [
-        0,
-        0
-      ],
-      "10": [
-        0,
-        0
-      ],
-      "11": [
-        0,
+        180,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fe221e5b9904a62222eb01c409609590af9068ad"
+    "hash": "fc91ac833a9c5dd7566d3788eb46f3c2238f148b"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\resendActivation.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\resendActivation.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\resendActivation.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\resendActivation.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11389,7 +11087,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -11443,10 +11141,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "129457e977e3316889ccfe29469df4b39126ac08"
+    "hash": "ea26adc5e008efff0e651bd5fba81cee5e377020"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12014,7 +11712,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -12066,10 +11764,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d66623adfbfe179c54461364844791626469954b"
+    "hash": "05bd931836b27a1fa06546e0802a80ce0e0ca6ad"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12623,10 +12321,10 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 2,
-      "2": 2,
-      "3": 2,
+      "0": 54,
+      "1": 54,
+      "2": 54,
+      "3": 54,
       "4": 0,
       "5": 0,
       "6": 0,
@@ -12675,10 +12373,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "425bf2aee7c795589ea728d38ba8789c6011e852"
+    "hash": "0f9759ca6eabf58d3a65c811fca5a6ce3675cd20"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13202,7 +12900,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -13251,10 +12949,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9d45f8ac908648e47aa5073dabd70472add91a0a"
+    "hash": "cb33f9e939a476c204a39937e5142f29a23d390c"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13305,7 +13003,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0
     },
     "f": {
@@ -13313,10 +13011,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "df9af173a6916eb8f1c18923656041347bdb22a8"
+    "hash": "5564335826680b30081a58fb2a4f68928ae094e9"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13756,7 +13454,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -13793,10 +13491,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b1b245649d89d874952d181c8c201c57de17154a"
+    "hash": "af9c896a22af0f77d302e9a357aef363bf35015e"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13847,7 +13545,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0
     },
     "f": {
@@ -13855,10 +13553,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "63bce0f61442168b2d3552cf045398ea5491b4ae"
+    "hash": "8d99d28f7d591dcab2c9e176822d65cefc9aedf9"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\NotFoundPage.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\NotFoundPage.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\NotFoundPage.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\NotFoundPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13943,7 +13641,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0
     },
@@ -13953,10 +13651,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4d6a88ab8c9ac251089c1fb6ae228d6c5e21c142"
+    "hash": "f5930a6174650e8eb797e0bc7b0e685059a34490"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15468,7 +15166,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -15615,10 +15313,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b0705ba1fa75275225ea0dc0bfd6fdb0a7bad600"
+    "hash": "9a0527a1620a1b639e16446e8ae1b0fc9c6f9ce5"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15822,34 +15520,34 @@
       }
     },
     "s": {
-      "0": 2,
-      "1": 1,
+      "0": 54,
+      "1": 4,
       "2": 0
     },
     "f": {
-      "0": 1,
+      "0": 4,
       "1": 0
     },
     "b": {
       "0": [
-        1,
-        0
+        0,
+        4
       ],
       "1": [
-        1,
-        1,
-        0
+        4,
+        4,
+        4
       ],
       "2": [
-        1,
+        4,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "825b397b3d703b0f27d23ea8e2c174550e0a4f89"
+    "hash": "07f3cf410ac4ea0c3d4908cb417222d8be0c4ce4"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\App.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\App.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\App.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15890,17 +15588,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2
+      "0": 54
     },
     "f": {
-      "0": 2
+      "0": 54
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0e89d8d13c26aaae4cfcaaa8ff9c276b0e6566be"
+    "hash": "516eb24e1dc85c872f8280372215a9aaa08c15fa"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\serviceWorker.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\serviceWorker.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\serviceWorker.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\serviceWorker.js",
     "statementMap": {
       "0": {
         "start": {
@@ -17242,7 +16940,7 @@
       }
     },
     "s": {
-      "0": 2,
+      "0": 54,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -17277,8 +16975,8 @@
       "32": 0,
       "33": 0,
       "34": 0,
-      "35": 2,
-      "36": 2,
+      "35": 54,
+      "36": 54,
       "37": 0,
       "38": 0
     },
@@ -17296,13 +16994,13 @@
       "10": 0,
       "11": 0,
       "12": 0,
-      "13": 2,
+      "13": 54,
       "14": 0,
       "15": 0
     },
     "b": {
       "0": [
-        2,
+        54,
         0,
         0
       ],
@@ -17360,15 +17058,15 @@
         0
       ],
       "14": [
-        2,
+        54,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "06a19f676b5bb88656d1f6b73e26a6989c431b97"
+    "hash": "7a70a4366d5beccaac0b2a2e7f86654783ce6c5e"
   },
-  "D:\\BookQuoraReact\\bookquorareact\\src\\index.js": {
-    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\index.js",
+  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\index.js": {
+    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -17394,12 +17092,12 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 2,
-      "1": 2
+      "0": 54,
+      "1": 54
     },
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9d552657e1b3dd1505f1a98431579b1cce22901e"
+    "hash": "9191a757a82b7c0eb3755b75ca06b8b064674d65"
   }
 }

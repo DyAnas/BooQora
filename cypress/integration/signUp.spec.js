@@ -18,10 +18,6 @@ describe("Page elements test", () => {
         //Test Title 
         cy.contains("Sign Up");
 
-        //Test error message
-
-        cy.get('p[name=errorMessage]');
-
         //Test Sign in form
         cy.get('form').within(($form) => {
 
@@ -96,24 +92,62 @@ describe("Validation", () => {
 
     })
 
-    it('Signup with right input', () => {
+    it('Signup with email@NotTietoEvry.com', () => {
+        const firstName = chance.first();
+        const lastName = chance.last();
+        const email = firstName + '@anything.com';
+        const password = 'RandomPass45@@';
+        const expectedErrorMessageToast = 'Email must match tietoevry';
+        const expectedStatusCode=404;
+        const expectedErrorMessageFromServer='Error: Email domain is not valid!'
+        cy.signup(firstName, lastName, email,password,expectedErrorMessageFromServer,expectedStatusCode).end();
+        cy.visit('/signup')
+        cy.get('input[name=firstName]').type(firstName);
+        cy.get('input[name=lastName]').type(lastName);
+        cy.get('input[name=email]').type(email);
+        cy.get('input[name=password]').type(password);
+        cy.get('input[name=confirmPassword]').type(password);
+        cy.get('button[type=submit]').click();
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', expectedErrorMessageToast);
+
+    })
+    
+    it('Signup with valid input', () => {
         const firstName = chance.first();
         const lastName = chance.last();
         const email = firstName + '@tietoevry.com';
         const password = 'RandomPass45@@';
         const expectedErrorMessage = 'User registered successfully!';
-        cy.signup(firstName, lastName, email,password, password,expectedErrorMessage);
+        const expectedStatusCode=201;
+        cy.signup(firstName, lastName, email,password,expectedErrorMessage,expectedStatusCode);
+        cy.get('button[type=submit]').click();
+        cy.url().should('eq', Cypress.config().baseUrl+'/')
         
     })
 
 })
+
+
 
 describe("Links", () => {
     it('click the link I have an account? Sign In', () => {
         cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
         cy.url().should('include', '/') // => true
-        cy.url().should('eq', 'http://localhost:3000/') // => true
+        cy.url().should('eq', Cypress.config().baseUrl+'/') // => true
         
     })
 
 })
+
+
+describe("Functions Testing", () => {
+    it('Redirect into login page after success signup', () => {
+        cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
+        cy.url().should('include', '/') // => true
+        cy.url().should('eq', Cypress.config().baseUrl+'/') // => true
+        
+    })
+
+
+})
+

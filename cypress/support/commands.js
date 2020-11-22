@@ -26,35 +26,81 @@
 
 
 Cypress.Commands.add("signin", (email, password, errorMessage) => {
-    cy.visit('http://localhost:3000/')
+    cy.visit(Cypress.config().baseUrl)
 
     cy.get('input[name=email]').type(email);
     cy.get('input[name=password]').type(password);
-    cy.get('button[type=submit]').should('contain','Sign In').click();
-    cy.get('p[name=errorMessage]').should('contain', errorMessage);
+    cy.get('button[type=submit]').should('contain', 'Sign In').click();
+    cy.get('.Toastify__toast-body[role=alert]').should('contain', errorMessage);
 
 })
 
-Cypress.Commands.add("signup", (firsName,lastName, email, password ,confirmPassword,message) => {
-    cy.visit('http://localhost:3000/signup')
-    cy.get('input[name=firstName]').type(firsName);
+Cypress.Commands.add("signup", (firstName, lastName, email, password, message,statuscode) => {
+    cy.visit('/signup')
+    cy.get('input[name=firstName]').type(firstName);
     cy.get('input[name=lastName]').type(lastName);
     cy.get('input[name=email]').type(email);
     cy.get('input[name=password]').type(password);
-    cy.get('input[name=confirmPassword]').type(confirmPassword);
-    cy.get('button[type=submit]').should('contain','Sign up').click();
-    cy.wait(2000);
-    cy.get('p[name=errorMessage]').should('contain', message);
+    cy.get('input[name=confirmPassword]').type(password);
+
+    cy.request({
+        method: 'POST',
+        url: 'http://localhost:8080/api/v1/employees/signup',
+        body: {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            confirmPassword: password
+
+        },
+        failOnStatusCode: false
+    })
+        .then((resp) => {
+            expect(resp.status).to.eq(statuscode)
+            expect(resp.body.message).to.eq(message)
+        })
+
+
 
 })
-// to login beforeach
-Cypress.Commands.add("login", (email, password, ) => {
-    cy.visit('http://localhost:3000/')
 
-    cy.get('input[name=email]').type(email);
-    cy.get('input[name=password]').type(password);
-    cy.get('button[type=submit]').should('contain','Sign In').click();
-    cy.wait(3000);
-    cy.visit(Cypress.config().baseUrl+"/newBooking")
 
-})
+// it('test request', () => {
+
+//     cy.request({
+//         method: 'POST',
+//         url: '/signin',
+//         body: {
+//             email: 'abdulrazak.kanjo@tietoevry.com',
+//             password: 'Password123@'
+//         },
+//         failOnStatusCode: false
+//         //followRedirect: false // turn off following redirects
+//     })
+//         .then((resp) => {
+//             // redirect status code is 302
+//             expect(resp.status).to.eq(404)
+//             //  expect(resp.redirectedToUrl).to.eq('http://localhost:8082/unauthorized')
+//         })
+// })
+
+
+
+
+
+        //     cy.request({
+        //         method: 'POST',
+        //         url: '/signin',
+        //         body: {
+        //             email: 'root@tietoevry.com',
+        //             password: 'WrongPassd123@'
+        //         },
+        //         failOnStatusCode: false
+        //     })
+        //         .then((resp) => {
+
+        //             expect(resp.status).to.eq(404)
+        //             expect(resp.body.message).to.eq('')
+        //         })
+        // })
