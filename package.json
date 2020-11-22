@@ -67,9 +67,9 @@
     "test": "cypress run",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
-    "cy:run":"cypress run",
+    "cy:run": "cypress run",
     "dev": "start-test 3000 cy:open",
-    "e2e":"start-test 3000"
+    "e2e": "start-test 3000"
   },
   "eslintConfig": {
     "extends": "react-app"

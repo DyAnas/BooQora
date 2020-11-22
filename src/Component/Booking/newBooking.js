@@ -96,7 +96,7 @@ const MapComponent = (props) => {
     // today and maxDate to show in calendar
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
-    const date =+ startDate.getDate()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
+    const date = startDate.getDay()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
 
@@ -324,7 +324,7 @@ const MapComponent = (props) => {
         <div className="container container-sm">
             <div className=" mt-4 mb-4 center ">
                 <div className="">
-                    <h3 className="title">New booking</h3>
+                    <h2 className="title">New booking</h2>
 
                     <p className="justify-text">Choose a date and click on a floor to show zone.</p>
                 </div>
@@ -337,7 +337,8 @@ const MapComponent = (props) => {
 
                     <div className="mb-3">
                         <DatePicker
-                            selected={startDate}
+                            dateFormat="dd-MM-yyyy"
+                            selected={new Date()}
                             onChange={date => setStartDate(date)}
                             startDate={startDate}
                             minDate={today}

@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authHeader.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authHeader.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authHeader.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authHeader.js",
     "statementMap": {
       "0": {
         "start": {
@@ -144,29 +144,29 @@
       }
     },
     "s": {
-      "0": 0,
-      "1": 0,
-      "2": 0,
+      "0": 1,
+      "1": 1,
+      "2": 1,
       "3": 0
     },
     "f": {
-      "0": 0
+      "0": 1
     },
     "b": {
       "0": [
-        0,
+        1,
         0
       ],
       "1": [
-        0,
-        0
+        1,
+        1
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f03cc5493c723d53990d1087ad8119f2345718e2"
+    "hash": "f996fd529c3a3910664b9d96dc4b7cd7eb85984b"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authUser.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authUser.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authUser.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authUser.js",
     "statementMap": {
       "0": {
         "start": {
@@ -762,6 +762,32 @@
       }
     },
     "s": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": 2,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 2,
+      "15": 0,
+      "16": 0,
+      "17": 2,
+      "18": 0,
+      "19": 0,
+      "20": 2,
+      "21": 0,
+      "22": 0,
+      "23": 13
+    },
+    "f": {
       "0": 1,
       "1": 1,
       "2": 0,
@@ -771,48 +797,22 @@
       "6": 0,
       "7": 0,
       "8": 0,
-      "9": 1,
-      "10": 1,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 1,
-      "15": 0,
-      "16": 0,
-      "17": 1,
-      "18": 0,
-      "19": 0,
-      "20": 1,
-      "21": 0,
-      "22": 0,
-      "23": 0
-    },
-    "f": {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 1,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
       "9": 0,
       "10": 0,
       "11": 0,
-      "12": 0
+      "12": 13
     },
     "b": {
       "0": [
-        0,
+        1,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "950fbe1393956f1a16b5a575bf8dc70f2735535b"
+    "hash": "86261bf91e876c3fcdda2012e791aa02c09f07e4"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js",
     "statementMap": {
       "0": {
         "start": {
@@ -996,7 +996,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 1,
       "2": 1,
       "3": 1,
@@ -1019,10 +1019,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8e0d2e399b0e81885cccfabbe8507956b49e42e4"
+    "hash": "370f25ea33a2892a6a9dfbf79dc472c8a5237d6c"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1938,7 +1938,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -2023,10 +2023,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ba0a454535ef0653e2514f5142e4ded7ef8e5f16"
+    "hash": "967410b8b91a4ccebcf3fe418c6b6fd718607195"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2958,19 +2958,19 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
+      "0": 2,
+      "1": 31,
+      "2": 31,
+      "3": 31,
+      "4": 31,
+      "5": 31,
+      "6": 1,
       "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
+      "8": 1,
+      "9": 31,
+      "10": 1,
+      "11": 1,
+      "12": 1,
       "13": 0,
       "14": 0,
       "15": 0,
@@ -2981,32 +2981,32 @@
       "20": 0,
       "21": 0,
       "22": 0,
-      "23": 0,
+      "23": 31,
       "24": 0,
       "25": 0,
       "26": 0,
       "27": 0,
       "28": 0,
-      "29": 0,
-      "30": 0,
-      "31": 0,
-      "32": 0
+      "29": 31,
+      "30": 31,
+      "31": 18,
+      "32": 9
     },
     "f": {
-      "0": 0,
-      "1": 0,
+      "0": 31,
+      "1": 1,
       "2": 0,
-      "3": 0,
-      "4": 0,
+      "3": 1,
+      "4": 1,
       "5": 0,
       "6": 0,
       "7": 0,
-      "8": 0,
-      "9": 0
+      "8": 18,
+      "9": 9
     },
     "b": {
       "0": [
-        0,
+        1,
         0
       ],
       "1": [
@@ -3029,27 +3029,27 @@
         0
       ],
       "5": [
-        0,
+        31,
         0
       ],
       "6": [
         0,
-        0
+        31
       ],
       "7": [
         0,
-        0
+        31
       ],
       "8": [
-        0,
-        0
+        1,
+        30
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b7bc6722fa39803bf989b66046b4c4ecc7cbbd77"
+    "hash": "42cec4371608c0c8d12fc3df10d339d21c48226e"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3191,27 +3191,27 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 0,
-      "2": 0,
-      "3": 0,
+      "0": 2,
+      "1": 8,
+      "2": 2,
+      "3": 2,
       "4": 0
     },
     "f": {
-      "0": 0,
-      "1": 0
+      "0": 8,
+      "1": 2
     },
     "b": {
       "0": [
-        0,
+        2,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b6933b40a8c026f7529125e04cf1a2e25980afb8"
+    "hash": "a2c6d5052fa5c96a645748c3f7ef1ad69b2ecbc8"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\NewPassword.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\NewPassword.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\NewPassword.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\NewPassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3979,7 +3979,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -4053,10 +4053,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2b3b6688b1343bda9160e1fbeec9d6cc63ecee52"
+    "hash": "0612c4c3c114704e67c1dc1b1dccd0fcbfb00304"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\About\\aboutBookora.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\About\\aboutBookora.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\About\\aboutBookora.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\About\\aboutBookora.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4107,7 +4107,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0
     },
     "f": {
@@ -4115,10 +4115,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "50347ebe8147b5776913b626f319f038e6717acf"
+    "hash": "d283574aaa298c19c93f153fbffa070ff10c9511"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4196,22 +4196,22 @@
       }
     },
     "s": {
-      "0": 0
+      "0": 6
     },
     "f": {
-      "0": 0
+      "0": 6
     },
     "b": {
       "0": [
         0,
-        0
+        6
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9d6a0a212eb2b7512807ad5348e6fb476f5af1ac"
+    "hash": "bc25ead9c9616373e494be483c2f5f5060336e4c"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\mapService.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\mapService.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\mapService.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\mapService.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4521,28 +4521,28 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 1,
-      "2": 1,
-      "3": 0,
-      "4": 0,
-      "5": 0,
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 1,
+      "5": 1,
       "6": 0,
       "7": 0,
       "8": 0,
-      "9": 0,
-      "10": 0,
+      "9": 1,
+      "10": 1,
       "11": 0,
       "12": 0,
       "13": 0,
       "14": 0,
       "15": 0,
-      "16": 0
+      "16": 1
     },
     "f": {
-      "0": 0,
+      "0": 1,
       "1": 0,
-      "2": 0,
+      "2": 1,
       "3": 0
     },
     "b": {
@@ -4552,10 +4552,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "018e7ff0e541fd85797056a3c77d0ad26209a866"
+    "hash": "ac7a4eed27b3a30e181bce6723f38f9c1244ff48"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\newBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\newBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\newBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\newBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4563,7 +4563,7 @@
           "column": 21
         },
         "end": {
-          "line": 398,
+          "line": 399,
           "column": 1
         }
       },
@@ -4620,11 +4620,11 @@
       "6": {
         "start": {
           "line": 99,
-          "column": 16
+          "column": 17
         },
         "end": {
           "line": 99,
-          "column": 106
+          "column": 104
         }
       },
       "7": {
@@ -5443,47 +5443,47 @@
           "column": 4
         },
         "end": {
-          "line": 397,
+          "line": 398,
           "column": 6
         }
       },
       "89": {
         "start": {
-          "line": 341,
+          "line": 342,
           "column": 46
         },
         "end": {
-          "line": 341,
+          "line": 342,
           "column": 64
         }
       },
       "90": {
         "start": {
-          "line": 371,
+          "line": 372,
           "column": 36
         },
         "end": {
-          "line": 374,
+          "line": 375,
           "column": 44
         }
       },
       "91": {
         "start": {
-          "line": 381,
+          "line": 382,
           "column": 32
         },
         "end": {
-          "line": 382,
+          "line": 383,
           "column": 96
         }
       },
       "92": {
         "start": {
-          "line": 382,
+          "line": 383,
           "column": 55
         },
         "end": {
-          "line": 382,
+          "line": 383,
           "column": 78
         }
       }
@@ -5507,7 +5507,7 @@
             "column": 32
           },
           "end": {
-            "line": 398,
+            "line": 399,
             "column": 1
           }
         },
@@ -5997,97 +5997,97 @@
         "name": "(anonymous_21)",
         "decl": {
           "start": {
-            "line": 341,
+            "line": 342,
             "column": 38
           },
           "end": {
-            "line": 341,
+            "line": 342,
             "column": 39
           }
         },
         "loc": {
           "start": {
-            "line": 341,
+            "line": 342,
             "column": 46
           },
           "end": {
-            "line": 341,
+            "line": 342,
             "column": 64
           }
         },
-        "line": 341
+        "line": 342
       },
       "22": {
         "name": "(anonymous_22)",
         "decl": {
           "start": {
-            "line": 369,
+            "line": 370,
             "column": 48
           },
           "end": {
-            "line": 369,
+            "line": 370,
             "column": 49
           }
         },
         "loc": {
           "start": {
-            "line": 371,
+            "line": 372,
             "column": 36
           },
           "end": {
-            "line": 374,
+            "line": 375,
             "column": 44
           }
         },
-        "line": 371
+        "line": 372
       },
       "23": {
         "name": "(anonymous_23)",
         "decl": {
           "start": {
-            "line": 380,
+            "line": 381,
             "column": 47
           },
           "end": {
-            "line": 380,
+            "line": 381,
             "column": 48
           }
         },
         "loc": {
           "start": {
-            "line": 381,
+            "line": 382,
             "column": 32
           },
           "end": {
-            "line": 382,
+            "line": 383,
             "column": 96
           }
         },
-        "line": 381
+        "line": 382
       },
       "24": {
         "name": "(anonymous_24)",
         "decl": {
           "start": {
-            "line": 382,
+            "line": 383,
             "column": 49
           },
           "end": {
-            "line": 382,
+            "line": 383,
             "column": 50
           }
         },
         "loc": {
           "start": {
-            "line": 382,
+            "line": 383,
             "column": 55
           },
           "end": {
-            "line": 382,
+            "line": 383,
             "column": 78
           }
         },
-        "line": 382
+        "line": 383
       }
     },
     "branchMap": {
@@ -6579,53 +6579,53 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
+      "0": 2,
+      "1": 6,
+      "2": 6,
+      "3": 6,
+      "4": 6,
+      "5": 6,
+      "6": 6,
+      "7": 6,
+      "8": 6,
+      "9": 6,
+      "10": 6,
       "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
-      "27": 0,
-      "28": 0,
+      "12": 6,
+      "13": 1,
+      "14": 6,
+      "15": 6,
+      "16": 6,
+      "17": 6,
+      "18": 6,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 7,
+      "23": 7,
+      "24": 2,
+      "25": 5,
+      "26": 1,
+      "27": 2,
+      "28": 1,
       "29": 0,
       "30": 0,
       "31": 0,
       "32": 0,
       "33": 0,
       "34": 0,
-      "35": 0,
-      "36": 0,
-      "37": 0,
-      "38": 0,
-      "39": 0,
-      "40": 0,
-      "41": 0,
-      "42": 0,
-      "43": 0,
+      "35": 6,
+      "36": 1,
+      "37": 1,
+      "38": 1,
+      "39": 7,
+      "40": 7,
+      "41": 6,
+      "42": 1,
+      "43": 1,
       "44": 0,
-      "45": 0,
-      "46": 0,
+      "45": 7,
+      "46": 1,
       "47": 0,
       "48": 0,
       "49": 0,
@@ -6633,27 +6633,27 @@
       "51": 0,
       "52": 0,
       "53": 0,
-      "54": 0,
-      "55": 0,
-      "56": 0,
-      "57": 0,
-      "58": 0,
-      "59": 0,
-      "60": 0,
-      "61": 0,
-      "62": 0,
-      "63": 0,
-      "64": 0,
-      "65": 0,
-      "66": 0,
-      "67": 0,
+      "54": 6,
+      "55": 6,
+      "56": 6,
+      "57": 1,
+      "58": 1,
+      "59": 1,
+      "60": 6,
+      "61": 2,
+      "62": 6,
+      "63": 6,
+      "64": 1,
+      "65": 1,
+      "66": 1,
+      "67": 6,
       "68": 0,
       "69": 0,
       "70": 0,
       "71": 0,
       "72": 0,
-      "73": 0,
-      "74": 0,
+      "73": 6,
+      "74": 6,
       "75": 0,
       "76": 0,
       "77": 0,
@@ -6667,43 +6667,43 @@
       "85": 0,
       "86": 0,
       "87": 0,
-      "88": 0,
+      "88": 6,
       "89": 0,
-      "90": 0,
-      "91": 0,
-      "92": 0
+      "90": 12,
+      "91": 42,
+      "92": 1
     },
     "f": {
-      "0": 0,
+      "0": 6,
       "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 7,
+      "6": 2,
       "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 0,
+      "8": 1,
+      "9": 1,
+      "10": 7,
       "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
+      "12": 1,
+      "13": 2,
+      "14": 6,
+      "15": 1,
       "16": 0,
       "17": 0,
       "18": 0,
       "19": 0,
       "20": 0,
       "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0
+      "22": 12,
+      "23": 42,
+      "24": 1
     },
     "b": {
       "0": [
-        0,
-        0
+        2,
+        5
       ],
       "1": [
         0,
@@ -6717,16 +6717,16 @@
         0
       ],
       "3": [
-        0,
-        0
+        6,
+        1
       ],
       "4": [
-        0,
+        1,
         0
       ],
       "5": [
-        0,
-        0
+        1,
+        1
       ],
       "6": [
         0,
@@ -6756,10 +6756,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "78838821cef8992386af7b07cd8555b1652a7f9d"
+    "hash": "384c14149bdff866f7524ee69089e83a54c6b69a"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\newBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\newBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\newBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\newBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6810,18 +6810,18 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
-      "1": 0
+      "0": 2,
+      "1": 1
     },
     "f": {
-      "0": 0
+      "0": 1
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b1252934c4dae25ab1deba5212e37c1116b53e15"
+    "hash": "1b962e749a4f0c015c3fffb539e64b70d8168c08"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\bookingService.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\bookingService.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\bookingService.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\bookingService.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6946,7 +6946,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -6960,10 +6960,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "eeacc3745a257675e71527fc045f67d3948a9f36"
+    "hash": "3d5380d12abac26e5872949173d6abf804292174"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\myBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\myBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\myBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\myBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7863,10 +7863,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7d747d12ca59ee067ebcd66ac4b2b9dec394cd12"
+    "hash": "f912cae7b3f2af5d0609c90f639e64c0384f7078"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\myBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\myBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\myBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\myBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7917,7 +7917,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0
     },
     "f": {
@@ -7925,10 +7925,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0982b1cf2a9a62a9d87ca84b7a1a701052c42e5f"
+    "hash": "69340e5931462165a1e3c993f8d5403d0927b728"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7989,7 +7989,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0
     },
@@ -7998,10 +7998,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d5bba5b5bd99f970c7c35be53d20390977642b8e"
+    "hash": "367090d5d7248b791b1af2a0507c335041af3eac"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9167,7 +9167,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -9267,10 +9267,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4436ba11d4db1061891abde388f21747c404b5a2"
+    "hash": "71c5680aeccf8b41afbda305d950f256a9410c82"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9392,25 +9392,25 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 24,
+      "0": 2,
+      "1": 0,
       "2": 0
     },
     "f": {
-      "0": 24,
+      "0": 0,
       "1": 0
     },
     "b": {
       "0": [
         0,
-        24
+        0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "98a2ed06108ae7d5c55374f3903369acf48e1211"
+    "hash": "02a075333c3133b5ea30b2409b3c651f0ae303a5"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\VerifyCode.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\VerifyCode.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\VerifyCode.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\VerifyCode.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9461,7 +9461,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0
     },
     "f": {
@@ -9469,10 +9469,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "c98e80b438957fed64ad7d3b292a572dfd56d6e7"
+    "hash": "9e636068fce1899c996e5bd0682a616bbf316d5c"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -10700,14 +10700,14 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 24,
-      "2": 24,
-      "3": 24,
-      "4": 24,
-      "5": 24,
-      "6": 1,
-      "7": 1,
+      "0": 2,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
       "8": 0,
       "9": 0,
       "10": 0,
@@ -10717,19 +10717,19 @@
       "14": 0,
       "15": 0,
       "16": 0,
-      "17": 1,
-      "18": 1,
+      "17": 0,
+      "18": 0,
       "19": 0,
-      "20": 1,
+      "20": 0,
       "21": 0,
-      "22": 1,
-      "23": 1,
+      "22": 0,
+      "23": 0,
       "24": 0,
       "25": 0,
-      "26": 24,
-      "27": 24,
-      "28": 24,
-      "29": 24,
+      "26": 0,
+      "27": 0,
+      "28": 0,
+      "29": 0,
       "30": 0,
       "31": 0,
       "32": 0,
@@ -10738,33 +10738,33 @@
       "35": 0,
       "36": 0,
       "37": 0,
-      "38": 24,
+      "38": 0,
       "39": 0,
       "40": 0,
       "41": 0,
-      "42": 24,
-      "43": 21,
+      "42": 0,
+      "43": 0,
       "44": 0,
       "45": 0,
       "46": 0
     },
     "f": {
-      "0": 24,
-      "1": 1,
+      "0": 0,
+      "1": 0,
       "2": 0,
-      "3": 1,
+      "3": 0,
       "4": 0,
       "5": 0,
       "6": 0,
       "7": 0,
-      "8": 21,
+      "8": 0,
       "9": 0,
       "10": 0,
       "11": 0
     },
     "b": {
       "0": [
-        1,
+        0,
         0
       ],
       "1": [
@@ -10772,22 +10772,22 @@
         0
       ],
       "2": [
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
         0,
         0
       ],
       "3": [
         0,
-        1
+        0
       ],
       "4": [
         0,
-        1
+        0
       ],
       "5": [
-        1,
+        0,
         0
       ],
       "6": [
@@ -10795,15 +10795,15 @@
         0
       ],
       "7": [
-        24,
-        24
+        0,
+        0
       ],
       "8": [
         0,
-        24
+        0
       ],
       "9": [
-        24,
+        0,
         0
       ],
       "10": [
@@ -10811,15 +10811,15 @@
         0
       ],
       "11": [
-        24,
+        0,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "845517d49447cbd4568877600c6bb92c1c979302"
+    "hash": "fe221e5b9904a62222eb01c409609590af9068ad"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\resendActivation.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\resendActivation.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\resendActivation.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\resendActivation.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11389,7 +11389,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -11443,10 +11443,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ea26adc5e008efff0e651bd5fba81cee5e377020"
+    "hash": "129457e977e3316889ccfe29469df4b39126ac08"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12014,7 +12014,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -12066,10 +12066,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "05bd931836b27a1fa06546e0802a80ce0e0ca6ad"
+    "hash": "d66623adfbfe179c54461364844791626469954b"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12623,10 +12623,10 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 1,
-      "2": 1,
-      "3": 1,
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
       "4": 0,
       "5": 0,
       "6": 0,
@@ -12675,10 +12675,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0f9759ca6eabf58d3a65c811fca5a6ce3675cd20"
+    "hash": "425bf2aee7c795589ea728d38ba8789c6011e852"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13202,7 +13202,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -13251,10 +13251,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "cb33f9e939a476c204a39937e5142f29a23d390c"
+    "hash": "9d45f8ac908648e47aa5073dabd70472add91a0a"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13305,7 +13305,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0
     },
     "f": {
@@ -13313,10 +13313,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "5564335826680b30081a58fb2a4f68928ae094e9"
+    "hash": "df9af173a6916eb8f1c18923656041347bdb22a8"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13756,7 +13756,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -13793,10 +13793,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "af9c896a22af0f77d302e9a357aef363bf35015e"
+    "hash": "b1b245649d89d874952d181c8c201c57de17154a"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13847,7 +13847,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0
     },
     "f": {
@@ -13855,10 +13855,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8d99d28f7d591dcab2c9e176822d65cefc9aedf9"
+    "hash": "63bce0f61442168b2d3552cf045398ea5491b4ae"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\NotFoundPage.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\NotFoundPage.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\NotFoundPage.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\NotFoundPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13943,7 +13943,7 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0
     },
@@ -13953,10 +13953,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f5930a6174650e8eb797e0bc7b0e685059a34490"
+    "hash": "4d6a88ab8c9ac251089c1fb6ae228d6c5e21c142"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15468,7 +15468,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -15615,10 +15615,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9a0527a1620a1b639e16446e8ae1b0fc9c6f9ce5"
+    "hash": "b0705ba1fa75275225ea0dc0bfd6fdb0a7bad600"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15822,34 +15822,34 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 0,
+      "0": 2,
+      "1": 1,
       "2": 0
     },
     "f": {
-      "0": 0,
+      "0": 1,
       "1": 0
     },
     "b": {
       "0": [
-        0,
+        1,
         0
       ],
       "1": [
-        0,
-        0,
+        1,
+        1,
         0
       ],
       "2": [
-        0,
+        1,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "07f3cf410ac4ea0c3d4908cb417222d8be0c4ce4"
+    "hash": "825b397b3d703b0f27d23ea8e2c174550e0a4f89"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\App.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\App.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\App.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15890,17 +15890,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1
+      "0": 2
     },
     "f": {
-      "0": 1
+      "0": 2
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "516eb24e1dc85c872f8280372215a9aaa08c15fa"
+    "hash": "0e89d8d13c26aaae4cfcaaa8ff9c276b0e6566be"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\serviceWorker.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\serviceWorker.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\serviceWorker.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\serviceWorker.js",
     "statementMap": {
       "0": {
         "start": {
@@ -17242,7 +17242,7 @@
       }
     },
     "s": {
-      "0": 1,
+      "0": 2,
       "1": 0,
       "2": 0,
       "3": 0,
@@ -17277,8 +17277,8 @@
       "32": 0,
       "33": 0,
       "34": 0,
-      "35": 1,
-      "36": 1,
+      "35": 2,
+      "36": 2,
       "37": 0,
       "38": 0
     },
@@ -17296,13 +17296,13 @@
       "10": 0,
       "11": 0,
       "12": 0,
-      "13": 1,
+      "13": 2,
       "14": 0,
       "15": 0
     },
     "b": {
       "0": [
-        1,
+        2,
         0,
         0
       ],
@@ -17360,15 +17360,15 @@
         0
       ],
       "14": [
-        1,
+        2,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7a70a4366d5beccaac0b2a2e7f86654783ce6c5e"
+    "hash": "06a19f676b5bb88656d1f6b73e26a6989c431b97"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\index.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\index.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\index.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -17394,12 +17394,12 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 1,
-      "1": 1
+      "0": 2,
+      "1": 2
     },
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9191a757a82b7c0eb3755b75ca06b8b064674d65"
+    "hash": "9d552657e1b3dd1505f1a98431579b1cce22901e"
   }
 }

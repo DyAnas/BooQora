@@ -47,4 +47,14 @@ Cypress.Commands.add("signup", (firsName,lastName, email, password ,confirmPassw
     cy.get('p[name=errorMessage]').should('contain', message);
 
 })
+// to login beforeach
+Cypress.Commands.add("login", (email, password, ) => {
+    cy.visit('http://localhost:3000/')
 
+    cy.get('input[name=email]').type(email);
+    cy.get('input[name=password]').type(password);
+    cy.get('button[type=submit]').should('contain','Sign In').click();
+    cy.wait(3000);
+    cy.visit(Cypress.config().baseUrl+"/newBooking")
+
+})
