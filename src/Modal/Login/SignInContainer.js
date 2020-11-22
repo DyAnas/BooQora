@@ -202,7 +202,7 @@ const SignInContainer = (props) => {
                         Forgot password?
                         </Link>
                    
-                    <Link href="/signup" variant="body2" className="text-footer" style={{marginTop:"10px"}}>
+                    <Link id="goToSignUp" href="/signup" variant="body2" className="text-footer" style={{marginTop:"10px"}}>
                         Don't have an account? Sign Up
                         </Link>
                 </div>

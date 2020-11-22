@@ -57,7 +57,7 @@ const Forgotpassword = (props) => {
                         })
                     }else if(error.response.status===404){
                         setMessage({
-                            text: "Email is not exist,",
+                            text: "Email is not exist !",
 
                         })
                     }

@@ -1,16 +1,17 @@
 /// <reference types="cypress"/>
 
-import Chance from "chance";
+import Chance from 'chance';
+
 
 const chance = new Chance();
 
 beforeEach(() => {
-    cy.visit('http://localhost:3000/')
+    cy.visit(Cypress.config().baseUrl)
 })
 
-describe("Sign in page tests", () => {
-
-    it('Page elements test', () => {
+describe("Page elements test", () => {
+    
+    it('Checks logo, Title, error message, form elements', () => {
         //Test logo
         cy.get(".center").find("img").should('have.attr', 'src').should('include', 'logo');
 
@@ -47,7 +48,7 @@ describe("Sign in page tests", () => {
 })
 
 
-describe("Sign in Test Validation", () => {
+describe("Validation", () => {
     it('Test submiting empty form', () => {
 
 
@@ -77,16 +78,48 @@ describe("Sign in Test Validation", () => {
     })
 
     it('Signin with not activated credentials', () => {
-        const firsName = chance.first();
+        const firstName = chance.first();
         const lastName = chance.last();
-        const email = firsName + '@tietoevry.com';
+        const email = firstName + '@tietoevry.com';
         const password = 'RandomPass45@@';
-        const expectedErrorMessage = 'Email is not actived';
-        cy.signup(firsName, lastName, email, password)
-        cy.signin(email, password, expectedErrorMessage)
+        const expectedErrorMessage = 'User registered successfully!';
+        cy.signup(firstName, lastName, email, password, password, expectedErrorMessage);
 
-        
+        const expectedErrorMessage2 = 'Email is not actived';
+        cy.signin(email, password, expectedErrorMessage2)
+
+
     })
-
-   
 })
+    describe("Test Footer Links", () => {
+
+        it('click the link I have an account? Sign In', () => {
+            //   cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
+            cy.get('#goToSignUp').click();  
+            cy.url().should('include', '/signup') // => true
+               cy.url().should('eq', 'http://localhost:3000/signup') // => true
+       
+           })
+    
+        it('Link forget password', () => {
+         //   cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
+         cy.get('#forgetPassword').click();  
+         cy.url().should('include', '/forgotPassword') // => true
+            cy.url().should('eq', 'http://localhost:3000/forgotPassword') // => true
+    
+        })
+    })    
+
+    describe('Sign in Senarioes ', ()=>{
+
+        it('sign in as Admin',()=>{
+
+            
+
+        })
+
+
+
+    })
+//TODO Firstname and last name can be to words with different letters type.
+

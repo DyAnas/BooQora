@@ -219,7 +219,7 @@ const SignUpContainer = (props) => {
                                 : null}
                             <hr/>
                             <div className="mb-1 ">
-                                <Link href="/" variant="body2" className="text-footer">
+                                <Link id="goToSignIn" href="/" variant="body2" className="text-footer">
                                     {"I have an account? Sign In"}
                                 </Link>
                             </div>
