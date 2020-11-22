@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-//TODO
+
 Cypress.Commands.add("signin", (email, password, errorMessage) => {
     cy.visit('http://localhost:3000/')
 
@@ -35,16 +35,16 @@ Cypress.Commands.add("signin", (email, password, errorMessage) => {
 
 })
 
-Cypress.Commands.add("signup", (firsName,lastName, email, password) => {
+Cypress.Commands.add("signup", (firsName,lastName, email, password ,confirmPassword,message) => {
     cy.visit('http://localhost:3000/signup')
     cy.get('input[name=firstName]').type(firsName);
     cy.get('input[name=lastName]').type(lastName);
     cy.get('input[name=email]').type(email);
     cy.get('input[name=password]').type(password);
-    cy.get('input[name=confirmPassword]').type(password);
+    cy.get('input[name=confirmPassword]').type(confirmPassword);
     cy.get('button[type=submit]').should('contain','Sign up').click();
     cy.wait(2000);
-    cy.get('p[name=errorMessage]').should('contain', 'User registered successfully!');
+    cy.get('p[name=errorMessage]').should('contain', message);
 
 })
 

@@ -69,6 +69,12 @@ const Forgotpassword = (props) => {
                             draggable: true,
                             progress: undefined,
                         })
+<<<<<<< HEAD
+                    }else if(error.response.status===404){
+                        setMessage({
+                            text: "Email is not exist !",
+=======
+>>>>>>> 08a51f3e02e724862011c16761c98f52ea44dcd7
 
                     }else if(error.response.status===404){
                         toast.error("Email is not exist,", {
