@@ -209,7 +209,11 @@ export const CreateNewAdmin = () => {
     return <div className="container  ">
         <div className="row text-center d-block mx-auto mainRow " >
 
-            <h3 className=" mb-4 mt-5 title">Upgrade a user to admin</h3>
+            <div className=" mt-4 mb-4 center ">
+                <div className="">
+                    <h2 className="  title"> Upgrade a user to admin </h2>
+                </div>
+            </div>
             <div className=" col " >
                 <ToastContainer
                     position="top-center"
@@ -222,7 +226,7 @@ export const CreateNewAdmin = () => {
 
                     <div className="d-flex justify-content-center center flex-column">
 
-                        <strong >Find User:</strong>
+                        <strong className="title" >Find User:</strong>
                         <form style={{ width:"85%"}} onSubmit={handleSubmit(handleFindEmployee)} id="TestForm" data-test="submit-button" >
                         <TextField
                             name="email"

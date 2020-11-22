@@ -13,7 +13,7 @@ export default function MyBookings(props) {
     const today = new Date();
     const email = AuthService.getCurrentUser().email;
     const [ListBooking, setListBooking] = useState([]);
-  
+
 
     const getAllBooking = () => {
         getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
@@ -105,7 +105,11 @@ export default function MyBookings(props) {
         <div>
             <ToastContainer
                 position="top-center"/>
-         <h2 className="title"> My Booking </h2>
+            <div className=" mt-4 mb-4 center ">
+
+                    <h3 className="title">My booking</h3>
+
+            </div>
             <MaterialTable
                 title="Your booking "
                 columns={columns}

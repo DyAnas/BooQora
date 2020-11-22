@@ -118,9 +118,13 @@ export const ZoneSettings = () => {
 
     return <div className="">
         <div className="container  ">
-            <div className="row text-center d-block mx-auto box " >
+            <div className="row text-center d-block mx-auto box  " >
 
-                <h3 className=" mb-5 ">Zone Settings</h3>
+                <div className=" mt-4 mb-4 center ">
+                    <div className="">
+                        <h2 className="  title"> Zone Settings </h2>
+                    </div>
+                </div>
                 <div className=" col " >
                     <ToastContainer
                         position="top-center"

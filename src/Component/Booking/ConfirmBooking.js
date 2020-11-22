@@ -9,22 +9,18 @@ function    BookDialog(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={props.show } onHide={props.onHide}>
-                <Modal.Header  className="p-3 mb-2 bg-info text-white"  closeButton>
+             {/*   <Modal.Header  className="p-3 mb-2 bg-info text-white"  closeButton>
                     <Modal.Title>Confirm Booking </Modal.Title>
-                </Modal.Header>
+                </Modal.Header>*/}
+
                 <Modal.Body>
-                <h2>Floor: {props.name}</h2>
-                    <p>Zone: {props.Zone}</p>
-                    <div className="row">
-                        <div className="col-md-6">
-                            <Form.Group controlId="dob">
-                                <Form.Label >Date:  {  props.dates}   </Form.Label>
-                            </Form.Group>
-                        </div>
-                        <div className="center col-md-6">
-                            <p style={{ color: "red"}}>{props.messages}</p>
-                        </div>
+                    <div className=" mt-1 mb-1 center ">
+                            <h2 className="  title"> Confirm Booking  </h2>
                     </div>
+                    <p>Floor: {props.name}</p>
+                    <p>Zone: {props.Zone}</p>
+                    <p>Date:  {  props.dates}   </p>
+
                     {props.loading ?
                         <div className="mt-2 container center">
                             <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">

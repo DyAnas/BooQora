@@ -49,19 +49,19 @@ const StatusFloor = () => {
             }
         }
     });
-    const getStatus= (response)=> {
+    const getStatus = (response) => {
         let item = []
         let color = []
-            response.data.map((i, index) => {
-                if (i.bookedPercentage < 30) {
-                    color[index] = 'rgba(75, 192, 192, 0.6)';
-                } else if (i.bookedPercentage > 30 || i.bookedPercentage < 70) {
-                    color[index] = 'rgba(255, 206, 86, 0.6)';
-                } else {
-                    color[index] = 'rgba(255, 99, 132, 0.6)';
-                }
-                return  item.push(i.bookedPercentage);
-            })
+        response.data.map((i, index) => {
+            if (i.bookedPercentage < 30) {
+                color[index] = 'rgba(75, 192, 192, 0.6)';
+            } else if (i.bookedPercentage > 30 || i.bookedPercentage < 70) {
+                color[index] = 'rgba(255, 206, 86, 0.6)';
+            } else {
+                color[index] = 'rgba(255, 99, 132, 0.6)';
+            }
+            return item.push(i.bookedPercentage);
+        })
 
 
         setBarOptions({
@@ -100,8 +100,8 @@ const StatusFloor = () => {
             ]
         })
 
-}
-    const fetchBooking= useCallback(() => {
+    }
+    const fetchBooking = useCallback(() => {
         CheckStatusOfAllZones(floor, startDate).then(getStatus)
     }, [startDate, floor,])
     useEffect(() => {
@@ -112,11 +112,14 @@ const StatusFloor = () => {
 
 
     return (
-
-
         <div className=" ">
-            <h2  className="  title"> Status Floor </h2>
-            <p className="text"> Choose a date and floor to show status</p>
+            <div className=" mt-2 mb-2 center ">
+                <div className="">
+                    <h2 className="  title"> Status Floor </h2>
+
+                    <p className="text"> Choose a date and floor to show status</p>
+                </div>
+            </div>
             <div className="row ">
                 <div className="col-md-6 labelsDate">
                     <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
@@ -135,13 +138,13 @@ const StatusFloor = () => {
                     <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">Floor </h2>
                     <div className="dropdown labelsDate">
                         <button className="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             floor: {floor}
                         </button>
                         <div className="dropdown-menu " aria-labelledby="dropdownMenuButton">
                             {[...Array(7)].map((x, i) =>
                                 <a className="dropdown-item" href="#" key={i}
-                                    onClick={() => setFloor(i + 1)} >{i + 1}</a>
+                                   onClick={() => setFloor(i + 1)}>{i + 1}</a>
                             )}
 
 
@@ -149,17 +152,14 @@ const StatusFloor = () => {
                     </div>
                 </div>
             </div>
-            <div className="">
-                <div className=" ">
-                    <Bar
-                        data={barData}
-                        options={barOptions.options}
-                        width={100}
-                        height={85}/>
-                </div>
 
+            <div>
+                <Bar
+                    data={barData}
+                    options={barOptions.options}
+                    width={100}
+                    height={85}/>
             </div>
-
         </div>
     )
 

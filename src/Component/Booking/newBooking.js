@@ -322,8 +322,8 @@ const MapComponent = (props) => {
 
     return (
         <div className="container container-sm">
-            <div className="row d-flex text-center flex-column">
-                <div className="col-sm-8">
+            <div className=" mt-4 mb-4 center ">
+                <div className="">
                     <h3 className="title">New booking</h3>
 
                     <p className="justify-text">Choose a date and click on a floor to show zone.</p>
