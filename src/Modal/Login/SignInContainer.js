@@ -65,7 +65,7 @@ const SignInContainer = (props) => {
                     }else if(error.response.status===400){
                         toast.warning(CustomToastWithLink, {
                             position: "top-center",
-                            autoClose: 10000,
+                            autoClose: false,
                             hideProgressBar: true,
                             closeOnClick: true,
                             pauseOnHover: true,
@@ -91,7 +91,7 @@ const SignInContainer = (props) => {
     }
     const CustomToastWithLink = () => (
         <div>
-        <p>Email is not actived:  </p>  <Link id="resendActivationLink" style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
+        <p>Email is not actived:    <Link id="resendActivationLink" style={{ color:"gray",textDecoration:"underline"  }} to="#" onClick={resendActivation}>Resend activation </Link></p>
         </div>
       );
     // handle if email is not active
@@ -134,7 +134,7 @@ const SignInContainer = (props) => {
 
                     <ToastContainer
                         position="top-center"
-                        autoClose={8000}/>
+                        />
 
                 </div>
                 <div className="center">

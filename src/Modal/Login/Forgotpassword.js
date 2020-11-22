@@ -22,11 +22,11 @@ const Forgotpassword = (props) => {
                     toast.success(Response.message, {
                         position: "top-center",
                         autoClose: 10000,
-                        hideProgressBar: false,
+                        hideProgressBar: true,
                         closeOnClick: true,
                         pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
+                        draggable: false,
+                
                     })
                     spinnerTimer();
                     // GotToResetPassword();
@@ -48,27 +48,15 @@ const Forgotpassword = (props) => {
                         error.message ||
                         error.toString();
 
-                    // if (resMessage === "No message available") {
-
-                    //     toast.error("Email is not registered", {
-                    //         position: "top-center",
-                    //         autoClose: 8000,
-                    //         hideProgressBar: false,
-                    //         closeOnClick: true,
-                    //         pauseOnHover: true,
-                    //         draggable: true,
-                    //         progress: undefined,
-                    //     })
-                    //}
                     if (error.response.status === 404) {
                         toast.error("Email is not exist!", {
                             position: "top-center",
                             autoClose: 8000,
-                            hideProgressBar: false,
+                            hideProgressBar: true,
                             closeOnClick: true,
                             pauseOnHover: true,
                             draggable: true,
-                            progress: undefined,
+                          
                         })
                     }
 
@@ -92,11 +80,11 @@ const Forgotpassword = (props) => {
             toast.error("Email must match tietoevry", {
                 position: "top-center",
                 autoClose: 8000,
-                hideProgressBar: false,
+                hideProgressBar: true,
                 closeOnClick: true,
                 pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
+                draggable: false,
+              
             })
 
         }//Authentication
@@ -120,11 +108,11 @@ const Forgotpassword = (props) => {
                     toast.error("Incorrect Code!! or code is expired", {
                         position: "top-center",
                         autoClose: 8000,
-                        hideProgressBar: false,
+                        hideProgressBar: true,
                         closeOnClick: true,
                         pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
+                        draggable: false,
+                    
                     })
                 }
 
