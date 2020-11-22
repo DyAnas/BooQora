@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../assets/logo1.png"
 import {TextField} from "@material-ui/core";
 import {withRouter} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
 
 
 const ForgotPassword = (props) => {
@@ -17,10 +18,9 @@ const ForgotPassword = (props) => {
                 <h1 className="text  mb-2 justify-content-center mt-3">
                     Forgot password
                     </h1>
-                <div className="center">
-                    <p style={{ color: "red"}}>{props.message}</p>
-
-                </div>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={8000}/>
                 <div className="center">
                     <form style={{ width:"80%"}} onSubmit={props.onSubmit}>
                         <TextField

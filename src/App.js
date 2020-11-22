@@ -16,13 +16,11 @@ import Archive from "./Modal/Statistics/Statistics";
 import {NotFoundPage} from "./Modal/NotFoundPage";
 import {CreateNewAdmin} from "./Component/AdminPages/CreateNewAdmin";
 import {NavigationBar} from "./Component/Layout/NavigationBar";
-import authHeader from "./service/Authentication/authHeader";
-import jwtDecode from "jwt-decode";
+
+
 class App extends Component {
 
   render() {
-console.log(authHeader().Authorization);
-
     return (
       <div className=" contianer">
      

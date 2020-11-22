@@ -4,30 +4,35 @@ import {TextField} from "@material-ui/core";
 import {useForm} from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
 import {withRouter} from "react-router-dom";
-
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const NewPassword = (props) => {
     const [password, setPassword] = React.useState('')
     const { register, handleSubmit, watch, errors } = useForm();
+    const [loading, setLoading] = React.useState(false)
     const email = props.email;
-    const [messages, setMessage] = React.useState({
-        text: ""
-    });
 
-
-    const goToSignin = () => {
-        props.history.push("/");
-
+    const goToSignIn = () =>  {
+        setTimeout(() => {
+            setLoading(false)
+            props.history.push("/");
+        }, 5000);
+        setLoading(true);
     }
     const onSubmit = () => {
 
         AuthService.resetPassword(email, password).then(
             Response => {
-                if (Response.message!== "you have used the old password"){
-                goToSignin();
-                }
-                setMessage({
-                    text: Response.message
+                toast.success(Response.message, {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
                 })
+                goToSignIn();
             }, error => {
                 const resMessage =
                     (error.response &&
@@ -36,22 +41,47 @@ const NewPassword = (props) => {
                     error.message ||
                     error.toString();
                 if (resMessage === "Error: Unauthorized") {
-                    setMessage({
-                        text: "Incorrect email or password",
+                    toast.error("Incorrect email or password", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
                     })
                 } else if (resMessage === "No message available") {
-                    setMessage({
-                        text: "Email is not registered",
 
+                    toast.error("Email is not registered", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
                     })
                 } else if (error.response.status === 400) {
-                    setMessage({
-                        text: "You can't change password to old password,",
 
+                    toast.error("You can't change password to old password,", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
                     })
                 } else {
-                    setMessage({
-                        text: resMessage,
+
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
                     })
                 }
 
@@ -68,10 +98,9 @@ const NewPassword = (props) => {
                 <h1 className="text  mb-2 justify-content-center mt-2">
                     Reset password
                     </h1>
-                <div className="center">
-                    <p style={{ color: "red" }}>{props.message || messages.text}</p>
-
-                </div>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={8000}/>
                 <div className="center">
                     <form onSubmit={handleSubmit(onSubmit)}  >
 
@@ -130,7 +159,7 @@ const NewPassword = (props) => {
                             <button
                                 type="submit"
                                 id="submit"
-                                onClick={goToSignin}
+                                onClick={goToSignIn}
                                 className="btn btn-info  mt-4 mb-3 text-light mr-3"
                                 variant="contained"
                             >
@@ -138,6 +167,16 @@ const NewPassword = (props) => {
                                 </button>
 
                         </div>
+                        {loading ?
+                            <div className="mt-2">
+                                <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                </div>
+                                <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                </div>
+                                <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                </div>
+                            </div>
+                            : null}
 
                         <hr />
                     </form>

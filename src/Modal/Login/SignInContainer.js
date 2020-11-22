@@ -5,6 +5,8 @@ import {useForm} from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
 import {Link, TextField} from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignInContainer = (props) => {
 
@@ -13,31 +15,24 @@ const SignInContainer = (props) => {
     const [password, setPassword] = React.useState('')
     // useForm to control form
     const { register, handleSubmit, errors } = useForm();
-    // dialog handle
-    const [message, setMessage] = React.useState({
-        text: "",
-        title: ""
-    });
-    const signIn = () => {
+
+
+    const goToNewBooking = () => {
         setTimeout(() => {
             props.history.push("/newBooking");
-        }, 2000);
+        }, 5000);
         setLoading(true);
     }
 
     // handle submit form
     const onSubmit = () => {
-        setMessage({
-            text: "",
-
-        })
 
         // check validation before call api
         if (validateEmail(email)) {
             AuthService.login(email, password).then(
                 () => {
 
-                    signIn();
+                    goToNewBooking();
 
                 },
                 error => {
@@ -47,52 +42,80 @@ const SignInContainer = (props) => {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
-                    if (resMessage === "Error: Unauthorized") {
-                        setMessage({
-                            text: "Incorrect email or password",
+                    if (error.response.status===401) {
+                        toast.error("Incorrect email or password", {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                     }
-                    else if (resMessage === "No message available") {
-                        setMessage({
-                            text: "Email is not registered",
-
+                    else if (error.response.status===404) {
+                        toast.error("Email is not registered", {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                     }else if(error.response.status===400){
-                        setMessage({
-                            text: "Email is not actived,",
-
+                        toast.info("Email is not actived,", {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                         setshowConfirmation(true)
                     }
 
                     else {
-                        setMessage({
-                            text: resMessage,
+                        toast.error(resMessage, {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                     }
 
                 }
             );
         } else {
-            setMessage({
-                text: "Email must match tietoEvry",
+            toast.error("Email must match tietoEvry", {
+                position: "top-center",
+                autoClose: 8000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
             })
         }//Authentication
     }
     // handle if email is not active
     const resendActivation = () => {
-        setMessage({
-            text: "",
-
-        })
         setLoading(true);
         AuthService.ResendActivation(email).then(
-
             Response => {
                 setLoading(false)
-                setMessage({
-                    text: Response.message,
-
+                toast.success(Response.message, {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
                 })
             })
         setshowConfirmation(false);
@@ -115,11 +138,13 @@ const SignInContainer = (props) => {
 
 
                 <div className="center">
-                    <p id="errorMessage" name="errorMessage" style={{ color: "red" }}>{message.text}
                         {showConfirmation &&
                             <Link style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
                         }
-                    </p>
+
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={8000}/>
 
                 </div>
                 <div className="center">

@@ -1,8 +1,8 @@
 import React from "react";
-import AuthService from "../../service/Authentication/authUser";
+
 
 export const About = (props) => {
-    const currentUser = AuthService.getCurrentUser();
+
 
 
     return (

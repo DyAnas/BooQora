@@ -1,7 +1,7 @@
-import React from "react";
+
 import axios from "axios";
 import authHeader from "../Authentication/authHeader";
-import {useHistory} from "react-router-dom";
+
 
 const api_url = "http://localhost:8080/api/v1/zones/";
 const api_url2 = "http://localhost:8080/api/v1/bookings/";
