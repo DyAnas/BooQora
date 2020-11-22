@@ -53,7 +53,7 @@ describe("Page elements test", () => {
 
 describe("Validation", () => {
 
-    it('Test submiting empty form shoould give (Required warning)', () => {
+    it('Test submiting empty form should give (Required warning)', () => {
 
         cy.get('button[type=submit]').click();
         cy.get("#firstName-helper-text").should("contain", "Required")

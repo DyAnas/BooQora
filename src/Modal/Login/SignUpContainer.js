@@ -107,7 +107,7 @@ const SignUpContainer = (props) => {
                                 inputRef={register({
                                     required: "Required",
                                     pattern: {
-                                        value: /^[a-zåøæA-ZÅØÆ]+$/i,
+                                        value: /^[a-zåøæ A-ZÅØÆ]+$/i,
                                         message: "Invalid First Name"
                                     }
                                 })}
@@ -129,7 +129,7 @@ const SignUpContainer = (props) => {
                                 inputRef={register({
                                     required: "Required",
                                     pattern: {
-                                        value: /^[a-zåøæA-ZÅØÆ]+$/i,
+                                        value: /^[a-zåøæ A-ZÅØÆ]+$/i,
                                         message: "Invalid Last Name"
                                     }
                                 })}

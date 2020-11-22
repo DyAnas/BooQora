@@ -20,7 +20,7 @@ describe("Page elements test", () => {
 
         //Test error message
 
-        cy.get('#errorMessage')
+      //  cy.get('#errorMessage')
 
         //Test Sign in form
         cy.get('form').within(($form) => {
@@ -121,5 +121,4 @@ describe("Validation", () => {
 
 
     })
-//TODO Firstname and last name can be to words with different letters type.
 
