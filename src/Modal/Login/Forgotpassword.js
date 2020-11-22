@@ -70,7 +70,6 @@ const Forgotpassword = (props) => {
                             progress: undefined,
                         })
 
-
                     }else if(error.response.status===404){
                         toast.error("Email is not exist,", {
                             position: "top-center",
