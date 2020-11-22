@@ -3,6 +3,9 @@ import {DeleteBookings, getAllBookingOfEmployeeInAPeriodEmployee} from "../../se
 import AuthService from '../../service/Authentication/authUser';
 import MaterialTable from "material-table";
 import { useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function MyBookings(props) {
     const history = useHistory();
     const maxDate = new Date();
@@ -10,7 +13,7 @@ export default function MyBookings(props) {
     const today = new Date();
     const email = AuthService.getCurrentUser().email;
     const [ListBooking, setListBooking] = useState([]);
-    const [message, setMessage] = useState("");
+  
 
     const getAllBooking = () => {
         getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
@@ -29,7 +32,16 @@ export default function MyBookings(props) {
                     window.location.reload();
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }
-                setMessage(resMessage)
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
+
             })
     }
     const removeBooking = (item) => {
@@ -37,9 +49,17 @@ export default function MyBookings(props) {
         DeleteBookings(item.bookingId).then(
             response => {
                 setTimeout(() => {
-                    setMessage("")
+
                 }, 3000);
-                setMessage(response.data.message)
+                toast.success(response.data.message, {
+                    position: "top-center",
+                    autoClose: 6000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
                 getAllBooking();
             }, (error) => {
                 const resMessage =
@@ -54,7 +74,16 @@ export default function MyBookings(props) {
                     window.location.reload();
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }
-                setMessage(resMessage)
+
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
 
             })
     }
@@ -74,9 +103,8 @@ export default function MyBookings(props) {
 
     return (
         <div>
-            <div className="center col-md-6">
-                <p style={{ color: "red" }}>{message}</p>
-            </div>
+            <ToastContainer
+                position="top-center"/>
          <h2 className="title"> My Booking </h2>
             <MaterialTable
                 title="Your booking "

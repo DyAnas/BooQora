@@ -15,31 +15,24 @@ const SignInContainer = (props) => {
     const [password, setPassword] = React.useState('')
     // useForm to control form
     const { register, handleSubmit, errors } = useForm();
-    // dialog handle
-    const [message, setMessage] = React.useState({
-        text: "",
-        title: ""
-    });
-    const signIn = () => {
+
+
+    const goToNewBooking = () => {
         setTimeout(() => {
             props.history.push("/newBooking");
-        }, 2000);
+        }, 5000);
         setLoading(true);
     }
 
     // handle submit form
     const onSubmit = () => {
-        setMessage({
-            text: "",
-
-        })
 
         // check validation before call api
         if (validateEmail(email)) {
             AuthService.login(email, password).then(
                 () => {
 
-                    signIn();
+                    goToNewBooking();
 
                 },
                 error => {
@@ -61,8 +54,6 @@ const SignInContainer = (props) => {
                         })
                     }
                     else if (error.response.status===404) {
-
-
                         toast.error("Email is not registered", {
                             position: "top-center",
                             autoClose: 8000,
@@ -73,8 +64,6 @@ const SignInContainer = (props) => {
                             progress: undefined,
                         })
                     }else if(error.response.status===400){
-
-
                         toast.info("Email is not actived,", {
                             position: "top-center",
                             autoClose: 8000,
@@ -88,7 +77,7 @@ const SignInContainer = (props) => {
                     }
 
                     else {
-                        toast.error(Response.message, {
+                        toast.error(resMessage, {
                             position: "top-center",
                             autoClose: 8000,
                             hideProgressBar: false,
@@ -115,13 +104,8 @@ const SignInContainer = (props) => {
     }
     // handle if email is not active
     const resendActivation = () => {
-        setMessage({
-            text: "",
-
-        })
         setLoading(true);
         AuthService.ResendActivation(email).then(
-
             Response => {
                 setLoading(false)
                 toast.success(Response.message, {
@@ -154,11 +138,10 @@ const SignInContainer = (props) => {
 
 
                 <div className="center">
-                    <p id="errorMessage" name="errorMessage" style={{ color: "red" }}>{message.text}
                         {showConfirmation &&
                             <Link style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
                         }
-                    </p>
+
                     <ToastContainer
                         position="top-center"
                         autoClose={8000}/>

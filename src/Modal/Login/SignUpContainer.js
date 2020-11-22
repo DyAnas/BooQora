@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../../Styles/LoginStyle.css';
 import {useForm} from 'react-hook-form';
 import AuthService from '../../service/Authentication/authUser'
 import {Link, TextField} from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
 import Logo from "../../assets/logo1.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const SignUpContainer = (props) => {
     // create state with useStat for
     const [loading, setLoading] = React.useState(false);
@@ -15,19 +18,13 @@ const SignUpContainer = (props) => {
 
     // useForm to control form
     const {register, handleSubmit, watch, errors} = useForm();
-    // dialog handle
-    const [message, setMessage] = useState({
-        text: "",
-        title: ""
-    });
-
 
     // to show message and go to sign in
-    const signIn = () => {
+    const goToSignIn = () => {
         setTimeout(() => {
             setLoading(false)
             props.history.push("/");
-        }, 2000);
+        }, 5000);
         setLoading(true);
 
     }
@@ -35,10 +32,6 @@ const SignUpContainer = (props) => {
 
     // handle submit form
     const onSubmit = data => {
-        setMessage({
-            text: "",
-
-        })
         // check validation before call api
         if (validateEmail(email)) {
             // call register method to send data to api
@@ -46,11 +39,16 @@ const SignUpContainer = (props) => {
             setLoading(true);
             AuthService.register(firstName, lastName, email, password, roles)
                 .then(Response => {
-                        setMessage({
-                            text: Response.data.message,
-                            title: "Success"
-                        })
-                        signIn(); // to show message and go to sign in
+                    toast.success(Response.message, {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
+                        goToSignIn(); // to show message and go to sign in
                     }, error => {
                         const resMessage =
                             (error.response &&
@@ -58,18 +56,28 @@ const SignUpContainer = (props) => {
                                 error.response.data.message) ||
                             error.message ||
                             error.toString();
-                        setMessage({
-                            text: resMessage,
-                            title: "Error"
-                        })
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
 
-                   signIn();
+                   goToSignIn();
                     }
                 );
         } else {
-            setMessage({
-                text: "Email must match tietoevry",
-                title: "Incorrect email or password"
+            toast.error("Email must match tietoevry", {
+                position: "top-center",
+                autoClose: 8000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
             })
         }
 
@@ -85,10 +93,10 @@ const SignUpContainer = (props) => {
                     <h1 className="text  mb-1 justify-content-center">
                         Sign Up
                     </h1>
-                    <div className="center">
-                        <p name="errorMessage" style={{color: "red", marginRight: "10px"}}>{message.text}</p>
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={8000}/>
 
-                    </div>
                     <div className="center">
                         <form style={{width: "85%"}} onSubmit={handleSubmit(onSubmit)}>
                             <TextField

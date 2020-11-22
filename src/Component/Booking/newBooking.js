@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React,  {useEffect, useState} from "react";
 import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
 import BookDialog from "./ConfirmBooking";
@@ -11,6 +11,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import {Doughnut} from 'react-chartjs-2';
 import en from "date-fns/locale/en-GB";
 import { useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const MapComponent = (props) => {
@@ -23,7 +25,7 @@ const MapComponent = (props) => {
             zone: "Zone A",
             shape: "poly",
             coords: [235, 137, 235, 152, 216, 152, 212, 181, 221, 183, 217, 213, 284, 224, 295, 147],
-            preFillColor: "",
+            preFillColor: "#02f3af",
             fillColor: "#7fb775"
         },
         {
@@ -33,7 +35,7 @@ const MapComponent = (props) => {
             zone: "Zone B",
             shape: "poly",
             coords: [86, 157, 88, 174, 82, 176, 84, 199, 98, 196, 102, 214, 190, 201, 180, 139],
-            preFillColor: "",
+            preFillColor:"#02f3af",
             fillColor: "#7fb775"
         },
         {
@@ -43,7 +45,7 @@ const MapComponent = (props) => {
             zone: "Zone C",
             shape: "poly",
             coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
-            preFillColor: "",
+            preFillColor: "#02f3af",
             fillColor: "#7fb775"
         },
         {
@@ -53,7 +55,7 @@ const MapComponent = (props) => {
             style: "span4",
             shape: "poly",
             coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
-            preFillColor: "",
+            preFillColor:"#02f3af",
             fillColor: "#7fb775"
         },
 
@@ -64,7 +66,7 @@ const MapComponent = (props) => {
             style: "span5",
             shape: "poly",
             coords: [67, 41, 64, 102, 154, 100, 156, 38],
-            preFillColor: "",
+            preFillColor: "#02f3af",
             fillColor: "#7fb775"
         },
         {
@@ -84,7 +86,7 @@ const MapComponent = (props) => {
             style: "span7",
             shape: "poly",
             coords: [15, 105, 63, 104, 63, 151, 41, 170, 11, 172],
-            preFillColor: "",
+            preFillColor: "#02f3af",
             fillColor: "#7fb775"
         },
 
@@ -108,7 +110,7 @@ const MapComponent = (props) => {
     const [Zone, setZone] = useState();
     const [mapAreas, setMapAreas] = useState({
         name: "choose a floor",
-        areas: []
+        areas: [areas[0], areas[5]]
     });
     // method to get all active zones
     const getActiveZone = (floor) => {
@@ -116,7 +118,6 @@ const MapComponent = (props) => {
         let areasToShow;
         getZoneList(floor).then(
             response => {
-                console.log(response)
                     response.data.zoneDTOList.map((i, index) => {
                         areas[index].id = i.id
                         if (i.activated === true) {
@@ -146,8 +147,15 @@ const MapComponent = (props) => {
                  window.location.reload();
 
                  }
-
-                setMessage(resMessage);
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
 
             } )
 
@@ -171,7 +179,6 @@ const MapComponent = (props) => {
                      return items.push(i.bookedPercentage);
                 })
 
-                console.log("items", items.toString())
                 setBarData({
                     labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
                     datasets: [
@@ -202,7 +209,15 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                     window.location.reload();
-                    setMessage(resMessage)
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }
 
@@ -215,7 +230,7 @@ const MapComponent = (props) => {
 
     // floor handle
     const handleClickFloor = (floor) => {
-        setMessage("")
+
         getStatusOfAllZones(floor, startDate)
         getActiveZone(floor);
         setFloor(floor);
@@ -227,6 +242,7 @@ const MapComponent = (props) => {
 
     }, [mapAreas, startDate, ]);
 
+
     useEffect(() => {
 
     }, [floor, startDate, areas]);
@@ -236,7 +252,6 @@ const MapComponent = (props) => {
     const enterArea = (area) => {
         setZoneID(area.id);
         setZone(area.zone)
-        setMessage("");
         handleShow();
 
     }
@@ -250,15 +265,20 @@ const MapComponent = (props) => {
         setShow(true);
     }
 
-
-    const [message, setMessage] = useState("");
     // confirm booking
     const currentUser = AuthService.getCurrentUser();
     const confirmBooking = () => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
-                console.log(response)
-                    setMessage(response.data.message);
+                toast.success(response.data.message, {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
                     showDialog();
 
             }, (error) => {
@@ -272,20 +292,33 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                     window.location.reload();
-                    setMessage(resMessage)
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }else if (error.response.status === 400) {
 
-                    setMessage("You already have booking on that day")
+                    toast.error("You already have booking on that day", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                     setShow(false);
 
                 }
             }
             )
     }
-
-
-
 
     return (
         <div className="container container-sm">
@@ -296,9 +329,9 @@ const MapComponent = (props) => {
                     <p className="justify-text">Choose a date and click on a floor to show zone.</p>
                 </div>
             </div>
-            <div className="center col-md-6">
-                <p style={{color: "red"}}>{message}</p>
-            </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={8000}/>
             <div className="row mr-0 ml-0">
                 <div className="col-md-6 pl-5 m-auto">
 
@@ -319,7 +352,6 @@ const MapComponent = (props) => {
                             name={mapAreas.name}
                             Zone={Zone}
                             ConfirmBooking={confirmBooking}
-                            messages={message}
                             dates={date}
                             loading={loading}
                         />

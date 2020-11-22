@@ -6,25 +6,27 @@ import ForgotPassword from "../../Component/Login/ForgotPassword";
 import VerifyCode from "../../Component/Login/VerifyCode";
 import NewPassword from "../../Component/Login/NewPassword";
 import {withRouter} from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Forgotpassword = (props) => {
     const { register, handleSubmit, errors } = useForm();
     const [email, setEmail] = React.useState('');
     const [confirmationCode, setconfirmationCode] = React.useState('');
-    const [message, setMessage] = React.useState({
-        text: "",
-        title: ""
-    });
-
     const [loading, setLoading] = React.useState(false);
 
     const onSubmit = data => {
         if (validateEmail(email)) {
             AuthService.forgotPassword(email).then(
                 Response => {
-                    setMessage({
-                        text: Response.message,
+                    toast.success(Response.message, {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
                     })
                     spinnerTimer();
                     // GotToResetPassword();
@@ -46,25 +48,49 @@ const Forgotpassword = (props) => {
                         error.message ||
                         error.toString();
                     if (resMessage === "Error: Unauthorized") {
-                        setMessage({
-                            text: "Incorrect email or password",
+                        toast.error("Incorrect email or password", {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                     }
                     else if (resMessage === "No message available") {
-                        setMessage({
-                            text: "Email is not registered",
 
+                        toast.error("Email is not registered", {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
-                    }else if(error.response.status===404){
-                        setMessage({
-                            text: "Email is not exist,",
 
+                    }else if(error.response.status===404){
+                        toast.error("Email is not exist,", {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                     }
 
                     else {
-                        setMessage({
-                            text: resMessage,
+                        toast.error(resMessage, {
+                            position: "top-center",
+                            autoClose: 8000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
                         })
                     }
 
@@ -73,9 +99,14 @@ const Forgotpassword = (props) => {
 
         }
         else {
-            
-            setMessage({
-                text: "Email must match tietoevry",
+            toast.error("Email must match tietoevry", {
+                position: "top-center",
+                autoClose: 8000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
             })
 
         }//Authentication
@@ -89,22 +120,23 @@ const Forgotpassword = (props) => {
         spinnerTimer();
         AuthService.verifyCode(confirmationCode).then(
             Response => {
-
+              console.log(Response.message);
                 if (Response.data === true) {
-
-                    setMessage({
-                        text: "",
-                    })
                     setShowVerifyCode(false);
                     setShowForgotpassord(false);
                     setShowRestPassword(true);
 
                 }else{
-      
-                    setMessage({
-                        text: "Incorrect Code!! or code is expired",
+
+                    toast.error("Incorrect Code!! or code is expired", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
                     })
-    
                 }
             
             }
@@ -114,10 +146,13 @@ const Forgotpassword = (props) => {
         setTimeout(() => {
 
             setLoading(false);
-        }, 6000);
+        }, 5000);
         setLoading(true);
     }
     return (<div>
+        <ToastContainer
+            position="top-center"
+            autoClose={8000}/>
         {ShowForgotpassord &&
             <ForgotPassword
                 onSubmit={handleSubmit(onSubmit)}
@@ -134,11 +169,12 @@ const Forgotpassword = (props) => {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 cancel={() => props.history.push("/")}
-                message={message.text}
                 loading={loading}
             />
+
         }
         {ShowVerifyCode &&
+
             <VerifyCode
                 onSubmit={handleSubmit(onSubmitCode)}
                 error={!!errors.confirmationCode}
@@ -153,13 +189,12 @@ const Forgotpassword = (props) => {
                 value={confirmationCode}
                 onChange={e => setconfirmationCode(e.target.value)}
                 cancel={() => props.history.push("/")}
-                message={message.text}
+
 
             />
         }
         {ShowRestPassword &&
             <NewPassword email={email}
-            message={message.text}
             />
 
         }

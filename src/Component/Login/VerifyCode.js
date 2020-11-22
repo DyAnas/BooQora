@@ -1,7 +1,8 @@
 import React from "react";
 import Logo from "../../assets/logo1.png";
 import {TextField} from "@material-ui/core";
-
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const VerifyCode = (props) => {
 
     return (<div className=" ipad vh-100 center background   ">
@@ -13,10 +14,10 @@ const VerifyCode = (props) => {
                     <h1 className="text  mb-2 justify-content-center mt-2">
                         Verify Code
                     </h1>
-                    <div className="center">
-                        <p className=" text-center" style={{ color: "red"}}>{props.message}</p>
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={8000}/>
 
-                    </div>
                     <div className="center">
                         <form onSubmit={props.onSubmit} id="TestForm" data-test="submit-button">
                             <TextField

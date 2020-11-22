@@ -5,13 +5,13 @@ import {FindEmployee, UpgradeUserToAdmin} from '../../service/AdminService/Admin
 import {useHistory} from "react-router-dom";
 import validateEmail from "../Login/ValidateEmail";
 import {useForm} from "react-hook-form";
+import {toast, ToastContainer} from "react-toastify";
 
 
 export const CreateNewAdmin = () => {
     const history = useHistory();
     const [email, setEmail] = useState("")
     const [userFound, setUserFound] = useState(false)
-    const [message, setMessage] = useState("")
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [checkBoxValueAdmin, setCheckBoxValueAdmin] = useState(false)
@@ -28,8 +28,15 @@ export const CreateNewAdmin = () => {
                 setLastname(response.data.lastName.toUpperCase())
                 setEmail(response.data.email)
                 setUserFound(true);
-
-                setMessage("")
+                toast.error(response.data.message, {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
 
                 if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
                     setCheckBoxValueAdmin(true)
@@ -44,11 +51,28 @@ export const CreateNewAdmin = () => {
                 if(error.response.status===404){
 
                     setUserFound(false);
-                    setMessage("Email is not found")
+                    toast.error("Email is not found", {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                 }else if(error.response.status===400){
 
                     setUserFound(false);
-                    setMessage("Incorrect Email")
+
+                    toast.error("Incorrect Email", {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                 }else if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
@@ -56,14 +80,31 @@ export const CreateNewAdmin = () => {
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }
                 else {
-                    setMessage(resMessage)
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                 }
                // setMessage(error.response.status)
 
             })
 
         } else {
-            setMessage( "Email must match tietoEvry")
+
+            toast.error("Email must match tietoEvry", {
+                position: "top-center",
+                autoClose: 10000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
         }
     }
 
@@ -90,7 +131,15 @@ export const CreateNewAdmin = () => {
         if (validateEmail(email)){
         UpgradeUserToAdmin(email, roleToApi).then(
             response => {
-                setMessage(response.data.message)
+                toast.success(response.data.message, {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
                 setUserFound(false);
 
             },(error) => {
@@ -103,24 +152,57 @@ export const CreateNewAdmin = () => {
                 console.log(resMessage);
                 if(error.response.status===404){
                     setUserFound(false);
-                    setMessage("Email is not found")
+                    toast.error("Email is not found", {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                 }else if(error.response.status===400){
 
                     setUserFound(false);
-                    setMessage("Incorrect Email")
+
+                    toast.error("Incorrect Email", {
+                        position: "top-center",
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                 }else if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
                     window.location.reload();
                     alert("You have been inactive for a while. For your security, please sign in again");
                 }
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
 
-                 setMessage(resMessage)
 
             })
 
     } else {
-        setMessage( "Email must match tietoEvry")
+            toast.error("Email must match tietoEvry", {
+                position: "top-center",
+                autoClose: 10000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
     }
 
     }
@@ -129,7 +211,9 @@ export const CreateNewAdmin = () => {
 
             <h3 className=" mb-4 mt-5 title">Upgrade a user to admin</h3>
             <div className=" col " >
-
+                <ToastContainer
+                    position="top-center"
+                    autoClose={8000}/>
 
             </div>
             < div className="row text-center d-block  " >
@@ -163,9 +247,7 @@ export const CreateNewAdmin = () => {
                             className="background_input w-75 center"
 
                         />
-                            <div className="center ">
-                                <p style={{color: "red"}}>{message}</p>
-                            </div>
+
                         <div>
 
                             <button
