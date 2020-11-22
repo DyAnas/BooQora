@@ -18,10 +18,9 @@ const SignInContainer = (props) => {
 
 
     const goToNewBooking = () => {
-        setTimeout(() => {
+        
             props.history.push("/newBooking");
-        }, 5000);
-        setLoading(true);
+
     }
 
     // handle submit form
@@ -30,7 +29,7 @@ const SignInContainer = (props) => {
         // check validation before call api
         if (validateEmail(email)) {
             AuthService.login(email, password).then(
-                () => {
+                (response) => {
 
                     goToNewBooking();
 
@@ -64,28 +63,16 @@ const SignInContainer = (props) => {
                             progress: undefined,
                         })
                     }else if(error.response.status===400){
-                        toast.info("Email is not actived,", {
+                        toast.warning(CustomToastWithLink, {
                             position: "top-center",
-                            autoClose: 8000,
-                            hideProgressBar: false,
+                            autoClose: 10000,
+                            hideProgressBar: true,
                             closeOnClick: true,
                             pauseOnHover: true,
                             draggable: true,
                             progress: undefined,
                         })
                         setshowConfirmation(true)
-                    }
-
-                    else {
-                        toast.error(resMessage, {
-                            position: "top-center",
-                            autoClose: 8000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
                     }
 
                 }
@@ -102,6 +89,11 @@ const SignInContainer = (props) => {
             })
         }//Authentication
     }
+    const CustomToastWithLink = () => (
+        <div>
+        <p>Email is not actived:  </p>  <Link id="resendActivationLink" style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
+        </div>
+      );
     // handle if email is not active
     const resendActivation = () => {
         setLoading(true);
@@ -138,9 +130,7 @@ const SignInContainer = (props) => {
 
 
                 <div className="center">
-                        {showConfirmation &&
-                            <Link style={{ margin: "10px" }} to="#" onClick={resendActivation}>Resend activation </Link>
-                        }
+                     
 
                     <ToastContainer
                         position="top-center"

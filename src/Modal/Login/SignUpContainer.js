@@ -21,12 +21,7 @@ const SignUpContainer = (props) => {
 
     // to show message and go to sign in
     const goToSignIn = () => {
-        setTimeout(() => {
-            setLoading(false)
             props.history.push("/");
-        }, 5000);
-        setLoading(true);
-
     }
 
 
@@ -39,15 +34,15 @@ const SignUpContainer = (props) => {
             setLoading(true);
             AuthService.register(firstName, lastName, email, password, roles)
                 .then(Response => {
-                    toast.success(Response.message, {
-                        position: "top-center",
-                        autoClose: 10000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                    // toast.success(Response.message, {
+                    //     position: "top-center",
+                    //     autoClose: 10000,
+                    //     hideProgressBar: false,
+                    //     closeOnClick: true,
+                    //     pauseOnHover: true,
+                    //     draggable: true,
+                    //     progress: undefined,
+                    // })
                         goToSignIn(); // to show message and go to sign in
                     }, error => {
                         const resMessage =

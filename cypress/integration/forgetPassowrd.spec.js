@@ -5,8 +5,8 @@ import Chance from 'chance';
 const chance = new Chance();
 
 beforeEach(() => {
-    cy.visit(Cypress.config().baseUrl+'/forgotPassword')
-    
+    cy.visit(Cypress.config().baseUrl + '/forgotPassword')
+
 })
 
 
@@ -17,9 +17,44 @@ describe('Validation', () => {
         const email = chance.first() + '@tietoevry.com';
         cy.get('input[name=email]').type(email);
         cy.get('button[type=submit]').click();
-        cy.get('p').should('contain','Email is not exist !');
-   
+
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Email is not exist!');
     })
-   
+
+    it('Insert email that dose not match tietoevry', () => {
+
+        const email = chance.email();
+        cy.get('input[name=email]').type(email);
+        cy.get('button[type=submit]').click();
+
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Email must match tietoevry');
+    })
+
+
+    it('Insert valid and registered email', () => {
+
+        const email = 'root@tietoevry.com';
+        cy.get('input[name=email]').type(email);
+        cy.get('button[type=submit]').click();
+
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Request to reset password received. Check your inbox.');
+    })
 
 })
+
+describe('Verfication Code Testing', () => {
+    it('Wrong Verification Code', () => {
+
+        const email = 'root@tietoevry.com'
+        cy.get('input[name=email]').type(email);
+        cy.get('button[type=submit]').click();
+        const randomCode ='blabla';
+        cy.get('#verifyCodeInput').type(randomCode);
+        cy.get('#verifyCode').click();
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Incorrect Code!! or code is expired');
+        cy.get('#cancel').click();
+        cy.url('eq',Cypress.config().baseUrl+'/')
+    })
+
+})
+

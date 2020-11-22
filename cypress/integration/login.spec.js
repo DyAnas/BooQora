@@ -10,17 +10,13 @@ beforeEach(() => {
 })
 
 describe("Page elements test", () => {
-    
+
     it('Checks logo, Title, error message, form elements', () => {
         //Test logo
         cy.get(".center").find("img").should('have.attr', 'src').should('include', 'logo');
 
         //Test Title 
         cy.contains("Sign In");
-
-        //Test error message
-
-      //  cy.get('#errorMessage')
 
         //Test Sign in form
         cy.get('form').within(($form) => {
@@ -67,14 +63,13 @@ describe("Validation", () => {
 
     })
 
-    //FIXME CHANGE THE ERRORR MESSAGE 
+
     it('Sign in with unregisterd credentials', () => {
         const email = chance.first() + '@tietoevry.com';
         const password = 'RandomPass45@@';
-        const expectedErrorMessage = 'Incorrect email or password';
+        const expectedErrorMessage = 'Email is not registered';
 
         cy.signin(email, password, expectedErrorMessage)
-
     })
 
     it('Signin with not activated credentials', () => {
@@ -83,42 +78,52 @@ describe("Validation", () => {
         const email = firstName + '@tietoevry.com';
         const password = 'RandomPass45@@';
         const expectedErrorMessage = 'User registered successfully!';
-        cy.signup(firstName, lastName, email, password, password, expectedErrorMessage);
-
+       const expectedCodeStatus=201;
+        cy.signup(firstName, lastName, email, password,expectedErrorMessage,expectedCodeStatus);
         const expectedErrorMessage2 = 'Email is not actived';
-        cy.signin(email, password, expectedErrorMessage2)
+        cy.signin(email, password, expectedErrorMessage2).end();
+        cy.log('Check click on resend activation link')
+        cy.get('#resendActivationLink').click();
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Cods is sent, Check your email!');
 
+    })
+
+    it('Sign in with wrong password', () => {
+        const email = 'root@tietoevry.com';
+        const password = 'RandomPass45@@';
+        const expectedErrorMessage='Incorrect email or password'
+        cy.signin(email, password, expectedErrorMessage)
+    })
+
+    it('Sign in with valid credentials', () => {
+        const email = 'john@tietoevry.com';
+        const password = '123456aB@';
+        cy.get('input[name=email]').type(email);
+        cy.get('input[name=password]').type(password);
+        cy.get('button[type=submit]').should('contain', 'Sign In').click();
+        cy.url().should('include', '/newBooking')
+        
+    })
+})
+
+
+
+describe("Test Footer Links", () => {
+
+    it('click the link I have an account? Sign In', () => {
+        //   cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
+        cy.get('#goToSignUp').click();
+        cy.url().should('include', '/signup') // => true
+        cy.url().should('eq', Cypress.config().baseUrl+'/signup') // => true
+
+    })
+
+    it('Link forget password', () => {
+        //   cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
+        cy.get('#forgetPassword').click();
+        cy.url().should('include', '/forgotPassword') // => true
+        cy.url().should('eq', Cypress.config().baseUrl+'/forgotPassword') // => true
 
     })
 })
-    describe("Test Footer Links", () => {
-
-        it('click the link I have an account? Sign In', () => {
-            //   cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
-            cy.get('#goToSignUp').click();  
-            cy.url().should('include', '/signup') // => true
-               cy.url().should('eq', 'http://localhost:3000/signup') // => true
-       
-           })
-    
-        it('Link forget password', () => {
-         //   cy.get('#goToSignIn').should('contain', 'I have an account? Sign In').click()
-         cy.get('#forgetPassword').click();  
-         cy.url().should('include', '/forgotPassword') // => true
-            cy.url().should('eq', 'http://localhost:3000/forgotPassword') // => true
-    
-        })
-    })    
-
-    describe('Sign in Senarioes ', ()=>{
-
-        it('sign in as Admin',()=>{
-
-            
-
-        })
-
-
-
-    })
 
