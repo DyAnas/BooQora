@@ -145,5 +145,18 @@ describe("Token expired", () => {
     })
 
 
+    it("Token Expired when click my booking", ()=> {
+
+
+        cy.wait(10000)
+        cy.get("#myBooking").click({force: true})
+        cy.get('.Toastify__toast-body[role=alert]')
+            .should('contain', "You have been inactive for a while. For your security, please sign in again");
+
+        cy.url().should('include', '/')
+
+    })
+
+
 
 })
