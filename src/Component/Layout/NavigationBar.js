@@ -36,7 +36,7 @@ export const NavigationBar = (props) => {
                 {(localStorage.length!==0) && (AuthService.getCurrentUser().roles[0] === "ROLE_ADMIN"
                  ||AuthService.getCurrentUser().roles[1] === "ROLE_ADMIN") ?
                 <>
-                    <Link to="/statistics" className="nav-item nav-link"><FontAwesomeIcon
+                    <Link to="/statistics" id="statistics" className="nav-item nav-link"><FontAwesomeIcon
                         icon={faChartLine}/> Statistics</Link>
                     <Link to="/zonesettings" className="nav-item nav-link"><FontAwesomeIcon icon={faCog} id="zoneSettings"/> Zone settings</Link>
                     <Link to="/addNewAdmin"  className="nav-item nav-link"><FontAwesomeIcon icon={faUserPlus} /> Add new Admin</Link>

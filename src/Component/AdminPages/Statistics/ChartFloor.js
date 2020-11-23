@@ -124,11 +124,11 @@ const StatusFloor = () => {
                 <div className="col-md-6 labelsDate">
                     <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">Date </h2>
                     <DatePicker
+                        id="dateFloor"
                         dateFormat="dd-MM-yyyy"
                         selected={startDate}
                         onChange={date => setStartDate(date)}
                         startDate={startDate}
-                        clearAriaLabel="From"
                         locale={en}
                         showWeekNumbers
                         className="btn btn-info Calendar1 float-left"
@@ -137,14 +137,14 @@ const StatusFloor = () => {
 
                 <div className="col-sm ml-2">
                     <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0  ">Floor </h2>
-                    <div className="dropdown labelsDate">
-                        <button className="btn btn-info font-weight-bolder dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
+                    <div  className="dropdown labelsDate">
+                        <button  className="btn btn-info font-weight-bolder dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             floor: {floor}
                         </button>
-                        <div className="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        <div  className="dropdown-menu " aria-labelledby="dropdownMenuButton">
                             {[...Array(7)].map((x, i) =>
-                                <a className="dropdown-item" href="#" key={i}
+                                <a  className="dropdown-item" href="#" key={i}
                                    onClick={() => setFloor(i + 1)}>{i + 1}</a>
                             )}
 
