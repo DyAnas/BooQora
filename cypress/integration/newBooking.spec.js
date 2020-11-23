@@ -29,11 +29,21 @@ describe("Page elements test", () => {
 
 
         })
-        const today= new Date();
-        const date ='"'+ today.getDate()  + '-' + (today.getMonth() + 1)  + '-' + today.getFullYear()+'"';
 
         // check datapicker
-        cy.get('.Calendar1').click();
+
+        cy.get("#dates").click()
+        cy.get("#dates").invoke('val').then((text) => {
+            expect('23-11-2020').to.equal(text);
+        })
+
+        cy.get("#dates").click()
+        cy.contains('24').click({force: true});
+        cy.get("#dates").invoke('val').then((text) => {
+            expect('24-11-2020').to.equal(text);
+        })
+
+
              })
 
 
@@ -117,6 +127,7 @@ describe("Token expired", () => {
          now.setHours(now.setHours(),now.getMinutes+60,0,0);
          console.log(now)
          cy.clock(now)*/
+
         cy.get("map").find("area:first").click({force: true})
         cy.wait(10000)
         cy.get("#submitBooking").click()

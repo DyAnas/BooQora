@@ -42,7 +42,7 @@ const columns =
     const [selectedRow, setSelectedRow] = useState(null);
 
 
-
+console.log(endDate)
         return (
             <div>
 
@@ -51,6 +51,7 @@ const columns =
                         <div className="col-md-6 labelsDate">
                             <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
                             <DatePicker
+                                id ="from"
                                 dateFormat="dd-MM-yyyy"
                                 selected={startDate}
                                 onChange={date => setStartDate(date)}
@@ -64,6 +65,7 @@ const columns =
                         <div className="col-md-6">
                             <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </h2>
                             <DatePicker
+                                id ="to"
                                 dateFormat="dd-MM-yyyy"
                                 selected={endDate}
                                 onChange={date => setEndDate(date)}

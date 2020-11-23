@@ -354,8 +354,9 @@ const MapComponent = (props) => {
 
                     <div className="mb-3">
                         <DatePicker
+                            id="dates"
                             dateFormat="dd-MM-yyyy"
-                            selected={new Date()}
+                            selected={startDate}
                             onChange={date => setStartDate(date)}
                             startDate={startDate}
                             minDate={today}

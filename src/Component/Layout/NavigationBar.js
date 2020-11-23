@@ -40,7 +40,7 @@ export const NavigationBar = (props) => {
                         icon={faChartLine}/> Statistics</Link>
                     <Link to="/zonesettings" className="nav-item nav-link"><FontAwesomeIcon icon={faCog} id="zoneSettings"/> Zone settings</Link>
                     <Link to="/addNewAdmin"  className="nav-item nav-link"><FontAwesomeIcon icon={faUserPlus} /> Add new Admin</Link>
-                    <Link to="/archive"  className="nav-item nav-link"><FontAwesomeIcon icon={faTable} /> Archive</Link>
+                    <Link to="/archive" id="archive"  className="nav-item nav-link"><FontAwesomeIcon icon={faTable} /> Archive</Link>
                  </>
                 : null}
 
