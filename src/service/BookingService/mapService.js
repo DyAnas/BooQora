@@ -50,7 +50,8 @@ export async function CheckStatusOfAllZones(floorId,date ) {
         headers:{
             Authorization: 'Bearer ' + token,
         }
-    }).catch(error=> {
+    })
+    .catch(error=> {
              if( error.response.status===401) {
 
                  localStorage.clear()

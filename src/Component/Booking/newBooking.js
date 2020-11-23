@@ -96,7 +96,7 @@ const MapComponent = (props) => {
     // today and maxDate to show in calendar
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
-    const date = startDate.getDay()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
+    const date = startDate.getDate()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
 
@@ -146,7 +146,7 @@ const MapComponent = (props) => {
                     history.push("/");
                  window.location.reload();
 
-                 }
+                 } else {
                 toast.error(resMessage, {
                     position: "top-center",
                     autoClose: 8000,
@@ -156,7 +156,7 @@ const MapComponent = (props) => {
                     draggable: true,
                     progress: undefined,
                 })
-
+                }
             } )
 
     }
@@ -209,7 +209,7 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                     window.location.reload();
-                    toast.error(resMessage, {
+                    toast.error("You have been inactive for a while. For your security, please sign in again", {
                         position: "top-center",
                         autoClose: 8000,
                         hideProgressBar: false,
@@ -218,9 +218,18 @@ const MapComponent = (props) => {
                         draggable: true,
                         progress: undefined,
                     })
-                    alert("You have been inactive for a while. For your security, please sign in again");
-                }
 
+                }else {
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
+                }
             } )
 
     }
@@ -291,8 +300,8 @@ const MapComponent = (props) => {
                 if (error.response.status === 401) {
                     localStorage.clear()
                     props.history.push("/");
-                    window.location.reload();
-                    toast.error(resMessage, {
+                   // window.location.reload();
+                    toast.error("You have been inactive for a while. For your security, please sign in again", {
                         position: "top-center",
                         autoClose: 8000,
                         hideProgressBar: false,
@@ -301,7 +310,7 @@ const MapComponent = (props) => {
                         draggable: true,
                         progress: undefined,
                     })
-                    alert("You have been inactive for a while. For your security, please sign in again");
+
                 }else if (error.response.status === 400) {
 
                     toast.error("You already have booking on that day", {
@@ -316,8 +325,16 @@ const MapComponent = (props) => {
                     setShow(false);
 
                 }
-            }
-            )
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
+            })
     }
 
     return (
@@ -350,11 +367,12 @@ const MapComponent = (props) => {
                         <BookDialog
                             show={show}
                             onHide={handleClose}
-                            name={mapAreas.name}
+                            name={floor}
                             Zone={Zone}
                             ConfirmBooking={confirmBooking}
                             dates={date}
                             loading={loading}
+
                         />
                     </div>
 
@@ -390,6 +408,7 @@ const MapComponent = (props) => {
                         data={barData}
                         width={60}
                         height={50}
+                        id="doughnut"
                     />
                 </div>
             </div>
