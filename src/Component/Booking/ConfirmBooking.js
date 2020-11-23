@@ -17,9 +17,9 @@ function    BookDialog(props) {
                     <div className=" mt-1 mb-1 center ">
                             <h2 className="  title"> Confirm Booking  </h2>
                     </div>
-                    <p>Floor: {props.name}</p>
-                    <p>Zone: {props.Zone}</p>
-                    <p>Date:  {  props.dates}   </p>
+                    <p id="floor">Floor: {props.name}</p>
+                    <p id="zone">Zone: {props.Zone}</p>
+                    <p id="date">Date:  {  props.dates}   </p>
 
                     {props.loading ?
                         <div className="mt-2 container center">
@@ -39,7 +39,7 @@ function    BookDialog(props) {
                     <Button variant="outline-danger" onClick={props.onHide}>
                         Close
                     </Button>
-                    <Button variant="outline-info" onClick={props.ConfirmBooking}>
+                    <Button id="submitBooking" variant="outline-info" onClick={props.ConfirmBooking}>
                        Confirm Booking
                     </Button>
                 </Modal.Footer>

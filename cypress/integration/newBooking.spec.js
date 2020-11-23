@@ -5,9 +5,13 @@ import Chance from 'chance';
 const chance = new Chance();
 
 beforeEach(() => {
+    cy.visit(Cypress.config().baseUrl)
     const email = 'root@tietoevry.com';
     const password = '123456aB@';
-    cy.login(email, password);
+    cy.get('input[name=email]').type(email);
+    cy.get('input[name=password]').type(password);
+    cy.get('button[type=submit]').should('contain', 'Sign In').click();
+    cy.url().should('include', '/newBooking')
 
 })
 describe("Page elements test", () => {
@@ -27,7 +31,7 @@ describe("Page elements test", () => {
         })
         const today= new Date();
         const date ='"'+ today.getDate()  + '-' + (today.getMonth() + 1)  + '-' + today.getFullYear()+'"';
-        // FIXME datapicker not show correct date
+
         // check datapicker
         cy.get('.Calendar1').click();
              })
@@ -43,55 +47,55 @@ describe("Function Test", () => {
         })
 
     })
-    // FIXME enterarea not work with click
-    it.only("enterArea", ()=> {
+  // click on area
+    it("Booking in  today", ()=> {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get(".span1").should("contain", "Zone A")
-      cy.get("map").find("area:first").click({force: true})
+        cy.get('.Calendar1').click();
+        cy.get("map").find("area:first").click({force: true})
+        cy.get("#submitBooking").click()
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', "Booking success");
+        cy.url().should('include', '/myBooking')
+    })
 
+    it("Booking in day that is already have booking", ()=> {
+
+        cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
+        cy.get(".span1").should("contain", "Zone A")
+        cy.get('.Calendar1').click();
+        cy.get("map").find("area:first").click({force: true})
+        cy.get("#floor").should("contain", "Floor: 1");
+        cy.get("#zone").should("contain", "Zone: Zone A");
+        cy.get("#date").should("contain", "23-11-2020");
+        cy.get("#submitBooking").click()
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', "You already have booking on that day");
 
     })
 
-    it("book plass", ()=> {
-        const today= new Date();
-        const token =JSON.parse(localStorage.getItem('user')).token;
-        cy.request({
-            method: 'POST',
-            url: 'http://localhost:8080/api/v1/bookings/book',
-            failOnStatusCode: false,
+    it('shows bar chart', () => {
+        cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
+        cy.get('#doughnut')
+            .should('be.visible')
+            .and(chart => {
+                // we can assert anything about the chart really
+                expect(chart.height()).to.be.greaterThan(200)
+            })
 
-            body: JSON.stringify({
-                date: today,
-                employeeId: 1,
-                zoneId: 1 })
-        }).then((response) => {
-            console.log(response.status)
-            expect(response.status).to.eq(415)
-            expect(response).to.have.property('headers')
+    })
 
-        });
-      const obj= {
-          date: today,
-          employeeId: 1,
-          zoneId: 1 }
-        cy.spy(obj, 'confirmBooking').as('foo')
-       /* cy.request({
-            method: 'POST',
-            url: 'http://localhost:8080/api/v1/bookings/book',
-            failOnStatusCode: false,
-             headers: {token},
-            body: JSON.stringify({
-                date: today,
-                employeeId: 1,
-                zoneId: 1 })
-        }).then((response) => {
-            console.log(response.status)
-            expect(response.status).to.eq(200)
-            expect(response).to.have.property('headers')
+})
 
-        });*/
-
-
+describe("Token expired", () => {
+    it("Token Expired when trye to booking", ()=> {
+        cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
+        cy.get(".span1").should("contain", "Zone A")
+        cy.get('.Calendar1').click();
+        cy.get("map").find("area:first").click({force: true})
+        cy.wait(8000);
+        cy.get("#submitBooking").click()
+        cy.url().should('include', '/')
+        cy.get('.Toastify__toast-body[role=alert]')
+            .should('contain', "You have been inactive for a while. For your security, please sign in again");
 
     })
 

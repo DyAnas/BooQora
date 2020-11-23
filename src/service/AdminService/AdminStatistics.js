@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import authHeader from "../Authentication/authHeader";
 
@@ -71,7 +70,7 @@ export async function getAllBookingOfEmployeeInAPeriod(from, to) {
 }
 
 export async function CheckStatusOfAllFloorPeriod(from, to) {
-    const response = await axios.post(api_url + "CheckStatusOfAllFloorPeriode", {
+    const response = await axios.post(api_url + "CheckStatusOfAllFloorPeriod", {
         from: from,
         to: to
     }, {
