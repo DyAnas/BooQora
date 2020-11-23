@@ -35,7 +35,19 @@ Cypress.Commands.add("signin", (email, password, errorMessage) => {
 
 })
 
-Cypress.Commands.add("signup", (firstName, lastName, email, password, message,statuscode) => {
+Cypress.Commands.add("signinAsAdmin", () => {
+    cy.visit(Cypress.config().baseUrl)
+
+    const email = 'root@tietoEvry.com'
+    const password = '123456aB@'
+    cy.get('input[name=email]').type(email);
+    cy.get('input[name=password]').type(password);
+    cy.get('button[type=submit]').should('contain', 'Sign In').click();
+
+
+})
+
+Cypress.Commands.add("signup", (firstName, lastName, email, password, message, statuscode) => {
     cy.visit('/signup')
     cy.get('input[name=firstName]').type(firstName);
     cy.get('input[name=lastName]').type(lastName);

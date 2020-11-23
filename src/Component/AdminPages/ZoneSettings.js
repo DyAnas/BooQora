@@ -36,16 +36,25 @@ export const ZoneSettings = () => {
                 localStorage.clear()
                 history.push("/");
                 window.location.reload();
-                alert("You have been inactive for a while. For your security, please sign in again");
+                toast.error("You have been inactive for a while. For your security, please sign in again", {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                 
+                })
+               
             }
             toast.error(resMessage, {
                 position: "top-center",
                 autoClose: 8000,
-                hideProgressBar: false,
+                hideProgressBar: true,
                 closeOnClick: true,
                 pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
+                draggable: false,
+             
             })
 
         })
@@ -95,20 +104,20 @@ export const ZoneSettings = () => {
                     error.toString();
                 if(error.response.status===401){
                     localStorage.clear()
-                    history.push("/");
+            //        history.push("/");
                     window.location.reload();
                     alert("You have been inactive for a while. For your security, please sign in again");
 
-                }
+                }else{
                 toast.error(resMessage, {
                     position: "top-center",
                     autoClose: 8000,
-                    hideProgressBar: false,
+                    hideProgressBar: true,
                     closeOnClick: true,
                     pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                    draggable: false,
+                    
+                })}
 
 
             })
@@ -147,7 +156,7 @@ export const ZoneSettings = () => {
 
                                         <tbody>
                                             <tr>
-                                                <th scope="row">Floor Nr: </th>
+                                                <th scope="row" >Floor Nr: </th>
                                                 <td><strong>{floor}</strong></td>
                                             </tr>
 
@@ -175,15 +184,15 @@ export const ZoneSettings = () => {
 
                                             <tr>
                                                 <th scope="row">Capacity: </th>
-                                                <td>
+                                                <td >
                                                     <input type="number"
                                                         onChange={event => setCapacity(event.target.value)}
                                                         value={Capacity}
                                                         className="form-control"
                                                         size="1"
-                                                        id="exampleDropdownFormPassword1"
+                                                        id="capacityInput"
                                                         placeholder="Capacity" 
-                                                        style={{maxWidth:"35%"}}/>
+                                                        style={{maxWidth:"45%"}}/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -191,7 +200,7 @@ export const ZoneSettings = () => {
                                                 <td >
                                                     <Checkbox
                                                         className="form-check-input"
-                                                        id="activeCheck"
+                                                        id="accesibility"
                                                         checked={Active}
                                                         onChange={(event) => handleCheckBox(event)}
                                                         name="checkedB"
