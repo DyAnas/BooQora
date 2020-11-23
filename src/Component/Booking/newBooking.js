@@ -144,7 +144,7 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
-                // window.location.reload();
+
 
                  } else {
                 toast.error(resMessage, {
@@ -208,7 +208,7 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     props.history.push("/");
-                   // window.location.reload();
+
                     toast.error("You have been inactive for a while. For your security, please sign in again", {
                         position: "top-center",
                         autoClose: 8000,
