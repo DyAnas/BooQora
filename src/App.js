@@ -8,7 +8,7 @@ import NewPassword from "./Component/Login/NewPassword";
 import {About} from './Modal/About/aboutBookora';
 import {NewBooking} from "./Modal/Booking/newBooking";
 import {MyBooking} from "./Modal/Booking/myBooking";
-import {ZoneSettings} from "./Component/AdminPages/ZoneSettings";
+import ZoneSettings from "./Component/AdminPages/ZoneSettings";
 import ContainerForgotPassword from "./Modal/Login/Forgotpassword";
 import resendConfirm from "./Component/Login/resendActivation";
 import ChartContainer from "./Modal/Statistics/ChartContainer";

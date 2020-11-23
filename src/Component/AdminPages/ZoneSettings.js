@@ -3,11 +3,11 @@ import "../../Styles/admin.css";
 import {getZoneList} from "../../service/BookingService/mapService";
 import {ChangeZone} from "../../service/AdminService/ZoneSetting";
 import {Checkbox} from '@material-ui/core'
-import {useHistory} from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const ZoneSettings = () => {
+const ZoneSettings = (props) => {
     const [edit, setEdit] = useState(false);
     const [floor, setFloor] = useState(1)
     const [Zone, setZone] = useState([])
@@ -15,7 +15,7 @@ export const ZoneSettings = () => {
     const [Capacity, setCapacity] = useState("")
     const [Active, setActive] = useState(false)
     const [ChooseZone, setChooseZone] = useState("Choose Zone")
-    const history = useHistory();
+
     useEffect(() => {
 
         setChooseZone("Choose Zone");
@@ -33,29 +33,35 @@ export const ZoneSettings = () => {
                 error.message ||
                 error.toString();
             if(error.response.status===401){
-                localStorage.clear()
-                history.push("/");
-                window.location.reload();
+
+
                 toast.error("You have been inactive for a while. For your security, please sign in again", {
                     position: "top-center",
                     autoClose: 8000,
-                    hideProgressBar: true,
+                    hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
-                    draggable: false,
+                    draggable: true,
+                    progress: undefined,
                  
                 })
+                setTimeout(() => {
+                    localStorage.clear()
+                    window.location.reload()
+                }, 8000);
+
                
-            }
-            toast.error(resMessage, {
-                position: "top-center",
-                autoClose: 8000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: false,
+            }else {
+                toast.error(resMessage, {
+                    position: "top-center",
+                    autoClose: 8000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
              
-            })
+            })}
 
         })
 
@@ -94,30 +100,44 @@ export const ZoneSettings = () => {
                     draggable: true,
                     progress: undefined,
                 })
-            } ,
-            (error) => {
+            } , (error) => {
                 const resMessage =
                     (error.response &&
                         error.response.data &&
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
+                console.log(error.response.status)
                 if(error.response.status===401){
-                    localStorage.clear()
-            //        history.push("/");
-                    window.location.reload();
-                    alert("You have been inactive for a while. For your security, please sign in again");
+                    toast.error("You have been inactive for a while. For your security, please sign in again", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+
+                    })
+                   // props.history.push("/");
+
+                    setTimeout(() => {
+                        localStorage.clear()
+                        window.location.reload()
+                    }, 8000);
 
                 }else{
                 toast.error(resMessage, {
                     position: "top-center",
                     autoClose: 8000,
-                    hideProgressBar: true,
+                    hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
-                    draggable: false,
+                    draggable: true,
+                    progress: undefined,
                     
-                })}
+                })
+                }
 
 
             })
@@ -137,7 +157,7 @@ export const ZoneSettings = () => {
                 <div className=" col " >
                     <ToastContainer
                         position="top-center"
-                        autoClose={8000}/>
+                       />
                     <div className="btn-group">
                         {[...Array(7)].map((x, i) =>
                             <button className="btn btn-light mt-4 " key={i}
@@ -218,6 +238,7 @@ export const ZoneSettings = () => {
 
                             </div>
                             <button
+                                id="save"
                                 onClick={handleSaveSetting}
                                 type="submit" className="btn btn-light mr-2">Save</button>
                             <button className="btn btn-light">Cancel</button>
@@ -231,3 +252,4 @@ export const ZoneSettings = () => {
     </div>
 
 }
+export default withRouter(ZoneSettings);

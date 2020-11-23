@@ -39,3 +39,34 @@ describe('Interactions', () => {
     })
 
 })
+
+describe("Token expired", () => {
+    it.only("Token Expired when on click floor ", ()=> {
+        cy.get("#statistics").click({force: true})
+        cy.wait(10000)
+        cy.get("#ZoneSetting").click({force: true})
+        cy.url().should('include', '/')
+        cy.get('.Toastify__toast-body[role=alert]')
+            .should('contain', "You have been inactive for a while. For your security, please sign in again");
+
+    })
+    it.only("Token Expired when on Click Save", ()=> {
+        cy.get("#ZoneSetting").click({force: true})
+        cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
+        cy.get("#dropdownMenuButton").click()
+        cy.contains('Zone (A)').click()
+
+        cy.get("#dropdownMenuButton").invoke('val').then((text) => {
+            expect('2').to.equal("2");
+        });
+        cy.wait(10000)
+        cy.get("#save").click()
+        cy.url().should('include', '/')
+        cy.get('.Toastify__toast-body[role=alert]')
+            .should('contain', "You have been inactive for a while. For your security, please sign in again");
+
+    })
+
+
+})
+
