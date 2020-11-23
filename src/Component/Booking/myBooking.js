@@ -113,6 +113,7 @@ export default function MyBookings(props) {
             <MaterialTable
                 title="Your booking "
                 columns={columns}
+                id="tableBooking"
                 data={ListBooking}
                 options={{
                     headerStyle: {

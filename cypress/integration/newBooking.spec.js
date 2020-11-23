@@ -1,8 +1,8 @@
 /// <reference types="cypress"/>
 
-import Chance from 'chance';
 
-const chance = new Chance();
+
+
 
 beforeEach(() => {
     cy.visit(Cypress.config().baseUrl)
@@ -70,6 +70,8 @@ describe("Function Test", () => {
         cy.get("#submitBooking").click()
         cy.get('.Toastify__toast-body[role=alert]').should('contain', "You already have booking on that day");
 
+
+
     })
 
     it('shows bar chart', () => {
@@ -82,22 +84,66 @@ describe("Function Test", () => {
             })
 
     })
+    it('My Booking', () => {
 
+        cy.get("#myBooking").click({force: true})
+        cy.get("table").should('be.visible');
+        cy.get(".MuiIconButton-colorInherit").click()
+        cy.get('.Toastify__toast-body[role=alert]').should('contain', "success deleted");
+
+
+
+    })
 })
 
 describe("Token expired", () => {
-    it("Token Expired when trye to booking", ()=> {
+    it("Token Expired when on click floor", ()=> {
+
+       /* const now = new Date()// April 14, 2017 timestamp
+        now.setHours(now.setHours(),now.getMinutes+60,0,0);
+        console.log(now)
+        cy.clock(now)*/
+        cy.wait(10000)
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
-        cy.get(".span1").should("contain", "Zone A")
-        cy.get('.Calendar1').click();
+        cy.url().should('include', '/')
+        cy.get('.Toastify__toast-body[role=alert]')
+            .should('contain', "You have been inactive for a while. For your security, please sign in again");
+
+    })
+
+    it("Token Expired when on click confirm booking", ()=> {
+        cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
+        /* const now = new Date()// April 14, 2017 timestamp
+         now.setHours(now.setHours(),now.getMinutes+60,0,0);
+         console.log(now)
+         cy.clock(now)*/
         cy.get("map").find("area:first").click({force: true})
-        cy.wait(8000);
+        cy.wait(10000)
         cy.get("#submitBooking").click()
         cy.url().should('include', '/')
         cy.get('.Toastify__toast-body[role=alert]')
             .should('contain', "You have been inactive for a while. For your security, please sign in again");
 
     })
+
+    it("Token Expired when click delete booking", ()=> {
+        cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
+        /* const now = new Date()// April 14, 2017 timestamp
+         now.setHours(now.setHours(),now.getMinutes+60,0,0);
+         console.log(now)
+         cy.clock(now)*/
+        cy.get("map").find("area:first").click({force: true})
+
+        cy.get("#submitBooking").click()
+        cy.wait(10000)
+        cy.get(".MuiIconButton-colorInherit").click()
+        cy.get('.Toastify__toast-body[role=alert]')
+            .should('contain', "You have been inactive for a while. For your security, please sign in again");
+
+        cy.url().should('include', '/')
+
+    })
+
 
 
 })

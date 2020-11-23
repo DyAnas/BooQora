@@ -29,8 +29,8 @@ export const NavigationBar = (props) => {
 
         <div className=" navbar-collapse collapse justify-content-between" id="navbarCollapse">
             <div className="navbar-nav">
-                <Link to="/newBooking" className="nav-item nav-link active"><FontAwesomeIcon icon={faCalendarCheck} /> New Booking</Link>
-                <Link to="myBookings" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Bookings</Link>
+                <Link to="/newBooking"  className="nav-item nav-link active"><FontAwesomeIcon icon={faCalendarCheck} /> New Booking</Link>
+                <Link to="myBookings" id="myBooking" className="nav-item nav-link"> <FontAwesomeIcon icon={faList} /> My Bookings</Link>
                 <Link to="/aboutBookora" className="nav-item nav-link"><FontAwesomeIcon icon={faInfo} /> About Bookora</Link>
 
                 {(localStorage.length!==0) && (AuthService.getCurrentUser().roles[0] === "ROLE_ADMIN"

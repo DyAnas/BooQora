@@ -122,8 +122,9 @@ const StatusFloor = () => {
             </div>
             <div className="row ">
                 <div className="col-md-6 labelsDate">
-                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
+                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">Date </h2>
                     <DatePicker
+                        dateFormat="dd-MM-yyyy"
                         selected={startDate}
                         onChange={date => setStartDate(date)}
                         startDate={startDate}
@@ -135,9 +136,9 @@ const StatusFloor = () => {
                 </div>
 
                 <div className="col-sm ml-2">
-                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">Floor </h2>
+                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0  ">Floor </h2>
                     <div className="dropdown labelsDate">
-                        <button className="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
+                        <button className="btn btn-info font-weight-bolder dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             floor: {floor}
                         </button>
