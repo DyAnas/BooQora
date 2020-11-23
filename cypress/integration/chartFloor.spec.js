@@ -12,7 +12,7 @@ beforeEach(() => {
 })
 
 describe("Chart Floor", () => {
-    it("show table", ()=> {
+    it("show Statistics", ()=> {
         cy.get("#statistics").click({force: true})
         cy.get("#dateFloor").click()
         cy.get("#dateFloor").invoke('val').then((text) => {
