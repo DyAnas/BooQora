@@ -29,28 +29,36 @@ export default function MyBookings(props) {
                 if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
-                    window.location.reload();
-                    alert("You have been inactive for a while. For your security, please sign in again");
-                }
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                   // window.location.reload();
 
+                    toast.error("You have been inactive for a while. For your security, please sign in again", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
+
+                }else {
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
+                }
             })
     }
     const removeBooking = (item) => {
         console.log("item  to remov",item);
         DeleteBookings(item.bookingId).then(
             response => {
-                setTimeout(() => {
 
-                }, 3000);
                 toast.success(response.data.message, {
                     position: "top-center",
                     autoClose: 6000,
@@ -71,20 +79,28 @@ export default function MyBookings(props) {
                 if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
-                    window.location.reload();
-                    alert("You have been inactive for a while. For your security, please sign in again");
+                   // window.location.reload();
+
+                    toast.error("You have been inactive for a while. For your security, please sign in again", {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
+                }else {
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
                 }
-
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
-
             })
     }
 
@@ -113,6 +129,7 @@ export default function MyBookings(props) {
             <MaterialTable
                 title="Your booking "
                 columns={columns}
+                id="tableBooking"
                 data={ListBooking}
                 options={{
                     headerStyle: {

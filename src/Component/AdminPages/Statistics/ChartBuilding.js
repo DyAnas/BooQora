@@ -103,6 +103,8 @@ const StatusBuilding = () => {
                 <div className="col-md-6 labelsDate">
                     <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
                     <DatePicker
+                        id="dateFrom"
+                        dateFormat="dd-MM-yyyy"
                         selected={startDate}
                         onChange={date => setStartDate(date)}
                         startDate={startDate}
@@ -115,6 +117,8 @@ const StatusBuilding = () => {
                 <div className="col-md-6">
                     <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </h2>
                     <DatePicker
+                        id="dateTo"
+                        dateFormat="dd-MM-yyyy"
                         selected={endDate}
                         onChange={date => setEndDate(date)}
                         startDate={startDate}

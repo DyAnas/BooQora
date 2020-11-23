@@ -144,7 +144,7 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
-                 window.location.reload();
+
 
                  } else {
                 toast.error(resMessage, {
@@ -208,7 +208,7 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     props.history.push("/");
-                    window.location.reload();
+
                     toast.error("You have been inactive for a while. For your security, please sign in again", {
                         position: "top-center",
                         autoClose: 8000,
@@ -354,13 +354,14 @@ const MapComponent = (props) => {
 
                     <div className="mb-3">
                         <DatePicker
+                            id="dates"
                             dateFormat="dd-MM-yyyy"
-                            selected={new Date()}
+                            selected={startDate}
                             onChange={date => setStartDate(date)}
                             startDate={startDate}
                             minDate={today}
                             maxDate={maxDate}
-                            className="btn btn-info Calendar1 float-left btn-sm"
+                            className="btn btn-info btn-sm Calendar1 float-left "
                             locale={en}
                             showWeekNumbers
                         />

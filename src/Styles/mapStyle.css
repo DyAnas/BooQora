@@ -9,7 +9,10 @@
 .top-row-btn {
     padding-bottom: 10px;
 }
-
+.Calendar1 {
+    font-weight: bolder;
+    width: 70%;
+}
 
 .btn.btn-light:hover {
     background: #17a2b8;
@@ -55,7 +58,7 @@
 .span1 {
     position: absolute;
 
-
+    font-weight: bolder;
     padding: 5px;
     font-size: 14px;
     bottom:28px;
@@ -74,7 +77,7 @@
 
 .span2 {
     position: absolute;
-
+    font-weight: bolder;
 
     padding: 5px;
     font-size: 14px;
@@ -101,6 +104,7 @@
     pointer-events: none;
     z-index: 1000;
     color: #ffffff;
+    font-weight: bolder;
 }
 
 
@@ -117,6 +121,7 @@
     pointer-events: none;
     z-index: 1000;
     color: #ffffff;
+    font-weight: bolder;
 }
 
 
@@ -124,7 +129,7 @@
 
 .span5 {
     position: absolute;
-
+    font-weight: bolder;
     padding: 5px;
     font-size: 14px;
     top: 70px;
@@ -143,6 +148,7 @@
 .span6 {
     position: absolute;
     padding: 5px;
+    font-weight: bolder;
     font-size: 14px;
     top: 70px;
     left: 220px;
@@ -157,6 +163,7 @@
 /* Zone G*/
 
 .span7 {
+    font-weight: bolder;
     position: absolute;
     padding: 5px;
     font-size: 12px;

@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authHeader.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authHeader.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authHeader.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authHeader.js",
     "statementMap": {
       "0": {
         "start": {
@@ -144,6 +144,7 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 18,
       "1": 18,
       "2": 18,
@@ -160,13 +161,31 @@
       "1": [
         18,
         18
+=======
+      "0": 19,
+      "1": 19,
+      "2": 19,
+      "3": 0
+    },
+    "f": {
+      "0": 19
+    },
+    "b": {
+      "0": [
+        19,
+        0
+      ],
+      "1": [
+        19,
+        19
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f03cc5493c723d53990d1087ad8119f2345718e2"
+    "hash": "f996fd529c3a3910664b9d96dc4b7cd7eb85984b"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authUser.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\authUser.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authUser.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\authUser.js",
     "statementMap": {
       "0": {
         "start": {
@@ -762,57 +781,57 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 23,
-      "3": 18,
-      "4": 18,
-      "5": 18,
-      "6": 18,
-      "7": 1,
-      "8": 1,
-      "9": 72,
-      "10": 5,
-      "11": 3,
-      "12": 3,
-      "13": 3,
-      "14": 72,
-      "15": 1,
-      "16": 1,
-      "17": 72,
+      "0": 19,
+      "1": 19,
+      "2": 19,
+      "3": 19,
+      "4": 19,
+      "5": 19,
+      "6": 19,
+      "7": 0,
+      "8": 0,
+      "9": 19,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 19,
+      "15": 0,
+      "16": 0,
+      "17": 19,
       "18": 0,
       "19": 0,
       "20": 72,
       "21": 0,
-      "22": 1,
-      "23": 226
+      "22": 0,
+      "23": 272
     },
     "f": {
-      "0": 23,
-      "1": 18,
-      "2": 1,
-      "3": 1,
-      "4": 5,
-      "5": 3,
-      "6": 1,
-      "7": 1,
+      "0": 19,
+      "1": 19,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
       "8": 0,
       "9": 0,
       "10": 0,
-      "11": 1,
-      "12": 226
+      "11": 0,
+      "12": 272
     },
     "b": {
       "0": [
-        18,
+        19,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "950fbe1393956f1a16b5a575bf8dc70f2735535b"
+    "hash": "86261bf91e876c3fcdda2012e791aa02c09f07e4"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ValidateEmail.js",
     "statementMap": {
       "0": {
         "start": {
@@ -996,33 +1015,33 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 34,
-      "2": 34,
-      "3": 34,
-      "4": 34,
-      "5": 34,
-      "6": 29,
-      "7": 5
+      "0": 19,
+      "1": 19,
+      "2": 19,
+      "3": 19,
+      "4": 19,
+      "5": 19,
+      "6": 19,
+      "7": 0
     },
     "f": {
-      "0": 34
+      "0": 19
     },
     "b": {
       "0": [
-        29,
-        5
+        19,
+        0
       ],
       "1": [
-        34,
-        5
+        19,
+        0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8e0d2e399b0e81885cccfabbe8507956b49e42e4"
+    "hash": "370f25ea33a2892a6a9dfbf79dc472c8a5237d6c"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignUpContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1874,6 +1893,7 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 330,
       "2": 330,
@@ -1911,6 +1931,45 @@
       "7": 118,
       "8": 84,
       "9": 4
+=======
+      "0": 19,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0
+    },
+    "f": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
     },
     "b": {
       "0": [
@@ -1925,6 +1984,7 @@
         0
       ],
       "2": [
+<<<<<<< HEAD
         3,
         327
       ],
@@ -1939,25 +1999,50 @@
       "5": [
         3,
         327
+=======
+        0,
+        0
+      ],
+      "3": [
+        0,
+        0
+      ],
+      "4": [
+        0,
+        0
+      ],
+      "5": [
+        0,
+        0
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ],
       "6": [
         4,
         2
       ],
       "7": [
+<<<<<<< HEAD
         3,
         327
       ],
       "8": [
         2,
         328
+=======
+        0,
+        0
+      ],
+      "8": [
+        0,
+        0
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "39b7fc933f23ce35e5f529e38dd5459b264b6721"
+    "hash": "2ca35765527d4c92baec98ad737ef15969a34fd6"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\SignInContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2843,6 +2928,7 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 812,
       "2": 812,
@@ -2907,12 +2993,79 @@
       "3": [
         2,
         1
+=======
+      "0": 19,
+      "1": 579,
+      "2": 579,
+      "3": 579,
+      "4": 579,
+      "5": 579,
+      "6": 19,
+      "7": 579,
+      "8": 19,
+      "9": 19,
+      "10": 19,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 579,
+      "21": 0,
+      "22": 579,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "28": 579,
+      "29": 579,
+      "30": 342,
+      "31": 171
+    },
+    "f": {
+      "0": 579,
+      "1": 19,
+      "2": 19,
+      "3": 19,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 342,
+      "9": 171
+    },
+    "b": {
+      "0": [
+        19,
+        0
+      ],
+      "1": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "2": [
+        0,
+        0
+      ],
+      "3": [
+        0,
+        0
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ],
       "4": [
-        1,
+        0,
         0
       ],
       "5": [
+<<<<<<< HEAD
         2,
         810
       ],
@@ -2923,13 +3076,25 @@
       "7": [
         1,
         811
+=======
+        0,
+        579
+      ],
+      "6": [
+        0,
+        579
+      ],
+      "7": [
+        0,
+        579
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "32a00275a840e32f35482d913b8130613c215696"
+    "hash": "e9c33f0901505b10a4660f4a38af9637ab12f900"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\Authentication\\protectedRoute.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3071,6 +3236,7 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 144,
       "2": 46,
@@ -3084,14 +3250,29 @@
     "b": {
       "0": [
         46,
+=======
+      "0": 19,
+      "1": 152,
+      "2": 48,
+      "3": 48,
+      "4": 0
+    },
+    "f": {
+      "0": 152,
+      "1": 48
+    },
+    "b": {
+      "0": [
+        48,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b6933b40a8c026f7529125e04cf1a2e25980afb8"
+    "hash": "a2c6d5052fa5c96a645748c3f7ef1ad69b2ecbc8"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\NewPassword.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\NewPassword.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\NewPassword.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\NewPassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3933,10 +4114,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2b3b6688b1343bda9160e1fbeec9d6cc63ecee52"
+    "hash": "0612c4c3c114704e67c1dc1b1dccd0fcbfb00304"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\About\\aboutBookora.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\About\\aboutBookora.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\About\\aboutBookora.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\About\\aboutBookora.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3995,10 +4176,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "50347ebe8147b5776913b626f319f038e6717acf"
+    "hash": "d283574aaa298c19c93f153fbffa070ff10c9511"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\ConfirmBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4076,22 +4257,33 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 75
     },
     "f": {
       "0": 75
+=======
+      "0": 92
+    },
+    "f": {
+      "0": 92
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
     },
     "b": {
       "0": [
         4,
+<<<<<<< HEAD
         71
+=======
+        88
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9d6a0a212eb2b7512807ad5348e6fb476f5af1ac"
+    "hash": "bc25ead9c9616373e494be483c2f5f5060336e4c"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\mapService.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\mapService.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\mapService.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\mapService.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4199,61 +4391,11 @@
           "column": 22
         },
         "end": {
-          "line": 64,
+          "line": 53,
           "column": 6
         }
       },
       "11": {
-        "start": {
-          "line": 55,
-          "column": 13
-        },
-        "end": {
-          "line": 60,
-          "column": 14
-        }
-      },
-      "12": {
-        "start": {
-          "line": 57,
-          "column": 17
-        },
-        "end": {
-          "line": 57,
-          "column": 37
-        }
-      },
-      "13": {
-        "start": {
-          "line": 58,
-          "column": 17
-        },
-        "end": {
-          "line": 58,
-          "column": 42
-        }
-      },
-      "14": {
-        "start": {
-          "line": 59,
-          "column": 17
-        },
-        "end": {
-          "line": 59,
-          "column": 102
-        }
-      },
-      "15": {
-        "start": {
-          "line": 62,
-          "column": 13
-        },
-        "end": {
-          "line": 62,
-          "column": 26
-        }
-      },
-      "16": {
         "start": {
           "line": 66,
           "column": 4
@@ -4336,71 +4478,11 @@
           }
         },
         "line": 42
-      },
-      "3": {
-        "name": "(anonymous_3)",
-        "decl": {
-          "start": {
-            "line": 54,
-            "column": 11
-          },
-          "end": {
-            "line": 54,
-            "column": 12
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 54,
-            "column": 19
-          },
-          "end": {
-            "line": 63,
-            "column": 10
-          }
-        },
-        "line": 54
       }
     },
-    "branchMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 55,
-            "column": 13
-          },
-          "end": {
-            "line": 60,
-            "column": 14
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 55,
-              "column": 13
-            },
-            "end": {
-              "line": 60,
-              "column": 14
-            }
-          },
-          {
-            "start": {
-              "line": 55,
-              "column": 13
-            },
-            "end": {
-              "line": 60,
-              "column": 14
-            }
-          }
-        ],
-        "line": 55
-      }
-    },
+    "branchMap": {},
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 72,
       "2": 72,
@@ -4430,12 +4512,32 @@
         0,
         0
       ]
+=======
+      "0": 19,
+      "1": 19,
+      "2": 19,
+      "3": 14,
+      "4": 14,
+      "5": 11,
+      "6": 8,
+      "7": 8,
+      "8": 2,
+      "9": 14,
+      "10": 14,
+      "11": 12
     },
+    "f": {
+      "0": 14,
+      "1": 8,
+      "2": 14
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
+    },
+    "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "88241279ea89e5d24c1af68c9c1fab545d8ec97c"
+    "hash": "4f088726e43872de37b1a1a4c4e04583e3b2d5b4"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\newBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\newBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\newBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\newBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4443,7 +4545,7 @@
           "column": 21
         },
         "end": {
-          "line": 418,
+          "line": 419,
           "column": 1
         }
       },
@@ -4769,16 +4871,6 @@
       },
       "33": {
         "start": {
-          "line": 147,
-          "column": 17
-        },
-        "end": {
-          "line": 147,
-          "column": 42
-        }
-      },
-      "34": {
-        "start": {
           "line": 150,
           "column": 16
         },
@@ -4787,7 +4879,7 @@
           "column": 18
         }
       },
-      "35": {
+      "34": {
         "start": {
           "line": 164,
           "column": 32
@@ -4797,7 +4889,7 @@
           "column": 5
         }
       },
-      "36": {
+      "35": {
         "start": {
           "line": 165,
           "column": 20
@@ -4807,7 +4899,7 @@
           "column": 22
         }
       },
-      "37": {
+      "36": {
         "start": {
           "line": 166,
           "column": 8
@@ -4817,7 +4909,7 @@
           "column": 15
         }
       },
-      "38": {
+      "37": {
         "start": {
           "line": 168,
           "column": 16
@@ -4827,7 +4919,7 @@
           "column": 18
         }
       },
-      "39": {
+      "38": {
         "start": {
           "line": 171,
           "column": 20
@@ -4837,7 +4929,7 @@
           "column": 61
         }
       },
-      "40": {
+      "39": {
         "start": {
           "line": 172,
           "column": 20
@@ -4847,7 +4939,7 @@
           "column": 21
         }
       },
-      "41": {
+      "40": {
         "start": {
           "line": 173,
           "column": 24
@@ -4857,7 +4949,7 @@
           "column": 70
         }
       },
-      "42": {
+      "41": {
         "start": {
           "line": 174,
           "column": 27
@@ -4867,27 +4959,27 @@
           "column": 21
         }
       },
-      "43": {
+      "42": {
         "start": {
           "line": 175,
           "column": 24
         },
         "end": {
           "line": 175,
+          "column": 78
+        }
+      },
+      "43": {
+        "start": {
+          "line": 177,
+          "column": 24
+        },
+        "end": {
+          "line": 177,
           "column": 78
         }
       },
       "44": {
-        "start": {
-          "line": 177,
-          "column": 24
-        },
-        "end": {
-          "line": 177,
-          "column": 78
-        }
-      },
-      "45": {
         "start": {
           "line": 179,
           "column": 21
@@ -4897,7 +4989,7 @@
           "column": 59
         }
       },
-      "46": {
+      "45": {
         "start": {
           "line": 182,
           "column": 16
@@ -4907,7 +4999,7 @@
           "column": 18
         }
       },
-      "47": {
+      "46": {
         "start": {
           "line": 203,
           "column": 20
@@ -4917,7 +5009,7 @@
           "column": 36
         }
       },
-      "48": {
+      "47": {
         "start": {
           "line": 208,
           "column": 16
@@ -4927,7 +5019,7 @@
           "column": 17
         }
       },
-      "49": {
+      "48": {
         "start": {
           "line": 209,
           "column": 20
@@ -4937,7 +5029,7 @@
           "column": 40
         }
       },
-      "50": {
+      "49": {
         "start": {
           "line": 210,
           "column": 20
@@ -4947,17 +5039,7 @@
           "column": 44
         }
       },
-      "51": {
-        "start": {
-          "line": 211,
-          "column": 20
-        },
-        "end": {
-          "line": 211,
-          "column": 45
-        }
-      },
-      "52": {
+      "50": {
         "start": {
           "line": 212,
           "column": 20
@@ -4967,7 +5049,7 @@
           "column": 22
         }
       },
-      "53": {
+      "51": {
         "start": {
           "line": 223,
           "column": 16
@@ -4977,7 +5059,7 @@
           "column": 18
         }
       },
-      "54": {
+      "52": {
         "start": {
           "line": 237,
           "column": 34
@@ -4987,7 +5069,7 @@
           "column": 46
         }
       },
-      "55": {
+      "53": {
         "start": {
           "line": 238,
           "column": 30
@@ -4997,7 +5079,7 @@
           "column": 41
         }
       },
-      "56": {
+      "54": {
         "start": {
           "line": 241,
           "column": 29
@@ -5007,7 +5089,7 @@
           "column": 5
         }
       },
-      "57": {
+      "55": {
         "start": {
           "line": 243,
           "column": 8
@@ -5017,7 +5099,7 @@
           "column": 45
         }
       },
-      "58": {
+      "56": {
         "start": {
           "line": 244,
           "column": 8
@@ -5027,7 +5109,7 @@
           "column": 29
         }
       },
-      "59": {
+      "57": {
         "start": {
           "line": 245,
           "column": 8
@@ -5037,7 +5119,7 @@
           "column": 24
         }
       },
-      "60": {
+      "58": {
         "start": {
           "line": 249,
           "column": 4
@@ -5047,7 +5129,7 @@
           "column": 32
         }
       },
-      "61": {
+      "59": {
         "start": {
           "line": 250,
           "column": 8
@@ -5057,7 +5139,7 @@
           "column": 32
         }
       },
-      "62": {
+      "60": {
         "start": {
           "line": 255,
           "column": 4
@@ -5067,7 +5149,7 @@
           "column": 34
         }
       },
-      "63": {
+      "61": {
         "start": {
           "line": 261,
           "column": 22
@@ -5077,7 +5159,7 @@
           "column": 5
         }
       },
-      "64": {
+      "62": {
         "start": {
           "line": 262,
           "column": 8
@@ -5087,7 +5169,7 @@
           "column": 27
         }
       },
-      "65": {
+      "63": {
         "start": {
           "line": 263,
           "column": 8
@@ -5097,7 +5179,7 @@
           "column": 26
         }
       },
-      "66": {
+      "64": {
         "start": {
           "line": 264,
           "column": 8
@@ -5107,7 +5189,7 @@
           "column": 21
         }
       },
-      "67": {
+      "65": {
         "start": {
           "line": 268,
           "column": 23
@@ -5117,7 +5199,7 @@
           "column": 5
         }
       },
-      "68": {
+      "66": {
         "start": {
           "line": 269,
           "column": 8
@@ -5127,7 +5209,7 @@
           "column": 17
         }
       },
-      "69": {
+      "67": {
         "start": {
           "line": 270,
           "column": 12
@@ -5137,7 +5219,7 @@
           "column": 26
         }
       },
-      "70": {
+      "68": {
         "start": {
           "line": 271,
           "column": 12
@@ -5147,7 +5229,7 @@
           "column": 46
         }
       },
-      "71": {
+      "69": {
         "start": {
           "line": 273,
           "column": 8
@@ -5157,7 +5239,7 @@
           "column": 25
         }
       },
-      "72": {
+      "70": {
         "start": {
           "line": 274,
           "column": 8
@@ -5167,7 +5249,7 @@
           "column": 22
         }
       },
-      "73": {
+      "71": {
         "start": {
           "line": 278,
           "column": 24
@@ -5177,7 +5259,7 @@
           "column": 52
         }
       },
-      "74": {
+      "72": {
         "start": {
           "line": 279,
           "column": 27
@@ -5187,7 +5269,7 @@
           "column": 5
         }
       },
-      "75": {
+      "73": {
         "start": {
           "line": 280,
           "column": 8
@@ -5197,7 +5279,7 @@
           "column": 14
         }
       },
-      "76": {
+      "74": {
         "start": {
           "line": 282,
           "column": 16
@@ -5207,7 +5289,7 @@
           "column": 18
         }
       },
-      "77": {
+      "75": {
         "start": {
           "line": 291,
           "column": 20
@@ -5217,7 +5299,7 @@
           "column": 33
         }
       },
-      "78": {
+      "76": {
         "start": {
           "line": 295,
           "column": 20
@@ -5227,7 +5309,7 @@
           "column": 36
         }
       },
-      "79": {
+      "77": {
         "start": {
           "line": 300,
           "column": 16
@@ -5237,7 +5319,7 @@
           "column": 17
         }
       },
-      "80": {
+      "78": {
         "start": {
           "line": 301,
           "column": 20
@@ -5247,7 +5329,7 @@
           "column": 40
         }
       },
-      "81": {
+      "79": {
         "start": {
           "line": 302,
           "column": 20
@@ -5257,7 +5339,7 @@
           "column": 44
         }
       },
-      "82": {
+      "80": {
         "start": {
           "line": 304,
           "column": 20
@@ -5267,7 +5349,7 @@
           "column": 22
         }
       },
-      "83": {
+      "81": {
         "start": {
           "line": 314,
           "column": 22
@@ -5277,7 +5359,7 @@
           "column": 17
         }
       },
-      "84": {
+      "82": {
         "start": {
           "line": 316,
           "column": 20
@@ -5287,7 +5369,7 @@
           "column": 22
         }
       },
-      "85": {
+      "83": {
         "start": {
           "line": 325,
           "column": 20
@@ -5297,7 +5379,7 @@
           "column": 35
         }
       },
-      "86": {
+      "84": {
         "start": {
           "line": 328,
           "column": 16
@@ -5307,53 +5389,53 @@
           "column": 18
         }
       },
-      "87": {
+      "85": {
         "start": {
           "line": 340,
           "column": 4
         },
         "end": {
-          "line": 417,
+          "line": 418,
           "column": 6
+        }
+      },
+      "86": {
+        "start": {
+          "line": 360,
+          "column": 46
+        },
+        "end": {
+          "line": 360,
+          "column": 64
+        }
+      },
+      "87": {
+        "start": {
+          "line": 391,
+          "column": 36
+        },
+        "end": {
+          "line": 394,
+          "column": 44
         }
       },
       "88": {
         "start": {
-          "line": 359,
-          "column": 46
+          "line": 401,
+          "column": 32
         },
         "end": {
-          "line": 359,
-          "column": 64
+          "line": 402,
+          "column": 96
         }
       },
       "89": {
         "start": {
-          "line": 390,
-          "column": 36
-        },
-        "end": {
-          "line": 393,
-          "column": 44
-        }
-      },
-      "90": {
-        "start": {
-          "line": 400,
-          "column": 32
-        },
-        "end": {
-          "line": 401,
-          "column": 96
-        }
-      },
-      "91": {
-        "start": {
-          "line": 401,
+          "line": 402,
           "column": 55
         },
         "end": {
-          "line": 401,
+          "line": 402,
           "column": 78
         }
       }
@@ -5377,7 +5459,7 @@
             "column": 32
           },
           "end": {
-            "line": 418,
+            "line": 419,
             "column": 1
           }
         },
@@ -5867,97 +5949,97 @@
         "name": "(anonymous_21)",
         "decl": {
           "start": {
-            "line": 359,
+            "line": 360,
             "column": 38
           },
           "end": {
-            "line": 359,
+            "line": 360,
             "column": 39
           }
         },
         "loc": {
           "start": {
-            "line": 359,
+            "line": 360,
             "column": 46
           },
           "end": {
-            "line": 359,
+            "line": 360,
             "column": 64
           }
         },
-        "line": 359
+        "line": 360
       },
       "22": {
         "name": "(anonymous_22)",
         "decl": {
           "start": {
-            "line": 388,
+            "line": 389,
             "column": 48
           },
           "end": {
-            "line": 388,
+            "line": 389,
             "column": 49
           }
         },
         "loc": {
           "start": {
-            "line": 390,
+            "line": 391,
             "column": 36
           },
           "end": {
-            "line": 393,
+            "line": 394,
             "column": 44
           }
         },
-        "line": 390
+        "line": 391
       },
       "23": {
         "name": "(anonymous_23)",
         "decl": {
           "start": {
-            "line": 399,
+            "line": 400,
             "column": 47
           },
           "end": {
-            "line": 399,
+            "line": 400,
             "column": 48
           }
         },
         "loc": {
           "start": {
-            "line": 400,
+            "line": 401,
             "column": 32
           },
           "end": {
-            "line": 401,
+            "line": 402,
             "column": 96
           }
         },
-        "line": 400
+        "line": 401
       },
       "24": {
         "name": "(anonymous_24)",
         "decl": {
           "start": {
-            "line": 401,
+            "line": 402,
             "column": 49
           },
           "end": {
-            "line": 401,
+            "line": 402,
             "column": 50
           }
         },
         "loc": {
           "start": {
-            "line": 401,
+            "line": 402,
             "column": 55
           },
           "end": {
-            "line": 401,
+            "line": 402,
             "column": 78
           }
         },
-        "line": 401
+        "line": 402
       }
     },
     "branchMap": {
@@ -6449,6 +6531,7 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 75,
       "2": 75,
@@ -6573,20 +6656,148 @@
       "0": [
         18,
         45
+=======
+      "0": 19,
+      "1": 94,
+      "2": 94,
+      "3": 94,
+      "4": 94,
+      "5": 94,
+      "6": 94,
+      "7": 94,
+      "8": 94,
+      "9": 94,
+      "10": 94,
+      "11": 0,
+      "12": 94,
+      "13": 8,
+      "14": 94,
+      "15": 94,
+      "16": 94,
+      "17": 94,
+      "18": 94,
+      "19": 14,
+      "20": 14,
+      "21": 11,
+      "22": 77,
+      "23": 77,
+      "24": 22,
+      "25": 55,
+      "26": 11,
+      "27": 22,
+      "28": 11,
+      "29": 2,
+      "30": 2,
+      "31": 2,
+      "32": 2,
+      "33": 0,
+      "34": 94,
+      "35": 14,
+      "36": 14,
+      "37": 12,
+      "38": 84,
+      "39": 84,
+      "40": 84,
+      "41": 0,
+      "42": 0,
+      "43": 0,
+      "44": 84,
+      "45": 12,
+      "46": 2,
+      "47": 2,
+      "48": 2,
+      "49": 2,
+      "50": 2,
+      "51": 0,
+      "52": 94,
+      "53": 94,
+      "54": 94,
+      "55": 14,
+      "56": 14,
+      "57": 14,
+      "58": 94,
+      "59": 32,
+      "60": 94,
+      "61": 94,
+      "62": 8,
+      "63": 8,
+      "64": 8,
+      "65": 94,
+      "66": 2,
+      "67": 2,
+      "68": 2,
+      "69": 2,
+      "70": 2,
+      "71": 94,
+      "72": 94,
+      "73": 8,
+      "74": 2,
+      "75": 2,
+      "76": 6,
+      "77": 6,
+      "78": 2,
+      "79": 2,
+      "80": 2,
+      "81": 4,
+      "82": 4,
+      "83": 4,
+      "84": 6,
+      "85": 94,
+      "86": 2,
+      "87": 188,
+      "88": 658,
+      "89": 14
+    },
+    "f": {
+      "0": 94,
+      "1": 0,
+      "2": 8,
+      "3": 14,
+      "4": 11,
+      "5": 77,
+      "6": 22,
+      "7": 2,
+      "8": 14,
+      "9": 12,
+      "10": 84,
+      "11": 2,
+      "12": 14,
+      "13": 32,
+      "14": 92,
+      "15": 8,
+      "16": 2,
+      "17": 2,
+      "18": 8,
+      "19": 2,
+      "20": 6,
+      "21": 2,
+      "22": 188,
+      "23": 658,
+      "24": 14
+    },
+    "b": {
+      "0": [
+        22,
+        55
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ],
       "1": [
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
         0,
         0
       ],
       "2": [
-        0,
+        2,
         0
       ],
       "3": [
+<<<<<<< HEAD
         63,
+=======
+        84,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
         0
       ],
       "4": [
@@ -6598,37 +6809,51 @@
         0
       ],
       "6": [
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
         0,
         0
       ],
       "7": [
-        0,
+        2,
         0
       ],
       "8": [
+<<<<<<< HEAD
         3,
         3,
         3,
+=======
+        6,
+        6,
+        6,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
         0,
         0
       ],
       "9": [
+<<<<<<< HEAD
         0,
         3
       ],
       "10": [
         3,
+=======
+        2,
+        4
+      ],
+      "10": [
+        4,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "94cb94b9aef97f50c5c2615d64a9d0849127a110"
+    "hash": "c7685b7473109e3c4406e1ef28bc9cc428121189"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\newBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\newBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\newBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\newBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6679,18 +6904,26 @@
     },
     "branchMap": {},
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 18
     },
     "f": {
       "0": 18
+=======
+      "0": 19,
+      "1": 19
+    },
+    "f": {
+      "0": 19
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b1252934c4dae25ab1deba5212e37c1116b53e15"
+    "hash": "1b962e749a4f0c015c3fffb539e64b70d8168c08"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\bookingService.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\BookingService\\bookingService.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\bookingService.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\BookingService\\bookingService.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6815,6 +7048,7 @@
     },
     "branchMap": {},
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 2,
       "2": 2,
@@ -6826,13 +7060,26 @@
     "f": {
       "0": 2,
       "1": 0
+=======
+      "0": 19,
+      "1": 7,
+      "2": 7,
+      "3": 6,
+      "4": 4,
+      "5": 4,
+      "6": 2
+    },
+    "f": {
+      "0": 7,
+      "1": 4
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "eeacc3745a257675e71527fc045f67d3948a9f36"
+    "hash": "3d5380d12abac26e5872949173d6abf804292174"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\myBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Booking\\myBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\myBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Booking\\myBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6900,7 +7147,7 @@
           "column": 26
         },
         "end": {
-          "line": 46,
+          "line": 56,
           "column": 5
         }
       },
@@ -6910,7 +7157,7 @@
           "column": 8
         },
         "end": {
-          "line": 45,
+          "line": 55,
           "column": 14
         }
       },
@@ -6940,7 +7187,7 @@
           "column": 16
         },
         "end": {
-          "line": 34,
+          "line": 54,
           "column": 17
         }
       },
@@ -6966,221 +7213,191 @@
       },
       "13": {
         "start": {
-          "line": 32,
+          "line": 34,
           "column": 20
         },
         "end": {
-          "line": 32,
-          "column": 45
+          "line": 42,
+          "column": 22
         }
       },
       "14": {
         "start": {
-          "line": 33,
+          "line": 45,
           "column": 20
         },
         "end": {
-          "line": 33,
-          "column": 105
+          "line": 53,
+          "column": 22
         }
       },
       "15": {
         "start": {
-          "line": 35,
-          "column": 16
+          "line": 57,
+          "column": 26
         },
         "end": {
-          "line": 43,
-          "column": 18
+          "line": 105,
+          "column": 5
         }
       },
       "16": {
         "start": {
-          "line": 47,
-          "column": 26
+          "line": 58,
+          "column": 8
         },
         "end": {
-          "line": 89,
-          "column": 5
+          "line": 58,
+          "column": 43
         }
       },
       "17": {
         "start": {
-          "line": 48,
+          "line": 59,
           "column": 8
         },
         "end": {
-          "line": 48,
-          "column": 43
+          "line": 104,
+          "column": 14
         }
       },
       "18": {
         "start": {
-          "line": 49,
-          "column": 8
-        },
-        "end": {
-          "line": 88,
-          "column": 14
-        }
-      },
-      "19": {
-        "start": {
-          "line": 51,
-          "column": 16
-        },
-        "end": {
-          "line": 53,
-          "column": 25
-        }
-      },
-      "20": {
-        "start": {
-          "line": 54,
-          "column": 16
-        },
-        "end": {
           "line": 62,
-          "column": 18
-        }
-      },
-      "21": {
-        "start": {
-          "line": 63,
           "column": 16
-        },
-        "end": {
-          "line": 63,
-          "column": 32
-        }
-      },
-      "22": {
-        "start": {
-          "line": 66,
-          "column": 20
         },
         "end": {
           "line": 70,
-          "column": 36
+          "column": 18
         }
       },
-      "23": {
+      "19": {
         "start": {
           "line": 71,
           "column": 16
         },
         "end": {
-          "line": 76,
+          "line": 71,
+          "column": 32
+        }
+      },
+      "20": {
+        "start": {
+          "line": 74,
+          "column": 20
+        },
+        "end": {
+          "line": 78,
+          "column": 36
+        }
+      },
+      "21": {
+        "start": {
+          "line": 79,
+          "column": 16
+        },
+        "end": {
+          "line": 103,
           "column": 17
+        }
+      },
+      "22": {
+        "start": {
+          "line": 80,
+          "column": 20
+        },
+        "end": {
+          "line": 80,
+          "column": 40
+        }
+      },
+      "23": {
+        "start": {
+          "line": 81,
+          "column": 20
+        },
+        "end": {
+          "line": 81,
+          "column": 38
         }
       },
       "24": {
         "start": {
-          "line": 72,
+          "line": 84,
           "column": 20
         },
         "end": {
-          "line": 72,
-          "column": 40
+          "line": 92,
+          "column": 22
         }
       },
       "25": {
         "start": {
-          "line": 73,
+          "line": 94,
           "column": 20
         },
         "end": {
-          "line": 73,
-          "column": 38
+          "line": 102,
+          "column": 22
         }
       },
       "26": {
         "start": {
-          "line": 74,
-          "column": 20
+          "line": 107,
+          "column": 4
         },
         "end": {
-          "line": 74,
-          "column": 45
+          "line": 109,
+          "column": 11
         }
       },
       "27": {
         "start": {
-          "line": 75,
-          "column": 20
+          "line": 108,
+          "column": 8
         },
         "end": {
-          "line": 75,
-          "column": 105
+          "line": 108,
+          "column": 24
         }
       },
       "28": {
         "start": {
-          "line": 78,
-          "column": 16
+          "line": 113,
+          "column": 8
         },
         "end": {
-          "line": 86,
-          "column": 18
+          "line": 118,
+          "column": 9
         }
       },
       "29": {
         "start": {
-          "line": 91,
+          "line": 120,
           "column": 4
         },
         "end": {
-          "line": 93,
-          "column": 11
+          "line": 151,
+          "column": 6
         }
       },
       "30": {
         "start": {
-          "line": 92,
-          "column": 8
+          "line": 142,
+          "column": 32
         },
         "end": {
-          "line": 92,
-          "column": 24
+          "line": 147,
+          "column": 21
         }
       },
       "31": {
         "start": {
-          "line": 97,
-          "column": 8
-        },
-        "end": {
-          "line": 102,
-          "column": 9
-        }
-      },
-      "32": {
-        "start": {
-          "line": 104,
-          "column": 4
-        },
-        "end": {
-          "line": 134,
-          "column": 6
-        }
-      },
-      "33": {
-        "start": {
-          "line": 125,
-          "column": 32
-        },
-        "end": {
-          "line": 130,
-          "column": 21
-        }
-      },
-      "34": {
-        "start": {
-          "line": 128,
+          "line": 145,
           "column": 53
         },
         "end": {
-          "line": 128,
+          "line": 145,
           "column": 75
         }
       }
@@ -7204,7 +7421,7 @@
             "column": 42
           },
           "end": {
-            "line": 135,
+            "line": 152,
             "column": 1
           }
         },
@@ -7228,7 +7445,7 @@
             "column": 32
           },
           "end": {
-            "line": 46,
+            "line": 56,
             "column": 5
           }
         },
@@ -7276,7 +7493,7 @@
             "column": 27
           },
           "end": {
-            "line": 45,
+            "line": 55,
             "column": 13
           }
         },
@@ -7286,169 +7503,145 @@
         "name": "(anonymous_4)",
         "decl": {
           "start": {
-            "line": 47,
+            "line": 57,
             "column": 26
           },
           "end": {
-            "line": 47,
+            "line": 57,
             "column": 27
           }
         },
         "loc": {
           "start": {
-            "line": 47,
+            "line": 57,
             "column": 36
           },
           "end": {
-            "line": 89,
+            "line": 105,
             "column": 5
           }
         },
-        "line": 47
+        "line": 57
       },
       "5": {
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 50,
+            "line": 60,
             "column": 12
           },
           "end": {
-            "line": 50,
+            "line": 60,
             "column": 13
           }
         },
         "loc": {
           "start": {
-            "line": 50,
+            "line": 60,
             "column": 24
           },
           "end": {
-            "line": 64,
+            "line": 72,
             "column": 13
           }
         },
-        "line": 50
+        "line": 60
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 51,
-            "column": 27
-          },
-          "end": {
-            "line": 51,
-            "column": 28
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 51,
-            "column": 33
-          },
-          "end": {
-            "line": 53,
-            "column": 17
-          }
-        },
-        "line": 51
-      },
-      "7": {
-        "name": "(anonymous_7)",
-        "decl": {
-          "start": {
-            "line": 64,
+            "line": 72,
             "column": 15
           },
           "end": {
-            "line": 64,
+            "line": 72,
             "column": 16
           }
         },
         "loc": {
           "start": {
-            "line": 64,
+            "line": 72,
             "column": 26
           },
           "end": {
-            "line": 88,
+            "line": 104,
             "column": 13
           }
         },
-        "line": 64
+        "line": 72
       },
-      "8": {
-        "name": "(anonymous_8)",
+      "7": {
+        "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 91,
+            "line": 107,
             "column": 14
           },
           "end": {
-            "line": 91,
+            "line": 107,
             "column": 15
           }
         },
         "loc": {
           "start": {
-            "line": 91,
+            "line": 107,
             "column": 20
           },
           "end": {
-            "line": 93,
+            "line": 109,
             "column": 5
           }
         },
-        "line": 91
+        "line": 107
+      },
+      "8": {
+        "name": "(anonymous_8)",
+        "decl": {
+          "start": {
+            "line": 142,
+            "column": 20
+          },
+          "end": {
+            "line": 142,
+            "column": 21
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 142,
+            "column": 32
+          },
+          "end": {
+            "line": 147,
+            "column": 21
+          }
+        },
+        "line": 142
       },
       "9": {
         "name": "(anonymous_9)",
         "decl": {
           "start": {
-            "line": 125,
-            "column": 20
-          },
-          "end": {
-            "line": 125,
-            "column": 21
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 125,
-            "column": 32
-          },
-          "end": {
-            "line": 130,
-            "column": 21
-          }
-        },
-        "line": 125
-      },
-      "10": {
-        "name": "(anonymous_10)",
-        "decl": {
-          "start": {
-            "line": 128,
+            "line": 145,
             "column": 33
           },
           "end": {
-            "line": 128,
+            "line": 145,
             "column": 34
           }
         },
         "loc": {
           "start": {
-            "line": 128,
+            "line": 145,
             "column": 53
           },
           "end": {
-            "line": 128,
+            "line": 145,
             "column": 75
           }
         },
-        "line": 128
+        "line": 145
       }
     },
     "branchMap": {
@@ -7525,7 +7718,7 @@
             "column": 16
           },
           "end": {
-            "line": 34,
+            "line": 54,
             "column": 17
           }
         },
@@ -7537,7 +7730,7 @@
               "column": 16
             },
             "end": {
-              "line": 34,
+              "line": 54,
               "column": 17
             }
           },
@@ -7547,7 +7740,7 @@
               "column": 16
             },
             "end": {
-              "line": 34,
+              "line": 54,
               "column": 17
             }
           }
@@ -7557,11 +7750,11 @@
       "2": {
         "loc": {
           "start": {
-            "line": 66,
+            "line": 74,
             "column": 20
           },
           "end": {
-            "line": 70,
+            "line": 78,
             "column": 36
           }
         },
@@ -7569,65 +7762,65 @@
         "locations": [
           {
             "start": {
-              "line": 66,
+              "line": 74,
               "column": 21
             },
             "end": {
-              "line": 66,
+              "line": 74,
               "column": 35
             }
           },
           {
             "start": {
-              "line": 67,
+              "line": 75,
               "column": 24
             },
             "end": {
-              "line": 67,
+              "line": 75,
               "column": 43
             }
           },
           {
             "start": {
-              "line": 68,
+              "line": 76,
               "column": 24
             },
             "end": {
-              "line": 68,
+              "line": 76,
               "column": 51
             }
           },
           {
             "start": {
-              "line": 69,
+              "line": 77,
               "column": 20
             },
             "end": {
-              "line": 69,
+              "line": 77,
               "column": 33
             }
           },
           {
             "start": {
-              "line": 70,
+              "line": 78,
               "column": 20
             },
             "end": {
-              "line": 70,
+              "line": 78,
               "column": 36
             }
           }
         ],
-        "line": 66
+        "line": 74
       },
       "3": {
         "loc": {
           "start": {
-            "line": 71,
+            "line": 79,
             "column": 16
           },
           "end": {
-            "line": 76,
+            "line": 103,
             "column": 17
           }
         },
@@ -7635,25 +7828,30 @@
         "locations": [
           {
             "start": {
-              "line": 71,
+              "line": 79,
               "column": 16
             },
             "end": {
-              "line": 76,
+              "line": 103,
               "column": 17
             }
           },
           {
             "start": {
-              "line": 71,
+              "line": 79,
               "column": 16
             },
             "end": {
+<<<<<<< HEAD
               "line": 76,
+=======
+              "line": 103,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
               "column": 17
             }
           }
         ],
+<<<<<<< HEAD
         "line": 71
       }
     },
@@ -7706,36 +7904,86 @@
       "8": 2,
       "9": 2,
       "10": 0
+=======
+        "line": 79
+      }
+    },
+    "s": {
+      "0": 11,
+      "1": 11,
+      "2": 11,
+      "3": 11,
+      "4": 11,
+      "5": 11,
+      "6": 11,
+      "7": 7,
+      "8": 6,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 0,
+      "15": 11,
+      "16": 4,
+      "17": 4,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 2,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 0,
+      "26": 11,
+      "27": 5,
+      "28": 11,
+      "29": 11,
+      "30": 6,
+      "31": 4
+    },
+    "f": {
+      "0": 11,
+      "1": 7,
+      "2": 6,
+      "3": 1,
+      "4": 4,
+      "5": 2,
+      "6": 2,
+      "7": 5,
+      "8": 6,
+      "9": 4
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
     },
     "b": {
       "0": [
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         0,
         0
       ],
       "1": [
-        0,
+        1,
         0
       ],
       "2": [
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
         0,
         0
       ],
       "3": [
-        0,
+        2,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7d747d12ca59ee067ebcd66ac4b2b9dec394cd12"
+    "hash": "6ca710da9cbc0fad72ab466ff7cf9954b6166e87"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\myBooking.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Booking\\myBooking.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\myBooking.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Booking\\myBooking.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7786,18 +8034,26 @@
     },
     "branchMap": {},
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 2
     },
     "f": {
       "0": 2
+=======
+      "0": 19,
+      "1": 5
+    },
+    "f": {
+      "0": 5
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0982b1cf2a9a62a9d87ca84b7a1a701052c42e5f"
+    "hash": "69340e5931462165a1e3c993f8d5403d0927b728"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\ZoneSetting.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7867,10 +8123,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d5bba5b5bd99f970c7c35be53d20390977642b8e"
+    "hash": "367090d5d7248b791b1af2a0507c335041af3eac"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\ZoneSettings.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9125,10 +9381,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "90e15de0daa6730e3d2b4095ba7e4c1663eaa4fa"
+    "hash": "ee25ea56069ffe47563c41337d01a45e8dd00137"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\ForgotPassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9250,25 +9506,39 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 145,
       "2": 0
     },
     "f": {
       "0": 145,
+=======
+      "0": 19,
+      "1": 0,
+      "2": 0
+    },
+    "f": {
+      "0": 0,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       "1": 0
     },
     "b": {
       "0": [
+<<<<<<< HEAD
         6,
         139
+=======
+        0,
+        0
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "98a2ed06108ae7d5c55374f3903369acf48e1211"
+    "hash": "02a075333c3133b5ea30b2409b3c651f0ae303a5"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\VerifyCode.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\VerifyCode.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\VerifyCode.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\VerifyCode.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9327,10 +9597,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "c98e80b438957fed64ad7d3b292a572dfd56d6e7"
+    "hash": "9e636068fce1899c996e5bd0682a616bbf316d5c"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Login\\Forgotpassword.js",
     "statementMap": {
       "0": {
         "start": {
@@ -10392,6 +10662,7 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 164,
       "2": 164,
@@ -10441,6 +10712,57 @@
       "4": 1,
       "5": 1,
       "6": 4,
+=======
+      "0": 19,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "28": 0,
+      "29": 0,
+      "30": 0,
+      "31": 0,
+      "32": 0,
+      "33": 0,
+      "34": 0,
+      "35": 0,
+      "36": 0,
+      "37": 0,
+      "38": 0,
+      "39": 0
+    },
+    "f": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       "7": 0,
       "8": 116,
       "9": 6,
@@ -10471,6 +10793,7 @@
         1
       ],
       "5": [
+<<<<<<< HEAD
         164,
         145
       ],
@@ -10481,21 +10804,37 @@
       "7": [
         164,
         22
+=======
+        0,
+        0
+      ],
+      "6": [
+        0,
+        0
+      ],
+      "7": [
+        0,
+        0
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       ],
       "8": [
         0,
         22
       ],
       "9": [
+<<<<<<< HEAD
         164,
+=======
+        0,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8cab76c65bd5d4e8e251d6ac1f569c951c436930"
+    "hash": "3c7c475bd996c2f4307a940c7d582dd8f7a1ffea"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\resendActivation.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Login\\resendActivation.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\resendActivation.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Login\\resendActivation.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11119,10 +11458,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ea26adc5e008efff0e651bd5fba81cee5e377020"
+    "hash": "129457e977e3316889ccfe29469df4b39126ac08"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartFloor.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11130,7 +11469,7 @@
           "column": 20
         },
         "end": {
-          "line": 166,
+          "line": 167,
           "column": 1
         }
       },
@@ -11350,37 +11689,37 @@
           "column": 4
         },
         "end": {
-          "line": 164,
+          "line": 165,
           "column": 5
         }
       },
       "23": {
         "start": {
-          "line": 128,
+          "line": 130,
           "column": 42
         },
         "end": {
-          "line": 128,
+          "line": 130,
           "column": 60
         }
       },
       "24": {
         "start": {
-          "line": 146,
+          "line": 147,
           "column": 32
         },
         "end": {
-          "line": 147,
+          "line": 148,
           "column": 78
         }
       },
       "25": {
         "start": {
-          "line": 147,
+          "line": 148,
           "column": 50
         },
         "end": {
-          "line": 147,
+          "line": 148,
           "column": 65
         }
       }
@@ -11404,7 +11743,7 @@
             "column": 26
           },
           "end": {
-            "line": 166,
+            "line": 167,
             "column": 1
           }
         },
@@ -11510,73 +11849,73 @@
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 128,
+            "line": 130,
             "column": 34
           },
           "end": {
-            "line": 128,
+            "line": 130,
             "column": 35
           }
         },
         "loc": {
           "start": {
-            "line": 128,
+            "line": 130,
             "column": 42
           },
           "end": {
-            "line": 128,
+            "line": 130,
             "column": 60
           }
         },
-        "line": 128
+        "line": 130
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 145,
+            "line": 146,
             "column": 47
           },
           "end": {
-            "line": 145,
+            "line": 146,
             "column": 48
           }
         },
         "loc": {
           "start": {
-            "line": 146,
+            "line": 147,
             "column": 32
           },
           "end": {
-            "line": 147,
+            "line": 148,
             "column": 78
           }
         },
-        "line": 146
+        "line": 147
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 147,
+            "line": 148,
             "column": 44
           },
           "end": {
-            "line": 147,
+            "line": 148,
             "column": 45
           }
         },
         "loc": {
           "start": {
-            "line": 147,
+            "line": 148,
             "column": 50
           },
           "end": {
-            "line": 147,
+            "line": 148,
             "column": 65
           }
         },
-        "line": 147
+        "line": 148
       }
     },
     "branchMap": {
@@ -11742,10 +12081,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "05bd931836b27a1fa06546e0802a80ce0e0ca6ad"
+    "hash": "b3af3b5cb80c815203ad2348948d1d99b44b33dc"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\service\\AdminService\\AdminStatistics.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12351,10 +12690,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a044799bbda417e2341e708482a5e5b0f7b75ba8"
+    "hash": "e1de4a7affd049dc7607deffe036248275abd0eb"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\ChartBuilding.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12362,7 +12701,7 @@
           "column": 23
         },
         "end": {
-          "line": 140,
+          "line": 144,
           "column": 1
         }
       },
@@ -12572,27 +12911,27 @@
           "column": 4
         },
         "end": {
-          "line": 138,
+          "line": 142,
           "column": 5
         }
       },
       "22": {
         "start": {
-          "line": 107,
+          "line": 109,
           "column": 42
         },
         "end": {
-          "line": 107,
+          "line": 109,
           "column": 60
         }
       },
       "23": {
         "start": {
-          "line": 119,
+          "line": 123,
           "column": 42
         },
         "end": {
-          "line": 119,
+          "line": 123,
           "column": 58
         }
       }
@@ -12616,7 +12955,7 @@
             "column": 29
           },
           "end": {
-            "line": 140,
+            "line": 144,
             "column": 1
           }
         },
@@ -12722,49 +13061,49 @@
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 107,
+            "line": 109,
             "column": 34
           },
           "end": {
-            "line": 107,
+            "line": 109,
             "column": 35
           }
         },
         "loc": {
           "start": {
-            "line": 107,
+            "line": 109,
             "column": 42
           },
           "end": {
-            "line": 107,
+            "line": 109,
             "column": 60
           }
         },
-        "line": 107
+        "line": 109
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 119,
+            "line": 123,
             "column": 34
           },
           "end": {
-            "line": 119,
+            "line": 123,
             "column": 35
           }
         },
         "loc": {
           "start": {
-            "line": 119,
+            "line": 123,
             "column": 42
           },
           "end": {
-            "line": 119,
+            "line": 123,
             "column": 58
           }
         },
-        "line": 119
+        "line": 123
       }
     },
     "branchMap": {
@@ -12927,10 +13266,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "cb33f9e939a476c204a39937e5142f29a23d390c"
+    "hash": "4e43e3ae7b272e31548d0f8451c305f0906e2b06"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\ChartContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12989,10 +13328,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "5564335826680b30081a58fb2a4f68928ae094e9"
+    "hash": "df9af173a6916eb8f1c18923656041347bdb22a8"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\Statistics\\Archive.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13126,51 +13465,61 @@
       },
       "13": {
         "start": {
-          "line": 46,
-          "column": 8
+          "line": 45,
+          "column": 0
         },
         "end": {
-          "line": 102,
-          "column": 10
+          "line": 45,
+          "column": 20
         }
       },
       "14": {
         "start": {
-          "line": 55,
-          "column": 50
+          "line": 46,
+          "column": 8
         },
         "end": {
-          "line": 55,
-          "column": 68
+          "line": 106,
+          "column": 10
         }
       },
       "15": {
         "start": {
-          "line": 67,
+          "line": 57,
           "column": 50
         },
         "end": {
-          "line": 67,
-          "column": 66
+          "line": 57,
+          "column": 68
         }
       },
       "16": {
         "start": {
-          "line": 83,
-          "column": 51
+          "line": 71,
+          "column": 50
         },
         "end": {
-          "line": 83,
-          "column": 91
+          "line": 71,
+          "column": 66
         }
       },
       "17": {
         "start": {
-          "line": 91,
+          "line": 87,
+          "column": 51
+        },
+        "end": {
+          "line": 87,
+          "column": 91
+        }
+      },
+      "18": {
+        "start": {
+          "line": 95,
           "column": 42
         },
         "end": {
-          "line": 93,
+          "line": 97,
           "column": 21
         }
       }
@@ -13218,7 +13567,7 @@
             "column": 43
           },
           "end": {
-            "line": 103,
+            "line": 107,
             "column": 1
           }
         },
@@ -13300,108 +13649,108 @@
         "name": "(anonymous_5)",
         "decl": {
           "start": {
-            "line": 55,
+            "line": 57,
             "column": 42
           },
           "end": {
-            "line": 55,
+            "line": 57,
             "column": 43
           }
         },
         "loc": {
           "start": {
-            "line": 55,
+            "line": 57,
             "column": 50
           },
           "end": {
-            "line": 55,
+            "line": 57,
             "column": 68
           }
         },
-        "line": 55
+        "line": 57
       },
       "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
-            "line": 67,
+            "line": 71,
             "column": 42
           },
           "end": {
-            "line": 67,
+            "line": 71,
             "column": 43
           }
         },
         "loc": {
           "start": {
-            "line": 67,
+            "line": 71,
             "column": 50
           },
           "end": {
-            "line": 67,
+            "line": 71,
             "column": 66
           }
         },
-        "line": 67
+        "line": 71
       },
       "7": {
         "name": "(anonymous_7)",
         "decl": {
           "start": {
-            "line": 83,
+            "line": 87,
             "column": 29
           },
           "end": {
-            "line": 83,
+            "line": 87,
             "column": 30
           }
         },
         "loc": {
           "start": {
-            "line": 83,
+            "line": 87,
             "column": 51
           },
           "end": {
-            "line": 83,
+            "line": 87,
             "column": 91
           }
         },
-        "line": 83
+        "line": 87
       },
       "8": {
         "name": "(anonymous_8)",
         "decl": {
           "start": {
-            "line": 91,
+            "line": 95,
             "column": 30
           },
           "end": {
-            "line": 91,
+            "line": 95,
             "column": 31
           }
         },
         "loc": {
           "start": {
-            "line": 91,
+            "line": 95,
             "column": 42
           },
           "end": {
-            "line": 93,
+            "line": 97,
             "column": 21
           }
         },
-        "line": 91
+        "line": 95
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 92,
+            "line": 96,
             "column": 41
           },
           "end": {
-            "line": 92,
+            "line": 96,
             "column": 97
           }
         },
@@ -13409,26 +13758,26 @@
         "locations": [
           {
             "start": {
-              "line": 92,
+              "line": 96,
               "column": 82
             },
             "end": {
-              "line": 92,
+              "line": 96,
               "column": 88
             }
           },
           {
             "start": {
-              "line": 92,
+              "line": 96,
               "column": 91
             },
             "end": {
-              "line": 92,
+              "line": 96,
               "column": 97
             }
           }
         ],
-        "line": 92
+        "line": 96
       }
     },
     "s": {
@@ -13449,7 +13798,8 @@
       "14": 0,
       "15": 0,
       "16": 0,
-      "17": 0
+      "17": 0,
+      "18": 0
     },
     "f": {
       "0": 0,
@@ -13469,10 +13819,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "af9c896a22af0f77d302e9a357aef363bf35015e"
+    "hash": "28957adfffc3486ffc9e2ba811daf7519cbed7b8"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\Statistics\\Statistics.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13531,10 +13881,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8d99d28f7d591dcab2c9e176822d65cefc9aedf9"
+    "hash": "63bce0f61442168b2d3552cf045398ea5491b4ae"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\NotFoundPage.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Modal\\NotFoundPage.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\NotFoundPage.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Modal\\NotFoundPage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -13629,10 +13979,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f5930a6174650e8eb797e0bc7b0e685059a34490"
+    "hash": "4d6a88ab8c9ac251089c1fb6ae228d6c5e21c142"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\AdminPages\\CreateNewAdmin.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15291,10 +15641,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9a0527a1620a1b639e16446e8ae1b0fc9c6f9ce5"
+    "hash": "b0705ba1fa75275225ea0dc0bfd6fdb0a7bad600"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\Component\\Layout\\NavigationBar.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15498,16 +15848,26 @@
       }
     },
     "s": {
+<<<<<<< HEAD
       "0": 72,
       "1": 23,
       "2": 0
     },
     "f": {
       "0": 23,
+=======
+      "0": 19,
+      "1": 24,
+      "2": 0
+    },
+    "f": {
+      "0": 24,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
       "1": 0
     },
     "b": {
       "0": [
+<<<<<<< HEAD
         19,
         4
       ],
@@ -15518,14 +15878,26 @@
       ],
       "2": [
         23,
+=======
+        24,
+        0
+      ],
+      "1": [
+        24,
+        24,
+        0
+      ],
+      "2": [
+        24,
+>>>>>>> 0d9d031b59f530b43f599748723ae896b4104158
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "07f3cf410ac4ea0c3d4908cb417222d8be0c4ce4"
+    "hash": "825b397b3d703b0f27d23ea8e2c174550e0a4f89"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\App.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\App.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\App.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -15573,10 +15945,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "516eb24e1dc85c872f8280372215a9aaa08c15fa"
+    "hash": "0e89d8d13c26aaae4cfcaaa8ff9c276b0e6566be"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\serviceWorker.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\serviceWorker.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\serviceWorker.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\serviceWorker.js",
     "statementMap": {
       "0": {
         "start": {
@@ -17041,10 +17413,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7a70a4366d5beccaac0b2a2e7f86654783ce6c5e"
+    "hash": "06a19f676b5bb88656d1f6b73e26a6989c431b97"
   },
-  "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\index.js": {
-    "path": "C:\\Users\\Alex\\Desktop\\HIOA\\Bachelor\\Bookora-bitbucket\\bookquorareact\\src\\index.js",
+  "D:\\BookQuoraReact\\bookquorareact\\src\\index.js": {
+    "path": "D:\\BookQuoraReact\\bookquorareact\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -17076,6 +17448,6 @@
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9191a757a82b7c0eb3755b75ca06b8b064674d65"
+    "hash": "9d552657e1b3dd1505f1a98431579b1cce22901e"
   }
 }
