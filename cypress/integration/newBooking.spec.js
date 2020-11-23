@@ -120,7 +120,6 @@ describe("Token expired", () => {
             .should('contain', "You have been inactive for a while. For your security, please sign in again");
 
     })
-
     it("Token Expired when on click confirm booking", ()=> {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         /* const now = new Date()// April 14, 2017 timestamp
