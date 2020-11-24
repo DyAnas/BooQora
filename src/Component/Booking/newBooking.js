@@ -13,7 +13,8 @@ import en from "date-fns/locale/en-GB";
 import { useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import SuccessMessage from "../Message/SuccessMessage";
+import ErrorMessage from "../Message/ErrorMessage";
 
 const MapComponent = (props) => {
     const history = useHistory();
@@ -110,7 +111,7 @@ const MapComponent = (props) => {
     const [Zone, setZone] = useState();
     const [mapAreas, setMapAreas] = useState({
         name: "choose a floor",
-        areas: [areas[0], areas[5]]
+        areas: []
     });
     // method to get all active zones
     const getActiveZone = (floor) => {
@@ -144,18 +145,11 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     history.push("/");
-
+                    ErrorMessage("")
 
                  } else {
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                    ErrorMessage(resMessage)
+
                 }
             } )
 
@@ -163,35 +157,39 @@ const MapComponent = (props) => {
     // method to get all statistics of zones
     const getStatusOfAllZones = (floorId, date) => {
         let items = [];
+        let color= []
         CheckStatusOfAllZones(floorId, date).then(
             response => {
                 response.data.map((i, index) => {
-
+                    console.log("Status",response.data)
                     // to change color of zone depend to percentage of booking
                     areas[index].status = i.bookedPercentage;
                     if (i.bookedPercentage < 40) {
-                        areas[index].preFillColor = 'rgb(158,233,162)'
-                    } else if (i.bookedPercentage > 40 || i.bookedPercentage < 70) {
-                        areas[index].preFillColor = 'rgba(255, 206, 86, 0.6)';
+                        areas[index].preFillColor = 'rgb(153,238,196)'
+                        color.push('rgb(154,25,210)')
+                    } else if (i.bookedPercentage >= 40 && i.bookedPercentage < 70) {
+                        areas[index].preFillColor = 'rgb(245,234,148)';
+                        color.push ('rgb(245,148,243)')
                     } else {
                         areas[index].preFillColor = 'rgba(255, 99, 132, 0.6)';
+                        color.push('rgb(3,65,55)')
                     }
                      return items.push(i.bookedPercentage);
                 })
-
+                   console.log("Color",color.toString())
                 setBarData({
                     labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
                     datasets: [
                         {
                             label: "Status Floor" + floorId + "By Zone",
                             data: items,
-                            backgroundColor: [
-                                'rgba(255,99,132,0.6)',
-                                'rgba(54, 162, 235, 0.6)',
-                                'rgba(255, 206, 86, 0.6)',
-                                'rgb(75,192,169)',
-                                'rgb(161,75,192)',
-                                'rgb(158,224,209)'
+                            backgroundColor:   [
+                                'rgba(245,11,60,0.6)',
+                                'rgba(21,154,239,0.6)',
+                                'rgba(129,92,4,0.6)',
+                                'rgb(1,140,108)',
+                                'rgb(138,10,186)',
+                                'rgb(229,74,180)'
                             ],
                             borderWidth: 3
                         }
@@ -208,27 +206,12 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     props.history.push("/");
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                    toast.error("You have been inactive for a while. For your security, please sign in again", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
 
                 }else {
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                    ErrorMessage(resMessage)
+
                 }
             } )
 
@@ -279,15 +262,7 @@ const MapComponent = (props) => {
     const confirmBooking = () => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
-                toast.success(response.data.message, {
-                    position: "top-center",
-                    autoClose: 10000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                SuccessMessage(response.data.message)
                     showDialog();
 
             }, (error) => {
@@ -301,39 +276,18 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                    // window.location.reload();
-                    toast.error("You have been inactive for a while. For your security, please sign in again", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+
 
                 }else if (error.response.status === 400) {
+                        ErrorMessage("You already have booking on that day")
 
-                    toast.error("You already have booking on that day", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
                     setShow(false);
 
+                } else {
+                    ErrorMessage(resMessage)
+
                 }
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
             })
     }
 

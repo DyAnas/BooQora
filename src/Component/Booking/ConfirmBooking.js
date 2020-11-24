@@ -9,9 +9,6 @@ function    BookDialog(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={props.show } onHide={props.onHide}>
-             {/*   <Modal.Header  className="p-3 mb-2 bg-info text-white"  closeButton>
-                    <Modal.Title>Confirm Booking </Modal.Title>
-                </Modal.Header>*/}
 
                 <Modal.Body>
                     <div className=" mt-1 mb-1 center ">
@@ -31,6 +28,7 @@ function    BookDialog(props) {
                             </div>
                         </div>
                         : null}
+
                 </Modal.Body>
 
                 <Modal.Footer>

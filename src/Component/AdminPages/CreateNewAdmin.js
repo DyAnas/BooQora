@@ -5,8 +5,9 @@ import { FindEmployee, UpgradeUserToAdmin } from '../../service/AdminService/Adm
 import { useHistory } from "react-router-dom";
 import validateEmail from "../Login/ValidateEmail";
 import { useForm } from "react-hook-form";
-import { toast, ToastContainer } from "react-toastify";
-
+import {  ToastContainer } from "react-toastify";
+import SuccessMessage from "../Message/SuccessMessage";
+import ErrorMessage from "../Message/ErrorMessage";
 
 export const CreateNewAdmin = () => {
     const history = useHistory();
@@ -28,15 +29,9 @@ export const CreateNewAdmin = () => {
                     setLastname(response.data.lastName.toUpperCase())
                     setEmail(response.data.email)
                     setUserFound(true);
-                    toast.error(response.data.message, {
-                        position: "top-center",
-                        autoClose: 10000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                    /* istanbul ignore next */
+                   SuccessMessage(response.data.message)
+
 
                     if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
                         setCheckBoxValueAdmin(true)
@@ -51,40 +46,13 @@ export const CreateNewAdmin = () => {
                     if (error.response.status === 404) {
 
                         setUserFound(false);
-                        toast.error("Email is not found", {
-                            position: "top-center",
-                            autoClose: 10000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
+                        ErrorMessage("Email is not found")
 
-                    } else if (error.response.status === 400) {
 
-                        setUserFound(false);
-                        /* istanbul ignore next */
-                        toast.error("Incorrect Email", {
-                            position: "top-center",
-                            autoClose: 10000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
                     } else if (error.response.status === 401) {
                         localStorage.clear()
-                        toast.error("You have been inactive for a while. For your security, please sign in again", {
-                            position: "top-center",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
+                        ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+
                         /* istanbul ignore next */
                         setTimeout(() => {
                             history.push("/");
@@ -93,30 +61,16 @@ export const CreateNewAdmin = () => {
                     }
                     else {
                         /* istanbul ignore next */
-                        toast.error(resMessage, {
-                            position: "top-center",
-                            autoClose: 10000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
+                        ErrorMessage(resMessage)
+
                     }
 
                 })
 
         } else {
 
-            toast.error("Email must match tietoEvry", {
-                position: "top-center",
-                autoClose: 10000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            ErrorMessage("Email must match tietoEvry")
+
         }
     }
 
@@ -144,15 +98,8 @@ export const CreateNewAdmin = () => {
 
         UpgradeUserToAdmin(email, roleToApi).then(
             response => {
-                toast.success(response.data.message, {
-                    position: "top-center",
-                    autoClose: 10000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                SuccessMessage(response.data.message)
+
                 setUserFound(false);
 
             }, (error) => {
@@ -165,42 +112,14 @@ export const CreateNewAdmin = () => {
 
                 if (error.response.status === 404) {
                     setUserFound(false);
-                    toast.error("Email is not found", {
-                        position: "top-center",
-                        autoClose: 10000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                    ErrorMessage("Email is not found")
 
-                } else if (error.response.status === 400) {
-                    /* istanbul ignore next */
-                    setUserFound(false);
 
-                    toast.error("Incorrect Email", {
-                        position: "top-center",
-                        autoClose: 10000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
                 } else if (error.response.status === 401) {
                     localStorage.clear()
 
-                    //                        window.location.reload();
-                    toast.error("You have been inactive for a while. For your security, please sign in again", {
-                        position: "top-center",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+               ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+
                     /* istanbul ignore next */
                     setTimeout(() => {
                         history.push("/");
@@ -209,15 +128,8 @@ export const CreateNewAdmin = () => {
 
                 } else {
                     /* istanbul ignore next */
-                    toast.error(resMessage, {
-                        position: "top-center",
-                        autoClose: 10000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                    ErrorMessage(resMessage)
+
 
                 }
 

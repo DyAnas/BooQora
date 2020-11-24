@@ -115,7 +115,7 @@ const StatusFloor = () => {
         <div className=" ">
             <div className=" mt-2 mb-2 center ">
                 <div className="">
-                    <h2 className="  title"> Status Floor </h2>
+                    <h2 className=" title"> Status Floor </h2>
 
                     <p className="text"> Choose a date and floor to show status</p>
                 </div>

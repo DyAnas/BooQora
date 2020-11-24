@@ -4,8 +4,10 @@ import {TextField} from "@material-ui/core";
 import {useForm} from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
 import {withRouter} from "react-router-dom";
-import {toast, ToastContainer} from "react-toastify";
+import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import ErrorMessage from "../../Component/Message/ErrorMessage";
+import SuccessMessage from "../../Component/Message/SuccessMessage";
 const NewPassword = (props) => {
     const [password, setPassword] = React.useState('')
     const { register, handleSubmit, watch, errors } = useForm();
@@ -23,15 +25,7 @@ const NewPassword = (props) => {
 
         AuthService.resetPassword(email, password).then(
             Response => {
-                toast.success(Response.message, {
-                    position: "top-center",
-                    autoClose: 10000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                SuccessMessage(Response.message)
                 goToSignIn();
             }, error => {
                 const resMessage =
@@ -41,48 +35,15 @@ const NewPassword = (props) => {
                     error.message ||
                     error.toString();
                 if (resMessage === "Error: Unauthorized") {
-                    toast.error("Incorrect email or password", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
-                } else if (resMessage === "No message available") {
+                    ErrorMessage("Incorrect email or password",)
 
-                    toast.error("Email is not registered", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
                 } else if (error.response.status === 400) {
 
-                    toast.error("You can't change password to old password,", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
-                } else {
+                    ErrorMessage("You can't change password to old password,")
 
-                    toast.error(resMessage, {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                } else {
+                 ErrorMessage(resMessage)
+
                 }
 
             }

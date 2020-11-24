@@ -7,7 +7,8 @@ import {Link, TextField} from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import ErrorMessage from "../../Component/Message/ErrorMessage";
+import SuccessMessage from "../../Component/Message/SuccessMessage";
 const SignInContainer = (props) => {
 
     const [loading, setLoading] = React.useState(false);
@@ -30,9 +31,7 @@ const SignInContainer = (props) => {
         if (validateEmail(email)) {
             AuthService.login(email, password).then(
                 (response) => {
-
                     goToNewBooking();
-
                 },
                 error => {
                     const resMessage =
@@ -42,26 +41,10 @@ const SignInContainer = (props) => {
                         error.message ||
                         error.toString();
                     if (error.response.status===401) {
-                        toast.error("Incorrect email or password", {
-                            position: "top-center",
-                            autoClose: 8000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
+                        ErrorMessage("Incorrect email or password");
                     }
                     else if (error.response.status===404) {
-                        toast.error("Email is not registered", {
-                            position: "top-center",
-                            autoClose: 8000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
+                        ErrorMessage("Email is not registered");
                     }else if(error.response.status===400){
                         toast.warning(CustomToastWithLink, {
                             position: "top-center",
@@ -72,21 +55,16 @@ const SignInContainer = (props) => {
                             draggable: true,
                             progress: undefined,
                         })
-                        setshowConfirmation(true)
+
+                    }
+                    else {
+                        ErrorMessage(resMessage);
                     }
 
                 }
             );
         } else {
-            toast.error("Email must match tietoEvry", {
-                position: "top-center",
-                autoClose: 8000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            ErrorMessage("Email must match tietoEvry");
         }//Authentication
     }
     const CustomToastWithLink = () => (
@@ -100,7 +78,8 @@ const SignInContainer = (props) => {
         AuthService.ResendActivation(email).then(
             Response => {
                 setLoading(false)
-                toast.success(Response.message, {
+                SuccessMessage(Response.message);
+               /* toast.success(Response.message, {
                     position: "top-center",
                     autoClose: 10000,
                     hideProgressBar: false,
@@ -108,12 +87,12 @@ const SignInContainer = (props) => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                })
+                })*/
             })
-        setshowConfirmation(false);
+
 
     }
-    const [showConfirmation, setshowConfirmation] = React.useState(false);
+
 
     return (<div className=" ipad vh-100 center background   " >
         <div className="col-md-3  box ipad2  ">

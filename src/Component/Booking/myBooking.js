@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {DeleteBookings, getAllBookingOfEmployeeInAPeriodEmployee} from "../../service/BookingService/bookingService";
 import AuthService from '../../service/Authentication/authUser';
 import MaterialTable from "material-table";
-import { useHistory } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import {useHistory} from 'react-router-dom';
+import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SuccessMessage from "../Message/SuccessMessage";
+import ErrorMessage from "../Message/ErrorMessage";
 
 export default function MyBookings(props) {
     const history = useHistory();
@@ -19,55 +21,32 @@ export default function MyBookings(props) {
         getAllBookingOfEmployeeInAPeriodEmployee(email, today, maxDate).then(
             response => {
                 setListBooking(response.data.bookingToShowDtoLists);
-            },  (error) => {
+            }, (error) => {
                 const resMessage =
                     (error.response &&
                         error.response.data &&
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-                if(error.response.status===401){
+                if (error.response.status === 401) {
                     localStorage.clear()
                     history.push("/");
-                   // window.location.reload();
+                    // window.location.reload();
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                    toast.error("You have been inactive for a while. For your security, please sign in again", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
 
-                }else {
-                    toast.error(resMessage, {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                } else {
+                    ErrorMessage(resMessage)
+
                 }
             })
     }
     const removeBooking = (item) => {
-        console.log("item  to remov",item);
+        console.log("item  to remov", item);
         DeleteBookings(item.bookingId).then(
             response => {
+                SuccessMessage(response.data.message)
 
-                toast.success(response.data.message, {
-                    position: "top-center",
-                    autoClose: 6000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
                 getAllBooking();
             }, (error) => {
                 const resMessage =
@@ -76,30 +55,15 @@ export default function MyBookings(props) {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-                if(error.response.status===401){
+                if (error.response.status === 401) {
                     localStorage.clear()
                     history.push("/");
-                   // window.location.reload();
+                    // window.location.reload();
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                    toast.error("You have been inactive for a while. For your security, please sign in again", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
-                }else {
-                    toast.error(resMessage, {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                } else {
+                    ErrorMessage(resMessage)
+
                 }
             })
     }
@@ -111,10 +75,10 @@ export default function MyBookings(props) {
     // remove one booking
     const columns =
         [
-            { title: "Booking Id", field: "bookingId" },
-            { title: "Date", field: "date",},
-            { title: "Floor", field: "floor" },
-            { title: "Zone", field: "zoneName",},
+            {title: "Booking Id", field: "bookingId"},
+            {title: "Date", field: "date",},
+            {title: "Floor", field: "floor"},
+            {title: "Zone", field: "zoneName",},
         ]
 
     return (
@@ -123,7 +87,7 @@ export default function MyBookings(props) {
                 position="top-center"/>
             <div className=" mt-4 mb-4 center ">
 
-                    <h3 className="title">My booking</h3>
+                <h3 className="title">My booking</h3>
 
             </div>
             <MaterialTable
