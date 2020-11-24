@@ -45,6 +45,7 @@ const ZoneSettings = (props) => {
                     progress: undefined,
                  
                 })
+                 /* istanbul ignore next */
                 setTimeout(() => {
                     localStorage.clear()
                     window.location.reload()
@@ -52,6 +53,7 @@ const ZoneSettings = (props) => {
 
                
             }else {
+                /* istanbul ignore next */
                 toast.error(resMessage, {
                     position: "top-center",
                     autoClose: 8000,
@@ -75,7 +77,7 @@ const ZoneSettings = (props) => {
         setChooseZone(Zone.zone)
 
 
-    }
+    } /* istanbul ignore next */
     const handleCheckBox = (event) => {
 
         setActive(event.target.checked)
@@ -91,6 +93,7 @@ const ZoneSettings = (props) => {
     const handleSaveSetting = () => {
         ChangeZone(floor, ZoneID, Capacity, Active).then(
             response => {
+                 /* istanbul ignore next */
                 toast.success(response.data.message, {
                     position: "top-center",
                     autoClose: 8000,
@@ -119,8 +122,8 @@ const ZoneSettings = (props) => {
                         progress: undefined,
 
                     })
-                   // props.history.push("/");
-
+                  
+                     /* istanbul ignore next */
                     setTimeout(() => {
                         localStorage.clear()
                         window.location.reload()

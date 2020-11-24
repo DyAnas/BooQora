@@ -10,13 +10,14 @@ beforeEach(() => {
     cy.url().should('include', '/newBooking')
 
 })
+const nowTime = Cypress.moment().format('DD-MM-yyyy')
 
 describe("Chart Floor", () => {
     it("show Statistics", ()=> {
         cy.get("#statistics").click({force: true})
         cy.get("#dateFloor").click()
         cy.get("#dateFloor").invoke('val').then((text) => {
-            expect('23-11-2020').to.equal(text);
+            expect(nowTime).to.equal(text);
         })
        // click prev month
 

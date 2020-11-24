@@ -54,7 +54,7 @@ export const NavigationBar = (props) => {
                     </div>
                     <div className="col">
 
-                        <Link to="#" className="nav-item nav-link" onClick={() => {
+                        <Link to="#" className="nav-item nav-link" id="logOut" onClick={() => {
                             AuthService.logout();
                         }}>Log out</Link>
                     </div>

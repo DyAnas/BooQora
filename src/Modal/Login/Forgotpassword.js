@@ -26,11 +26,13 @@ const Forgotpassword = (props) => {
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: false,
-                
+
                     })
                     spinnerTimer();
-                    // GotToResetPassword();
+
+                    /* istanbul ignore next */
                     if (Response.message.trim() === "This email address does not exist!") {
+
                         setShowVerifyCode(false);
                         setShowForgotpassord(true);
                         setShowRestPassword(false);
@@ -56,7 +58,7 @@ const Forgotpassword = (props) => {
                             closeOnClick: true,
                             pauseOnHover: true,
                             draggable: true,
-                          
+
                         })
                     }
 
@@ -84,7 +86,7 @@ const Forgotpassword = (props) => {
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: false,
-              
+
             })
 
         }//Authentication
@@ -98,6 +100,7 @@ const Forgotpassword = (props) => {
         spinnerTimer();
         AuthService.verifyCode(confirmationCode).then(
             Response => {
+                /* istanbul ignore next */
                 if (Response.data === true) {
                     setShowVerifyCode(false);
                     setShowForgotpassord(false);
@@ -112,13 +115,14 @@ const Forgotpassword = (props) => {
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: false,
-                    
+
                     })
                 }
 
             }
         );
     }
+    /* istanbul ignore next */
     const spinnerTimer = () => {
         setTimeout(() => {
 

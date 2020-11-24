@@ -14,6 +14,9 @@ beforeEach(() => {
     cy.url().should('include', '/newBooking')
 
 })
+
+
+const nowTime = Cypress.moment().format('DD-MM-yyyy')
 describe("Page elements test", () => {
 
     it('Check map, Title, button, datapicker', () => {
@@ -34,7 +37,7 @@ describe("Page elements test", () => {
 
         cy.get("#dates").click()
         cy.get("#dates").invoke('val').then((text) => {
-            expect('23-11-2020').to.equal(text);
+            expect(nowTime).to.equal(text);
         })
 
         cy.get("#dates").click()
@@ -76,7 +79,7 @@ describe("Function Test", () => {
         cy.get("map").find("area:first").click({force: true})
         cy.get("#floor").should("contain", "Floor: 1");
         cy.get("#zone").should("contain", "Zone: Zone A");
-        cy.get("#date").should("contain", "23-11-2020");
+        cy.get("#date").should("contain", nowTime);
         cy.get("#submitBooking").click()
         cy.get('.Toastify__toast-body[role=alert]').should('contain', "You already have booking on that day");
 

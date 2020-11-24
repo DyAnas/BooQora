@@ -65,7 +65,7 @@ describe("Validation", () => {
 
 
     it('Sign in with unregisterd credentials', () => {
-        const email = chance.first() + '@tietoevry.com';
+        const email = 'unregistered12@tietoevry.com';
         const password = 'RandomPass45@@';
         const expectedErrorMessage = 'Email is not registered';
 
@@ -73,8 +73,8 @@ describe("Validation", () => {
     })
 
     it('Signin with not activated credentials', () => {
-        const firstName = chance.first();
-        const lastName = chance.last();
+        const firstName = "anyfirstname"
+        const lastName = 'anylastname'
         const email = firstName + '@tietoevry.com';
         const password = 'RandomPass45@@';
         const expectedErrorMessage = 'User registered successfully!';

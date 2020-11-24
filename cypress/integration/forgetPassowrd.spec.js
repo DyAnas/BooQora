@@ -58,3 +58,10 @@ describe('Verfication Code Testing', () => {
 
 })
 
+it('click on logo to go back to sign in page', () => {
+
+ cy.get('img[alt=logo]').click();
+  
+    cy.url('eq',Cypress.config().baseUrl+'/')
+})
+

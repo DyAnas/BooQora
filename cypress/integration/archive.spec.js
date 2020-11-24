@@ -3,8 +3,9 @@
 
 
 
-
+const nowTime = Cypress.moment().format('DD-MM-yyyy')
 beforeEach(() => {
+   
     cy.visit(Cypress.config().baseUrl)
     const email = 'root@tietoevry.com';
     const password = '123456aB@';
@@ -15,16 +16,17 @@ beforeEach(() => {
 
 })
 describe("Archive test", () => {
-    it("show table", ()=> {
-        cy.get("#myBooking").click({force: true})
+    it("show table", () => {
+        cy.get("#myBooking").click({ force: true })
         cy.get("table").should('be.visible');
     })
-    it("select date to show all booking", ()=>{
-        cy.get("#archive").click({force: true})
 
+    it("select date to show all booking", () => {
+        cy.get("#archive").click({ force: true })
+       
         cy.get("#from").click()
         cy.get("#from").invoke('val').then((text) => {
-            expect('23-11-2020').to.equal(text);
+            expect(nowTime).to.equal(text);
         })
         cy.contains('Prev').click();
         //choose date 1
@@ -35,7 +37,7 @@ describe("Archive test", () => {
 
         cy.get("#to").click()
         cy.get("#to").invoke('val').then((text) => {
-            expect('23-11-2020').to.equal(text);
+            expect(nowTime).to.equal(text);
         })
         // to click datapicker and choose next month
         cy.contains('Next').click();

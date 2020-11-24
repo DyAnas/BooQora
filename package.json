@@ -101,5 +101,16 @@
     "jest-skipped-reporter": "0.0.5",
     "react-test-render": "^1.1.2",
     "start-server-and-test": "^1.11.6"
+  },
+  "nyc": {
+    "excludeAfterRemap": true,
+    "exclude":[
+      "src/serviceWorker.js",
+      "src/Modal/About/aboutBookora.js",
+      "src/Component/Login/NewPassword.js",
+      "src/Component/Login/resendActivation.js",
+      "src/Modal/NotFoundPage.js",
+      "src/service/AdminService/AdminStatistics.js"
+    ]
   }
 }

@@ -8,8 +8,8 @@ const chance = new Chance();
 beforeEach(() => {
     cy.signinAsAdmin();
     cy.url().should('include', '/newBooking')
-    cy.get('#addNewAdmin').click();
-    cy.url().should('include', '/addNewAdmin')
+    cy.contains(' Add new Admin').click();
+    cy.url('include', '/addNewAdmin')
 })
 
 

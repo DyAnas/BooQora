@@ -93,8 +93,8 @@ describe("Validation", () => {
     })
 
     it('Signup with email@NotTietoEvry.com', () => {
-        const firstName = chance.first();
-        const lastName = chance.last();
+        const firstName = "anyname";
+        const lastName = "anylastname";
         const email = firstName + '@anything.com';
         const password = 'RandomPass45@@';
         const expectedErrorMessageToast = 'Email must match tietoevry';
@@ -113,8 +113,8 @@ describe("Validation", () => {
     })
     
     it('Signup with valid input', () => {
-        const firstName = chance.first();
-        const lastName = chance.last();
+        const firstName = "anyname";
+        const lastName = "anylastname";
         const email = firstName + '@tietoevry.com';
         const password = 'RandomPass45@@';
         const expectedErrorMessage = 'User registered successfully!';

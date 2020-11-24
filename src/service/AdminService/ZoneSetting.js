@@ -3,6 +3,7 @@ import authHeader from "../Authentication/authHeader";
 
 
 const api_url = "http://localhost:8080/api/v1/zones/";
+/* istanbul ignore next */
 export async function ChangeZone(floor,zoneId, capacity, activated) {
 
     const response = await axios.post(api_url+"ZoneSettings", {
@@ -17,5 +18,6 @@ export async function ChangeZone(floor,zoneId, capacity, activated) {
         }
 
     })
+     /* istanbul ignore next */
     return response;
 }
