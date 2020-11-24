@@ -121,6 +121,7 @@ describe("Validation", () => {
         const expectedStatusCode=201;
         cy.signup(firstName, lastName, email,password,expectedErrorMessage,expectedStatusCode);
         cy.get('button[type=submit]').click();
+        cy.wait(8000);
         cy.url().should('eq', Cypress.config().baseUrl+'/')
         
     })

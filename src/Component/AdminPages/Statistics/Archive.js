@@ -41,8 +41,6 @@ const columns =
 
     const [selectedRow, setSelectedRow] = useState(null);
 
-
-console.log(endDate)
         return (
             <div>
 

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../../Styles/admin.css";
-import { getZoneList } from "../../service/BookingService/mapService";
-import { ChangeZone } from "../../service/AdminService/ZoneSetting";
-import { Checkbox } from '@material-ui/core'
-import { withRouter } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import {getZoneList} from "../../service/BookingService/mapService";
+import {ChangeZone} from "../../service/AdminService/ZoneSetting";
+import {Checkbox} from '@material-ui/core'
+import { withRouter} from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import SuccessMessage from "../Message/SuccessMessage";
+import ErrorMessage from "../Message/ErrorMessage";
 const ZoneSettings = (props) => {
     const [edit, setEdit] = useState(false);
     const [floor, setFloor] = useState(1)
@@ -35,36 +36,19 @@ const ZoneSettings = (props) => {
                 error.toString();
             if (error.response.status === 401) {
 
+          ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                toast.error("You have been inactive for a while. For your security, please sign in again", {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-
-                })
-                /* istanbul ignore next */
+                 /* istanbul ignore next */
                 setTimeout(() => {
                     localStorage.clear()
-                    window.location.reload()
+                   props.history.push("/")
                 }, 8000);
 
 
             } else {
                 /* istanbul ignore next */
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
+                ErrorMessage(resMessage)
 
-                })
             }
 
         })
@@ -96,17 +80,11 @@ const ZoneSettings = (props) => {
         ChangeZone(floor, ZoneID, Capacity, Active).then(
             /* istanbul ignore next */
             response => {
+                console.log(response)
+                 /* istanbul ignore next */
+                SuccessMessage("Success editing")
 
-                toast.success(response.data.message, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
-            }, (error) => {
+            } , (error) => {
                 const resMessage =
                     (error.response &&
                         error.response.data &&
@@ -114,36 +92,19 @@ const ZoneSettings = (props) => {
                     error.message ||
                     error.toString();
                 console.log(error.response.status)
-                if (error.response.status === 401) {
-                    toast.error("You have been inactive for a while. For your security, please sign in again", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
+                if(error.response.status===401){
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                    })
-
-                    /* istanbul ignore next */
+                  
+                     /* istanbul ignore next */
                     setTimeout(() => {
                         localStorage.clear()
-                        window.location.reload()
+                        props.history.push("/")
                     }, 8000);
 
-                } else {
-                    /* istanbul ignore next */
-                    toast.error(resMessage, {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
+                }else{
+                    ErrorMessage(resMessage)
 
-                    })
                 }
 
 

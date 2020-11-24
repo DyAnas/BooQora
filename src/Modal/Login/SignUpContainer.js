@@ -5,8 +5,10 @@ import AuthService from '../../service/Authentication/authUser'
 import {Link, TextField} from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
 import Logo from "../../assets/logo1.png"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ErrorMessage from "../../Component/Message/ErrorMessage";
+import SuccessMessage from "../../Component/Message/SuccessMessage";
 
 const SignUpContainer = (props) => {
     // create state with useStat for
@@ -21,7 +23,10 @@ const SignUpContainer = (props) => {
 
     // to show message and go to sign in
     const goToSignIn = () => {
+        setTimeout(()=>{
             props.history.push("/");
+        }, 8000)
+
     }
 
 
@@ -33,16 +38,9 @@ const SignUpContainer = (props) => {
             const roles = ["user"];
             setLoading(true);
             AuthService.register(firstName, lastName, email, password, roles)
-                .then(Response => {
-                    // toast.success(Response.message, {
-                    //     position: "top-center",
-                    //     autoClose: 10000,
-                    //     hideProgressBar: false,
-                    //     closeOnClick: true,
-                    //     pauseOnHover: true,
-                    //     draggable: true,
-                    //     progress: undefined,
-                    // })
+                .then(response => {
+
+                    SuccessMessage(response.data.message)
                         goToSignIn(); // to show message and go to sign in
                     }, error => {
                         const resMessage =
@@ -51,29 +49,21 @@ const SignUpContainer = (props) => {
                                 error.response.data.message) ||
                             error.message ||
                             error.toString();
-                    toast.error(resMessage, {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    })
+                        console.log(error.response.status)
+                        if(error.response.status===409){
 
-                   goToSignIn();
+                            ErrorMessage(resMessage);
+
+                            goToSignIn();
+                        } else {
+                            ErrorMessage(resMessage);
+                        }
+
                     }
                 );
         } else {
-            toast.error("Email must match tietoevry", {
-                position: "top-center",
-                autoClose: 8000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+
+            ErrorMessage("Email must match tietoevry")
         }
 
     }

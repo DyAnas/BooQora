@@ -8,6 +8,8 @@ import NewPassword from "../../Component/Login/NewPassword";
 import { withRouter } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ErrorMessage from "../../Component/Message/ErrorMessage";
+import SuccessMessage from "../../Component/Message/SuccessMessage";
 
 const Forgotpassword = (props) => {
     const { register, handleSubmit, errors } = useForm();
@@ -19,15 +21,8 @@ const Forgotpassword = (props) => {
         if (validateEmail(email)) {
             AuthService.forgotPassword(email).then(
                 Response => {
-                    toast.success(Response.message, {
-                        position: "top-center",
-                        autoClose: 10000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: false,
+                    SuccessMessage(Response.message)
 
-                    })
                     spinnerTimer();
 
                     /* istanbul ignore next */
@@ -51,43 +46,19 @@ const Forgotpassword = (props) => {
                         error.toString();
 
                     if (error.response.status === 404) {
-                        toast.error("Email is not exist!", {
-                            position: "top-center",
-                            autoClose: 8000,
-                            hideProgressBar: true,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
+                        ErrorMessage("Email is not exist!")
 
-                        })
+                    } else {
+                        ErrorMessage(resMessage)
+
+
                     }
-
-                    // else {
-                    //     toast.error(resMessage, {
-                    //         position: "top-center",
-                    //         autoClose: 8000,
-                    //         hideProgressBar: false,
-                    //         closeOnClick: true,
-                    //         pauseOnHover: true,
-                    //         draggable: true,
-                    //         progress: undefined,
-                    //     })
-                    // }
-
                 }
-            );
+            )
 
         }
         else {
-            toast.error("Email must match tietoevry", {
-                position: "top-center",
-                autoClose: 8000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: false,
-
-            })
+            ErrorMessage("Email must match tietoevry")
 
         }//Authentication
     }
@@ -106,17 +77,9 @@ const Forgotpassword = (props) => {
                     setShowForgotpassord(false);
                     setShowRestPassword(true);
 
+
                 } else {
-
-                    toast.error("Incorrect Code!! or code is expired", {
-                        position: "top-center",
-                        autoClose: 8000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: false,
-
-                    })
+                    ErrorMessage("Incorrect Code!! or code is expired")
                 }
 
             }
