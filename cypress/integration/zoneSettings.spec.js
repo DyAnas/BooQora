@@ -25,7 +25,7 @@ describe('elements Test', () => {
 
 describe('Interactions', () => {
 
-    it('onClick floor', () => {
+    it('Change Floor 1 Zone A', () => {
         //click first floor
         cy.get(".btn-group").find("button").first().click()
 
