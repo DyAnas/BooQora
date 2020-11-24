@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../../Styles/admin.css";
-import {getZoneList} from "../../service/BookingService/mapService";
-import {ChangeZone} from "../../service/AdminService/ZoneSetting";
-import {Checkbox} from '@material-ui/core'
-import { withRouter} from "react-router-dom";
+import { getZoneList } from "../../service/BookingService/mapService";
+import { ChangeZone } from "../../service/AdminService/ZoneSetting";
+import { Checkbox } from '@material-ui/core'
+import { withRouter } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,7 +23,8 @@ const ZoneSettings = (props) => {
         let items = []
         getZoneList(floor).then(response => {
             response.data.zoneDTOList.map((i, index) => {
-                return items.push(i)})
+                return items.push(i)
+            })
             return setZone(items)
         }, (error) => {
             const resMessage =
@@ -32,7 +33,7 @@ const ZoneSettings = (props) => {
                     error.response.data.message) ||
                 error.message ||
                 error.toString();
-            if(error.response.status===401){
+            if (error.response.status === 401) {
 
 
                 toast.error("You have been inactive for a while. For your security, please sign in again", {
@@ -43,16 +44,16 @@ const ZoneSettings = (props) => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                 
+
                 })
-                 /* istanbul ignore next */
+                /* istanbul ignore next */
                 setTimeout(() => {
                     localStorage.clear()
                     window.location.reload()
                 }, 8000);
 
-               
-            }else {
+
+            } else {
                 /* istanbul ignore next */
                 toast.error(resMessage, {
                     position: "top-center",
@@ -62,8 +63,9 @@ const ZoneSettings = (props) => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-             
-            })}
+
+                })
+            }
 
         })
 
@@ -77,7 +79,7 @@ const ZoneSettings = (props) => {
         setChooseZone(Zone.zone)
 
 
-    } /* istanbul ignore next */
+    }
     const handleCheckBox = (event) => {
 
         setActive(event.target.checked)
@@ -92,8 +94,9 @@ const ZoneSettings = (props) => {
 
     const handleSaveSetting = () => {
         ChangeZone(floor, ZoneID, Capacity, Active).then(
+            /* istanbul ignore next */
             response => {
-                 /* istanbul ignore next */
+
                 toast.success(response.data.message, {
                     position: "top-center",
                     autoClose: 8000,
@@ -103,7 +106,7 @@ const ZoneSettings = (props) => {
                     draggable: true,
                     progress: undefined,
                 })
-            } , (error) => {
+            }, (error) => {
                 const resMessage =
                     (error.response &&
                         error.response.data &&
@@ -111,7 +114,7 @@ const ZoneSettings = (props) => {
                     error.message ||
                     error.toString();
                 console.log(error.response.status)
-                if(error.response.status===401){
+                if (error.response.status === 401) {
                     toast.error("You have been inactive for a while. For your security, please sign in again", {
                         position: "top-center",
                         autoClose: 8000,
@@ -122,24 +125,25 @@ const ZoneSettings = (props) => {
                         progress: undefined,
 
                     })
-                  
-                     /* istanbul ignore next */
+
+                    /* istanbul ignore next */
                     setTimeout(() => {
                         localStorage.clear()
                         window.location.reload()
                     }, 8000);
 
-                }else{
-                toast.error(resMessage, {
-                    position: "top-center",
-                    autoClose: 8000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    
-                })
+                } else {
+                    /* istanbul ignore next */
+                    toast.error(resMessage, {
+                        position: "top-center",
+                        autoClose: 8000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+
+                    })
                 }
 
 
@@ -160,7 +164,7 @@ const ZoneSettings = (props) => {
                 <div className=" col " >
                     <ToastContainer
                         position="top-center"
-                       />
+                    />
                     <div className="btn-group">
                         {[...Array(7)].map((x, i) =>
                             <button className="btn btn-light mt-4 " key={i}
@@ -214,8 +218,8 @@ const ZoneSettings = (props) => {
                                                         className="form-control"
                                                         size="1"
                                                         id="capacityInput"
-                                                        placeholder="Capacity" 
-                                                        style={{maxWidth:"45%"}}/>
+                                                        placeholder="Capacity"
+                                                        style={{ maxWidth: "45%" }} />
                                                 </td>
                                             </tr>
                                             <tr>

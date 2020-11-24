@@ -33,6 +33,8 @@ describe('Interactions', () => {
 
             //first table row Floor Nr = 1
             cy.get('td').first().children().first().should('contain', 1);
+            cy.get('#capacityInput').type(30);
+            cy.get('#accesibility').check();
            
 
         })
@@ -41,7 +43,7 @@ describe('Interactions', () => {
 })
 
 describe("Token expired", () => {
-    it.only("Token Expired when on click floor ", ()=> {
+    it("Token Expired when on click floor ", ()=> {
         cy.get("#statistics").click({force: true})
         cy.wait(10000)
         cy.get("#ZoneSetting").click({force: true})
@@ -50,7 +52,7 @@ describe("Token expired", () => {
             .should('contain', "You have been inactive for a while. For your security, please sign in again");
 
     })
-    it.only("Token Expired when on Click Save", ()=> {
+    it("Token Expired when on Click Save", ()=> {
         cy.get("#ZoneSetting").click({force: true})
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get("#dropdownMenuButton").click()
