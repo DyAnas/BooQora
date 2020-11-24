@@ -39,7 +39,7 @@ export const NavigationBar = (props) => {
                     <Link to="/statistics" id="statistics" className="nav-item nav-link"><FontAwesomeIcon
                         icon={faChartLine}/> Statistics</Link>
                     <Link to="/zonesettings" className="nav-item nav-link"><FontAwesomeIcon icon={faCog} id="zoneSettings"/> Zone settings</Link>
-                    <Link to="/addNewAdmin"  className="nav-item nav-link"><FontAwesomeIcon icon={faUserPlus} /> Add new Admin</Link>
+                    <Link to="/addNewAdmin"  className="nav-item nav-link"><FontAwesomeIcon icon={faUserPlus}id="addNewAdmin" /> Add new Admin</Link>
                     <Link to="/archive" id="archive"  className="nav-item nav-link"><FontAwesomeIcon icon={faTable} /> Archive</Link>
                  </>
                 : null}
