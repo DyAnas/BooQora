@@ -1,6 +1,6 @@
 import {toast} from "react-toastify";
 
-const SuccessMessage = (error)=> {
+const successMessage = (error)=> {
     toast.success(error, {
         position: "top-center",
         autoClose: 8000,
@@ -11,4 +11,4 @@ const SuccessMessage = (error)=> {
         progress: undefined,
     })
 }
-export default SuccessMessage;
+export default successMessage;

@@ -5,8 +5,8 @@ import MaterialTable from "material-table";
 import {useHistory} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SuccessMessage from "../Message/SuccessMessage";
-import ErrorMessage from "../Message/ErrorMessage";
+import successMessage from "../Message/SuccessMessage";
+import errorMessage from "../Message/ErrorMessage";
 
 export default function MyBookings(props) {
     const history = useHistory();
@@ -32,11 +32,11 @@ export default function MyBookings(props) {
                     localStorage.clear()
                     history.push("/");
                     // window.location.reload();
-                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+                    errorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
                 } else {
-                    ErrorMessage(resMessage)
+                    errorMessage(resMessage)
 
                 }
             })
@@ -45,7 +45,7 @@ export default function MyBookings(props) {
         console.log("item  to remov", item);
         DeleteBookings(item.bookingId).then(
             response => {
-                SuccessMessage(response.data.message)
+                successMessage(response.data.message)
 
                 getAllBooking();
             }, (error) => {
@@ -59,10 +59,10 @@ export default function MyBookings(props) {
                     localStorage.clear()
                     history.push("/");
                     // window.location.reload();
-                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+                    errorMessage("You have been inactive for a while. For your security, please sign in again")
 
                 } else {
-                    ErrorMessage(resMessage)
+                    errorMessage(resMessage)
 
                 }
             })

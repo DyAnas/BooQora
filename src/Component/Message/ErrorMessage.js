@@ -1,6 +1,6 @@
 import {toast} from "react-toastify";
 
-const ErrorMessage = (error)=> {
+const errorMessage = (error)=> {
    
     toast.error(error, {
         position: "top-center",
@@ -12,4 +12,4 @@ const ErrorMessage = (error)=> {
         progress: undefined,
     })
 }
-export default ErrorMessage;
+export default errorMessage;

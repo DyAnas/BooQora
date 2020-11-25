@@ -6,8 +6,8 @@ import AuthService from '../../service/Authentication/authUser';
 import {withRouter} from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorMessage from "../../Component/Message/ErrorMessage";
-import SuccessMessage from "../../Component/Message/SuccessMessage";
+import errorMessage from "../../Component/Message/ErrorMessage";
+import successMessage from "../../Component/Message/SuccessMessage";
 const NewPassword = (props) => {
     const [password, setPassword] = React.useState('')
     const { register, handleSubmit, watch, errors } = useForm();
@@ -25,7 +25,7 @@ const NewPassword = (props) => {
 
         AuthService.resetPassword(email, password).then(
             Response => {
-                SuccessMessage(Response.message)
+                successMessage(Response.message)
                 goToSignIn();
             }, error => {
                 const resMessage =
@@ -35,14 +35,14 @@ const NewPassword = (props) => {
                     error.message ||
                     error.toString();
                 if (resMessage === "Error: Unauthorized") {
-                    ErrorMessage("Incorrect email or password",)
+                    errorMessage("Incorrect email or password",)
 
                 } else if (error.response.status === 400) {
 
-                    ErrorMessage("You can't change password to old password,")
+                    errorMessage("You can't change password to old password,")
 
                 } else {
-                 ErrorMessage(resMessage)
+                 errorMessage(resMessage)
 
                 }
 

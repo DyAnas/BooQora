@@ -7,8 +7,8 @@ import validateEmail from "../../Component/Login/ValidateEmail"
 import Logo from "../../assets/logo1.png"
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorMessage from "../../Component/Message/ErrorMessage";
-import SuccessMessage from "../../Component/Message/SuccessMessage";
+import errorMessage from "../../Component/Message/ErrorMessage";
+import successMessage from "../../Component/Message/SuccessMessage";
 
 const SignUpContainer = (props) => {
     // create state with useStat for
@@ -40,7 +40,7 @@ const SignUpContainer = (props) => {
             AuthService.register(firstName, lastName, email, password, roles)
                 .then(response => {
 
-                    SuccessMessage(response.data.message)
+                    successMessage(response.data.message)
                         goToSignIn(); // to show message and go to sign in
                     }, error => {
                         const resMessage =
@@ -52,18 +52,18 @@ const SignUpContainer = (props) => {
                         console.log(error.response.status)
                         if(error.response.status===409){
 
-                            ErrorMessage(resMessage);
+                            errorMessage(resMessage);
 
                             goToSignIn();
                         } else {
-                            ErrorMessage(resMessage);
+                            errorMessage(resMessage);
                         }
 
                     }
                 );
         } else {
 
-            ErrorMessage("Email must match tietoevry")
+            errorMessage("Email must match tietoevry")
         }
 
     }

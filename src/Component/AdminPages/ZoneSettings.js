@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "../../Styles/admin.css";
 import {getZoneList} from "../../service/BookingService/mapService";
 import {ChangeZone} from "../../service/AdminService/ZoneSetting";
-import {Checkbox, TextField} from '@material-ui/core'
+import {Checkbox} from '@material-ui/core'
 import { withRouter} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SuccessMessage from "../Message/SuccessMessage";
-import ErrorMessage from "../Message/ErrorMessage";
+import successMessage from "../Message/SuccessMessage";
+import errorMessage from "../Message/ErrorMessage";
 import {useForm} from "react-hook-form";
 const ZoneSettings = (props) => {
     const [edit, setEdit] = useState(false);
@@ -55,7 +55,7 @@ const ZoneSettings = (props) => {
                 error.toString();
             if (error.response.status === 401) {
 
-          ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+          errorMessage("You have been inactive for a while. For your security, please sign in again")
 
                  /* istanbul ignore next */
                 setTimeout(() => {
@@ -66,7 +66,7 @@ const ZoneSettings = (props) => {
 
             } else {
                 /* istanbul ignore next */
-                ErrorMessage(resMessage)
+                errorMessage(resMessage)
 
             }
 
@@ -83,7 +83,7 @@ const ZoneSettings = (props) => {
 
 
                  /* istanbul ignore next */
-                SuccessMessage("Success editing")
+                successMessage("Success editing")
 
             } , (error) => {
                 const resMessage =
@@ -95,7 +95,7 @@ const ZoneSettings = (props) => {
               
                
                 if(error.response.status===401){
-                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+                    errorMessage("You have been inactive for a while. For your security, please sign in again")
 
                   
                      /* istanbul ignore next */
@@ -105,11 +105,11 @@ const ZoneSettings = (props) => {
                     }, 8000);
 
                 }else if (error.response.status===400){
-                    ErrorMessage("Editing Failed ")
+                    errorMessage("Editing Failed ")
 
                 }
                 else{
-                    ErrorMessage(resMessage)
+                    errorMessage(resMessage)
 
                 }
 
@@ -160,7 +160,7 @@ const ZoneSettings = (props) => {
                                                     <div className="dropdown">
 
                                                         <button className="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
-                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-required="true">
+                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             {ChooseZone}
                                                         </button>
 

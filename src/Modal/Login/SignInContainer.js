@@ -7,8 +7,8 @@ import { Link, TextField } from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorMessage from "../../Component/Message/ErrorMessage";
-import SuccessMessage from "../../Component/Message/SuccessMessage";
+import errorMessage from "../../Component/Message/ErrorMessage";
+import successMessage from "../../Component/Message/SuccessMessage";
 const SignInContainer = (props) => {
 
     const [loading, setLoading] = React.useState(false);
@@ -41,10 +41,10 @@ const SignInContainer = (props) => {
                         error.message ||
                         error.toString();
                     if (error.response.status === 401) {
-                        ErrorMessage("Incorrect email or password");
+                        errorMessage("Incorrect email or password");
                     }
                     else if (error.response.status === 404) {
-                        ErrorMessage("Email is not registered");
+                        errorMessage("Email is not registered");
                     } else if (error.response.status === 400) {
                         toast.warning(CustomToastWithLink, {
                             position: "top-center",
@@ -58,13 +58,13 @@ const SignInContainer = (props) => {
 
                     }
                     else {
-                        ErrorMessage(resMessage);
+                        errorMessage(resMessage);
                     }
 
                 }
             );
         } else {
-            ErrorMessage("Email must match tietoEvry");
+            errorMessage("Email must match tietoEvry");
         }//Authentication
     }
     const CustomToastWithLink = () => (
@@ -78,7 +78,7 @@ const SignInContainer = (props) => {
         AuthService.ResendActivation(email).then(
             Response => {
                 setLoading(false)
-                SuccessMessage(Response.message);
+                successMessage(Response.message);
                 /* toast.success(Response.message, {
                      position: "top-center",
                      autoClose: 10000,

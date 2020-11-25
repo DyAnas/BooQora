@@ -6,10 +6,10 @@ import ForgotPassword from "../../Component/Login/ForgotPassword";
 import VerifyCode from "../../Component/Login/VerifyCode";
 import NewPassword from "../../Component/Login/NewPassword";
 import { withRouter } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorMessage from "../../Component/Message/ErrorMessage";
-import SuccessMessage from "../../Component/Message/SuccessMessage";
+import errorMessage from "../../Component/Message/ErrorMessage";
+import successMessage from "../../Component/Message/SuccessMessage";
 
 const Forgotpassword = (props) => {
     const { register, handleSubmit, errors } = useForm();
@@ -21,7 +21,7 @@ const Forgotpassword = (props) => {
         if (validateEmail(email)) {
             AuthService.forgotPassword(email).then(
                 Response => {
-                    SuccessMessage(Response.message)
+                    successMessage(Response.message)
 
                     spinnerTimer();
 
@@ -46,10 +46,10 @@ const Forgotpassword = (props) => {
                         error.toString();
 
                     if (error.response.status === 404) {
-                        ErrorMessage("Email is not exist!")
+                        errorMessage("Email is not exist!")
 
                     } else {
-                        ErrorMessage(resMessage)
+                        errorMessage(resMessage)
 
 
                     }
@@ -58,7 +58,7 @@ const Forgotpassword = (props) => {
 
         }
         else {
-            ErrorMessage("Email must match tietoevry")
+            errorMessage("Email must match tietoevry")
 
         }//Authentication
     }
@@ -79,7 +79,7 @@ const Forgotpassword = (props) => {
 
 
                 } else {
-                    ErrorMessage("Incorrect Code!! or code is expired")
+                    errorMessage("Incorrect Code!! or code is expired")
                 }
 
             }

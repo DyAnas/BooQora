@@ -6,8 +6,8 @@ import { useHistory } from "react-router-dom";
 import validateEmail from "../Login/ValidateEmail";
 import { useForm } from "react-hook-form";
 import {  ToastContainer } from "react-toastify";
-import SuccessMessage from "../Message/SuccessMessage";
-import ErrorMessage from "../Message/ErrorMessage";
+import successMessage from "../Message/SuccessMessage";
+import errorMessage from "../Message/ErrorMessage";
 
 export const CreateNewAdmin = () => {
     const history = useHistory();
@@ -30,7 +30,7 @@ export const CreateNewAdmin = () => {
                     setEmail(response.data.email)
                     setUserFound(true);
                     /* istanbul ignore next */
-                   SuccessMessage(response.data.message)
+                   successMessage(response.data.message)
 
 
                     if (response.data.role[0] === "ROLE_ADMIN" || response.data.role[1] === "ROLE_ADMIN") {
@@ -46,12 +46,12 @@ export const CreateNewAdmin = () => {
                     if (error.response.status === 404) {
 
                         setUserFound(false);
-                        ErrorMessage("Email is not found")
+                        errorMessage("Email is not found")
 
 
                     } else if (error.response.status === 401) {
                         localStorage.clear()
-                        ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+                        errorMessage("You have been inactive for a while. For your security, please sign in again")
 
                         /* istanbul ignore next */
                         setTimeout(() => {
@@ -61,7 +61,7 @@ export const CreateNewAdmin = () => {
                     }
                     else {
                         /* istanbul ignore next */
-                        ErrorMessage(resMessage)
+                        errorMessage(resMessage)
 
                     }
 
@@ -69,7 +69,7 @@ export const CreateNewAdmin = () => {
 
         } else {
 
-            ErrorMessage("Email must match tietoEvry")
+            errorMessage("Email must match tietoEvry")
 
         }
     }
@@ -98,7 +98,7 @@ export const CreateNewAdmin = () => {
 
         UpgradeUserToAdmin(email, roleToApi).then(
             response => {
-                SuccessMessage(response.data.message)
+                successMessage(response.data.message)
 
                 setUserFound(false);
 
@@ -112,13 +112,13 @@ export const CreateNewAdmin = () => {
 
                 if (error.response.status === 404) {
                     setUserFound(false);
-                    ErrorMessage("Email is not found")
+                    errorMessage("Email is not found")
 
 
                 } else if (error.response.status === 401) {
                     localStorage.clear()
 
-               ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+               errorMessage("You have been inactive for a while. For your security, please sign in again")
 
                     /* istanbul ignore next */
                     setTimeout(() => {
@@ -128,7 +128,7 @@ export const CreateNewAdmin = () => {
 
                 } else {
                     /* istanbul ignore next */
-                    ErrorMessage(resMessage)
+                    errorMessage(resMessage)
 
 
                 }

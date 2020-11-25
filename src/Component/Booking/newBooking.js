@@ -11,14 +11,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import {Doughnut} from 'react-chartjs-2';
 import en from "date-fns/locale/en-GB";
 import { useHistory } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SuccessMessage from "../Message/SuccessMessage";
-import ErrorMessage from "../Message/ErrorMessage";
+import successMessage from "../Message/SuccessMessage";
+import errorMessage from "../Message/ErrorMessage";
 
 const MapComponent = (props) => {
-   
-    const history = useHistory();
+
     const areas = [
         {
             id: 1,
@@ -198,11 +197,11 @@ const MapComponent = (props) => {
                 if(error.response.status===401){
                     localStorage.clear()
                     props.history.push("/");
-                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+                    errorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
                 }else {
-                    ErrorMessage(resMessage)
+                    errorMessage(resMessage)
 
                 }
             } )
@@ -227,8 +226,9 @@ const MapComponent = (props) => {
 
 
     useEffect(() => {
-
-    }, [floor, startDate, areas]);
+        getStatusOfAllZones(floor, startDate)
+        getActiveZone(floor);
+    }, [ floor, startDate]);
 
 
     // handle onclick zone
@@ -253,7 +253,7 @@ const MapComponent = (props) => {
     const confirmBooking = () => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
-                SuccessMessage(response.data.message)
+                successMessage(response.data.message)
                     showDialog();
 
             }, (error) => {
@@ -267,16 +267,16 @@ const MapComponent = (props) => {
                     localStorage.clear()
                     props.history.push("/");
                     
-                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
+                    errorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
                 }else if (error.response.status === 400) {
-                        ErrorMessage("You already have booking on that day")
+                        errorMessage("You already have booking on that day")
 
                     setShow(false);
 
                 } else {
-                    ErrorMessage(resMessage)
+                    errorMessage(resMessage)
 
                 }
             })

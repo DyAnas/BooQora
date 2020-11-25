@@ -1,6 +1,6 @@
 import {toast} from "react-toastify";
 
-const WarningMessage = (error)=> {
+const warningMessage = (error)=> {
     toast.error(error, {
         position: "top-center",
         autoClose: 8000,
@@ -11,4 +11,4 @@ const WarningMessage = (error)=> {
         progress: undefined,
     })
 }
-export default WarningMessage;
+export default warningMessage;
