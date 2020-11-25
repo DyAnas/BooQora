@@ -294,7 +294,7 @@ const MapComponent = (props) => {
     }
 
     useEffect(()=>{
-        console.log(floor)
+
         const id= "btn"+floor;
         window.onload = function(){
             let button = document.getElementById(id);
@@ -304,7 +304,7 @@ const MapComponent = (props) => {
         }
 
 
-    },[floor, startDate])
+    },[])
 
     return (
         <div className="container container-sm pl-0 pb-4 pr-0 pt-3" >

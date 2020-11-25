@@ -123,13 +123,9 @@ export default function MyBookings(props) {
 //TODO Colors adjustment (New Booking) (Abod)
 
 //TODO Reponsive Design for small screens (Abod)
-
-//TODO Click a floor after sign in (Abod)
-
 //TODO Expired Token and its toasts in statitics (ANAS)
 
-//TODO BaclEnd Get the past dates in chartfloor and building statistics(BUG) (ANAS)
 
-//TODO Zone Settings toast if direct click save (ANAS)
 
-//TODO button gets unclicked when i change the date in new booking page
+
+
