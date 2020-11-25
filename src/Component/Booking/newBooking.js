@@ -101,7 +101,8 @@ const MapComponent = (props) => {
     const date = startDate.getDate()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
-
+    const [barData, setBarData] = useState({});
+    const [floor, setFloor] = useState(4)
     //  handle dialog
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -116,14 +117,7 @@ const MapComponent = (props) => {
     });
     
     
-    useEffect(()=>{
 
-        window.onload = function(){
-            let button = document.getElementById('btn4');
-            button.click();
-            
-        }        
-    },[])
     
     
     
@@ -131,6 +125,7 @@ const MapComponent = (props) => {
     const getActiveZone = (floor) => {
         let items = [];
         let areasToShow;
+        setFloor(floor)
         getZoneList(floor).then(
             response => {
                     response.data.zoneDTOList.map((i, index) => {
@@ -154,26 +149,26 @@ const MapComponent = (props) => {
     // method to get all statistics of zones
     const getStatusOfAllZones = (floorId, date) => {
         let items = [];
-        let color= []
+
         CheckStatusOfAllZones(floorId, date).then(
             response => {
                 response.data.map((i, index) => {
-                    console.log("Status",response.data)
+
                     // to change color of zone depend to percentage of booking
                     areas[index].status = i.bookedPercentage;
                     if (i.bookedPercentage < 40) {
                         areas[index].preFillColor = 'rgb(153,238,196)'
-                        color.push('rgb(154,25,210)')
+
                     } else if (i.bookedPercentage >= 40 && i.bookedPercentage < 70) {
                         areas[index].preFillColor = 'rgb(245,234,148)';
-                        color.push ('rgb(245,148,243)')
+
                     } else {
                         areas[index].preFillColor = 'rgba(255, 99, 132, 0.6)';
-                        color.push('rgb(3,65,55)')
+
                     }
                      return items.push(i.bookedPercentage);
                 })
-                   console.log("Color",color.toString())
+
                 setBarData({
                     labels: ["Zone A", "Zon B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G"],
                     datasets: [
@@ -214,8 +209,7 @@ const MapComponent = (props) => {
 
     }
 
-    const [barData, setBarData] = useState({});
-    const [floor, setFloor] = useState(1)
+
 
     // floor handle
     const handleClickFloor = (floor) => {
@@ -288,6 +282,30 @@ const MapComponent = (props) => {
             })
     }
 
+    const styleId =(id)=> {
+        let style ="";
+
+        if(id ===(floor-1)){
+            style ="buttonActive mt-1 ml-1 mr-1"
+        }else {
+            style ="btn btn-light  mt-1 ml-1 mr-1";
+        }
+        return style;
+    }
+
+    useEffect(()=>{
+        console.log(floor)
+        const id= "btn"+floor;
+        window.onload = function(){
+            let button = document.getElementById(id);
+            console.log("button",button.id)
+            button.click();
+            button.className="buttonActive mt-1 ml-1 mr-1";
+        }
+
+
+    },[floor, startDate])
+
     return (
         <div className="container container-sm pl-0 pb-4 pr-0 pt-3" >
             <div className=" row  mr-0 justify-content-center">
@@ -302,7 +320,7 @@ const MapComponent = (props) => {
                             startDate={startDate}
                             minDate={today}
                             maxDate={maxDate}
-                            className="btn btn-info btn-sm Calendar1 float-left "
+                            className="btn datapicker btn-sm Calendar1 float-left "
                             locale={en}
                             showWeekNumbers
                         />
@@ -350,7 +368,7 @@ const MapComponent = (props) => {
                     <div className="col d-sm-inline-block mt-4 pl-0">
                         <div className="btn-group">
                             {[...Array(7)].map((x, i) =>
-                                <button className="btn btn-light mt-1 ml-1 mr-1 " id={"btn"+i} key={i}
+                                <button className={styleId(i)} id={"btn"+i} key={i}
                                         onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
                             )}
                         </div>

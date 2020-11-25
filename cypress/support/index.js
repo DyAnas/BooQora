@@ -1,5 +1,5 @@
 import '@cypress/code-coverage/support'
-
+require('cypress-react-unit-test/support')
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.

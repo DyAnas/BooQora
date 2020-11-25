@@ -11,7 +11,7 @@ const StatusFloor = () => {
         labels: ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E', 'Zone F', 'Zone G'],
         datasets: [
             {
-                label: "Percentage Status Floor" + floor + "By Zone",
+                label: "Percentage usage of floor" + floor,
                 data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
@@ -40,8 +40,8 @@ const StatusFloor = () => {
             },
             title: {
                 display: true,
-                text: 'Percentage Status Floor ' + 1 + ' By Zone',
-                fontSize: 25
+                text: 'Percentage usage of different zones by floor ' + 1 ,
+                fontSize: 18
             },
             legend: {
                 display: true,
@@ -78,8 +78,8 @@ const StatusFloor = () => {
                 },
                 title: {
                     display: true,
-                    text: 'Percentage Status Floor ' + floor + ' By Zone',
-                    fontSize: 25
+                    text: 'Percentage usage of different zones by floor ' + floor,
+                    fontSize: 18
                 },
                 legend: {
                     display: true,
@@ -92,7 +92,7 @@ const StatusFloor = () => {
             ...barData,
             datasets: [
                 {
-                    label: " Percentage Status Floor " + floor + " By Zone",
+                    label: " Percentage usage of floor " + floor ,
                     data: item,
                     backgroundColor: color,
                     borderWidth: 3
@@ -140,7 +140,7 @@ const StatusFloor = () => {
                     <div  className="dropdown labelsDate">
                         <button  className="btn btn-info font-weight-bolder dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            floor: {floor}
+                            Floor: {floor}
                         </button>
                         <div  className="dropdown-menu " aria-labelledby="dropdownMenuButton">
                             {[...Array(7)].map((x, i) =>

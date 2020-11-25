@@ -22,7 +22,22 @@
     background: #17a2b8!important;
 }
 
+.buttonActive{
+    background: #17a2b8;
+    border: 1px solid #66c9e9;
+    border-radius: 1px;
+    color: #ec0e92;
+    font-weight: bolder;
+    width: 100%;
+  padding: 6px 12px;
 
+
+}
+.datapicker {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
 
 .btn.btn-light {
     background-color: #fafdfd;

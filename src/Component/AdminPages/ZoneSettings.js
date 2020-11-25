@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../../Styles/admin.css";
 import {getZoneList} from "../../service/BookingService/mapService";
 import {ChangeZone} from "../../service/AdminService/ZoneSetting";
-import {Checkbox} from '@material-ui/core'
+import {Checkbox, TextField} from '@material-ui/core'
 import { withRouter} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SuccessMessage from "../Message/SuccessMessage";
 import ErrorMessage from "../Message/ErrorMessage";
+import {useForm} from "react-hook-form";
 const ZoneSettings = (props) => {
     const [edit, setEdit] = useState(false);
     const [floor, setFloor] = useState(1)
@@ -16,7 +17,7 @@ const ZoneSettings = (props) => {
     const [Capacity, setCapacity] = useState("")
     const [Active, setActive] = useState(false)
     const [ChooseZone, setChooseZone] = useState("Choose Zone")
-
+    const {  handleSubmit } = useForm();
 
 
     const handlerZone = (Zone) => {
@@ -34,8 +35,8 @@ const ZoneSettings = (props) => {
 
         setFloor(floor);
         setEdit(true)
-
-        setChooseZone("Choose Zone");
+        setZoneID(0)
+        setChooseZone("Choose Zone")
         setCapacity(0)
         let items = []
 
@@ -43,6 +44,7 @@ const ZoneSettings = (props) => {
             response.data.zoneDTOList.map((i, index) => {
                 return items.push(i)
             })
+            console.log(response.data)
             return setZone(items)
         }, (error) => {
             const resMessage =
@@ -74,12 +76,12 @@ const ZoneSettings = (props) => {
     }
 
     const handleSaveSetting = () => {
+        setEdit(false)
         ChangeZone(floor, ZoneID, Capacity, Active).then(
             /* istanbul ignore next */
             response => {
-                console.log(response)
 
-               
+
                  /* istanbul ignore next */
                 SuccessMessage("Success editing")
 
@@ -140,7 +142,7 @@ const ZoneSettings = (props) => {
 
                 {edit ? <div className="row text-center d-block  " >
                     <div className="col-md-4 mx-auto  " style={{ backgroundColor: "#e1f2fb", borderRadius: "20px", padding: "15px", margin: "3px" }}>
-                        <form >
+                        <form onSubmit={handleSubmit(handleSaveSetting)}>
 
                             <div className="form-group ">
                                 <div className="table-responsive-sm">
@@ -157,7 +159,8 @@ const ZoneSettings = (props) => {
                                                 <td>
                                                     <div className="dropdown">
 
-                                                        <button className="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <button className="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-required="true">
                                                             {ChooseZone}
                                                         </button>
 
@@ -178,6 +181,7 @@ const ZoneSettings = (props) => {
                                                 <th scope="row">Capacity: </th>
                                                 <td >
                                                     <input type="number"
+
                                                         onChange={event => setCapacity(event.target.value)}
                                                         value={Capacity}
                                                         className="form-control"
@@ -211,7 +215,6 @@ const ZoneSettings = (props) => {
                             </div>
                             <button
                                 id="save"
-                                onClick={handleSaveSetting}
                                 type="submit" className="btn btn-light mr-2">Save</button>
                             <button className="btn btn-light">Cancel</button>
                         </form>
