@@ -5,8 +5,8 @@ import MaterialTable from "material-table";
 import {useHistory} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import successMessage from "../Message/SuccessMessage";
-import errorMessage from "../Message/ErrorMessage";
+import SuccessMessage from "../Message/SuccessMessage";
+import ErrorMessage from "../Message/ErrorMessage";
 
 export default function MyBookings(props) {
     const history = useHistory();
@@ -32,11 +32,11 @@ export default function MyBookings(props) {
                     localStorage.clear()
                     history.push("/");
                     // window.location.reload();
-                    errorMessage("You have been inactive for a while. For your security, please sign in again")
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
                 } else {
-                    errorMessage(resMessage)
+                    ErrorMessage(resMessage)
 
                 }
             })
@@ -45,7 +45,7 @@ export default function MyBookings(props) {
         console.log("item  to remov", item);
         DeleteBookings(item.bookingId).then(
             response => {
-                successMessage(response.data.message)
+                SuccessMessage(response.data.message)
 
                 getAllBooking();
             }, (error) => {
@@ -59,10 +59,10 @@ export default function MyBookings(props) {
                     localStorage.clear()
                     history.push("/");
                     // window.location.reload();
-                    errorMessage("You have been inactive for a while. For your security, please sign in again")
+                    ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
                 } else {
-                    errorMessage(resMessage)
+                    ErrorMessage(resMessage)
 
                 }
             })
@@ -123,9 +123,13 @@ export default function MyBookings(props) {
 //TODO Colors adjustment (New Booking) (Abod)
 
 //TODO Reponsive Design for small screens (Abod)
+
+//TODO Click a floor after sign in (Abod)
+
 //TODO Expired Token and its toasts in statitics (ANAS)
 
+//TODO BaclEnd Get the past dates in chartfloor and building statistics(BUG) (ANAS)
 
+//TODO Zone Settings toast if direct click save (ANAS)
 
-
-
+//TODO button gets unclicked when i change the date in new booking ap\\
