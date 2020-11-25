@@ -17,11 +17,28 @@ const ZoneSettings = (props) => {
     const [Active, setActive] = useState(false)
     const [ChooseZone, setChooseZone] = useState("Choose Zone")
 
-    useEffect(() => {
+
+
+    const handlerZone = (Zone) => {
+        setZoneID(Zone.id);
+        setCapacity(Zone.capacity);
+        setActive(Zone.activated)
+        setChooseZone(Zone.zone)
+
+    }
+    const handleCheckBox = (event) => {
+
+        setActive(event.target.checked)
+    }
+    const handleClickFloor = (floor) => {
+
+        setFloor(floor);
+        setEdit(true)
 
         setChooseZone("Choose Zone");
         setCapacity(0)
         let items = []
+
         getZoneList(floor).then(response => {
             response.data.zoneDTOList.map((i, index) => {
                 return items.push(i)
@@ -52,27 +69,7 @@ const ZoneSettings = (props) => {
             }
 
         })
-
-
-    }, [floor]);
-
-    const handlerZone = (Zone) => {
-        setZoneID(Zone.id);
-        setCapacity(Zone.capacity);
-        setActive(Zone.activated)
-        setChooseZone(Zone.zone)
-
-
-    }
-    const handleCheckBox = (event) => {
-
-        setActive(event.target.checked)
-    }
-    const handleClickFloor = (floor) => {
-
-        setFloor(floor);
-        setEdit(true)
-
+   
 
     }
 
@@ -81,6 +78,8 @@ const ZoneSettings = (props) => {
             /* istanbul ignore next */
             response => {
                 console.log(response)
+
+               
                  /* istanbul ignore next */
                 SuccessMessage("Success editing")
 
@@ -91,7 +90,8 @@ const ZoneSettings = (props) => {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-                console.log(error.response.status)
+              
+               
                 if(error.response.status===401){
                     ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
@@ -102,7 +102,11 @@ const ZoneSettings = (props) => {
                         props.history.push("/")
                     }, 8000);
 
-                }else{
+                }else if (error.response.status===400){
+                    ErrorMessage("Editing Failed ")
+
+                }
+                else{
                     ErrorMessage(resMessage)
 
                 }

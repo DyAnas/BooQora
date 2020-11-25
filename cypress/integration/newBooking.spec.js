@@ -17,6 +17,7 @@ beforeEach(() => {
 
 
 const nowTime = Cypress.moment().format('DD-MM-yyyy')
+const today = Cypress.moment().format('DD')
 describe("Page elements test", () => {
 
     it('Check map, Title, button, datapicker', () => {
@@ -41,42 +42,42 @@ describe("Page elements test", () => {
         })
 
         cy.get("#dates").click()
-        cy.contains('24').click({force: true});
+        cy.contains(today).click({ force: true });
         cy.get("#dates").invoke('val').then((text) => {
-            expect('24-11-2020').to.equal(text);
+            expect(nowTime).to.equal(text);
         })
 
 
-             })
+    })
 
 
 })
 
 describe("Function Test", () => {
-    it("onClickFloor", ()=> {
+    it("onClickFloor", () => {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get("span").should(($p) => {
             expect($p).to.have.length(3)
         })
 
     })
-  // click on area
-    it("Booking in  today", ()=> {
+    // click on area
+    it("make booking today", () => {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get(".span1").should("contain", "Zone A")
         cy.get('.Calendar1').click();
-        cy.get("map").find("area:first").click({force: true})
+        cy.get("map").find("area:first").click({ force: true })
         cy.get("#submitBooking").click()
         cy.get('.Toastify__toast-body[role=alert]').should('contain', "Booking success");
         cy.url().should('include', '/myBooking')
     })
 
-    it("Booking in day that is already have booking", ()=> {
+    it("Booking in day that is already have booking", () => {
 
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get(".span1").should("contain", "Zone A")
         cy.get('.Calendar1').click();
-        cy.get("map").find("area:first").click({force: true})
+        cy.get("map").find("area:first").click({ force: true })
         cy.get("#floor").should("contain", "Floor: 1");
         cy.get("#zone").should("contain", "Zone: Zone A");
         cy.get("#date").should("contain", nowTime);
@@ -99,23 +100,15 @@ describe("Function Test", () => {
     })
     it('My Booking', () => {
 
-        cy.get("#myBooking").click({force: true})
+        cy.get("#myBooking").click({ force: true })
         cy.get("table").should('be.visible');
         cy.get(".MuiIconButton-colorInherit").click()
         cy.get('.Toastify__toast-body[role=alert]').should('contain', "success deleted");
-
-
-
     })
 })
 
 describe("Token expired", () => {
-    it("Token Expired when on click floor", ()=> {
-
-       /* const now = new Date()// April 14, 2017 timestamp
-        now.setHours(now.setHours(),now.getMinutes+60,0,0);
-        console.log(now)
-        cy.clock(now)*/
+    it("Token Expired when on click floor", () => {
         cy.wait(10000)
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.url().should('include', '/')
@@ -123,14 +116,9 @@ describe("Token expired", () => {
             .should('contain', "You have been inactive for a while. For your security, please sign in again");
 
     })
-    it("Token Expired when on click confirm booking", ()=> {
+    it("Token Expired when on click confirm booking", () => {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
-        /* const now = new Date()// April 14, 2017 timestamp
-         now.setHours(now.setHours(),now.getMinutes+60,0,0);
-         console.log(now)
-         cy.clock(now)*/
-
-        cy.get("map").find("area:first").click({force: true})
+        cy.get("map").find("area:first").click({ force: true })
         cy.wait(10000)
         cy.get("#submitBooking").click()
         cy.url().should('include', '/')
@@ -139,33 +127,24 @@ describe("Token expired", () => {
 
     })
 
-    it("Token Expired when click delete booking", ()=> {
+    it("Token Expired when click delete booking", () => {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
-        /* const now = new Date()// April 14, 2017 timestamp
-         now.setHours(now.setHours(),now.getMinutes+60,0,0);
-         console.log(now)
-         cy.clock(now)*/
-        cy.get("map").find("area:first").click({force: true})
-
+        cy.get("map").find("area:first").click({ force: true })
         cy.get("#submitBooking").click()
         cy.wait(10000)
         cy.get(".MuiIconButton-colorInherit").click()
         cy.get('.Toastify__toast-body[role=alert]')
             .should('contain', "You have been inactive for a while. For your security, please sign in again");
-
         cy.url().should('include', '/')
 
     })
 
 
-    it("Token Expired when click my booking", ()=> {
-
-
+    it("Token Expired when click my booking", () => {
         cy.wait(10000)
-        cy.get("#myBooking").click({force: true})
+        cy.get("#myBooking").click({ force: true })
         cy.get('.Toastify__toast-body[role=alert]')
             .should('contain', "You have been inactive for a while. For your security, please sign in again");
-
         cy.url().should('include', '/')
 
     })
