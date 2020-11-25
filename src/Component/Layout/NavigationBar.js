@@ -21,7 +21,7 @@ import {Link} from "react-router-dom";
 
 export const NavigationBar = (props) => {
 
-    return <nav className="navbar navbar-expand-md navbar-light bg-light " >
+    return <nav className="navbar navbar-expand-lg navbar-light bg-light " >
         <Link to="/newBooking" className="navbar-brand mr-auto"  ><img src={whiteLogo} alt="Logo" /></Link>
         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span className=" navbar-toggler-icon"></span>

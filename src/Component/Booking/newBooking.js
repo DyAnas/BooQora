@@ -17,6 +17,7 @@ import SuccessMessage from "../Message/SuccessMessage";
 import ErrorMessage from "../Message/ErrorMessage";
 
 const MapComponent = (props) => {
+   
     const history = useHistory();
     const areas = [
         {
@@ -113,6 +114,19 @@ const MapComponent = (props) => {
         name: "choose a floor",
         areas: []
     });
+    
+    
+    useEffect(()=>{
+
+        window.onload = function(){
+            let button = document.getElementById('btn4');
+            button.click();
+            
+        }        
+    },[])
+    
+    
+    
     // method to get all active zones
     const getActiveZone = (floor) => {
         let items = [];
@@ -258,7 +272,7 @@ const MapComponent = (props) => {
                 if (error.response.status === 401) {
                     localStorage.clear()
                     props.history.push("/");
-                   // window.location.reload();
+                    
                     ErrorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
@@ -275,22 +289,12 @@ const MapComponent = (props) => {
     }
 
     return (
-        <div className="container container-sm">
-            <div className=" mt-4 mb-4 center ">
-                <div className="">
-                    <h2 className="title">New booking</h2>
+        <div className="container container-sm pl-0 pb-4 pr-0 pt-3" >
+            <div className=" row  mr-0 justify-content-center">
+                <div className="d-flex flex-column ">
+                    <h2 className="title ">New booking</h2>
 
-                    <p className="justify-text">Choose a date and click on a floor to show zone.</p>
-                </div>
-            </div>
-            <ToastContainer
-                position="top-center"
-                autoClose={8000}/>
-            <div className="row mr-0 ml-0">
-                <div className="col-md-6 pl-5 m-auto">
-
-                    <div className="mb-3">
-                        <DatePicker
+                    <DatePicker
                             id="dates"
                             dateFormat="dd-MM-yyyy"
                             selected={startDate}
@@ -302,6 +306,17 @@ const MapComponent = (props) => {
                             locale={en}
                             showWeekNumbers
                         />
+                   
+                </div>
+            </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={8000}/>
+            <div className="row mr-0 ml-0">
+                <div className="col-md-6  m-auto p-0">
+
+                    <div className="mb-3 ">
+                    <p className="justify-text">Choose date and floor to see zone state.</p>
                         <BookDialog
                             show={show}
                             onHide={handleClose}
@@ -314,7 +329,7 @@ const MapComponent = (props) => {
                         />
                     </div>
 
-                    <div className="col d-sm-inline-block  ">
+                    <div className="col d-sm-inline-block  pl-0">
                         <div className="images">
                             <ImageMapper
                                 src={`${URL}?${query}`}
@@ -332,16 +347,16 @@ const MapComponent = (props) => {
                             )}
                         </div>
                     </div>
-                    <div className="col d-sm-inline-block mt-4">
+                    <div className="col d-sm-inline-block mt-4 pl-0">
                         <div className="btn-group">
                             {[...Array(7)].map((x, i) =>
-                                <button className="btn btn-light mt-1 ml-1 mr-1 " key={i}
+                                <button className="btn btn-light mt-1 ml-1 mr-1 " id={"btn"+i} key={i}
                                         onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
                             )}
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-5 d-none d-md-block m-auto">
+                <div className="col-md-5 d-none d-md-block m-auto">
                     <Doughnut
                         data={barData}
                         width={60}

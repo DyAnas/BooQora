@@ -1,9 +1,9 @@
 import React from 'react';
 import Logo from "../../assets/logo1.png"
 import '../../Styles/LoginStyle.css';
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
-import {Link, TextField} from "@material-ui/core";
+import { Link, TextField } from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,9 +19,9 @@ const SignInContainer = (props) => {
 
 
     const goToNewBooking = () => {
-        
-            props.history.push("/newBooking");
 
+        //     props.history.push("/newBooking");
+        window.location.replace("/newBooking");
     }
 
     // handle submit form
@@ -40,12 +40,12 @@ const SignInContainer = (props) => {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
-                    if (error.response.status===401) {
+                    if (error.response.status === 401) {
                         ErrorMessage("Incorrect email or password");
                     }
-                    else if (error.response.status===404) {
+                    else if (error.response.status === 404) {
                         ErrorMessage("Email is not registered");
-                    }else if(error.response.status===400){
+                    } else if (error.response.status === 400) {
                         toast.warning(CustomToastWithLink, {
                             position: "top-center",
                             autoClose: false,
@@ -69,9 +69,9 @@ const SignInContainer = (props) => {
     }
     const CustomToastWithLink = () => (
         <div>
-        <p>Email is not actived:    <Link id="resendActivationLink" style={{ color:"gray",textDecoration:"underline"  }} to="#" onClick={resendActivation}>Resend activation </Link></p>
+            <p>Email is not actived:    <Link id="resendActivationLink" style={{ color: "gray", textDecoration: "underline" }} to="#" onClick={resendActivation}>Resend activation </Link></p>
         </div>
-      );
+    );
     // handle if email is not active
     const resendActivation = () => {
         setLoading(true);
@@ -79,15 +79,15 @@ const SignInContainer = (props) => {
             Response => {
                 setLoading(false)
                 SuccessMessage(Response.message);
-               /* toast.success(Response.message, {
-                    position: "top-center",
-                    autoClose: 10000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })*/
+                /* toast.success(Response.message, {
+                     position: "top-center",
+                     autoClose: 10000,
+                     hideProgressBar: false,
+                     closeOnClick: true,
+                     pauseOnHover: true,
+                     draggable: true,
+                     progress: undefined,
+                 })*/
             })
 
 
@@ -109,15 +109,15 @@ const SignInContainer = (props) => {
 
 
                 <div className="center">
-                     
+
 
                     <ToastContainer
                         position="top-center"
-                        />
+                    />
 
                 </div>
                 <div className="center">
-                    <form style={{ width:"85%"}} onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
+                    <form style={{ width: "85%" }} onSubmit={handleSubmit(onSubmit)} id="TestForm" data-test="submit-button" >
                         <TextField
                             name="email"
                             error={!!errors.email}
@@ -129,7 +129,7 @@ const SignInContainer = (props) => {
                                     message: "Invalid email"
                                 }
                             })}
-                           // value={email}
+                            // value={email}
                             helperText={errors.email ? errors.email.message : ""}
                             type="email"
                             fullWidth
@@ -195,8 +195,8 @@ const SignInContainer = (props) => {
                     <Link id="forgetPassword" href="/forgotPassword" variant="body2" className="text-footer">
                         Forgot password?
                         </Link>
-                   
-                    <Link id="goToSignUp" href="/signup" variant="body2" className="text-footer" style={{marginTop:"10px"}}>
+
+                    <Link id="goToSignUp" href="/signup" variant="body2" className="text-footer" style={{ marginTop: "10px" }}>
                         Don't have an account? Sign Up
                         </Link>
                 </div>
