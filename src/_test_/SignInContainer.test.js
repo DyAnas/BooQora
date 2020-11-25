@@ -1,5 +1,5 @@
 import React from "react";
-import SignInContainer from "../Modal/Login/SignInContainer";
+import SignInContainer from "../Module/Login/SignInContainer";
 import 'mutationobserver-shim';
 import {fireEvent, render, screen} from "@testing-library/react";
 

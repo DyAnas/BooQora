@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import SignUpContainer from "./Modal/Login/SignUpContainer";
-import SignInContainer from './Modal/Login/SignInContainer'
+import SignUpContainer from "./Module/Login/SignUpContainer";
+import SignInContainer from './Module/Login/SignInContainer'
 import {ProtectedRoute} from "./service/Authentication/protectedRoute";
 import NewPassword from "./Component/Login/NewPassword";
-import {About} from './Modal/About/aboutBookora';
-import {NewBooking} from "./Modal/Booking/newBooking";
-import {MyBooking} from "./Modal/Booking/myBooking";
+import {About} from './Module/About/aboutBookora';
+import {NewBooking} from "./Module/Booking/newBooking";
+import {MyBooking} from "./Module/Booking/myBooking";
 import ZoneSettings from "./Component/AdminPages/ZoneSettings";
-import ContainerForgotPassword from "./Modal/Login/Forgotpassword";
+import ContainerForgotPassword from "./Module/Login/Forgotpassword";
 import resendConfirm from "./Component/Login/resendActivation";
-import ChartContainer from "./Modal/Statistics/ChartContainer";
-import Archive from "./Modal/Statistics/Statistics";
-import {NotFoundPage} from "./Modal/NotFoundPage";
+import ChartContainer from "./Module/Statistics/ChartContainer";
+import Archive from "./Module/Statistics/Statistics";
+import {NotFoundPage} from "./Module/NotFoundPage";
 import {CreateNewAdmin} from "./Component/AdminPages/CreateNewAdmin";
 import {NavigationBar} from "./Component/Layout/NavigationBar";
 

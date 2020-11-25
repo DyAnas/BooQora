@@ -5,6 +5,9 @@ import {useForm} from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
 import {Link, TextField} from "@material-ui/core";
 import validateEmail from "./ValidateEmail"
+import {ToastContainer} from "react-toastify";
+import successMessage from "../Message/SuccessMessage";
+import errorMessage from "../Message/ErrorMessage";
 
 const ResendConfirm = (props) => {
 
@@ -36,10 +39,8 @@ const ResendConfirm = (props) => {
             AuthService.ResendActivation(email).then(
                 Response => {
                     setLoading(false)
-                    setMessage({
-                        text: Response.message,
 
-                    })
+                    successMessage(Response.message)
                     goToSignIn();
                 },(error) => {
                     const resMessage =
@@ -48,15 +49,13 @@ const ResendConfirm = (props) => {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
+                      errorMessage(resMessage)
 
-                    setMessage(resMessage);
+
 
                 } )
         } else {
-            setMessage({
-                text: "Email must match tietoevry",
-            })
-
+             errorMessage( "Email must match tietoevry")
         }
     }
 
@@ -76,12 +75,11 @@ const ResendConfirm = (props) => {
                     </div>
 
 
-                    <div className="center">
-                        <p style={{ color: "red" }}>{message.text}
 
-                        </p>
+                    <ToastContainer
+                        position="top-center"
+                    />
 
-                    </div>
                     <div className="center">
                         <form onSubmit={handleSubmit(resendActivation)} id="TestForm" data-test="submit-button" >
                             <TextField

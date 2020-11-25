@@ -20,7 +20,6 @@ const SignInContainer = (props) => {
 
     const goToNewBooking = () => {
 
-        //     props.history.push("/newBooking");
         window.location.replace("/newBooking");
     }
 
@@ -79,15 +78,7 @@ const SignInContainer = (props) => {
             Response => {
                 setLoading(false)
                 successMessage(Response.message);
-                /* toast.success(Response.message, {
-                     position: "top-center",
-                     autoClose: 10000,
-                     hideProgressBar: false,
-                     closeOnClick: true,
-                     pauseOnHover: true,
-                     draggable: true,
-                     progress: undefined,
-                 })*/
+
             })
 
 

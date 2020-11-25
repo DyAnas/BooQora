@@ -3,7 +3,7 @@
 import React from 'react';
 
 import {mount} from 'cypress-react-unit-test';
-import SignUpContainer from "../../src/Modal/Login/SignUpContainer";
+import SignUpContainer from "../../src/Module/Login/SignUpContainer";
 
 
 describe("<SignUpContainer />", () => {
