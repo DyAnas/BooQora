@@ -71,13 +71,13 @@ class AuthService {
     }
 
 
-    register(firstName, lastName, email, password, role) {
+    register(firstName, lastName, email, password, roles) {
         return axios.post(api_url + "signup", {
             firstName,
             lastName,
             email,
             password,
-            role
+            roles
         });
     }
 
