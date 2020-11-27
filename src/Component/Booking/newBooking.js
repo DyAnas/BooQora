@@ -1,20 +1,20 @@
-import React,  {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ImageMapper from "react-image-mapper";
 import URL from '../../assets/map.jpg'
 import BookDialog from "./ConfirmBooking";
 import "../../Styles/mapStyle.css";
-import {BookPlass, CheckStatusOfAllZones, getZoneList} from "../../service/BookingService/mapService";
+import { BookPlass, CheckStatusOfAllZones, getZoneList } from "../../service/BookingService/mapService";
 import AuthService from '../../service/Authentication/authUser';
-import { withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {Doughnut} from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import en from "date-fns/locale/en-GB";
-import { useHistory } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import successMessage from "../Message/SuccessMessage";
 import errorMessage from "../Message/ErrorMessage";
+import DatePickerCustomInput from "../../Module/DatePickerCustomInput";
 
 const MapComponent = (props) => {
 
@@ -27,7 +27,7 @@ const MapComponent = (props) => {
             shape: "poly",
             coords: [235, 137, 235, 152, 216, 152, 212, 181, 221, 183, 217, 213, 284, 224, 295, 147],
             preFillColor: "#02f3af",
-            fillColor: "#7fb775"
+            fillColor: "#8bcdcd"
         },
         {
             id: 2,
@@ -36,8 +36,8 @@ const MapComponent = (props) => {
             zone: "Zone B",
             shape: "poly",
             coords: [86, 157, 88, 174, 82, 176, 84, 199, 98, 196, 102, 214, 190, 201, 180, 139],
-            preFillColor:"#02f3af",
-            fillColor: "#7fb775"
+            preFillColor: "#02f3af",
+            fillColor: "#8bcdcd"
         },
         {
             id: 3,
@@ -47,7 +47,7 @@ const MapComponent = (props) => {
             shape: "poly",
             coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
             preFillColor: "#02f3af",
-            fillColor: "#7fb775"
+            fillColor: "#8bcdcd"
         },
         {
             id: 4,
@@ -56,8 +56,8 @@ const MapComponent = (props) => {
             style: "span4",
             shape: "poly",
             coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
-            preFillColor:"#02f3af",
-            fillColor: "#7fb775"
+            preFillColor: "#02f3af",
+            fillColor: "#8bcdcd"
         },
 
         {
@@ -68,7 +68,7 @@ const MapComponent = (props) => {
             shape: "poly",
             coords: [67, 41, 64, 102, 154, 100, 156, 38],
             preFillColor: "#02f3af",
-            fillColor: "#7fb775"
+            fillColor: "#8bcdcd"
         },
         {
             id: 6,
@@ -78,7 +78,7 @@ const MapComponent = (props) => {
             shape: "poly",
             coords: [157, 39, 154, 100, 250, 98, 250, 91, 264, 91, 291, 35],
             preFillColor: "#02f3af",
-            fillColor: "#7fb775"
+            fillColor: "#8bcdcd"
         },
         {
             id: 7,
@@ -88,7 +88,7 @@ const MapComponent = (props) => {
             shape: "poly",
             coords: [15, 105, 63, 104, 63, 151, 41, 170, 11, 172],
             preFillColor: "#02f3af",
-            fillColor: "#7fb775"
+            fillColor: "#8bcdcd"
         },
 
     ];
@@ -97,11 +97,11 @@ const MapComponent = (props) => {
     // today and maxDate to show in calendar
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
-    const date = startDate.getDate()  + '-' + (startDate.getMonth() + 1)  + '-' + startDate.getFullYear();
+    const date = startDate.getDate() + '-' + (startDate.getMonth() + 1) + '-' + startDate.getFullYear();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
     const [barData, setBarData] = useState({});
-    const [floor, setFloor] = useState(4)
+    const [floor, setFloor] = useState(5)
     //  handle dialog
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -114,12 +114,12 @@ const MapComponent = (props) => {
         name: "choose a floor",
         areas: []
     });
-    
-    
 
-    
-    
-    
+
+
+
+
+
     // method to get all active zones
     const getActiveZone = (floor) => {
         let items = [];
@@ -127,22 +127,22 @@ const MapComponent = (props) => {
         setFloor(floor)
         getZoneList(floor).then(
             response => {
-                    response.data.zoneDTOList.map((i, index) => {
-                        areas[index].id = i.id
-                        if (i.activated === true) {
-                            return items.push(index);
+                response.data.zoneDTOList.map((i, index) => {
+                    areas[index].id = i.id
+                    if (i.activated === true) {
+                        return items.push(index);
 
-                        }
-                        return null;
-                    })
-                    areasToShow = items.map(item => {
-                        return areas[item]
-                    })
-                    setMapAreas({
-                        name: floor.toString(),
-                        areas: areasToShow
-                    })
-            } )
+                    }
+                    return null;
+                })
+                areasToShow = items.map(item => {
+                    return areas[item]
+                })
+                setMapAreas({
+                    name: floor.toString(),
+                    areas: areasToShow
+                })
+            })
 
     }
     // method to get all statistics of zones
@@ -151,21 +151,22 @@ const MapComponent = (props) => {
 
         CheckStatusOfAllZones(floorId, date).then(
             response => {
+                console.log(response.data);
                 response.data.map((i, index) => {
 
                     // to change color of zone depend to percentage of booking
                     areas[index].status = i.bookedPercentage;
                     if (i.bookedPercentage < 40) {
-                        areas[index].preFillColor = 'rgb(153,238,196)'
+                        areas[index].preFillColor = '#5aec90'
 
                     } else if (i.bookedPercentage >= 40 && i.bookedPercentage < 70) {
-                        areas[index].preFillColor = 'rgb(245,234,148)';
+                        areas[index].preFillColor = '#ffff90';
 
                     } else {
-                        areas[index].preFillColor = 'rgba(255, 99, 132, 0.6)';
+                        areas[index].preFillColor = '#f36a96';
 
                     }
-                     return items.push(i.bookedPercentage);
+                    return items.push(i.bookedPercentage);
                 })
 
                 setBarData({
@@ -174,13 +175,13 @@ const MapComponent = (props) => {
                         {
                             label: "Status Floor" + floorId + "By Zone",
                             data: items,
-                            backgroundColor:   [
-                                'rgba(245,11,60,0.6)',
-                                'rgba(21,154,239,0.6)',
-                                'rgba(129,92,4,0.6)',
-                                'rgb(1,140,108)',
-                                'rgb(138,10,186)',
-                                'rgb(229,74,180)'
+                            backgroundColor: [
+                                '#0247fe',
+                                '#6363ff',
+                                '#8d81ff',
+                                '#ae9fff',
+                                '#cbbeff',
+                                '#e6deff'
                             ],
                             borderWidth: 3
                         }
@@ -194,17 +195,17 @@ const MapComponent = (props) => {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-                if(error.response.status===401){
+                if (error.response.status === 401) {
                     localStorage.clear()
                     props.history.push("/");
                     errorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
-                }else {
+                } else {
                     errorMessage(resMessage)
 
                 }
-            } )
+            })
 
     }
 
@@ -222,13 +223,13 @@ const MapComponent = (props) => {
     useEffect(() => {
         setQuery(Math.random());
 
-    }, [mapAreas, startDate, ]);
+    }, [mapAreas, startDate,]);
 
 
     useEffect(() => {
         getStatusOfAllZones(floor, startDate)
         getActiveZone(floor);
-    }, [ floor, startDate]);
+    }, [floor, startDate]);
 
 
     // handle onclick zone
@@ -254,7 +255,7 @@ const MapComponent = (props) => {
         BookPlass(startDate, currentUser.id, ZoneID).then(
             response => {
                 successMessage(response.data.message)
-                    showDialog();
+                showDialog();
 
             }, (error) => {
                 const resMessage =
@@ -266,12 +267,13 @@ const MapComponent = (props) => {
                 if (error.response.status === 401) {
                     localStorage.clear()
                     props.history.push("/");
-                    
+
                     errorMessage("You have been inactive for a while. For your security, please sign in again")
 
 
-                }else if (error.response.status === 400) {
-                        errorMessage("You already have booking on that day")
+                } else if (error.response.status === 400) {
+                    errorMessage(resMessage);
+
 
                     setShow(false);
 
@@ -282,70 +284,50 @@ const MapComponent = (props) => {
             })
     }
 
-    const styleId =(id)=> {
-        let style ="";
+    const styleId = (id) => {
+        let style = "";
 
-        if(id ===(floor-1)){
-            style ="buttonActive mt-1 ml-1 mr-1"
-        }else {
-            style ="btn btn-light  mt-1 ml-1 mr-1";
+        if (id === (floor - 1)) {
+            style = "buttonActive mt-1 ml-1 mr-1"
+        } else {
+            style = "btn btn-light  mt-1 ml-1 mr-1";
         }
         return style;
     }
 
-    useEffect(()=>{
-
-        const id= "btn"+floor;
-        window.onload = function(){
-            let button = document.getElementById(id);
-            console.log("button",button.id)
-            button.click();
-            button.className="buttonActive mt-1 ml-1 mr-1";
-        }
 
 
-    },[])
+
 
     return (
         <div className="container container-sm pl-0 pb-4 pr-0 pt-3" >
-            <div className=" row  mr-0 justify-content-center">
-                <div className="d-flex flex-column ">
-                    <h2 className="title ">New booking</h2>
+            <h2 className="title text-center mb-lg-5">New booking</h2>
 
-                    <DatePicker
-                            id="dates"
-                            dateFormat="dd-MM-yyyy"
-                            selected={startDate}
-                            onChange={date => setStartDate(date)}
-                            startDate={startDate}
-                            minDate={today}
-                            maxDate={maxDate}
-                            className="btn datapicker btn-sm Calendar1 float-left "
-                            locale={en}
-                            showWeekNumbers
-                        />
-                   
-                </div>
-            </div>
-            <ToastContainer
-                position="top-center"
-                autoClose={8000}/>
             <div className="row mr-0 ml-0">
-                <div className="col-md-6  m-auto p-0">
-
-                    <div className="mb-3 ">
-                    <p className="justify-text">Choose date and floor to see zone state.</p>
-                        <BookDialog
-                            show={show}
-                            onHide={handleClose}
-                            name={floor}
-                            Zone={Zone}
-                            ConfirmBooking={confirmBooking}
-                            dates={date}
-                            loading={loading}
-
-                        />
+                <div className="col-md-4  m-auto  p-md-0">
+                <p className="justify-text mb-0" id="dpLable">Date:  </p>
+                    <DatePicker
+                        id="dates"
+                        dateFormat="dd-MM-yyyy"
+                        selected={startDate}
+                        onChange={date => setStartDate(date)}
+                        startDate={startDate}
+                        minDate={today}
+                        maxDate={maxDate}
+                        className=" datapicker btn-sm Calendar1 float-left "
+                        locale={en}
+                        showWeekNumbers
+                        customInput={<DatePickerCustomInput />}
+                    />
+                    <div className="col d-sm-inline-block mb-4 mt-3 pl-0">
+                        <div className="btn-group">
+                            {[...Array(7)].map((x, i) =>
+                                <button className={styleId(i)} id={"btn" + i} key={i}
+                                    onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
+                            )}
+                        </div>
                     </div>
+
 
                     <div className="col d-sm-inline-block  pl-0">
                         <div className="images">
@@ -358,34 +340,49 @@ const MapComponent = (props) => {
 
                             {mapAreas.areas.map((x, i) =>
 
-                                    <span className={mapAreas.areas[i].style} key={i}> {mapAreas.areas[i].zone}
-                                        <br/>
-                                        {mapAreas.areas[i].status}%
-                                     </span>
+                                <span className={mapAreas.areas[i].style} key={i}> {mapAreas.areas[i].zone}
+                                    <br />
+                                    {mapAreas.areas[i].status}%
+                                 </span>
                             )}
                         </div>
+                        <p className="justify-text text-center mt-4 mr-lg-5" style={{ fontWeight: "bold", color: "#385844" }}
+                            id="mapParagraph">Floor {floor} availability overview</p>
+                        <BookDialog
+                            show={show}
+                            onHide={handleClose}
+                            name={floor}
+                            Zone={Zone}
+                            ConfirmBooking={confirmBooking}
+                            dates={date}
+                            loading={loading}
+
+                        />
                     </div>
-                    <div className="col d-sm-inline-block mt-4 pl-0">
-                        <div className="btn-group">
-                            {[...Array(7)].map((x, i) =>
-                                <button className={styleId(i)} id={"btn"+i} key={i}
-                                        onClick={() => handleClickFloor(i + 1)}>{i + 1}</button>
-                            )}
-                        </div>
+           
+
+                 
                     </div>
-                </div>
-                <div className="col-md-5 d-none d-md-block m-auto">
+              
+     
+                <div className="col-md-6 d-none d-lg-block mb-0 text-center mt-3">
+
                     <Doughnut
                         data={barData}
                         width={60}
                         height={50}
                         id="doughnut"
                     />
+                    <p className="justify-text text-center mt-3" style={{ fontWeight: "bold", color: "#385844" }}
+                        id="mapParagraph">Bookings overview per zone in Floor</p>
+
                 </div>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={8000} />
         </div>
 
     );
 }
 export default withRouter(MapComponent);
-

@@ -42,11 +42,11 @@ describe('Interactions', () => {
 
 })
 
-describe("Token expired", () => {
+describe.only("Token expired", () => {
     it("Token Expired when on click floor ", ()=> {
-        cy.get("#statistics").click({force: true})
-        cy.wait(10000)
         cy.get("#ZoneSetting").click({force: true})
+        cy.wait(10000)
+        cy.get('button').contains('1').click({force: true})
         cy.url().should('include', '/')
         cy.get('.Toastify__toast-body[role=alert]')
             .should('contain', "You have been inactive for a while. For your security, please sign in again");

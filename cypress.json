@@ -1,6 +1,4 @@
 {
   "projectId": "t2dzo2",
-  "baseUrl":"http://localhost:3000",
-  "experimentalComponentTesting": true,
-  "componentFolder": "cypress/component"
+  "baseUrl":"http://localhost:3000"
 }

@@ -1,8 +1,9 @@
-import React, {useCallback, useEffect, useState} from "react";
-import {Bar} from 'react-chartjs-2';
-import {CheckStatusOfAllFloorPeriod} from "../../../service/AdminService/AdminStatistics";
+import React, { useCallback, useEffect, useState } from "react";
+import { Bar } from 'react-chartjs-2';
+import { CheckStatusOfAllFloorPeriod } from "../../../service/AdminService/AdminStatistics";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
+import DatePickerCustomInput from "../../../Module/DatePickerCustomInput";
 
 const StatusBuilding = () => {
     const [barData, setBarData] = useState({
@@ -91,17 +92,17 @@ const StatusBuilding = () => {
     }, [fetchBooking])
 
     return (
-        <div className=" ">
+        <div>
             <div className=" mt-2 mb-2 center ">
                 <div className="">
-                    <h2 className=" title"> Status Building </h2>
+                    <h2 className=" title center"> Status Building </h2>
                     <p className="text"> Choose a date to show status</p>
                 </div>
             </div>
 
             <div className="row">
-                <div className="col-md-6 labelsDate">
-                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">From </h2>
+                <div className="col-md-6">
+                    <h2 style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0">From </h2>
                     <DatePicker
                         id="dateFrom"
                         dateFormat="dd-MM-yyyy"
@@ -112,10 +113,11 @@ const StatusBuilding = () => {
                         className="btn btn-info Calendar1 float-left"
                         locale={en}
                         showWeekNumbers
+                        customInput={<DatePickerCustomInput />}
                     />
                 </div>
                 <div className="col-md-6">
-                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">To </h2>
+                    <h2 style={{ fontSize: "20px" }} className="mr-3  m-0">To </h2>
                     <DatePicker
                         id="dateTo"
                         dateFormat="dd-MM-yyyy"
@@ -125,6 +127,7 @@ const StatusBuilding = () => {
                         locale={en}
                         showWeekNumbers
                         className="btn btn-info Calendar1 float-left"
+                        customInput={<DatePickerCustomInput />}
                     />
 
                 </div>

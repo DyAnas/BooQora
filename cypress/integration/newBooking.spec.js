@@ -26,7 +26,7 @@ describe("Page elements test", () => {
         //Test Title
         cy.contains("New Booking");
         //Test paragraphe
-        cy.contains("Choose a date and click on a floor to show zone.");
+        cy.get('#mapParagraph');
         // check if button floor have length 7
         cy.get(".btn-group").find("button").should(($p) => {
             expect($p).to.have.length(7)

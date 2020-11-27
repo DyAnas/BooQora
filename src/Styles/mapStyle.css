@@ -1,21 +1,28 @@
+.Calendar1 {
+    font-weight: bolder;
+    width: 50%;
+}
+
 .images{
     position: relative;
     text-align: center;
-}
-.react-datepicker-popper {
-    z-index: 9999 !important;
 }
 
 .top-row-btn {
     padding-bottom: 10px;
 }
-.Calendar1 {
+
+
+.btn.btn-light {
+    background-color: #fafdfd;
+    border: 1px solid #0a470a;
+    border-radius: 10px;
+    color: #385844;
     font-weight: bolder;
-    width: 70%;
 }
 
 .btn.btn-light:hover {
-    background: #17a2b8;
+    background: #c0e0e7;
 }
 
 .btn.btn-light:focus {
@@ -23,29 +30,66 @@
 }
 
 .buttonActive{
-    background: #17a2b8;
-    border: 1px solid #66c9e9;
+    background: #c0e0e7;
+    border: 1px solid #000158;
     border-radius: 1px;
-    color: #ec0e92;
+    color: #284934;
     font-weight: bolder;
     width: 100%;
   padding: 6px 12px;
 
-
 }
-.datapicker {
-    color: #fff;
-    background-color: #17a2b8;
+
+/* DatePicker style*/
+
+  .wrapper { position: relative; }
+
+  i.fa-calendar {
+       position: absolute;
+        top: 3px; 
+        left: 5px;         
+    }
+  
+  #dpLable {
+    color: #284934;
+    width: 20%;
+    height: 30px;
+    padding-top: 3px;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .dateInput {
+    color: #355541;
+    padding-left: 20px;
+    background-color: #f5feff;
+    border-color: #e7e7e7;
+    border-radius: 3px;
+    font-weight: bold ;
+    text-align: center;
+}
+
+  .dateInput:hover{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    background-color: #a2e7f1;
+    border-color: #c5e4e9;
+  }
+
+  .dateInput:active{
+    background-color: #ffffff;
     border-color: #17a2b8;
+    cursor: pointer;
+  
+  }
+
+  .react-datepicker-popper {
+    z-index: 9999 !important;
 }
 
-.btn.btn-light {
-    background-color: #fafdfd;
-    border: 1px solid #66c9e9;
-    border-radius: 10px;
-    color: #ec0e92;
-    font-weight: bolder;
-}
+
+
 
 .WithStyles\(ForwardRef\(TableCell\)\)-head-2 {
     color: #fff;
@@ -54,10 +98,11 @@
 }
 .title {
     font-family: Gilroy,sans-serif!important;
-    font-size: 30px!important;
+    font-size: 25px!important;
+    font-weight: bold;
 
 
-    color:#e257a3 !important;
+    color:#00587a !important;
 
 }
 
@@ -67,28 +112,31 @@
     padding-top: 5px!important;
 }
 
-    /* Zone A*/
 
+
+
+/* MAP STYLE */
+
+    /* Zone A*/
 .span1 {
     position: absolute;
 
     font-weight: bolder;
     padding: 5px;
     font-size: 14px;
-    bottom:28px;
+    bottom:25px;
     left: 255px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
     font-style: oblique;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
 /* Zone B*/
-
 .span2 {
     position: absolute;
     font-weight: bolder;
@@ -101,12 +149,11 @@
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
 }
 
 
 /* Zone C*/
-
 .span3 {
     position: absolute;
     padding: 5px;
@@ -117,65 +164,61 @@
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
     font-weight: bolder;
 }
 
 
 /* Zone D*/
-
 .span4 {
     position: absolute;
     padding: 5px;
     top: 60px;
-    left: 40px;
+    left: 38px;
     font-size: 14px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
     font-weight: bolder;
 }
 
 
 /* Zone E*/
-
 .span5 {
     position: absolute;
     font-weight: bolder;
     padding: 5px;
     font-size: 14px;
     top: 70px;
-    left: 120px;
+    left: 110px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
 
 }
 
 
 /* Zone F*/
-
 .span6 {
     position: absolute;
     padding: 5px;
     font-weight: bolder;
     font-size: 14px;
-    top: 70px;
-    left: 220px;
+    top: 69px;
+    left: 213px;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
 }
 
 
 /* Zone G*/
-
 .span7 {
     font-weight: bolder;
     position: absolute;
@@ -187,7 +230,7 @@
     border-radius: 5px;
     pointer-events: none;
     z-index: 1000;
-    color: #4b54f3;
+    color: #355541;
 }
 
 
@@ -197,4 +240,17 @@
     .btn-group-vertical {
         vertical-align: baseline !important;
     }
+}
+
+
+@media only screen and (max-width:540px) {
+    .zoneSettingsForm{
+
+        background-color: #e1f2fb;
+        border-radius: 20px;
+        padding: 15px;
+        margin: 3px;
+        min-width:  110%;
+    }
+  
 }

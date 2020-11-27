@@ -96,7 +96,7 @@ const SignUpContainer = (props) => {
                                         message: "Invalid First Name"
                                     }
                                 })}
-                                value={firstName}
+                                // value={firstName}
                                 helperText={errors.firstName ? errors.firstName.message : ""}
                                 type="text"
                                 fullWidth

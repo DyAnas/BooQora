@@ -1,3 +1,33 @@
+.zoneSettingsForm{
+
+    background-color: #e1f2fb;
+     border-radius: 20px;
+      padding: 15px;
+       margin: 3px;
+}
+@media only screen and (max-width: 786px) {
+    .zoneSettingsForm{
+
+        background-color: #e1f2fb;
+        border-radius: 20px;
+        padding: 15px;
+        margin: 3px;
+        max-width: 70%;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .zoneSettingsForm{
+
+        background-color: #e1f2fb;
+        border-radius: 20px;
+        padding: 15px;
+        margin: 3px;
+        min-width:  110%;
+    }
+    
+}
+
 .mainRow{
     padding: 10px;
     background-color: white;
@@ -35,4 +65,31 @@
 
 .tableStyle{
     text-align: left;
+}
+
+.btn.btn-light {
+    background-color: #fafdfd;
+    border: 1px solid #0a470a;
+    border-radius: 10px;
+    color: #385844;
+    font-weight: bolder;
+}
+
+.btn.btn-light:hover {
+    background: #c0e0e7;
+}
+
+.btn.btn-light:focus {
+    background: #17a2b8!important;
+}
+
+.buttonActive{
+    background: #c0e0e7;
+    border: 1px solid #000158;
+    border-radius: 1px;
+    color: #284934;
+    font-weight: bolder;
+    width: 100%;
+  padding: 6px 12px;
+
 }

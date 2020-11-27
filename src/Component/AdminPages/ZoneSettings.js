@@ -1,23 +1,25 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import "../../Styles/admin.css";
-import {getZoneList} from "../../service/BookingService/mapService";
-import {ChangeZone} from "../../service/AdminService/ZoneSetting";
-import {Checkbox} from '@material-ui/core'
-import { withRouter} from "react-router-dom";
+import { getZoneList } from "../../service/BookingService/mapService";
+import { ChangeZone } from "../../service/AdminService/ZoneSetting";
+import { Checkbox } from '@material-ui/core'
+import { withRouter } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import successMessage from "../Message/SuccessMessage";
 import errorMessage from "../Message/ErrorMessage";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
+
+
 const ZoneSettings = (props) => {
     const [edit, setEdit] = useState(false);
-    const [floor, setFloor] = useState(1)
+    const [floor, setFloor] = useState()
     const [Zone, setZone] = useState([])
     const [ZoneID, setZoneID] = useState()
     const [Capacity, setCapacity] = useState("")
     const [Active, setActive] = useState(false)
     const [ChooseZone, setChooseZone] = useState("Choose Zone")
-    const {  handleSubmit } = useForm();
+    const { handleSubmit } = useForm();
 
 
     const handlerZone = (Zone) => {
@@ -55,12 +57,12 @@ const ZoneSettings = (props) => {
                 error.toString();
             if (error.response.status === 401) {
 
-          errorMessage("You have been inactive for a while. For your security, please sign in again")
+                errorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                 /* istanbul ignore next */
+                /* istanbul ignore next */
                 setTimeout(() => {
                     localStorage.clear()
-                   props.history.push("/")
+                    props.history.push("/")
                 }, 8000);
 
 
@@ -71,7 +73,7 @@ const ZoneSettings = (props) => {
             }
 
         })
-   
+
 
     }
 
@@ -82,33 +84,33 @@ const ZoneSettings = (props) => {
             response => {
 
 
-                 /* istanbul ignore next */
+                /* istanbul ignore next */
                 successMessage("Success editing")
 
-            } , (error) => {
+            }, (error) => {
                 const resMessage =
                     (error.response &&
                         error.response.data &&
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-              
-               
-                if(error.response.status===401){
+
+
+                if (error.response.status === 401) {
                     errorMessage("You have been inactive for a while. For your security, please sign in again")
 
-                  
-                     /* istanbul ignore next */
+
+                    /* istanbul ignore next */
                     setTimeout(() => {
                         localStorage.clear()
                         props.history.push("/")
                     }, 8000);
 
-                }else if (error.response.status===400){
+                } else if (error.response.status === 400) {
                     errorMessage("Editing Failed ")
 
                 }
-                else{
+                else {
                     errorMessage(resMessage)
 
                 }
@@ -117,31 +119,46 @@ const ZoneSettings = (props) => {
             })
 
     }
+    const styleId = (id) => {
+        let style = "";
+
+        if (id === (floor - 1)) {
+            style = "buttonActive mt-1 ml-1 mr-1"
+        } else {
+            style = "btn btn-light  mt-1 ml-1 mr-1";
+        }
+        return style;
+    }
 
 
     return <div className="">
         <div className="container  ">
             <div className="row text-center d-block mx-auto box  " >
 
-                <div className=" mt-4 mb-4 center ">
+                <div className=" mt-4 mb-3 center ">
                     <div className="">
-                        <h2 className="  title"> Zone Settings </h2>
+                        <h2 className="title"> Zone Settings </h2>
                     </div>
+                    
                 </div>
-                <div className=" col " >
+                <div className="row text-center d-block mx-auto   " >
+                <p className="justify-text mb-0" >Choose a floor:  </p>
+                </div>
+                <div className="col center mb-4" >
+                
                     <ToastContainer
                         position="top-center"
                     />
                     <div className="btn-group">
                         {[...Array(7)].map((x, i) =>
-                            <button className="btn btn-light mt-4 " key={i}
+                            <button className={styleId(i)+" mt-3"} key={i}
                                 onClick={() => handleClickFloor(i + 1)}   >{i + 1}</button>
                         )}
                     </div>
                 </div>
 
                 {edit ? <div className="row text-center d-block  " >
-                    <div className="col-md-4 mx-auto  " style={{ backgroundColor: "#e1f2fb", borderRadius: "20px", padding: "15px", margin: "3px" }}>
+                    <div className="col-lg-4 mx-auto zoneSettingsForm ">
                         <form onSubmit={handleSubmit(handleSaveSetting)}>
 
                             <div className="form-group ">
@@ -160,7 +177,7 @@ const ZoneSettings = (props) => {
                                                     <div className="dropdown">
 
                                                         <button className="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
-                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             {ChooseZone}
                                                         </button>
 
@@ -216,7 +233,9 @@ const ZoneSettings = (props) => {
                             <button
                                 id="save"
                                 type="submit" className="btn btn-light mr-2">Save</button>
-                            <button className="btn btn-light">Cancel</button>
+                            <button className="btn btn-light" onClick={() => {
+                                setEdit(false)
+                            }}>Cancel</button>
                         </form>
                     </div>
 

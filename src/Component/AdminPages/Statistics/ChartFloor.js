@@ -1,9 +1,9 @@
-import React, {useCallback, useEffect, useState} from "react";
-import {Bar} from 'react-chartjs-2';
-import {CheckStatusOfAllZones} from "../../../service/BookingService/mapService";
+import React, { useCallback, useEffect, useState } from "react";
+import { Bar } from 'react-chartjs-2';
+import { CheckStatusOfAllZones } from "../../../service/BookingService/mapService";
 import DatePicker from "react-datepicker";
 import en from "date-fns/locale/en-GB";
-
+import DatePickerCustomInput from "../../../Module/DatePickerCustomInput";
 
 const StatusFloor = () => {
     const [floor, setFloor] = useState(1)
@@ -40,7 +40,7 @@ const StatusFloor = () => {
             },
             title: {
                 display: true,
-                text: 'Percentage usage of different zones by floor ' + 1 ,
+                text: 'Percentage usage of different zones by floor ' + 1,
                 fontSize: 18
             },
             legend: {
@@ -92,7 +92,7 @@ const StatusFloor = () => {
             ...barData,
             datasets: [
                 {
-                    label: " Percentage usage of floor " + floor ,
+                    label: " Percentage usage of floor " + floor,
                     data: item,
                     backgroundColor: color,
                     borderWidth: 3
@@ -113,16 +113,16 @@ const StatusFloor = () => {
 
     return (
         <div className=" ">
-            <div className=" mt-2 mb-2 center ">
-                <div className="">
-                    <h2 className=" title"> Status Floor </h2>
+            <div className=" mt-2 mb-2  ">
 
-                    <p className="text"> Choose a date and floor to show status</p>
-                </div>
+                <h2 className=" title center"> Status Floor </h2>
+
+                <p className="text"> Choose a date and floor to show status</p>
+
             </div>
             <div className="row ">
                 <div className="col-md-6 labelsDate">
-                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0">Date </h2>
+                    <h2 style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0">Date </h2>
                     <DatePicker
                         id="dateFloor"
                         dateFormat="dd-MM-yyyy"
@@ -132,20 +132,21 @@ const StatusFloor = () => {
                         locale={en}
                         showWeekNumbers
                         className="btn btn-info Calendar1 float-left"
+                        customInput={<DatePickerCustomInput />}
                     />
                 </div>
 
                 <div className="col-sm ml-2">
-                    <h2 style={{fontSize: "20px"}} className="mr-3 labelsDate m-0  ">Floor </h2>
-                    <div  className="dropdown labelsDate">
-                        <button  className="btn btn-info font-weight-bolder dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h2 style={{ fontSize: "20px" }} className="mr-3 labelsDate m-0  ">Floor </h2>
+                    <div className="dropdown labelsDate">
+                        <button className="btn btn-info font-weight-bolder dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Floor: {floor}
                         </button>
-                        <div  className="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        <div className="dropdown-menu " aria-labelledby="dropdownMenuButton">
                             {[...Array(7)].map((x, i) =>
-                                <a  className="dropdown-item" href="#" key={i}
-                                   onClick={() => setFloor(i + 1)}>{i + 1}</a>
+                                <a className="dropdown-item" href="#" key={i}
+                                    onClick={() => setFloor(i + 1)}>{i + 1}</a>
                             )}
 
 
@@ -159,7 +160,7 @@ const StatusFloor = () => {
                     data={barData}
                     options={barOptions.options}
                     width={100}
-                    height={85}/>
+                    height={85} />
             </div>
         </div>
     )

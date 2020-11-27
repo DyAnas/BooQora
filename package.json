@@ -107,11 +107,13 @@
     "excludeAfterRemap": true,
     "exclude": [
       "src/serviceWorker.js",
-      "src/Modal/About/aboutBookora.js",
+      "src/Module/About/aboutBookora.js",
       "src/Component/Login/NewPassword.js",
       "src/Component/Login/resendActivation.js",
-      "src/Modal/NotFoundPage.js",
-      "src/service/AdminService/AdminStatistics.js"
+      "src/Module/NotFoundPage.js",
+      "src/service/AdminService/AdminStatistics.js",
+      "src/Module/About/aboutBookora.js",
+      "src/Component/AdminPages/Statistics/ChartQuantityEmployeeInBuilding.js"
     ]
   }
 }
