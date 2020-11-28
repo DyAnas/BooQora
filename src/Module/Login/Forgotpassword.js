@@ -21,8 +21,8 @@ const Forgotpassword = (props) => {
         if (validateEmail(email)) {
             AuthService.forgotPassword(email).then(
                 Response => {
-                    successMessage(Response.message)
 
+                    successMessage(Response.message)
                     spinnerTimer();
 
                     /* istanbul ignore next */
@@ -50,17 +50,14 @@ const Forgotpassword = (props) => {
 
                     } else {
                         errorMessage(resMessage)
-
-
                     }
                 }
             )
-
         }
         else {
             errorMessage("Email must match tietoevry")
 
-        }//Authentication
+        }
     }
     const [ShowVerifyCode, setShowVerifyCode] = React.useState(false)
     const [ShowRestPassword, setShowRestPassword] = React.useState(false)
@@ -77,11 +74,9 @@ const Forgotpassword = (props) => {
                     setShowForgotpassord(false);
                     setShowRestPassword(true);
 
-
                 } else {
                     errorMessage("Incorrect Code!! or code is expired")
                 }
-
             }
         );
     }
@@ -115,7 +110,6 @@ const Forgotpassword = (props) => {
 
                 loading={loading}
             />
-
         }
         {ShowVerifyCode &&
 
@@ -133,14 +127,11 @@ const Forgotpassword = (props) => {
                 value={confirmationCode}
                 onChange={e => setconfirmationCode(e.target.value)}
                 cancel={() => props.history.push("/")}
-
-
             />
         }
         {ShowRestPassword &&
             <NewPassword email={email}
             />
-
         }
     </div>)
 }

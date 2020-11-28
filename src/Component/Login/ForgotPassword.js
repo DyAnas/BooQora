@@ -1,8 +1,8 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import {TextField} from "@material-ui/core";
-import {withRouter} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
+import { TextField } from "@material-ui/core";
+import { withRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 
 const ForgotPassword = (props) => {
@@ -11,18 +11,18 @@ const ForgotPassword = (props) => {
         <div className="col-md-3  box ipad2  ">
             <div>
                 <div className="center ">
-                    <img src={Logo} alt="logo" style={{cursor:"pointer"}} onClick={()=>{
+                    <img src={Logo} alt="logo" style={{ cursor: "pointer" }} onClick={() => {
                         props.history.push("/");
-                    }}/>
+                    }} />
                 </div>
                 <h1 className="text  mb-2 justify-content-center mt-3">
                     Forgot password
                     </h1>
                 <ToastContainer
                     position="top-center"
-                    autoClose={8000}/>
+                    autoClose={8000} />
                 <div className="center">
-                    <form style={{ width:"80%"}} onSubmit={props.onSubmit}>
+                    <form style={{ width: "80%" }} onSubmit={props.onSubmit}>
                         <TextField
                             name="email"
                             error={props.error}
@@ -52,15 +52,15 @@ const ForgotPassword = (props) => {
                                 </button>
                         </div>
                         {props.loading ?
-                        <div className=" ">
-                            <div className="spinner-grow spinner-grow-sm text-info ml-1 " role="status">                    
-                      </div>
-                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
-                      </div>
-                      <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">                    
-                      </div>
-                        </div>
-                       : null}
+                            <div className=" ">
+                                <div className="spinner-grow spinner-grow-sm text-info ml-1 " role="status">
+                                </div>
+                                <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                </div>
+                                <div className="spinner-grow spinner-grow-sm text-info ml-1" role="status">
+                                </div>
+                            </div>
+                            : null}
                         <hr />
                     </form>
                 </div>
@@ -69,4 +69,4 @@ const ForgotPassword = (props) => {
     </div>
     )
 }
-export default withRouter (ForgotPassword);
+export default withRouter(ForgotPassword);

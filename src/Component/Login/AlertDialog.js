@@ -13,8 +13,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function AlertDialogSlide(props) {
-   // const theme = useTheme();
-
 
     return (
         <div>
@@ -34,15 +32,15 @@ export default function AlertDialogSlide(props) {
                         {props.message}
                     </DialogContentText>
                 </DialogContent>
-               <DialogActions>
-                   {props.showConfirmation &&
-                    <Button onClick={props.resendConfirmation} className="btn-info">
-                      resend confirmation
+                <DialogActions>
+                    {props.showConfirmation &&
+                        <Button onClick={props.resendConfirmation} className="btn-info">
+                            resend confirmation
                     </Button>
-                   }
+                    }
 
 
-        
+
                 </DialogActions>
             </Dialog>
         </div>

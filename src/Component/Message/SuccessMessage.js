@@ -1,6 +1,6 @@
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
-const successMessage = (error)=> {
+const successMessage = (error) => {
     toast.success(error, {
         position: "top-center",
         autoClose: 8000,

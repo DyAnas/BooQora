@@ -26,7 +26,6 @@ const StatusFloor = () => {
     const today = new Date();
     const [startDate, setStartDate] = useState(today);
 
-    // set options
     const [barOptions, setBarOptions] = useState({
         options: {
             scales: {
@@ -108,15 +107,10 @@ const StatusFloor = () => {
         fetchBooking()
     }, [fetchBooking])
 
-    // today and maxDate to show in calendar
-
-
     return (
         <div className=" ">
             <div className=" mt-2 mb-2  ">
-
                 <h2 className=" title center"> Status Floor </h2>
-
                 <p className="text"> Choose a date and floor to show status</p>
 
             </div>
@@ -148,7 +142,6 @@ const StatusFloor = () => {
                                 <a className="dropdown-item" href="#" key={i}
                                     onClick={() => setFloor(i + 1)}>{i + 1}</a>
                             )}
-
 
                         </div>
                     </div>

@@ -1,6 +1,6 @@
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
-const warningMessage = (error)=> {
+const warningMessage = (error) => {
     toast.error(error, {
         position: "top-center",
         autoClose: 8000,

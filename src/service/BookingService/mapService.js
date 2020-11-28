@@ -3,7 +3,7 @@ import AuthService from '../Authentication/authUser';
 
 
 const api_url = "http://localhost:8080/api/v1/zones/floor/";
-const api_url2="http://localhost:8080/api/v1/zones/"
+const api_url2 = "http://localhost:8080/api/v1/zones/"
 const api_url3 = "http://localhost:8080/api/v1/"
 
 
@@ -11,27 +11,27 @@ const api_url3 = "http://localhost:8080/api/v1/"
 export async function getZoneList(floor) {
     //let response = "token is expired"
     //if (AuthService.checkTokenExpirationMiddleware()) {
-        let token = AuthService.getCurrentUser().token;
-       const response = await axios.get(api_url + floor, {
-            headers: {
-                Authorization: 'Bearer ' + token
-            }
+    let token = AuthService.getCurrentUser().token;
+    const response = await axios.get(api_url + floor, {
+        headers: {
+            Authorization: 'Bearer ' + token
+        }
 
-        })
+    })
 
 
     return response;
-    }
+}
 
-export async function BookPlass(date, employeeId, zoneId ) {
-    let token= AuthService.getCurrentUser().token;
-    const response = await axios.post(api_url3+"bookings/book", {
+export async function BookPlass(date, employeeId, zoneId) {
+    let token = AuthService.getCurrentUser().token;
+    const response = await axios.post(api_url3 + "bookings/book", {
         date: date,
         employeeId: employeeId,
-        zoneId:zoneId
+        zoneId: zoneId
 
     }, {
-        headers:{
+        headers: {
             Authorization: 'Bearer ' + token,
         }
 
@@ -39,29 +39,18 @@ export async function BookPlass(date, employeeId, zoneId ) {
     )
     return response;
 }
-export async function CheckStatusOfAllZones(floorId,date ) {
+export async function CheckStatusOfAllZones(floorId, date) {
 
-    let token= AuthService.getCurrentUser().token;
-     const response = await axios.post(api_url2+"checkStatusOfAllZoneInAFloor", {
-        // Authorization: 'Bearer ' + token,
+    let token = AuthService.getCurrentUser().token;
+    const response = await axios.post(api_url2 + "checkStatusOfAllZoneInAFloor", {
+
         floorId: floorId,
         date: date,
     }, {
-        headers:{
+        headers: {
             Authorization: 'Bearer ' + token,
         }
     })
-    /*.catch(error=> {
-             if( error.response.status===401) {
-
-                 localStorage.clear()
-                 window.location.reload();
-                 alert("You have been inactive for a while. For your security, please sign in again");
-             }
-
-             return error;
-         }
-     )*/
 
     return response;
 

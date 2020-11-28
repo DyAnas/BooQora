@@ -46,7 +46,7 @@ const ZoneSettings = (props) => {
             response.data.zoneDTOList.map((i, index) => {
                 return items.push(i)
             })
-            console.log(response.data)
+
             return setZone(items)
         }, (error) => {
             const resMessage =
@@ -71,10 +71,7 @@ const ZoneSettings = (props) => {
                 errorMessage(resMessage)
 
             }
-
         })
-
-
     }
 
     const handleSaveSetting = () => {
@@ -82,7 +79,6 @@ const ZoneSettings = (props) => {
         ChangeZone(floor, ZoneID, Capacity, Active).then(
             /* istanbul ignore next */
             response => {
-
 
                 /* istanbul ignore next */
                 successMessage("Success editing")
@@ -94,7 +90,6 @@ const ZoneSettings = (props) => {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-
 
                 if (error.response.status === 401) {
                     errorMessage("You have been inactive for a while. For your security, please sign in again")
@@ -114,11 +109,9 @@ const ZoneSettings = (props) => {
                     errorMessage(resMessage)
 
                 }
-
-
             })
-
     }
+    
     const styleId = (id) => {
         let style = "";
 
@@ -139,19 +132,19 @@ const ZoneSettings = (props) => {
                     <div className="">
                         <h2 className="title"> Zone Settings </h2>
                     </div>
-                    
+
                 </div>
                 <div className="row text-center d-block mx-auto   " >
-                <p className="justify-text mb-0" >Choose a floor:  </p>
+                    <p className="justify-text mb-0" >Choose a floor:  </p>
                 </div>
                 <div className="col center mb-4" >
-                
+
                     <ToastContainer
                         position="top-center"
                     />
                     <div className="btn-group">
                         {[...Array(7)].map((x, i) =>
-                            <button className={styleId(i)+" mt-3"} key={i}
+                            <button className={styleId(i) + " mt-3"} key={i}
                                 onClick={() => handleClickFloor(i + 1)}   >{i + 1}</button>
                         )}
                     </div>
@@ -192,7 +185,6 @@ const ZoneSettings = (props) => {
                                                     </div>
                                                 </td>
                                             </tr>
-
 
                                             <tr>
                                                 <th scope="row">Capacity: </th>

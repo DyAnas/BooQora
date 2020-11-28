@@ -1,11 +1,11 @@
 import React from 'react';
 import '../../Styles/LoginStyle.css';
-import {useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import AuthService from '../../service/Authentication/authUser'
-import {Link, TextField} from "@material-ui/core";
+import { Link, TextField } from "@material-ui/core";
 import validateEmail from "../../Component/Login/ValidateEmail"
 import Logo from "../../assets/logo1.png"
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import errorMessage from "../../Component/Message/ErrorMessage";
 import successMessage from "../../Component/Message/SuccessMessage";
@@ -19,16 +19,14 @@ const SignUpContainer = (props) => {
     const [password, setPassword] = React.useState('')
 
     // useForm to control form
-    const {register, handleSubmit, watch, errors} = useForm();
+    const { register, handleSubmit, watch, errors } = useForm();
 
     // to show message and go to sign in
     const goToSignIn = () => {
-        setTimeout(()=>{
+        setTimeout(() => {
             props.history.push("/");
         }, 8000)
-
     }
-
 
     // handle submit form
     const onSubmit = data => {
@@ -41,26 +39,24 @@ const SignUpContainer = (props) => {
                 .then(response => {
 
                     successMessage(response.data.message)
-                        goToSignIn(); // to show message and go to sign in
-                    }, error => {
-                        const resMessage =
-                            (error.response &&
-                                error.response.data &&
-                                error.response.data.message) ||
-                            error.message ||
-                            error.toString();
-                        console.log(error.response.status)
-                        if(error.response.status===409){
+                    goToSignIn(); // to show message and go to sign in
 
-                            errorMessage(resMessage);
+                }, error => {
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    if (error.response.status === 409) {
 
-                            goToSignIn();
-                        } else {
-                            errorMessage(resMessage);
-                        }
+                        errorMessage(resMessage);
 
+                        goToSignIn();
+                    } else {
+                        errorMessage(resMessage);
                     }
-                );
+                });
         } else {
 
             errorMessage("Email must match tietoevry")
@@ -73,17 +69,17 @@ const SignUpContainer = (props) => {
             <div className="col-md-3  box ipad2  ">
                 <div>
                     <div className="center logo ">
-                        <img src={Logo} alt="logo"/>
+                        <img src={Logo} alt="logo" />
                     </div>
                     <h1 className="text  mb-1 justify-content-center">
                         Sign Up
                     </h1>
                     <ToastContainer
                         position="top-center"
-                        autoClose={8000}/>
+                        autoClose={8000} />
 
                     <div className="center">
-                        <form style={{width: "85%"}} onSubmit={handleSubmit(onSubmit)}>
+                        <form style={{ width: "85%" }} onSubmit={handleSubmit(onSubmit)}>
                             <TextField
                                 name="firstName"
                                 id="firstName"
@@ -210,7 +206,7 @@ const SignUpContainer = (props) => {
                                     </div>
                                 </div>
                                 : null}
-                            <hr/>
+                            <hr />
                             <div className="mb-1 ">
                                 <Link id="goToSignIn" href="/" variant="body2" className="text-footer">
                                     {"I have an account? Sign In"}

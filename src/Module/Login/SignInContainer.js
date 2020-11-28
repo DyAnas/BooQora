@@ -18,9 +18,7 @@ const SignInContainer = (props) => {
     // useForm to control form
     const { register, handleSubmit, errors } = useForm();
 
-
     const goToNewBooking = () => {
-
         window.location.replace("/newBooking");
     }
 
@@ -60,18 +58,18 @@ const SignInContainer = (props) => {
                     else {
                         errorMessage(resMessage);
                     }
-
                 }
             );
         } else {
             errorMessage("Email must match tietoEvry");
-        }//Authentication
+        }
     }
     const CustomToastWithLink = () => (
         <div>
             <p>Email is not actived:    <Link id="resendActivationLink" style={{ color: "gray", textDecoration: "underline" }} to="#" onClick={resendActivation}>Resend activation </Link></p>
         </div>
     );
+
     // handle if email is not active
     const resendActivation = () => {
         setLoading(true);
@@ -79,10 +77,7 @@ const SignInContainer = (props) => {
             Response => {
                 setLoading(false)
                 successMessage(Response.message);
-
             })
-
-
     }
 
 
@@ -99,9 +94,7 @@ const SignInContainer = (props) => {
                     </h1>
                 </div>
 
-
                 <div className="center">
-
 
                     <ToastContainer
                         position="top-center"
@@ -132,7 +125,6 @@ const SignInContainer = (props) => {
                             margin="normal"
                             id="input"
                             className="background_input"
-
                         />
 
                         <TextField
@@ -156,7 +148,6 @@ const SignInContainer = (props) => {
                             variant="filled"
                             margin="normal"
                             id="password"
-
                         />
 
                         <div className="center">

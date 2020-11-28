@@ -45,7 +45,7 @@ const MapComponent = (props) => {
             style: "span3",
             zone: "Zone C",
             shape: "poly",
-            coords: [11, 174, 42, 171, 63, 153, 59, 261, 6, 267],
+            coords: [11, 174, 42, 171, 63, 151, 59, 263, 6, 267],
             preFillColor: "#02f3af",
             fillColor: "#8bcdcd"
         },
@@ -55,7 +55,7 @@ const MapComponent = (props) => {
             zone: "Zone D",
             style: "span4",
             shape: "poly",
-            coords: [11, 8, 63, 3, 66, 50, 63, 104, 15, 104],
+            coords: [11, 8, 64, 3, 65, 50, 62, 104, 14, 104],
             preFillColor: "#02f3af",
             fillColor: "#8bcdcd"
         },
@@ -66,7 +66,7 @@ const MapComponent = (props) => {
             zone: "Zone E",
             style: "span5",
             shape: "poly",
-            coords: [67, 41, 64, 102, 154, 100, 156, 38],
+            coords: [67, 41, 64, 102, 152, 100, 156, 38],
             preFillColor: "#02f3af",
             fillColor: "#8bcdcd"
         },
@@ -116,10 +116,6 @@ const MapComponent = (props) => {
     });
 
 
-
-
-
-
     // method to get all active zones
     const getActiveZone = (floor) => {
         let items = [];
@@ -145,13 +141,14 @@ const MapComponent = (props) => {
             })
 
     }
+
     // method to get all statistics of zones
     const getStatusOfAllZones = (floorId, date) => {
         let items = [];
 
         CheckStatusOfAllZones(floorId, date).then(
             response => {
-                console.log(response.data);
+
                 response.data.map((i, index) => {
 
                     // to change color of zone depend to percentage of booking
@@ -166,7 +163,7 @@ const MapComponent = (props) => {
                         areas[index].preFillColor = '#f36a96';
 
                     }
-                    return items.push(i.bookedPercentage);
+                    return items.push(i.totalReservation);
                 })
 
                 setBarData({
@@ -296,16 +293,13 @@ const MapComponent = (props) => {
     }
 
 
-
-
-
     return (
         <div className="container container-sm pl-0 pb-4 pr-0 pt-3" >
             <h2 className="title text-center mb-lg-5">New booking</h2>
 
             <div className="row mr-0 ml-0">
                 <div className="col-md-4  m-auto  p-md-0">
-                <p className="justify-text mb-0" id="dpLable">Date:  </p>
+                    <p className="justify-text mb-0" id="dpLable">Date:  </p>
                     <DatePicker
                         id="dates"
                         dateFormat="dd-MM-yyyy"
@@ -327,7 +321,6 @@ const MapComponent = (props) => {
                             )}
                         </div>
                     </div>
-
 
                     <div className="col d-sm-inline-block  pl-0">
                         <div className="images">
@@ -359,12 +352,9 @@ const MapComponent = (props) => {
 
                         />
                     </div>
-           
 
-                 
-                    </div>
-              
-     
+                </div>
+
                 <div className="col-md-6 d-none d-lg-block mb-0 text-center mt-3">
 
                     <Doughnut
@@ -374,7 +364,7 @@ const MapComponent = (props) => {
                         id="doughnut"
                     />
                     <p className="justify-text text-center mt-3" style={{ fontWeight: "bold", color: "#385844" }}
-                        id="mapParagraph">Bookings overview per zone in Floor</p>
+                        id="mapParagraph">Number of bookings per zone in Floor {floor}</p>
 
                 </div>
             </div>

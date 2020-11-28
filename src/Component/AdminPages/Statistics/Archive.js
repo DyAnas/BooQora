@@ -29,7 +29,6 @@ export default function BookingsArchives() {
         fetchBooking()
     }, [fetchBooking])
 
-
     const columns =
         [
             { title: "Booking Id", field: "bookingId" },
@@ -74,10 +73,8 @@ export default function BookingsArchives() {
                             className="btn btn-info Calendar1 float-left"
                             customInput={<DatePickerCustomInput />}
                         />
-
-
                     </div>
-                    <div className="table col-12 mt-4">
+                    <div className="table col-12 mt-4 pl-0 pr-0">
 
                         <MaterialTable
                             title="Booking Archive:"
@@ -96,9 +93,7 @@ export default function BookingsArchives() {
                                     backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
                                 })
                             }}
-
                         />
-
                     </div>
                 </div>
             </div>

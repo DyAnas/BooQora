@@ -15,7 +15,6 @@ class AuthService {
             .then(Response => {
                 if (Response.data.token) {
                     localStorage.setItem("user", JSON.stringify(Response.data));
-                    console.log(authHeader().Authorization)
                 }
                 return Response.data;
             });
@@ -39,7 +38,6 @@ class AuthService {
                 email,
 
             }).then(response => {
-                console.log(response.data.token)
                 localStorage.setItem("user", JSON.stringify(response.data));
                 return response.data;
             })

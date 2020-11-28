@@ -1,7 +1,7 @@
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
-const errorMessage = (error)=> {
-   
+const errorMessage = (error) => {
+
     toast.error(error, {
         position: "top-center",
         autoClose: 8000,

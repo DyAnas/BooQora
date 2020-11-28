@@ -11,12 +11,12 @@ export const About = (props) => {
                 <div className="col-sm mb-2">
                     <h2 className="title ">About Bookora</h2>
                 </div>
-                <div className="col-sm mb-3 p-5">
-                    <p className="text-justify " style={{ letterSpacing:"1px"}}>Bookora is a booking system for Tietoevry.
+                <div className="col-sm mb-3 p-5 center">
+                    <p className="text-justify  " style={{ fontFamily: "Gilroy,sans-serif", width: "80%" }}>Bookora is a booking system for Tietoevry.
                     It aims to help both leaders and employees to
                     plan their working days in advance by providing
                     information about  how many people are in the different
-                    sections and how many of them are planning to come in the coming days.<br/>
+                    sections and how many of them are planning to come in the coming days.
                     It can also help leaders to decide how many places they have
                     to rent from Telenor, based on the statistisk about the usage
                 of the building.</p>

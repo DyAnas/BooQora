@@ -22,7 +22,7 @@ const StatusBuilding = () => {
             }
         ]
     });
-    // set options
+    
     const barOptions = {
         options: {
             scales: {
@@ -50,7 +50,6 @@ const StatusBuilding = () => {
     const statusBuilding = (response) => {
         let item = []
         let color = []
-        //   console.log(response.data)
         response.data.map((i, index) => {
             if (i.totalBooking < 30) {
                 color[index] = 'rgba(75, 192, 192, 0.6)';
@@ -61,8 +60,6 @@ const StatusBuilding = () => {
             }
             return item.push(i.totalBooking);
         })
-        // setData(item)
-
 
         setBarData({
             ...barData,

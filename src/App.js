@@ -26,7 +26,7 @@ class App extends Component {
 
         <BrowserRouter>
           <Switch>
-         
+
             <Route path="/" exact component={SignInContainer} />
             <Route path="/signup" component={SignUpContainer} />
             <Route path="/resend-activation" component={resendConfirm} />
@@ -51,7 +51,7 @@ class App extends Component {
                 <ProtectedRoute path="/archive" component={Archive} />
               </div>
             </>
-            <Route exact path="*"  component={NotFoundPage} />
+            <Route exact path="*" component={NotFoundPage} />
 
           </Switch>
 

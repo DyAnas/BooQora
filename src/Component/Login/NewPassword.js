@@ -1,10 +1,10 @@
 import React from "react";
 import Logo from "../../assets/logo1.png"
-import {TextField} from "@material-ui/core";
-import {useForm} from "react-hook-form";
+import { TextField } from "@material-ui/core";
+import { useForm } from "react-hook-form";
 import AuthService from '../../service/Authentication/authUser';
-import {withRouter} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
+import { withRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import errorMessage from "../../Component/Message/ErrorMessage";
 import successMessage from "../../Component/Message/SuccessMessage";
@@ -14,7 +14,7 @@ const NewPassword = (props) => {
     const [loading, setLoading] = React.useState(false)
     const email = props.email;
 
-    const goToSignIn = () =>  {
+    const goToSignIn = () => {
         setTimeout(() => {
             setLoading(false)
             props.history.push("/");
@@ -42,7 +42,7 @@ const NewPassword = (props) => {
                     errorMessage("You can't change password to old password,")
 
                 } else {
-                 errorMessage(resMessage)
+                    errorMessage(resMessage)
 
                 }
 
@@ -61,7 +61,7 @@ const NewPassword = (props) => {
                     </h1>
                 <ToastContainer
                     position="top-center"
-                    autoClose={8000}/>
+                    autoClose={8000} />
                 <div className="center">
                     <form onSubmit={handleSubmit(onSubmit)}  >
 
@@ -148,5 +148,4 @@ const NewPassword = (props) => {
     )
 }
 
-//withRouter to enable props.history.push("/");
 export default withRouter(NewPassword);

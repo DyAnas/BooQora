@@ -67,6 +67,7 @@ export async function CheckStatusOfAllFloorPeriod(from, to) {
         from: from,
         to: to
     }, {
+       
         headers: {
             Authorization: authHeader().Authorization,
         }

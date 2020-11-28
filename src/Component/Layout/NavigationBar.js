@@ -50,7 +50,6 @@ export const NavigationBar = (props) => {
                 <div className="row d-block text-center">
                     <div className="col" >
                         <strong><FontAwesomeIcon icon={faUserCircle} />  {AuthService.getCurrentUser().email} </strong>
-
                     </div>
                     <div className="col">
 

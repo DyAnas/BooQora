@@ -74,15 +74,8 @@ export const CreateNewAdmin = () => {
         }
     }
 
-
-
-
     const handleCheckBox = (event) => {
-
-
         setCheckBoxValueAdmin(event.target.checked);
-
-
     }
 
     const HandleUpgradeUser = () => {
@@ -130,11 +123,8 @@ export const CreateNewAdmin = () => {
                     /* istanbul ignore next */
                     errorMessage(resMessage)
 
-
                 }
-
             })
-
     }
 
 
@@ -150,7 +140,6 @@ export const CreateNewAdmin = () => {
                 <ToastContainer
                     position="top-center"
                     autoClose={8000} />
-
             </div>
             < div className="row text-center d-block  " >
 
@@ -185,7 +174,6 @@ export const CreateNewAdmin = () => {
                             />
 
                             <div>
-
                                 <button
                                     className="btn btn-light "
                                 >Find</button>
@@ -193,9 +181,6 @@ export const CreateNewAdmin = () => {
                             </div>
                         </form>
                     </div>
-
-
-
 
                 </div>
                 {userFound ?
@@ -212,7 +197,6 @@ export const CreateNewAdmin = () => {
                                         <td className="text-primary" id="lastName">{lastname}</td>
                                     </tr>
                                     <tr>
-
                                         <th scope="row">Email:</th>
                                         <td className="text-primary" id="email">{email}</td>
                                     </tr>
