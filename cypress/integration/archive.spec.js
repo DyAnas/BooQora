@@ -24,26 +24,26 @@ describe("Archive test", () => {
     it("select date to show all booking", () => {
         cy.get("#archive").click({ force: true })
        
-        cy.get("#from").click()
-        cy.get("#from").invoke('val').then((text) => {
+        cy.get(".dateInput").first().click()
+        cy.get(".dateInput").first().invoke('val').then((text) => {
             expect(nowTime).to.equal(text);
         })
         cy.contains('Prev').click();
         //choose date 1
         cy.contains('1').click();
-        cy.get("#from").invoke('val').then((text) => {
+        cy.get(".dateInput").first().invoke('val').then((text) => {
             expect('01-10-2020').to.equal(text);
         });
 
-        cy.get("#to").click()
-        cy.get("#to").invoke('val').then((text) => {
+        cy.get(".dateInput").last().click()
+        cy.get(".dateInput").last().invoke('val').then((text) => {
             expect(nowTime).to.equal(text);
         })
         // to click datapicker and choose next month
         cy.contains('Next').click();
         //choose date 24
         cy.contains('24').click();
-        cy.get("#to").invoke('val').then((text) => {
+        cy.get(".dateInput").last().invoke('val').then((text) => {
             expect('24-12-2020').to.equal(text);
         });
 

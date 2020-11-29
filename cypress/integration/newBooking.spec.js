@@ -36,14 +36,14 @@ describe("Page elements test", () => {
 
         // check datapicker
 
-        cy.get("#dates").click()
-        cy.get("#dates").invoke('val').then((text) => {
+        cy.get(".dateInput").click()
+        cy.get(".dateInput").invoke('val').then((text) => {
             expect(nowTime).to.equal(text);
         })
 
-        cy.get("#dates").click()
+        cy.get(".dateInput").click()
         cy.contains(today).click({ force: true });
-        cy.get("#dates").invoke('val').then((text) => {
+        cy.get(".dateInput").invoke('val').then((text) => {
             expect(nowTime).to.equal(text);
         })
 
@@ -65,7 +65,7 @@ describe("Function Test", () => {
     it("make booking today", () => {
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get(".span1").should("contain", "Zone A")
-        cy.get('.Calendar1').click();
+        cy.get('.dateInput').click();
         cy.get("map").find("area:first").click({ force: true })
         cy.get("#submitBooking").click()
         cy.get('.Toastify__toast-body[role=alert]').should('contain', "Booking success");
@@ -76,7 +76,7 @@ describe("Function Test", () => {
 
         cy.get(".btn-group").find("button:first").should("contain", "1").click({ multiple: true })
         cy.get(".span1").should("contain", "Zone A")
-        cy.get('.Calendar1').click();
+        cy.get('.dateInput').click();
         cy.get("map").find("area:first").click({ force: true })
         cy.get("#floor").should("contain", "Floor: 1");
         cy.get("#zone").should("contain", "Zone: Zone A");

@@ -11,30 +11,40 @@ beforeEach(() => {
 
 })
 const nowTime = Cypress.moment().format('DD-MM-yyyy')
+const today = Cypress.moment()
+const tomorrow = Cypress.moment().add(1,'day').format('DD')
+
 
 describe("Chart Building", () => {
-    it("show Statistics", ()=> {
-        cy.get("#statistics").click({force: true})
-        cy.get("#dateFrom").click()
-        cy.get("#dateFrom").invoke('val').then((text) => {
-            expect(nowTime).to.equal(text);
+    it("show Statistics", () => {
+        cy.get("#statistics").click({ force: true })
+        cy.get(".dateInput").eq(1).click()
+        cy.get(".dateInput").eq(1).invoke('val').then((dateFromDatePicker) => {
+            expect(nowTime).to.equal(dateFromDatePicker);
         })
         // click prev month
 
         //choose date 1
         cy.contains('10').click();
-        cy.get("#dateFrom").invoke('val').then((text) => {
-            expect('10-11-2020').to.equal(text);
+        cy.get(".dateInput").eq(1).invoke('val').then((dateFromDatePicker) => {
+            expect('10').to.equal(dateFromDatePicker.substr(0,2));
         });
-        cy.get("#dateTo").click()
-        cy.get("#dateTo").invoke('val').then((text) => {
-            expect(nowTime).to.equal(text);
+        cy.get(".dateInput").eq(2).click()
+        cy.get(".dateInput").eq(2).invoke('val').then((dateFromDatePicker) => {
+            expect(nowTime).to.equal(dateFromDatePicker);
         })
 
-        cy.get("#dateTo").click()
-        cy.contains('25').click();
-        cy.get("#dateTo").invoke('val').then((text) => {
-            expect('25-11-2020').to.equal(text);
-        });
+
     })
 })
+it('to Date', () => {
+    cy.get("#statistics").click({ force: true })
+    cy.get(".dateInput").eq(2).click()
+    cy.contains(today.add(1,'day').format('DD')).click();
+    cy.get(".dateInput").eq(2).invoke('val').then((dateFromDatePicker) => {
+
+        expect(tomorrow).to.equal(dateFromDatePicker.substr(0,2));
+    })
+})
+
+//.add(1,'day').format('DD')

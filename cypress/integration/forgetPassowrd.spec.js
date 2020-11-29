@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
 
+import { waitForElement } from '@testing-library/react';
 import Chance from 'chance';
 
 const chance = new Chance();
@@ -36,8 +37,8 @@ describe('Validation', () => {
         const email = 'root@tietoevry.com';
         cy.get('input[name=email]').type(email);
         cy.get('button[type=submit]').click();
-
-        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Request to reset password received. Check your inbox.');
+     
+        cy.get('.Toastify__toast-body[role=alert]',{ timeout: 30000 }).should('contain', 'Request to reset password received. Check your inbox.');
     })
 
 })
@@ -51,7 +52,7 @@ describe('Verfication Code Testing', () => {
         const randomCode ='blabla';
         cy.get('#verifyCodeInput').type(randomCode);
         cy.get('#verifyCode').click();
-        cy.get('.Toastify__toast-body[role=alert]').should('contain', 'Incorrect Code!! or code is expired');
+        cy.get('.Toastify__toast-body[role=alert]',{ timeout: 30000 }).should('contain', 'Incorrect Code!! or code is expired');
         cy.get('#cancel').click();
         cy.url('eq',Cypress.config().baseUrl+'/')
     })

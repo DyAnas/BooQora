@@ -54,7 +54,7 @@ export default function BookingsArchives() {
                             onChange={date => setStartDate(date)}
                             startDate={startDate}
                             clearAriaLabel="From"
-                            className="btn btn-info Calendar1 float-left"
+                            className="btn btn-info Calendar1 float-left from"
                             locale={en}
                             showWeekNumbers
                             customInput={<DatePickerCustomInput />}
@@ -70,8 +70,8 @@ export default function BookingsArchives() {
                             startDate={startDate}
                             locale={en}
                             showWeekNumbers
-                            className="btn btn-info Calendar1 float-left"
-                            customInput={<DatePickerCustomInput />}
+                            className="from btn btn-info Calendar1 float-left"
+                            customInput={<DatePickerCustomInput className="from" />}
                         />
                     </div>
                     <div className="table col-12 mt-4 pl-0 pr-0">
