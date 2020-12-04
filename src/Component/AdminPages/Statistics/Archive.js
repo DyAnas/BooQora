@@ -89,6 +89,9 @@ export default function BookingsArchives() {
                                     backgroundColor: '#008891',
                                     color: '#FFF'
                                 },
+                                cellStyle: {
+                                    textAlign: "center"
+                                },
                                 rowStyle: rowData => ({
                                     backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
                                 })

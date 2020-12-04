@@ -314,6 +314,7 @@ const MapComponent = (props) => {
                         customInput={<DatePickerCustomInput />}
                     />
                     <div className="col d-sm-inline-block mb-4 mt-3 pl-0">
+                        <h5><stong>Floors:</stong></h5>
                         <div className="btn-group">
                             {[...Array(7)].map((x, i) =>
                                 <button className={styleId(i)} id={"btn" + i} key={i}
